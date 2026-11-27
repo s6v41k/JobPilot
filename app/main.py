@@ -11,7 +11,7 @@ from __future__ import annotations
 
 import json
 import threading
-from pathlib import Path
+from contextlib import asynccontextmanager
 from typing import Any, Iterator, Literal
 
 import httpx
@@ -28,14 +28,26 @@ from app.config import ROOT_DIR, get_settings
 from app.cv import CVError, read_cv
 from app.llm import LLMError
 from app.matching import match_jobs
+from app.providers import forem_mirror
 from app.providers.aggregator import search_all
-from app.providers.base import JobQuery
+from app.providers.base import JobQuery, ProviderError
 from app.tools import TOOLS, call_tool
 from app.tools.profile_tools import Profile, build_profile
 
 WEB_DIR = ROOT_DIR / "web"
 
-app = FastAPI(title="JobPilot", version="0.1")
+_refresher = forem_mirror.BackgroundRefresher()
+
+
+@asynccontextmanager
+async def lifespan(_: FastAPI):
+    """On start-up keep the local copy of the Le Forem data fresh (in the background, never blocking)."""
+    _refresher.start()
+    yield
+    _refresher.stop()
+
+
+app = FastAPI(title="JobPilot", version="0.1", lifespan=lifespan)
 
 
 # ------------------------------------------------------------------ error handling
@@ -120,6 +132,10 @@ def health() -> dict:
         result["database"] = {"ok": False, "message": f"Database problem ({type(e).__name__})"}
     result["adzuna"] = {"configured": s.adzuna_configured, "monthly_budget": s.adzuna_monthly_budget,
                         "used": result["database"].get("adzuna_used")}
+    try:
+        result["vacancies"] = {**forem_mirror.info(), "message": _refresher.last_message}
+    except Exception:
+        result["vacancies"] = {"offers": 0, "refreshed_at": None, "age_hours": None, "message": "unknown"}
     result["ok"] = bool(result["ollama"]["ok"] and result["database"]["ok"])
     return result
 
@@ -150,6 +166,16 @@ def jobs(
                 row["match"] = scores.get(row["id"])
     return {"count": len(rows), "data_source": outcome.data_source, "snapshot_date": outcome.snapshot_date,
             "notes": outcome.notes, "attribution": outcome.attribution, "jobs": rows}
+
+
+@app.post("/api/refresh")
+def refresh_vacancies() -> dict:
+    """Download the latest Le Forem offers now (one bulk request). Keeps the old copy on failure."""
+    try:
+        count = forem_mirror.refresh()
+    except ProviderError as e:
+        raise HTTPException(503, str(e)) from None
+    return {**forem_mirror.info(), "ok": True, "offers": count}
 
 
 @app.get("/api/jobs/{job_id}")

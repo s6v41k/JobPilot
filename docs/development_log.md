@@ -19,7 +19,7 @@ test details in [testing.md](testing.md).
 | 8 | `get_job_details`, `match_cv` | done |
 | 9 | Cover letters, application tracker | done |
 | 10 | FastAPI: REST + streaming chat | done |
-| 10b | Local mirror of the Forem dataset (daily quota problem, see below) | **next** |
+| 10b | Local copy of the Forem dataset (daily quota problem) | done - **live download still to be verified** |
 | 11 | Web UI: Chat with tool trace | |
 | 12 | Web UI: Jobs, Tracker, Profile - **MVP (target 10 Dec)** | |
 | 13 | Preflight check, demo mode, error banners | |
@@ -144,3 +144,23 @@ retry with precise feedback.
    tried when Forem found nothing or failed - never because "only a few" results came back.
 3. A budget counter lives in the database file, so tests that use a temporary database do not see the real count. For now: do not
    run live searches against temporary databases while Forem is unavailable.
+
+## Commit 10b - Local copy of the Le Forem dataset (this commit)
+**What:** `app/providers/forem_mirror.py` downloads **all current offers in one request** (the portal's `exports/json`
+endpoint) into the table `forem_offers`; `ForemProvider` now searches that local copy and only falls back to the live API
+when no copy exists yet. The server refreshes the copy in a background thread at start-up and then every hour if it is older than 6 h.
+**Why:** the portal allows 10 000 anonymous requests per day per address and we ran into it (see commit 10). Searching locally is
+also faster (about 150 ms over 25 000 offers, measured), works offline during the demo and does not bother the portal.
+**How it behaves**
+- Search words must *start* a word of the title or occupation ("serveur" finds "Serveurs", "erveur" does not); accents and case are ignored.
+- City names work in NL/FR/EN (`Antwerp` = `Anvers` = `Antwerpen`); `Brussels` is the whole region.
+- Expired offers are filtered at query time, so the copy never shows yesterday's offers.
+- A failed download keeps the old copy. A copy older than 24 h is labelled `cached` with a note ("last refreshed 30 hours ago").
+- User text is cleaned of SQL wildcards (`%`, `_`) and passed as parameters: it can never act as a pattern or as SQL.
+**Run:** `.venv\Scripts\python -m app.providers.forem_mirror` (download now), or just start the server. `/api/health` shows
+`vacancies: {offers, age_hours}`; `POST /api/refresh` triggers a download.
+**Test:** `tests/test_mirror.py` (22 tests) uses the **real** 108-offer snapshot as the "downloaded dataset".
+**To verify live (not possible on the day of writing - the portal quota was exhausted until 00:00 UTC):**
+1. run `python -m app.providers.forem_mirror` and check it prints about 24 000 offers (the export format is assumed to be a JSON list of records);
+2. check the file size of `data/jobpilot.db` (expected ~35 MB) and a search through `/api/jobs`.
+If the export format differs, only `refresh()` needs adjusting; the search side is already tested.

@@ -88,6 +88,25 @@ class ForemProvider(JobProvider):
         return " and ".join(parts)
 
     def search(self, query: JobQuery) -> list[Job]:
+        # 1. the local copy (instant, offline, no quota); 2. the live portal as a fallback
+        with db.connect(self._db_path) as conn:
+            state = db.forem_mirror_state(conn)
+        if state and state["offers"] > 0:
+            return self.search_local(query)
+        return self.search_live(query)
+
+    def search_local(self, query: JobQuery) -> list[Job]:
+        """Same filters as the live query, but answered from the SQLite copy."""
+        with db.connect(self._db_path) as conn:
+            raw = db.forem_search(
+                conn, today=(self._today or date.today()).isoformat(), keywords=query.keywords,
+                places=city_variants(query.city) if query.city else None,
+                nuts=_NUTS[query.region] if query.region else None,
+                job_type=query.job_type, language=query.language, limit=query.limit * 2)
+        jobs = self.parse({"results": raw})
+        return [j for j in jobs if matches(j, query)][: query.limit]
+
+    def search_live(self, query: JobQuery) -> list[Job]:
         params = {
             "where": self.build_where(query),
             "order_by": "datedebutdiffusion desc",

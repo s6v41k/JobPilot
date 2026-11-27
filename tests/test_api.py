@@ -269,6 +269,25 @@ def test_delete_my_data(client):
     assert client.get("/api/jobs/t:1").status_code == 200            # public vacancies stay
 
 
+# ----------------------------------------------------------------- vacancy copy
+def test_health_reports_the_local_vacancy_copy(client):
+    assert client.get("/api/health").json()["vacancies"]["offers"] == 0          # nothing downloaded yet
+
+
+def test_refresh_endpoint(client, monkeypatch):
+    monkeypatch.setattr(main.forem_mirror, "refresh", lambda **kw: 123)
+    res = client.post("/api/refresh").json()
+    assert res["ok"] and res["offers"] == 123
+
+
+def test_refresh_failure_is_a_503_with_a_message(client, monkeypatch):
+    def quota(**kw):
+        raise main.ProviderError("Le Forem open data daily request limit reached; the saved copy is kept.")
+    monkeypatch.setattr(main.forem_mirror, "refresh", quota)
+    res = client.post("/api/refresh")
+    assert res.status_code == 503 and "saved copy is kept" in res.json()["error"]
+
+
 # ------------------------------------------------------------------- robustness
 def test_unexpected_server_error_is_a_calm_json_message(client, monkeypatch):
     monkeypatch.setattr(main, "search_all", lambda q: 1 / 0)

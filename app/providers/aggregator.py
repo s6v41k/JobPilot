@@ -14,6 +14,7 @@ from dataclasses import dataclass, field
 from app import db
 from app.providers import adzuna as adzuna_module
 from app.providers import forem as forem_module
+from app.providers import forem_mirror
 from app.providers.adzuna import AdzunaProvider
 from app.providers.base import Job, JobProvider, JobQuery, ProviderError, localize
 from app.providers.forem import ForemProvider
@@ -23,6 +24,7 @@ from app.providers.snapshot import SnapshotProvider
 # Adzuna has a tiny free quota (25 calls/month), so it is used ONLY when Le Forem found nothing at all
 # (or failed). A Jobs-tab click or a chat question must never spend it just because results were few.
 MIN_RESULTS_BEFORE_ADZUNA = 1
+STALE_AFTER_HOURS_FOR_LABEL = 24      # a local copy older than this is labelled "cached", not "live"
 
 
 @dataclass
@@ -69,6 +71,10 @@ def search_all(
             found += forem.search(local.model_copy(update={"keywords": variant}))
         out.jobs = _dedupe(found)
         out.attribution.append(forem_module.ATTRIBUTION)
+        age = forem_mirror.age_hours(db_path)
+        if age is not None and age > STALE_AFTER_HOURS_FOR_LABEL:     # old local copy: say so honestly
+            out.data_source = "cached"
+            out.notes.append(f"The vacancy list was last refreshed {age:.0f} hours ago, so some offers may be gone.")
     except ProviderError as e:
         failed += 1
         out.notes.append(str(e))

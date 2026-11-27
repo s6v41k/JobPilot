@@ -18,6 +18,7 @@ from pathlib import Path
 from typing import Any, Iterator
 
 from app.config import get_settings
+from app.geo import normalize
 
 APPLICATION_STATUSES = ("interested", "applied", "interview", "offer", "rejected")
 
@@ -84,6 +85,27 @@ CREATE TABLE IF NOT EXISTS seen_jobs (
     search_id   INTEGER NOT NULL REFERENCES searches(id) ON DELETE CASCADE,
     job_id      TEXT NOT NULL,
     PRIMARY KEY (search_id, job_id)
+);
+
+-- A local copy of ALL current Le Forem offers (one bulk download instead of many small queries:
+-- the portal has a daily request quota). The search columns are pre-normalised (lowercase, no accents).
+CREATE TABLE IF NOT EXISTS forem_offers (
+    number    TEXT PRIMARY KEY,
+    haystack  TEXT NOT NULL,        -- " title occupation " normalised, searched by word start
+    places    TEXT,                 -- " municipality names " normalised
+    nuts      TEXT,                 -- "BE1,BE2..." region codes
+    contract  TEXT,
+    regime    TEXT,
+    langs     TEXT,                 -- "FR,NL"
+    starts    TEXT,
+    ends      TEXT NOT NULL,        -- last day of publication (9999-12-31 when unknown)
+    raw       TEXT NOT NULL         -- the original record as JSON
+);
+CREATE INDEX IF NOT EXISTS idx_forem_ends ON forem_offers(ends);
+CREATE TABLE IF NOT EXISTS mirror_state (
+    name          TEXT PRIMARY KEY,
+    refreshed_at  TEXT NOT NULL,
+    offers        INTEGER NOT NULL
 );
 
 -- Text embeddings (vectors), cached so the same text is never embedded twice.
@@ -212,6 +234,79 @@ def cache_set(conn: sqlite3.Connection, key: str, source: str, body: str) -> Non
         "ON CONFLICT(cache_key) DO UPDATE SET body=excluded.body, fetched_at=excluded.fetched_at",
         (key, source, body, now_iso()),
     )
+
+
+# ----------------------------------------------------------- Le Forem local copy
+def _words(text: str) -> list[str]:
+    """Normalised words with LIKE wildcards removed (user text must not act as a pattern)."""
+    cleaned = normalize(text).replace("%", " ").replace("_", " ").replace("\\", " ")
+    return [w for w in cleaned.split() if w]
+
+
+def forem_row(rec: dict[str, Any]) -> tuple | None:
+    """One raw ODWB record -> one row of forem_offers (None if it has no number)."""
+    number = rec.get("numerooffreforem")
+    if not number:
+        return None
+    return (
+        str(number),
+        f" {normalize((rec.get('titreoffre') or '') + ' ' + (rec.get('metier') or ''))} ",
+        f" {normalize(' '.join(rec.get('lieuxtravaillocalite') or []))} ",
+        ",".join(rec.get("lieuxtravailregionnuts") or []),
+        rec.get("typecontrat"), rec.get("regimetravail"),
+        ",".join(rec.get("languescodeiso2") or []),
+        rec.get("datedebutdiffusion"), rec.get("datefindiffusion") or "9999-12-31",
+        json.dumps(rec, ensure_ascii=False),
+    )
+
+
+def forem_replace_all(conn: sqlite3.Connection, records: list[dict[str, Any]]) -> int:
+    """Replace the whole local copy in ONE transaction (readers never see a half-filled table)."""
+    rows = [r for r in (forem_row(rec) for rec in records) if r]
+    conn.execute("DELETE FROM forem_offers")
+    conn.executemany("INSERT OR REPLACE INTO forem_offers VALUES (?,?,?,?,?,?,?,?,?,?)", rows)
+    conn.execute(
+        "INSERT INTO mirror_state (name, refreshed_at, offers) VALUES ('forem', ?, ?) "
+        "ON CONFLICT(name) DO UPDATE SET refreshed_at=excluded.refreshed_at, offers=excluded.offers",
+        (now_iso(), len(rows)),
+    )
+    return len(rows)
+
+
+def forem_mirror_state(conn: sqlite3.Connection) -> dict[str, Any] | None:
+    row = conn.execute("SELECT refreshed_at, offers FROM mirror_state WHERE name = 'forem'").fetchone()
+    return dict(row) if row else None
+
+
+def forem_search(conn: sqlite3.Connection, today: str, keywords: str = "", places: list[str] | None = None,
+                 nuts: str | None = None, job_type: str | None = None, language: str | None = None,
+                 limit: int = 20) -> list[dict[str, Any]]:
+    """Search the local copy. Words must START a word of the title/occupation (so 'serveur' finds 'serveurs')."""
+    sql, args = "SELECT raw FROM forem_offers WHERE ends >= ?", [today]
+    for word in _words(keywords):
+        sql += " AND haystack LIKE ?"
+        args.append(f"% {word}%")
+    place_words = [p for name in (places or []) for p in [" ".join(_words(name))] if p]
+    if place_words:
+        sql += " AND (" + " OR ".join("places LIKE ?" for _ in place_words) + ")"
+        args += [f"% {p}%" for p in place_words]
+    if nuts:
+        sql += " AND nuts LIKE ?"
+        args.append(f"%{nuts}%")
+    if job_type == "student":
+        sql += " AND (contract = 'Etudiant' OR haystack LIKE '% etudiant%' OR haystack LIKE '% student%')"
+    elif job_type == "internship":
+        sql += " AND (haystack LIKE '% stage%' OR haystack LIKE '% stagiaire%')"
+    elif job_type == "part-time":
+        sql += " AND regime = 'Temps partiel'"
+    elif job_type == "full-time":
+        sql += " AND regime = 'Temps plein'"
+    if language:
+        sql += " AND langs LIKE ?"
+        args.append(f"%{language.upper()}%")
+    sql += " ORDER BY starts DESC LIMIT ?"
+    args.append(max(1, min(int(limit), 200)))
+    return [json.loads(r["raw"]) for r in conn.execute(sql, args).fetchall()]
 
 
 # --------------------------------------------------------------------- embeddings
