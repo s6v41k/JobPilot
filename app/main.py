@@ -28,7 +28,7 @@ from app.config import ROOT_DIR, get_settings
 from app.cv import CVError, read_cv
 from app.llm import LLMError
 from app.matching import match_jobs
-from app import preflight, warmup
+from app import demo, preflight, warmup
 from app.providers import forem_mirror
 from app.providers.aggregator import search_all
 from app.providers.base import JobQuery, ProviderError
@@ -146,6 +146,13 @@ def health() -> dict:
 
 
 # ------------------------------------------------------------------------- jobs
+@app.get("/api/demo")
+def demo_info() -> dict:
+    """The scripted scenarios and which of them have a recording (for the demo panel in the chat)."""
+    have = {rec["id"]: rec for rec in demo.list_recordings()}
+    return {"scenarios": [{**vars(sc), "recording": have.get(sc.id)} for sc in demo.SCENARIOS]}
+
+
 @app.get("/api/preflight")
 def run_preflight(chat: bool = Query(False, description="also ask the real model one tiny question")) -> dict:
     """The same report as `python -m app.preflight`, for the 'System check' button in the Profile tab."""
@@ -223,6 +230,8 @@ def run_tool(name: str, arguments: dict[str, Any] | None = None) -> dict:
 class ChatRequest(BaseModel):
     message: str = Field(min_length=1, max_length=4000)
     reset: bool = Field(False, description="forget the conversation before answering")
+    replay: str | None = Field(None, pattern=r"^[A-Za-z0-9_-]{1,40}$",
+                               description="id of a recorded real run to play back instead of asking the model")
 
 
 def sse(event: str, payload: dict) -> str:
@@ -230,17 +239,23 @@ def sse(event: str, payload: dict) -> str:
     return f"event: {event}\ndata: {json.dumps(payload, ensure_ascii=False, default=str)}\n\n"
 
 
-def chat_stream(message: str, reset: bool) -> Iterator[str]:
+def chat_stream(message: str, reset: bool, replay: str | None = None) -> Iterator[str]:
     if not _chat_lock.acquire(blocking=False):
         yield sse("error", {"type": "error", "message": "Another question is still being answered. "
                                                         "Please wait a moment."})
         return
     try:
+        if replay:                               # demo safety net: a REAL recorded run, clearly labelled
+            for event in demo.replay_events(demo.load_recording(replay)):
+                yield sse(event["type"], event)
+            return
         agent = get_agent()
         if reset:
             agent.reset()
         for event in agent.run(message):
             yield sse(event["type"], event)
+    except FileNotFoundError as e:
+        yield sse("error", {"type": "error", "message": str(e)})
     except Exception as e:                       # the agent already guards itself; this is the backstop
         yield sse("error", {"type": "error", "message": f"Something went wrong ({type(e).__name__}). Please try again."})
     finally:
@@ -251,7 +266,8 @@ def chat_stream(message: str, reset: bool) -> Iterator[str]:
 def chat(request: ChatRequest) -> StreamingResponse:
     """Stream the agent's work as Server-Sent Events:
     token / tool_call / tool_result / retract / error / done."""
-    return StreamingResponse(chat_stream(request.message, request.reset), media_type="text/event-stream",
+    return StreamingResponse(chat_stream(request.message, request.reset, request.replay),
+                             media_type="text/event-stream",
                              headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"})
 
 

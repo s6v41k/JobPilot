@@ -35,6 +35,7 @@ import httpx
 import ollama
 
 from app import db
+from app.agent.language import looks_like_job_request, reply_hint
 from app.agent.prompts import build_system_prompt
 from app.config import Settings, get_settings
 from app.tools import TOOLS, call_tool, tool_schemas
@@ -245,7 +246,9 @@ class Agent:
         started = time.perf_counter()
         profile = self.profile if self.profile is not None else load_stored_profile()
         system = {"role": "system", "content": build_system_prompt(profile)}
-        messages = [system] + self.history + [{"role": "user", "content": user_text}]
+        # The model sees a small hint about the language to answer in (7B models often answer in English
+        # to a Dutch question). The hint is NOT shown in the UI and NOT kept in the history.
+        messages = [system] + self.history + [{"role": "user", "content": user_text + reply_hint(user_text)}]
         turn_start = len(messages) - 1            # where this turn begins (for saving history)
         synthetic: list[dict] = []                # our own nudges: never saved to the history
         schemas = tool_schemas(self.tool_names)
@@ -255,7 +258,7 @@ class Agent:
         totals = Counter()
         rounds = tool_runs = 0
         final_text = ""
-        nudged = retried = False
+        nudged = retried = tool_nudged = False
 
         try:
             while True:
@@ -266,6 +269,18 @@ class Agent:
 
                 if not calls:                                   # the LLM answered in prose
                     final_text = text.strip()
+                    # Questions about vacancies MUST use a tool: an answer "from memory" is thrown away once.
+                    if (use_tools and final_text and not tool_nudged and tool_runs == 0
+                            and looks_like_job_request(user_text)):
+                        tool_nudged = True
+                        yield {"type": "retract", "reason": "The model answered without searching."}
+                        asked = {"role": "assistant", "content": final_text}
+                        fix = {"role": "user", "content": "STOP: you answered without using a tool. Questions about "
+                               "vacancies, CVs, letters or applications MUST use the tools. Call the right tool now "
+                               "(for a vacancy search: search_jobs) and answer ONLY from its results."}
+                        messages += [asked, fix]
+                        synthetic += [asked, fix]
+                        continue
                     if not final_text and not nudged:           # empty answer: ask once more
                         nudged = True
                         nudge = {"role": "user", "content": "Please answer the question now, "
@@ -334,6 +349,8 @@ class Agent:
         # and so the model keeps seeing that it answers vacancy questions with tools.
         ours = {id(m) for m in synthetic}
         turn = [history_form(m) for m in messages[turn_start:] if id(m) not in ours]
+        if turn and turn[0]["role"] == "user":
+            turn[0] = {"role": "user", "content": user_text}          # keep the original question, without our hint
         if not turn or turn[-1].get("content") != final_text or turn[-1]["role"] != "assistant":
             turn.append({"role": "assistant", "content": final_text})
         self.history += turn

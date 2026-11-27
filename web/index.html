@@ -50,12 +50,17 @@
           <div class="suggestions">
             <button v-for="s in suggestions" :key="s" @click="send(s)">{{ s }}</button>
           </div>
+          <p><button class="linkbtn" v-if="demo.length" @click="showDemo = !showDemo">Demo scenarios for the presentation</button></p>
         </div>
 
         <div v-for="m in messages" :key="m.id" class="msg" :class="m.role">
           <div v-if="m.role === 'user'" class="bubble">{{ m.text }}</div>
 
           <template v-else>
+            <div class="replay-badge" v-if="m.replay">
+              <b>REPLAY</b> of a real recording from {{ replayDate(m.replay) }} - {{ m.replay.model }}, it took {{ Math.round(m.replay.original_seconds) }} s originally.
+              <span v-if="m.replay.data_note">Data: {{ m.replay.data_note }}.</span>
+            </div>
             <!-- what the agent decided to do (tool calls) -->
             <div class="steps" v-if="m.steps.length">
               <span v-for="s in m.steps" :key="s.id" class="chip" :class="s.status">
@@ -106,12 +111,27 @@
       </div>
     </div>
 
+    <div class="demo-panel" v-if="showDemo && demo.length">
+      <div class="col">
+        <div class="demo-head"><b>Demo scenarios</b> <span class="meta">Run live with the model, or replay a real recording (clearly labelled) if the model is too slow.</span>
+          <button class="linkbtn" @click="showDemo = false">close</button></div>
+        <div class="demo-row" v-for="sc in demo" :key="sc.id">
+          <div><b>{{ sc.id }} - {{ sc.title }}</b> <span class="meta">~{{ sc.minutes }} min live</span><br><span class="demo-prompt">{{ sc.prompt }}</span></div>
+          <div class="demo-buttons">
+            <button class="btn primary" :disabled="busy" @click="send(sc.prompt)">Run live</button>
+            <button class="btn" :disabled="busy || !sc.recording" @click="send(sc.prompt, {replay: sc.id})" :title="sc.recording ? 'recorded ' + replayDate(sc.recording) : 'no recording yet: python -m app.demo record --scenario ' + sc.id">Replay</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <form class="composer" @submit.prevent="send()">
       <div class="col">
         <textarea ref="box" v-model="input" rows="1" placeholder="Ask about jobs in Belgium..." @keydown.enter.exact.prevent="send()" @input="grow"></textarea>
         <button v-if="busy" type="button" class="stop" @click="stop">Stop</button>
         <button v-else type="submit" class="send" :disabled="!input.trim()">Send</button>
         <button type="button" class="stop" @click="newChat" :disabled="busy" title="Forget this conversation">New chat</button>
+        <button type="button" class="stop" v-if="demo.length" @click="showDemo = !showDemo" title="Scripted scenarios for the presentation">Demo</button>
       </div>
       <div class="privacy">Runs on your computer. Your CV never leaves it; only search words go to the job sources.</div>
     </form>

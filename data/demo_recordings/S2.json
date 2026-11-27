@@ -1,0 +1,609 @@
+{
+ "version": 1,
+ "id": "S2",
+ "scenario": "S2",
+ "question": "Zoek een stage in Antwerpen",
+ "model": "qwen2.5:7b",
+ "recorded_at": "2026-11-27T14:21:44+00:00",
+ "original_seconds": 47.7,
+ "data_note": "real Le Forem snapshot of 2026-11-27 (108 offers), fictional CV 'emma_verbeke'",
+ "events": [
+  {
+   "t": 8.81,
+   "type": "tool_call",
+   "name": "search_jobs",
+   "arguments": {
+    "city": "Antwerp",
+    "job_type": "internship",
+    "keywords": "stage",
+    "region": "flanders"
+   }
+  },
+  {
+   "t": 8.86,
+   "type": "tool_result",
+   "name": "search_jobs",
+   "ok": true,
+   "error": null,
+   "duration_ms": 44,
+   "data": {
+    "count": 2,
+    "data_source": "live",
+    "snapshot_date": null,
+    "notes": [],
+    "attribution": [
+     {
+      "text": "Le Forem - Open Data Wallonie-Bruxelles (CC BY-SA 4.0)",
+      "url": "https://www.odwb.be/explore/dataset/offres-d-emploi-forem/"
+     }
+    ],
+    "jobs": [
+     {
+      "id": "forem:2147692",
+      "title": "OFFRE DE STAGE – RARKETING",
+      "company": "SYNERGIE BELGIUM",
+      "city": "Antwerpen(District 7)",
+      "region": "flanders",
+      "job_type": "internship",
+      "language": null,
+      "posted_at": "2026-11-12",
+      "url": "https://www.leforem.be/recherche-offres/offre-detail/2147692",
+      "summary": "Occupation: Développement des ressources humaines. Sector: Activités liées à l'emploi. Contract: Intérimaire.…"
+     },
+     {
+      "id": "forem:2147654",
+      "title": "OFFRE DE STAGE – RH / MARKETING",
+      "company": "Gosselies",
+      "city": "Antwerpen(District 7)",
+      "region": "flanders",
+      "job_type": "internship",
+      "language": null,
+      "posted_at": "2026-11-12",
+      "url": "https://www.leforem.be/recherche-offres/offre-detail/2147654",
+      "summary": "Occupation: Assistant ressources humaines polyvalent / Assistante ressources humaines polyvalente. Sector: Ac…"
+     }
+    ]
+   }
+  },
+  {
+   "t": 27.48,
+   "type": "token",
+   "text": "Hier"
+  },
+  {
+   "t": 27.68,
+   "type": "token",
+   "text": " zijn"
+  },
+  {
+   "t": 27.86,
+   "type": "token",
+   "text": " twee"
+  },
+  {
+   "t": 28.05,
+   "type": "token",
+   "text": " stage"
+  },
+  {
+   "t": 28.23,
+   "type": "token",
+   "text": "ge"
+  },
+  {
+   "t": 28.41,
+   "type": "token",
+   "text": "le"
+  },
+  {
+   "t": 28.59,
+   "type": "token",
+   "text": "ide"
+  },
+  {
+   "t": 28.77,
+   "type": "token",
+   "text": " ban"
+  },
+  {
+   "t": 28.97,
+   "type": "token",
+   "text": "en"
+  },
+  {
+   "t": 29.16,
+   "type": "token",
+   "text": " in"
+  },
+  {
+   "t": 29.35,
+   "type": "token",
+   "text": " Ant"
+  },
+  {
+   "t": 29.53,
+   "type": "token",
+   "text": "wer"
+  },
+  {
+   "t": 29.71,
+   "type": "token",
+   "text": "pen"
+  },
+  {
+   "t": 29.89,
+   "type": "token",
+   "text": ":\n\n"
+  },
+  {
+   "t": 30.07,
+   "type": "token",
+   "text": "1"
+  },
+  {
+   "t": 30.25,
+   "type": "token",
+   "text": "."
+  },
+  {
+   "t": 30.44,
+   "type": "token",
+   "text": " OFF"
+  },
+  {
+   "t": 30.61,
+   "type": "token",
+   "text": "RE"
+  },
+  {
+   "t": 30.79,
+   "type": "token",
+   "text": " DE"
+  },
+  {
+   "t": 30.97,
+   "type": "token",
+   "text": " ST"
+  },
+  {
+   "t": 31.14,
+   "type": "token",
+   "text": "AGE"
+  },
+  {
+   "t": 31.32,
+   "type": "token",
+   "text": " –"
+  },
+  {
+   "t": 31.5,
+   "type": "token",
+   "text": " R"
+  },
+  {
+   "t": 31.73,
+   "type": "token",
+   "text": "ARK"
+  },
+  {
+   "t": 31.94,
+   "type": "token",
+   "text": "ETING"
+  },
+  {
+   "t": 32.14,
+   "type": "token",
+   "text": " -"
+  },
+  {
+   "t": 32.33,
+   "type": "token",
+   "text": " Sy"
+  },
+  {
+   "t": 32.53,
+   "type": "token",
+   "text": "nergy"
+  },
+  {
+   "t": 32.74,
+   "type": "token",
+   "text": " Belgium"
+  },
+  {
+   "t": 32.93,
+   "type": "token",
+   "text": ","
+  },
+  {
+   "t": 33.16,
+   "type": "token",
+   "text": " Ant"
+  },
+  {
+   "t": 33.36,
+   "type": "token",
+   "text": "wer"
+  },
+  {
+   "t": 33.55,
+   "type": "token",
+   "text": "pen"
+  },
+  {
+   "t": 33.74,
+   "type": "token",
+   "text": " ("
+  },
+  {
+   "t": 33.93,
+   "type": "token",
+   "text": "District"
+  },
+  {
+   "t": 34.12,
+   "type": "token",
+   "text": " "
+  },
+  {
+   "t": 34.31,
+   "type": "token",
+   "text": "7"
+  },
+  {
+   "t": 34.51,
+   "type": "token",
+   "text": ")"
+  },
+  {
+   "t": 34.72,
+   "type": "token",
+   "text": " ("
+  },
+  {
+   "t": 34.94,
+   "type": "token",
+   "text": "id"
+  },
+  {
+   "t": 35.13,
+   "type": "token",
+   "text": ":"
+  },
+  {
+   "t": 35.33,
+   "type": "token",
+   "text": " fore"
+  },
+  {
+   "t": 35.56,
+   "type": "token",
+   "text": "m"
+  },
+  {
+   "t": 35.78,
+   "type": "token",
+   "text": ":"
+  },
+  {
+   "t": 35.98,
+   "type": "token",
+   "text": "2"
+  },
+  {
+   "t": 36.18,
+   "type": "token",
+   "text": "1"
+  },
+  {
+   "t": 36.4,
+   "type": "token",
+   "text": "4"
+  },
+  {
+   "t": 36.61,
+   "type": "token",
+   "text": "7"
+  },
+  {
+   "t": 36.83,
+   "type": "token",
+   "text": "6"
+  },
+  {
+   "t": 37.06,
+   "type": "token",
+   "text": "9"
+  },
+  {
+   "t": 37.27,
+   "type": "token",
+   "text": "2"
+  },
+  {
+   "t": 37.48,
+   "type": "token",
+   "text": ")\n"
+  },
+  {
+   "t": 37.68,
+   "type": "token",
+   "text": "2"
+  },
+  {
+   "t": 37.88,
+   "type": "token",
+   "text": "."
+  },
+  {
+   "t": 38.09,
+   "type": "token",
+   "text": " OFF"
+  },
+  {
+   "t": 38.29,
+   "type": "token",
+   "text": "RE"
+  },
+  {
+   "t": 38.48,
+   "type": "token",
+   "text": " DE"
+  },
+  {
+   "t": 38.66,
+   "type": "token",
+   "text": " ST"
+  },
+  {
+   "t": 38.84,
+   "type": "token",
+   "text": "AGE"
+  },
+  {
+   "t": 39.02,
+   "type": "token",
+   "text": " –"
+  },
+  {
+   "t": 39.21,
+   "type": "token",
+   "text": " RH"
+  },
+  {
+   "t": 39.41,
+   "type": "token",
+   "text": " /"
+  },
+  {
+   "t": 39.61,
+   "type": "token",
+   "text": " MARK"
+  },
+  {
+   "t": 39.82,
+   "type": "token",
+   "text": "ETING"
+  },
+  {
+   "t": 40.04,
+   "type": "token",
+   "text": " -"
+  },
+  {
+   "t": 40.24,
+   "type": "token",
+   "text": " G"
+  },
+  {
+   "t": 40.43,
+   "type": "token",
+   "text": "oss"
+  },
+  {
+   "t": 40.61,
+   "type": "token",
+   "text": "el"
+  },
+  {
+   "t": 40.83,
+   "type": "token",
+   "text": "ies"
+  },
+  {
+   "t": 41.03,
+   "type": "token",
+   "text": ","
+  },
+  {
+   "t": 41.24,
+   "type": "token",
+   "text": " Ant"
+  },
+  {
+   "t": 41.43,
+   "type": "token",
+   "text": "wer"
+  },
+  {
+   "t": 41.61,
+   "type": "token",
+   "text": "pen"
+  },
+  {
+   "t": 41.8,
+   "type": "token",
+   "text": " ("
+  },
+  {
+   "t": 41.98,
+   "type": "token",
+   "text": "District"
+  },
+  {
+   "t": 42.16,
+   "type": "token",
+   "text": " "
+  },
+  {
+   "t": 42.34,
+   "type": "token",
+   "text": "7"
+  },
+  {
+   "t": 42.53,
+   "type": "token",
+   "text": ")"
+  },
+  {
+   "t": 42.71,
+   "type": "token",
+   "text": " ("
+  },
+  {
+   "t": 42.89,
+   "type": "token",
+   "text": "id"
+  },
+  {
+   "t": 43.06,
+   "type": "token",
+   "text": ":"
+  },
+  {
+   "t": 43.24,
+   "type": "token",
+   "text": " fore"
+  },
+  {
+   "t": 43.42,
+   "type": "token",
+   "text": "m"
+  },
+  {
+   "t": 43.59,
+   "type": "token",
+   "text": ":"
+  },
+  {
+   "t": 43.77,
+   "type": "token",
+   "text": "2"
+  },
+  {
+   "t": 43.95,
+   "type": "token",
+   "text": "1"
+  },
+  {
+   "t": 44.13,
+   "type": "token",
+   "text": "4"
+  },
+  {
+   "t": 44.31,
+   "type": "token",
+   "text": "7"
+  },
+  {
+   "t": 44.48,
+   "type": "token",
+   "text": "6"
+  },
+  {
+   "t": 44.66,
+   "type": "token",
+   "text": "5"
+  },
+  {
+   "t": 44.84,
+   "type": "token",
+   "text": "4"
+  },
+  {
+   "t": 45.02,
+   "type": "token",
+   "text": ")\n\n"
+  },
+  {
+   "t": 45.2,
+   "type": "token",
+   "text": "W"
+  },
+  {
+   "t": 45.39,
+   "type": "token",
+   "text": "ilt"
+  },
+  {
+   "t": 45.58,
+   "type": "token",
+   "text": " u"
+  },
+  {
+   "t": 45.77,
+   "type": "token",
+   "text": " meer"
+  },
+  {
+   "t": 45.95,
+   "type": "token",
+   "text": " informatie"
+  },
+  {
+   "t": 46.15,
+   "type": "token",
+   "text": " over"
+  },
+  {
+   "t": 46.34,
+   "type": "token",
+   "text": " een"
+  },
+  {
+   "t": 46.53,
+   "type": "token",
+   "text": " spec"
+  },
+  {
+   "t": 46.71,
+   "type": "token",
+   "text": "ifie"
+  },
+  {
+   "t": 46.9,
+   "type": "token",
+   "text": "ke"
+  },
+  {
+   "t": 47.1,
+   "type": "token",
+   "text": " vac"
+  },
+  {
+   "t": 47.32,
+   "type": "token",
+   "text": "ature"
+  },
+  {
+   "t": 47.54,
+   "type": "token",
+   "text": "?"
+  },
+  {
+   "t": 47.73,
+   "type": "done",
+   "text": "Hier zijn twee stagegeleide banen in Antwerpen:\n\n1. OFFRE DE STAGE – RARKETING - Synergy Belgium, Antwerpen (District 7) (id: forem:2147692)\n2. OFFRE DE STAGE – RH / MARKETING - Gosselies, Antwerpen (District 7) (id: forem:2147654)\n\nWilt u meer informatie over een specifieke vacature?",
+   "stats": {
+    "eval_count": 148,
+    "eval_duration": 27640974000,
+    "prompt_eval_count": 4818,
+    "total_duration": 47644257600,
+    "tool_rounds": 1,
+    "tool_runs": 1,
+    "elapsed_s": 47.73,
+    "model": "qwen2.5:7b"
+   }
+  }
+ ]
+}

@@ -1,0 +1,707 @@
+{
+ "version": 1,
+ "id": "S4",
+ "scenario": "S4",
+ "question": "Is there a job as an astronaut in Mechelen?",
+ "model": "qwen2.5:7b",
+ "recorded_at": "2026-11-27T14:22:52+00:00",
+ "original_seconds": 40.2,
+ "data_note": "real Le Forem snapshot of 2026-11-27 (108 offers), fictional CV 'emma_verbeke'",
+ "events": [
+  {
+   "t": 1.18,
+   "type": "token",
+   "text": "I"
+  },
+  {
+   "t": 1.36,
+   "type": "token",
+   "text": "'m"
+  },
+  {
+   "t": 1.53,
+   "type": "token",
+   "text": " sorry"
+  },
+  {
+   "t": 1.7,
+   "type": "token",
+   "text": ","
+  },
+  {
+   "t": 1.88,
+   "type": "token",
+   "text": " but"
+  },
+  {
+   "t": 2.09,
+   "type": "token",
+   "text": " current"
+  },
+  {
+   "t": 2.29,
+   "type": "token",
+   "text": " job"
+  },
+  {
+   "t": 2.47,
+   "type": "token",
+   "text": " vacancies"
+  },
+  {
+   "t": 2.65,
+   "type": "token",
+   "text": " for"
+  },
+  {
+   "t": 2.83,
+   "type": "token",
+   "text": " astronauts"
+  },
+  {
+   "t": 3.01,
+   "type": "token",
+   "text": " are"
+  },
+  {
+   "t": 3.18,
+   "type": "token",
+   "text": " quite"
+  },
+  {
+   "t": 3.36,
+   "type": "token",
+   "text": " rare"
+  },
+  {
+   "t": 3.53,
+   "type": "token",
+   "text": " and"
+  },
+  {
+   "t": 3.7,
+   "type": "token",
+   "text": " not"
+  },
+  {
+   "t": 3.88,
+   "type": "token",
+   "text": " typically"
+  },
+  {
+   "t": 4.06,
+   "type": "token",
+   "text": " found"
+  },
+  {
+   "t": 4.27,
+   "type": "token",
+   "text": " in"
+  },
+  {
+   "t": 4.45,
+   "type": "token",
+   "text": " Mech"
+  },
+  {
+   "t": 4.63,
+   "type": "token",
+   "text": "elen"
+  },
+  {
+   "t": 4.83,
+   "type": "token",
+   "text": " or"
+  },
+  {
+   "t": 5.05,
+   "type": "token",
+   "text": " anywhere"
+  },
+  {
+   "t": 5.24,
+   "type": "token",
+   "text": " in"
+  },
+  {
+   "t": 5.42,
+   "type": "token",
+   "text": " Belgium"
+  },
+  {
+   "t": 5.6,
+   "type": "token",
+   "text": "."
+  },
+  {
+   "t": 5.78,
+   "type": "token",
+   "text": " For"
+  },
+  {
+   "t": 5.95,
+   "type": "token",
+   "text": " such"
+  },
+  {
+   "t": 6.12,
+   "type": "token",
+   "text": " specific"
+  },
+  {
+   "t": 6.29,
+   "type": "token",
+   "text": " roles"
+  },
+  {
+   "t": 6.46,
+   "type": "token",
+   "text": ","
+  },
+  {
+   "t": 6.63,
+   "type": "token",
+   "text": " it"
+  },
+  {
+   "t": 6.8,
+   "type": "token",
+   "text": "'s"
+  },
+  {
+   "t": 6.98,
+   "type": "token",
+   "text": " best"
+  },
+  {
+   "t": 7.16,
+   "type": "token",
+   "text": " to"
+  },
+  {
+   "t": 7.35,
+   "type": "token",
+   "text": " check"
+  },
+  {
+   "t": 7.54,
+   "type": "token",
+   "text": " international"
+  },
+  {
+   "t": 7.74,
+   "type": "token",
+   "text": " opportunities"
+  },
+  {
+   "t": 7.92,
+   "type": "token",
+   "text": " or"
+  },
+  {
+   "t": 8.1,
+   "type": "token",
+   "text": " organizations"
+  },
+  {
+   "t": 8.29,
+   "type": "token",
+   "text": " directly"
+  },
+  {
+   "t": 8.49,
+   "type": "token",
+   "text": "."
+  },
+  {
+   "t": 8.68,
+   "type": "token",
+   "text": " Would"
+  },
+  {
+   "t": 8.86,
+   "type": "token",
+   "text": " you"
+  },
+  {
+   "t": 9.06,
+   "type": "token",
+   "text": " like"
+  },
+  {
+   "t": 9.26,
+   "type": "token",
+   "text": " to"
+  },
+  {
+   "t": 9.45,
+   "type": "token",
+   "text": " explore"
+  },
+  {
+   "t": 9.64,
+   "type": "token",
+   "text": " other"
+  },
+  {
+   "t": 9.82,
+   "type": "token",
+   "text": " job"
+  },
+  {
+   "t": 10.0,
+   "type": "token",
+   "text": " types"
+  },
+  {
+   "t": 10.19,
+   "type": "token",
+   "text": " in"
+  },
+  {
+   "t": 10.37,
+   "type": "token",
+   "text": " Mech"
+  },
+  {
+   "t": 10.55,
+   "type": "token",
+   "text": "elen"
+  },
+  {
+   "t": 10.74,
+   "type": "token",
+   "text": " instead"
+  },
+  {
+   "t": 10.92,
+   "type": "token",
+   "text": "?"
+  },
+  {
+   "t": 11.1,
+   "type": "token",
+   "text": " If"
+  },
+  {
+   "t": 11.28,
+   "type": "token",
+   "text": " you"
+  },
+  {
+   "t": 11.46,
+   "type": "token",
+   "text": "'re"
+  },
+  {
+   "t": 11.66,
+   "type": "token",
+   "text": " interested"
+  },
+  {
+   "t": 11.85,
+   "type": "token",
+   "text": " in"
+  },
+  {
+   "t": 12.06,
+   "type": "token",
+   "text": " customer"
+  },
+  {
+   "t": 12.26,
+   "type": "token",
+   "text": " service"
+  },
+  {
+   "t": 12.45,
+   "type": "token",
+   "text": ","
+  },
+  {
+   "t": 12.63,
+   "type": "token",
+   "text": " administration"
+  },
+  {
+   "t": 12.81,
+   "type": "token",
+   "text": ","
+  },
+  {
+   "t": 12.99,
+   "type": "token",
+   "text": " or"
+  },
+  {
+   "t": 13.17,
+   "type": "token",
+   "text": " events"
+  },
+  {
+   "t": 13.37,
+   "type": "token",
+   "text": "—"
+  },
+  {
+   "t": 13.55,
+   "type": "token",
+   "text": "fields"
+  },
+  {
+   "t": 13.75,
+   "type": "token",
+   "text": " where"
+  },
+  {
+   "t": 13.94,
+   "type": "token",
+   "text": " you"
+  },
+  {
+   "t": 14.12,
+   "type": "token",
+   "text": " have"
+  },
+  {
+   "t": 14.3,
+   "type": "token",
+   "text": " experience"
+  },
+  {
+   "t": 14.48,
+   "type": "token",
+   "text": "—"
+  },
+  {
+   "t": 14.66,
+   "type": "token",
+   "text": "there"
+  },
+  {
+   "t": 14.84,
+   "type": "token",
+   "text": " might"
+  },
+  {
+   "t": 15.04,
+   "type": "token",
+   "text": " be"
+  },
+  {
+   "t": 15.23,
+   "type": "token",
+   "text": " some"
+  },
+  {
+   "t": 15.43,
+   "type": "token",
+   "text": " relevant"
+  },
+  {
+   "t": 15.64,
+   "type": "token",
+   "text": " options"
+  },
+  {
+   "t": 15.82,
+   "type": "token",
+   "text": " available"
+  },
+  {
+   "t": 16.01,
+   "type": "token",
+   "text": "."
+  },
+  {
+   "t": 16.2,
+   "type": "token",
+   "text": " Shall"
+  },
+  {
+   "t": 16.37,
+   "type": "token",
+   "text": " we"
+  },
+  {
+   "t": 16.55,
+   "type": "token",
+   "text": " search"
+  },
+  {
+   "t": 16.72,
+   "type": "token",
+   "text": " for"
+  },
+  {
+   "t": 16.89,
+   "type": "token",
+   "text": " those"
+  },
+  {
+   "t": 17.08,
+   "type": "token",
+   "text": "?"
+  },
+  {
+   "t": 17.25,
+   "type": "retract",
+   "reason": "The model answered without searching."
+  },
+  {
+   "t": 26.36,
+   "type": "tool_call",
+   "name": "search_jobs",
+   "arguments": {
+    "city": "Mechelen",
+    "keywords": "customer service, administration, events"
+   }
+  },
+  {
+   "t": 26.39,
+   "type": "tool_result",
+   "name": "search_jobs",
+   "ok": true,
+   "error": null,
+   "duration_ms": 23,
+   "data": {
+    "count": 0,
+    "data_source": "live",
+    "snapshot_date": null,
+    "notes": [],
+    "attribution": [
+     {
+      "text": "Le Forem - Open Data Wallonie-Bruxelles (CC BY-SA 4.0)",
+      "url": "https://www.odwb.be/explore/dataset/offres-d-emploi-forem/"
+     }
+    ],
+    "jobs": []
+   }
+  },
+  {
+   "t": 31.94,
+   "type": "token",
+   "text": "I"
+  },
+  {
+   "t": 32.15,
+   "type": "token",
+   "text": "'ve"
+  },
+  {
+   "t": 32.4,
+   "type": "token",
+   "text": " searched"
+  },
+  {
+   "t": 32.61,
+   "type": "token",
+   "text": " for"
+  },
+  {
+   "t": 32.83,
+   "type": "token",
+   "text": " jobs"
+  },
+  {
+   "t": 33.03,
+   "type": "token",
+   "text": " related"
+  },
+  {
+   "t": 33.24,
+   "type": "token",
+   "text": " to"
+  },
+  {
+   "t": 33.44,
+   "type": "token",
+   "text": " customer"
+  },
+  {
+   "t": 33.64,
+   "type": "token",
+   "text": " service"
+  },
+  {
+   "t": 33.84,
+   "type": "token",
+   "text": ","
+  },
+  {
+   "t": 34.03,
+   "type": "token",
+   "text": " administration"
+  },
+  {
+   "t": 34.22,
+   "type": "token",
+   "text": ","
+  },
+  {
+   "t": 34.41,
+   "type": "token",
+   "text": " and"
+  },
+  {
+   "t": 34.61,
+   "type": "token",
+   "text": " events"
+  },
+  {
+   "t": 34.8,
+   "type": "token",
+   "text": " in"
+  },
+  {
+   "t": 34.98,
+   "type": "token",
+   "text": " Mech"
+  },
+  {
+   "t": 35.16,
+   "type": "token",
+   "text": "elen"
+  },
+  {
+   "t": 35.34,
+   "type": "token",
+   "text": ","
+  },
+  {
+   "t": 35.52,
+   "type": "token",
+   "text": " but"
+  },
+  {
+   "t": 35.7,
+   "type": "token",
+   "text": " there"
+  },
+  {
+   "t": 35.88,
+   "type": "token",
+   "text": " are"
+  },
+  {
+   "t": 36.06,
+   "type": "token",
+   "text": " no"
+  },
+  {
+   "t": 36.24,
+   "type": "token",
+   "text": " current"
+  },
+  {
+   "t": 36.43,
+   "type": "token",
+   "text": " vacancies"
+  },
+  {
+   "t": 36.61,
+   "type": "token",
+   "text": " available"
+  },
+  {
+   "t": 36.8,
+   "type": "token",
+   "text": "."
+  },
+  {
+   "t": 36.99,
+   "type": "token",
+   "text": " Would"
+  },
+  {
+   "t": 37.18,
+   "type": "token",
+   "text": " you"
+  },
+  {
+   "t": 37.38,
+   "type": "token",
+   "text": " like"
+  },
+  {
+   "t": 37.57,
+   "type": "token",
+   "text": " to"
+  },
+  {
+   "t": 37.79,
+   "type": "token",
+   "text": " explore"
+  },
+  {
+   "t": 37.99,
+   "type": "token",
+   "text": " job"
+  },
+  {
+   "t": 38.18,
+   "type": "token",
+   "text": " opportunities"
+  },
+  {
+   "t": 38.38,
+   "type": "token",
+   "text": " in"
+  },
+  {
+   "t": 38.57,
+   "type": "token",
+   "text": " a"
+  },
+  {
+   "t": 38.76,
+   "type": "token",
+   "text": " different"
+  },
+  {
+   "t": 38.95,
+   "type": "token",
+   "text": " city"
+  },
+  {
+   "t": 39.15,
+   "type": "token",
+   "text": " or"
+  },
+  {
+   "t": 39.37,
+   "type": "token",
+   "text": " a"
+  },
+  {
+   "t": 39.56,
+   "type": "token",
+   "text": " different"
+  },
+  {
+   "t": 39.75,
+   "type": "token",
+   "text": " field"
+  },
+  {
+   "t": 39.95,
+   "type": "token",
+   "text": "?"
+  },
+  {
+   "t": 40.17,
+   "type": "done",
+   "text": "I've searched for jobs related to customer service, administration, and events in Mechelen, but there are no current vacancies available. Would you like to explore job opportunities in a different city or a different field?",
+   "stats": {
+    "eval_count": 163,
+    "eval_duration": 30071946000,
+    "prompt_eval_count": 6975,
+    "total_duration": 40082424400,
+    "tool_rounds": 1,
+    "tool_runs": 1,
+    "elapsed_s": 40.17,
+    "model": "qwen2.5:7b"
+   }
+  }
+ ]
+}

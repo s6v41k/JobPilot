@@ -55,7 +55,8 @@ class ForemProvider(JobProvider):
         self._client = client
         self._db_path = db_path
         self._limiter = limiter or RateLimiter(0.5)
-        self._today = today
+        override = self.settings.today_override
+        self._today = today or (date.fromisoformat(override) if override else None)
 
     def available(self) -> tuple[bool, str]:
         return True, "open data, no key needed"

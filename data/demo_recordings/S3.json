@@ -1,0 +1,328 @@
+{
+ "version": 1,
+ "id": "S3",
+ "scenario": "S3",
+ "question": "Chercher un job étudiant à Liège",
+ "model": "qwen2.5:7b",
+ "recorded_at": "2026-11-27T14:22:09+00:00",
+ "original_seconds": 23.4,
+ "data_note": "real Le Forem snapshot of 2026-11-27 (108 offers), fictional CV 'emma_verbeke'",
+ "events": [
+  {
+   "t": 7.52,
+   "type": "tool_call",
+   "name": "search_jobs",
+   "arguments": {
+    "city": "Liège",
+    "job_type": "student",
+    "region": "wallonia"
+   }
+  },
+  {
+   "t": 7.54,
+   "type": "tool_result",
+   "name": "search_jobs",
+   "ok": true,
+   "error": null,
+   "duration_ms": 20,
+   "data": {
+    "count": 0,
+    "data_source": "live",
+    "snapshot_date": null,
+    "notes": [],
+    "attribution": [
+     {
+      "text": "Le Forem - Open Data Wallonie-Bruxelles (CC BY-SA 4.0)",
+      "url": "https://www.odwb.be/explore/dataset/offres-d-emploi-forem/"
+     }
+    ],
+    "jobs": []
+   }
+  },
+  {
+   "t": 13.19,
+   "type": "token",
+   "text": "D"
+  },
+  {
+   "t": 13.37,
+   "type": "token",
+   "text": "és"
+  },
+  {
+   "t": 13.55,
+   "type": "token",
+   "text": "ol"
+  },
+  {
+   "t": 13.74,
+   "type": "token",
+   "text": "é"
+  },
+  {
+   "t": 13.93,
+   "type": "token",
+   "text": ","
+  },
+  {
+   "t": 14.1,
+   "type": "token",
+   "text": " il"
+  },
+  {
+   "t": 14.28,
+   "type": "token",
+   "text": " n"
+  },
+  {
+   "t": 14.46,
+   "type": "token",
+   "text": "'y"
+  },
+  {
+   "t": 14.64,
+   "type": "token",
+   "text": " a"
+  },
+  {
+   "t": 14.82,
+   "type": "token",
+   "text": " act"
+  },
+  {
+   "t": 15.01,
+   "type": "token",
+   "text": "uellement"
+  },
+  {
+   "t": 15.22,
+   "type": "token",
+   "text": " auc"
+  },
+  {
+   "t": 15.41,
+   "type": "token",
+   "text": "une"
+  },
+  {
+   "t": 15.58,
+   "type": "token",
+   "text": " offre"
+  },
+  {
+   "t": 15.76,
+   "type": "token",
+   "text": " de"
+  },
+  {
+   "t": 15.94,
+   "type": "token",
+   "text": " job"
+  },
+  {
+   "t": 16.11,
+   "type": "token",
+   "text": " ét"
+  },
+  {
+   "t": 16.29,
+   "type": "token",
+   "text": "udiant"
+  },
+  {
+   "t": 16.46,
+   "type": "token",
+   "text": " disponible"
+  },
+  {
+   "t": 16.64,
+   "type": "token",
+   "text": " à"
+  },
+  {
+   "t": 16.81,
+   "type": "token",
+   "text": " Li"
+  },
+  {
+   "t": 16.99,
+   "type": "token",
+   "text": "ège"
+  },
+  {
+   "t": 17.16,
+   "type": "token",
+   "text": "."
+  },
+  {
+   "t": 17.34,
+   "type": "token",
+   "text": " Essay"
+  },
+  {
+   "t": 17.51,
+   "type": "token",
+   "text": "ons"
+  },
+  {
+   "t": 17.7,
+   "type": "token",
+   "text": " d"
+  },
+  {
+   "t": 17.88,
+   "type": "token",
+   "text": "'"
+  },
+  {
+   "t": 18.07,
+   "type": "token",
+   "text": "él"
+  },
+  {
+   "t": 18.26,
+   "type": "token",
+   "text": "arg"
+  },
+  {
+   "t": 18.44,
+   "type": "token",
+   "text": "ir"
+  },
+  {
+   "t": 18.62,
+   "type": "token",
+   "text": " notre"
+  },
+  {
+   "t": 18.81,
+   "type": "token",
+   "text": " recherche"
+  },
+  {
+   "t": 18.99,
+   "type": "token",
+   "text": "."
+  },
+  {
+   "t": 19.17,
+   "type": "token",
+   "text": " Ser"
+  },
+  {
+   "t": 19.38,
+   "type": "token",
+   "text": "ait"
+  },
+  {
+   "t": 19.57,
+   "type": "token",
+   "text": "-il"
+  },
+  {
+   "t": 19.76,
+   "type": "token",
+   "text": " possible"
+  },
+  {
+   "t": 19.94,
+   "type": "token",
+   "text": " de"
+  },
+  {
+   "t": 20.16,
+   "type": "token",
+   "text": " recher"
+  },
+  {
+   "t": 20.35,
+   "type": "token",
+   "text": "cher"
+  },
+  {
+   "t": 20.54,
+   "type": "token",
+   "text": " dans"
+  },
+  {
+   "t": 20.74,
+   "type": "token",
+   "text": " une"
+  },
+  {
+   "t": 20.94,
+   "type": "token",
+   "text": " autre"
+  },
+  {
+   "t": 21.14,
+   "type": "token",
+   "text": " ville"
+  },
+  {
+   "t": 21.35,
+   "type": "token",
+   "text": " pro"
+  },
+  {
+   "t": 21.55,
+   "type": "token",
+   "text": "che"
+  },
+  {
+   "t": 21.75,
+   "type": "token",
+   "text": " comme"
+  },
+  {
+   "t": 21.96,
+   "type": "token",
+   "text": " Nam"
+  },
+  {
+   "t": 22.15,
+   "type": "token",
+   "text": "ur"
+  },
+  {
+   "t": 22.34,
+   "type": "token",
+   "text": " ou"
+  },
+  {
+   "t": 22.56,
+   "type": "token",
+   "text": " Char"
+  },
+  {
+   "t": 22.76,
+   "type": "token",
+   "text": "ler"
+  },
+  {
+   "t": 22.97,
+   "type": "token",
+   "text": "oi"
+  },
+  {
+   "t": 23.18,
+   "type": "token",
+   "text": " ?"
+  },
+  {
+   "t": 23.37,
+   "type": "done",
+   "text": "Désolé, il n'y a actuellement aucune offre de job étudiant disponible à Liège. Essayons d'élargir notre recherche. Serait-il possible de rechercher dans une autre ville proche comme Namur ou Charleroi ?",
+   "stats": {
+    "eval_count": 90,
+    "eval_duration": 16180928000,
+    "prompt_eval_count": 4519,
+    "total_duration": 23307798900,
+    "tool_rounds": 1,
+    "tool_runs": 1,
+    "elapsed_s": 23.37,
+    "model": "qwen2.5:7b"
+   }
+  }
+ ]
+}

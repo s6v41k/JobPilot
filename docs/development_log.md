@@ -23,7 +23,7 @@ test details in [testing.md](testing.md).
 | 11 | Web UI: Chat with tool trace | done |
 | 12 | Web UI: Jobs, Tracker, Profile - **MVP (target 10 Dec)** | done (27 Nov) |
 | 13 | Pre-flight check and model warm-up | done |
-| 13b | Demo mode: prepare data, record/replay real runs, demo script | **next** |
+| 13b | Demo mode: prepare data, record/replay real runs, demo script | done |
 | 14 | Agent roles (one model per job) and runtime model switching | |
 | 15 | Benchmark (two stages) and model selection | |
 | 16 | Memory (rolling summary, `num_ctx`) and RAG knowledge tool | |
@@ -244,3 +244,37 @@ It works, but **speed is now the main risk for the demo**; commits 13-15 deal wi
 **Also:** the pre-flight showed Adzuna at **4/25 calls used**, not 2 as we thought: earlier live experiments, before the rule "only when Forem finds nothing", spent two more. 21 left.
 **Run:** `.venv\Scripts\python -m app.preflight` (add `--chat` before a rehearsal). **Test:** `tests/test_warmup_preflight.py` (18 tests, fake Ollama - no test ever loads a model),
 plus 3 API tests, and 2 new browser checks (the System check panel).
+
+## Commit 13b - Demo mode (this commit)
+**What**
+- `python -m app.demo prepare` - the routine for the day before: download the current vacancies (one request), save a fresh **real snapshot** as the offline safety net,
+  load and warm the model, run the pre-flight check.
+- **Recordings**: `python -m app.demo record --scenario S1` runs a scripted question with the **real model** and saves every token, tool call and tool result with its timing
+  (`data/demo_recordings/S1.json`). `--offline` records from the saved snapshot (no internet, no Adzuna call).
+- **Replay**: the chat can play a recording back instead of asking the model (`POST /api/chat` with `replay`). Long waits are shortened (a 2-minute run takes ~15 s) but nothing else changes, and the
+  page **always** shows a yellow label: *"REPLAY of a real recording from 27 Nov 2026 - qwen2.5:7b, it took 122 s originally. Data: ..."*. The vacancies of the recording are stored locally, so *Save* still works.
+- A **Demo panel** in the chat (button *Demo*): the four scripted scenarios with *Run live* and *Replay*.
+- `docs/demo_script.md`: the whole presentation - checklist (day before / hour before / five minutes before), a minute-by-minute script with who does what, a **plan B table**
+  for every kind of failure (slow model, Ollama down, no internet, page frozen, web app dead -> terminal agent), and likely questions. A test makes sure the prompts in the script are exactly the prompts in the code.
+
+**Why a replay and not just "hope"?** The live model takes minutes on this laptop. A replay is a safety net the speaker can use in 10 seconds - but only because it is labelled honestly;
+passing a recording off as a live answer would be cheating, and the label also makes a good talking point ("this is what the model really did on <date>").
+
+**Run:** `.venv\Scripts\python -m app.demo list` / `prepare` / `record --scenario S1`. **Test:** `tests/test_demo.py` (24 tests), `tests/test_language.py` (23 tests), and 8 more browser checks
+(the Demo panel, the REPLAY label, saving from a replay): 64 in total.
+
+**What recording the real scenarios showed (all real, qwen2.5:7b, warm model, snapshot data of 2026-11-27)**
+
+| Scenario | Live time | Result |
+|---|---|---|
+| S1 find + compare | **122 s** (it was 222 s before the warm-up) | `search_jobs` -> `match_cv` (all 5 ids), correct, grounded |
+| S2 Dutch internship | 48 s | found 2 internships - **but answered in English** (first recording) |
+| S3 French student job | 23 s | 0 offers in the small snapshot, honest answer in French |
+| S4 astronaut | 13 s | **did not search at all**, answered from memory (first recording) |
+
+Two real defects, found only by recording, and fixed in this commit:
+1. **Wrong answer language.** A 7B model answers in English to a Dutch question. Fix: the model sees a hidden hint "(Reply in Dutch.)" after the question (never shown in the UI, never stored in the history; it is put in the *user* message
+   so the cached system prompt is not disturbed). The language is guessed from a small word list that works on short messages. Re-recorded S2 answers in Dutch.
+2. **Answering vacancy questions from memory.** Fix: if the question looks like a job request and the model answered *without any tool call*, the answer is discarded once (`retract`, shown in the UI with the reason)
+   and the model is told to use the right tool. Re-recorded S4: the guard fired, then it searched and honestly reported nothing.
+Both are covered by tests (the language guesser, the hint, the one-time rule that cannot loop).

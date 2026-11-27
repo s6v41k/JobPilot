@@ -38,6 +38,9 @@ class Settings:
 
     # --- Scraping: seconds to wait between requests to the same site ---
     scrape_delay_seconds: float = 2.5
+    # Pretend today is this date (YYYY-MM-DD) when hiding expired offers. Only for offline demo recordings made
+    # from an older snapshot; leave empty normally.
+    today_override: str = ""
     user_agent: str = "JobPilot/0.1 (student project; local use)"
 
     # --- Storage ---
@@ -93,6 +96,7 @@ def load_settings() -> Settings:
         adzuna_app_key=_env("ADZUNA_APP_KEY", ""),
         adzuna_monthly_budget=int(_env("ADZUNA_MONTHLY_BUDGET", str(Settings.adzuna_monthly_budget))),
         scrape_delay_seconds=float(_env("SCRAPE_DELAY_SECONDS", str(Settings.scrape_delay_seconds))),
+        today_override=_env("TODAY_OVERRIDE", ""),
         db_path=_env("DB_PATH", Settings.db_path),
         log_dir=_env("LOG_DIR", Settings.log_dir),
     )

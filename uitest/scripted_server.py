@@ -21,7 +21,7 @@ from app.config import get_settings
 _tmp = pathlib.Path(tempfile.mkdtemp())
 get_settings().update(db_path=str(_tmp / "ui.db"), log_dir=str(_tmp / "logs"))
 
-from app import db, main                                            # noqa: E402  (settings first)
+from app import db, demo, main                                       # noqa: E402  (settings first)
 from app.agent.agent import Agent                                   # noqa: E402
 from app.providers import forem as forem_module                     # noqa: E402
 from app.providers.aggregator import SearchOutcome                  # noqa: E402
@@ -118,6 +118,11 @@ def prepare() -> None:
     main._refresher.start = lambda: None                         # never download from the portal in UI tests
     main._warmer.start = lambda: None                            # ... and never load a real model
     main._warmer.trigger = lambda: None
+    # a recording for the Demo panel: the scripted run of scenario S1, captured like a real one
+    demo.RECORDINGS_DIR = _tmp / "recordings"
+    first = demo.SCENARIOS[0]
+    demo.save_recording(demo.capture(main._agent.run(first.prompt), first.prompt, first.id, "scripted-model", "scripted test data"))
+    main._agent.reset()
 
 
 if __name__ == "__main__":

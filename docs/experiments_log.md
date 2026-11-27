@@ -159,6 +159,22 @@ Reading: almost all of the "first question" cost is *loading the model and readi
 A warm model with a cached prefix answers a simple question in 5 s. Questions with tool calls are still slow afterwards because the tool *results*
 (new tokens) are read every round and are not cached. Ideas to test in the benchmark: fewer tools per role, shorter tool schemas, shorter tool results.
 
+## 11. Recording the demo scenarios with the real model (2026-11-27)
+
+`python -m app.demo record --scenario Sx --offline` - qwen2.5:7b, model warm, vacancies from the real snapshot of 2026-11-27 (108 offers), fictional CV.
+
+| Scenario | Seconds | Tool calls | Observations |
+|---|---|---|---|
+| S1 *Find student jobs in Brussels and tell me which one fits my CV best* | 122.1 | `search_jobs`, `match_cv` (5 ids) | best pick "Serveur" 85% - the warm-up halved the earlier 222 s |
+| S2 *Zoek een stage in Antwerpen* (1st) | 49.8 | `search_jobs` | answered in **English** |
+| S2 (after the language hint) | 47.7 | `search_jobs` | answered in **Dutch** |
+| S3 *Chercher un job etudiant a Liege* | 22.4 / 23.4 | `search_jobs` (0 results) | French answer, honest "no offers" |
+| S4 *Is there a job as an astronaut in Mechelen?* (1st) | 13.4 | **none** | answered from memory: "such jobs are rare..." |
+| S4 (after the "must use a tool" rule) | 40.2 | `search_jobs` (after 1 discarded answer) | honest "no current vacancies" |
+
+Lessons: (1) a 7B model needs *both* a language hint and a tool-use guard; the system prompt alone is not enough (rules 1 and 7 were already in it).
+(2) Recording is a cheap way to find such defects before an audience does. (3) The small snapshot (108 offers) makes S3 empty; with the full list from Le Forem it will have results.
+
 ---
 
 ## Open questions

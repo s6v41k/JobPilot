@@ -251,3 +251,13 @@ label.btn.file { display: inline-block; cursor: pointer; flex-direction: row; co
 .checks .ok .mark { background: #14391f; color: var(--ok); } .checks .warn .mark { background: #3a3014; color: var(--warn); }
 .checks .fail .mark { background: #3a1c1c; color: var(--bad); } .checks .skip .mark { background: var(--panel-2); color: var(--muted); }
 .checks .fix { color: var(--muted); }
+
+/* demo mode */
+.replay-badge { background: #2a2412; border: 1px solid #8a6d12; color: #fde68a; border-radius: 10px; padding: .45rem .8rem; font-size: .85rem; }
+.replay-badge b { color: var(--accent); letter-spacing: .04em; }
+.demo-panel { border-top: 1px solid var(--line); background: var(--panel); padding: .8rem 1.25rem; max-height: 40vh; overflow-y: auto; }
+.demo-head { display: flex; gap: .75rem; align-items: baseline; flex-wrap: wrap; margin-bottom: .5rem; }
+.demo-row { display: flex; gap: 1rem; justify-content: space-between; align-items: center; padding: .5rem 0; border-top: 1px solid var(--line); }
+.demo-prompt { color: var(--muted); font-size: .85rem; }
+.demo-buttons { display: flex; gap: .5rem; flex-shrink: 0; }
+.linkbtn { background: none; border: 0; color: var(--accent); text-decoration: underline; padding: 0; font-size: .85rem; }

@@ -32,6 +32,9 @@ const app = createApp({
     let firstSend = true;                         // the server may remember an older chat: start clean
     let timers = [];
 
+    const demo = ref([]);                          // scripted scenarios for the presentation (+ recordings)
+    const showDemo = ref(false);
+
     const suggestions = [
       "Find student jobs in Antwerp",
       "Zoek een stage in Leuven",
@@ -124,7 +127,7 @@ const app = createApp({
       return reactive({
         id: nextId++, role: "assistant", text: "", steps: [], jobs: {}, matches: {}, letters: [],
         source: null, attribution: [], notes: [], error: null, notice: null, stats: null,
-        waiting: true, startedAt: Date.now(),
+        waiting: true, startedAt: Date.now(), replay: null,
       });
     }
 
@@ -147,11 +150,13 @@ const app = createApp({
         m.waiting = true;                           // the model now reads the result
       } else if (type === "retract") {
         m.text = "";
-        m.notice = "The first answer mentioned vacancies that no tool had returned, so it was discarded. Searching properly...";
+        m.notice = (data.reason || "The first answer could not be verified.") + " The first answer was discarded; trying again...";
         m.waiting = true;
       } else if (type === "error") {
         m.error = data.message;
         m.waiting = false;
+      } else if (type === "replay") {
+        m.replay = data;                            // a recorded REAL run is being played back: say so
       } else if (type === "done") {
         m.stats = data.stats;
         m.waiting = false;
@@ -189,13 +194,15 @@ const app = createApp({
       return s && s.eval_duration ? (s.eval_count / (s.eval_duration / 1e9)).toFixed(1) : "";
     };
 
-    async function send(text) {
+    async function send(text, options) {
+      options = options || {};
       text = (text !== undefined ? text : input.value).trim();
       if (!text || busy.value) return;
       input.value = "";
       nextTick(grow);
       tab.value = "chat";
       busy.value = true;
+      showDemo.value = false;
       messages.push({ id: nextId++, role: "user", text });
       const m = newAssistant();
       messages.push(m);
@@ -204,7 +211,7 @@ const app = createApp({
       try {
         const res = await fetch("/api/chat", {
           method: "POST", headers: { "Content-Type": "application/json" }, signal: controller.signal,
-          body: JSON.stringify({ message: text, reset: firstSend }),
+          body: JSON.stringify({ message: text, reset: firstSend, replay: options.replay || null }),
         });
         firstSend = false;
         if (!res.ok) {
@@ -249,6 +256,11 @@ const app = createApp({
         notify("error", "Could not save the vacancy: " + e.message);
       }
     }
+    async function loadDemo() {
+      try { demo.value = (await api("/api/demo")).scenarios; } catch (e) { /* the demo panel is optional */ }
+    }
+    const replayDate = (r) => JP.shortDate(r && r.recorded_at);
+
     async function loadSaved() {
       try {
         const list = (await api("/api/applications")).applications;
@@ -281,6 +293,7 @@ const app = createApp({
     onMounted(() => {
       loadHealth();
       loadSaved();
+      loadDemo();
       timers.push(setInterval(loadHealth, 20000));
       timers.push(setInterval(() => { now.value = Date.now(); }, 1000));
       if (box.value) box.value.focus();
@@ -291,7 +304,7 @@ const app = createApp({
       tabs, tab, tabLabel, health, messages, input, busy, saved, suggestions, scroller, box,
       ollamaOk, hasProfile, modelName, warmText, modelTitle, vacanciesLabel, vacanciesTitle, allBanners,
       render, fmt, sourceText, cardsOf, waitingText, speed,
-      toasts, closeToast, send, stop, newChat, saveJob, copy, dismiss, grow, notify, onProfileChanged, onTrackerChanged,
+      demo, showDemo, replayDate, toasts, closeToast, send, stop, newChat, saveJob, copy, dismiss, grow, notify, onProfileChanged, onTrackerChanged,
     };
   },
 });

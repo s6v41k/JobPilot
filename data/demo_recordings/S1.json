@@ -1,0 +1,870 @@
+{
+ "version": 1,
+ "id": "S1",
+ "scenario": "S1",
+ "question": "Find student jobs in Brussels and tell me which one fits my CV best",
+ "model": "qwen2.5:7b",
+ "recorded_at": "2026-11-27T14:17:11+00:00",
+ "original_seconds": 122.1,
+ "data_note": "real Le Forem snapshot of 2026-11-27 (108 offers), fictional CV 'emma_verbeke'",
+ "events": [
+  {
+   "t": 8.56,
+   "type": "tool_call",
+   "name": "search_jobs",
+   "arguments": {
+    "city": "Brussels",
+    "job_type": "student",
+    "limit": 5,
+    "region": "brussels"
+   }
+  },
+  {
+   "t": 8.61,
+   "type": "tool_result",
+   "name": "search_jobs",
+   "ok": true,
+   "error": null,
+   "duration_ms": 49,
+   "data": {
+    "count": 5,
+    "data_source": "live",
+    "snapshot_date": null,
+    "notes": [],
+    "attribution": [
+     {
+      "text": "Le Forem - Open Data Wallonie-Bruxelles (CC BY-SA 4.0)",
+      "url": "https://www.odwb.be/explore/dataset/offres-d-emploi-forem/"
+     }
+    ],
+    "jobs": [
+     {
+      "id": "forem:2165125",
+      "title": "ETUDIANT  Travailleur de nuit",
+      "company": "Pag - Asa - Pag - Asa  vzw",
+      "city": "Bruxelles",
+      "region": "brussels",
+      "job_type": "student",
+      "language": "fr",
+      "posted_at": "2026-11-26",
+      "url": "https://www.leforem.be/recherche-offres/offre-detail/2165125",
+      "summary": "Occupation: Éducateur-accompagnateur / Éducatrice-accompagnatrice. Sector: Services sociaux généraux avec héb…"
+     },
+     {
+      "id": "forem:2164142",
+      "title": "Instituteur/trice maternel(le) – Job étudiant (jeunes diplômé(e)s)",
+      "company": "AIB",
+      "city": "Etterbeek",
+      "region": "brussels",
+      "job_type": "student",
+      "language": "fr",
+      "posted_at": "2026-11-26",
+      "url": "https://www.leforem.be/recherche-offres/offre-detail/2164142",
+      "summary": "Occupation: Soins infirmiers spécialisés en puériculture. Sector: Activités liées à l'emploi. Contract: Etudi…"
+     },
+     {
+      "id": "forem:2158588",
+      "title": "Apprenti technicien pc ou vente (alternance IFAPME, EFP, ...)",
+      "company": "Mister Genius",
+      "city": "Anderlecht",
+      "region": "brussels",
+      "job_type": "student",
+      "language": null,
+      "posted_at": "2026-11-20",
+      "url": "https://www.leforem.be/recherche-offres/offre-detail/2158588",
+      "summary": "Occupation: Technicien / Technicienne d'appareils électriques et électroniques. Sector: Conseil informatique.…"
+     },
+     {
+      "id": "forem:2151647",
+      "title": "Serveur - Job étudiant",
+      "company": "ACCENT Jobs For People",
+      "city": "Saint-Gilles",
+      "region": "brussels",
+      "job_type": "student",
+      "language": "fr",
+      "posted_at": "2026-11-17",
+      "url": "https://www.leforem.be/recherche-offres/offre-detail/2151647",
+      "summary": "Occupation: Service en restauration. Sector: Activités liées à l'emploi. Contract: Etudiant. Working time: Te…"
+     },
+     {
+      "id": "forem:2149104",
+      "title": "Jaarlijkse jobstudent – Bachelor in de verpleegkunde in specialisatieopleiding",
+      "company": "CHU Saint-Pierre - UMC Sint-Pieter",
+      "city": "Anderlecht",
+      "region": "brussels",
+      "job_type": "student",
+      "language": null,
+      "posted_at": "2026-11-13",
+      "url": "https://www.leforem.be/recherche-offres/offre-detail/2149104",
+      "summary": "Occupation: Infirmier / Infirmière. Sector: Activités des hôpitaux généraux, sauf hôpitaux gériatriques et sp…"
+     }
+    ]
+   }
+  },
+  {
+   "t": 63.91,
+   "type": "tool_call",
+   "name": "match_cv",
+   "arguments": {
+    "job_ids": [
+     "forem:2165125",
+     "forem:2164142",
+     "forem:2158588",
+     "forem:2151647",
+     "forem:2149104"
+    ]
+   }
+  },
+  {
+   "t": 66.72,
+   "type": "tool_result",
+   "name": "match_cv",
+   "ok": true,
+   "error": null,
+   "duration_ms": 2813,
+   "data": {
+    "matches": [
+     {
+      "job_id": "forem:2151647",
+      "title": "Serveur - Job étudiant",
+      "score": 85,
+      "label": "strong",
+      "matched_skills": [
+       "hospitality"
+      ],
+      "missing_skills": [],
+      "reason": "Strong fit: it asks for 1 skill(s) and your CV shows 1 (hospitality); the ad is in French, which you speak at intermediate level."
+     },
+     {
+      "job_id": "forem:2165125",
+      "title": "ETUDIANT  Travailleur de nuit",
+      "score": 53,
+      "label": "partial",
+      "matched_skills": [],
+      "missing_skills": [],
+      "reason": "Partial fit: the ad is in French, which you speak at intermediate level."
+     },
+     {
+      "job_id": "forem:2164142",
+      "title": "Instituteur/trice maternel(le) – Job étudiant (jeunes diplômé(e)s)",
+      "score": 43,
+      "label": "partial",
+      "matched_skills": [],
+      "missing_skills": [
+       "healthcare"
+      ],
+      "reason": "Partial fit: it mentions skills your CV does not show (healthcare); the ad is in French, which you speak at intermediate level."
+     },
+     {
+      "job_id": "forem:2149104",
+      "title": "Jaarlijkse jobstudent – Bachelor in de verpleegkunde in specialisatieopleiding",
+      "score": 34,
+      "label": "weak",
+      "matched_skills": [],
+      "missing_skills": [
+       "healthcare"
+      ],
+      "reason": "Weak fit: it mentions skills your CV does not show (healthcare)."
+     },
+     {
+      "job_id": "forem:2158588",
+      "title": "Apprenti technicien pc ou vente (alternance IFAPME, EFP, ...)",
+      "score": 29,
+      "label": "weak",
+      "matched_skills": [],
+      "missing_skills": [
+       "sales"
+      ],
+      "reason": "Weak fit: it mentions skills your CV does not show (sales)."
+     }
+    ],
+    "unknown_ids": []
+   }
+  },
+  {
+   "t": 92.41,
+   "type": "token",
+   "text": "The"
+  },
+  {
+   "t": 92.62,
+   "type": "token",
+   "text": " vacancies"
+  },
+  {
+   "t": 92.85,
+   "type": "token",
+   "text": " in"
+  },
+  {
+   "t": 93.07,
+   "type": "token",
+   "text": " Brussels"
+  },
+  {
+   "t": 93.29,
+   "type": "token",
+   "text": " that"
+  },
+  {
+   "t": 93.52,
+   "type": "token",
+   "text": " match"
+  },
+  {
+   "t": 93.77,
+   "type": "token",
+   "text": " your"
+  },
+  {
+   "t": 94.0,
+   "type": "token",
+   "text": " CV"
+  },
+  {
+   "t": 94.21,
+   "type": "token",
+   "text": " are"
+  },
+  {
+   "t": 94.4,
+   "type": "token",
+   "text": " as"
+  },
+  {
+   "t": 94.59,
+   "type": "token",
+   "text": " follows"
+  },
+  {
+   "t": 94.78,
+   "type": "token",
+   "text": ":\n\n"
+  },
+  {
+   "t": 94.98,
+   "type": "token",
+   "text": "1"
+  },
+  {
+   "t": 95.18,
+   "type": "token",
+   "text": "."
+  },
+  {
+   "t": 95.38,
+   "type": "token",
+   "text": " **"
+  },
+  {
+   "t": 95.57,
+   "type": "token",
+   "text": "Serve"
+  },
+  {
+   "t": 95.77,
+   "type": "token",
+   "text": "ur"
+  },
+  {
+   "t": 95.97,
+   "type": "token",
+   "text": " -"
+  },
+  {
+   "t": 96.18,
+   "type": "token",
+   "text": " Job"
+  },
+  {
+   "t": 96.4,
+   "type": "token",
+   "text": " ét"
+  },
+  {
+   "t": 96.59,
+   "type": "token",
+   "text": "udiant"
+  },
+  {
+   "t": 96.79,
+   "type": "token",
+   "text": "**"
+  },
+  {
+   "t": 96.99,
+   "type": "token",
+   "text": " at"
+  },
+  {
+   "t": 97.19,
+   "type": "token",
+   "text": " ACC"
+  },
+  {
+   "t": 97.41,
+   "type": "token",
+   "text": "ENT"
+  },
+  {
+   "t": 97.61,
+   "type": "token",
+   "text": " Jobs"
+  },
+  {
+   "t": 97.81,
+   "type": "token",
+   "text": " For"
+  },
+  {
+   "t": 98.01,
+   "type": "token",
+   "text": " People"
+  },
+  {
+   "t": 98.21,
+   "type": "token",
+   "text": " ("
+  },
+  {
+   "t": 98.41,
+   "type": "token",
+   "text": "8"
+  },
+  {
+   "t": 98.6,
+   "type": "token",
+   "text": "5"
+  },
+  {
+   "t": 98.81,
+   "type": "token",
+   "text": "%"
+  },
+  {
+   "t": 99.03,
+   "type": "token",
+   "text": " fit"
+  },
+  {
+   "t": 99.25,
+   "type": "token",
+   "text": ")"
+  },
+  {
+   "t": 99.46,
+   "type": "token",
+   "text": " -"
+  },
+  {
+   "t": 99.68,
+   "type": "token",
+   "text": " Brussels"
+  },
+  {
+   "t": 99.89,
+   "type": "token",
+   "text": " ("
+  },
+  {
+   "t": 100.1,
+   "type": "token",
+   "text": "id"
+  },
+  {
+   "t": 100.31,
+   "type": "token",
+   "text": ":"
+  },
+  {
+   "t": 100.52,
+   "type": "token",
+   "text": " fore"
+  },
+  {
+   "t": 100.73,
+   "type": "token",
+   "text": "m"
+  },
+  {
+   "t": 100.96,
+   "type": "token",
+   "text": ":"
+  },
+  {
+   "t": 101.18,
+   "type": "token",
+   "text": "2"
+  },
+  {
+   "t": 101.4,
+   "type": "token",
+   "text": "1"
+  },
+  {
+   "t": 101.6,
+   "type": "token",
+   "text": "5"
+  },
+  {
+   "t": 101.81,
+   "type": "token",
+   "text": "1"
+  },
+  {
+   "t": 102.01,
+   "type": "token",
+   "text": "6"
+  },
+  {
+   "t": 102.22,
+   "type": "token",
+   "text": "4"
+  },
+  {
+   "t": 102.42,
+   "type": "token",
+   "text": "7"
+  },
+  {
+   "t": 102.61,
+   "type": "token",
+   "text": ")\n"
+  },
+  {
+   "t": 102.81,
+   "type": "token",
+   "text": "2"
+  },
+  {
+   "t": 103.04,
+   "type": "token",
+   "text": "."
+  },
+  {
+   "t": 103.24,
+   "type": "token",
+   "text": " **"
+  },
+  {
+   "t": 103.45,
+   "type": "token",
+   "text": "ET"
+  },
+  {
+   "t": 103.67,
+   "type": "token",
+   "text": "UD"
+  },
+  {
+   "t": 103.89,
+   "type": "token",
+   "text": "I"
+  },
+  {
+   "t": 104.11,
+   "type": "token",
+   "text": "ANT"
+  },
+  {
+   "t": 104.33,
+   "type": "token",
+   "text": " "
+  },
+  {
+   "t": 104.56,
+   "type": "token",
+   "text": " Trav"
+  },
+  {
+   "t": 104.78,
+   "type": "token",
+   "text": "ail"
+  },
+  {
+   "t": 105.0,
+   "type": "token",
+   "text": "leur"
+  },
+  {
+   "t": 105.21,
+   "type": "token",
+   "text": " de"
+  },
+  {
+   "t": 105.42,
+   "type": "token",
+   "text": " nuit"
+  },
+  {
+   "t": 105.65,
+   "type": "token",
+   "text": "**"
+  },
+  {
+   "t": 105.87,
+   "type": "token",
+   "text": " at"
+  },
+  {
+   "t": 106.09,
+   "type": "token",
+   "text": " Pag"
+  },
+  {
+   "t": 106.34,
+   "type": "token",
+   "text": " -"
+  },
+  {
+   "t": 106.62,
+   "type": "token",
+   "text": " As"
+  },
+  {
+   "t": 106.86,
+   "type": "token",
+   "text": "a"
+  },
+  {
+   "t": 107.11,
+   "type": "token",
+   "text": " -"
+  },
+  {
+   "t": 107.38,
+   "type": "token",
+   "text": " Pag"
+  },
+  {
+   "t": 107.66,
+   "type": "token",
+   "text": " -"
+  },
+  {
+   "t": 107.94,
+   "type": "token",
+   "text": " As"
+  },
+  {
+   "t": 108.18,
+   "type": "token",
+   "text": "a"
+  },
+  {
+   "t": 108.41,
+   "type": "token",
+   "text": " v"
+  },
+  {
+   "t": 108.65,
+   "type": "token",
+   "text": "zw"
+  },
+  {
+   "t": 108.9,
+   "type": "token",
+   "text": " ("
+  },
+  {
+   "t": 109.18,
+   "type": "token",
+   "text": "5"
+  },
+  {
+   "t": 109.45,
+   "type": "token",
+   "text": "3"
+  },
+  {
+   "t": 109.69,
+   "type": "token",
+   "text": "%"
+  },
+  {
+   "t": 110.02,
+   "type": "token",
+   "text": " fit"
+  },
+  {
+   "t": 110.24,
+   "type": "token",
+   "text": ")"
+  },
+  {
+   "t": 110.46,
+   "type": "token",
+   "text": " -"
+  },
+  {
+   "t": 110.67,
+   "type": "token",
+   "text": " Brussels"
+  },
+  {
+   "t": 110.9,
+   "type": "token",
+   "text": " ("
+  },
+  {
+   "t": 111.14,
+   "type": "token",
+   "text": "id"
+  },
+  {
+   "t": 111.37,
+   "type": "token",
+   "text": ":"
+  },
+  {
+   "t": 111.61,
+   "type": "token",
+   "text": " fore"
+  },
+  {
+   "t": 111.85,
+   "type": "token",
+   "text": "m"
+  },
+  {
+   "t": 112.08,
+   "type": "token",
+   "text": ":"
+  },
+  {
+   "t": 112.33,
+   "type": "token",
+   "text": "2"
+  },
+  {
+   "t": 112.56,
+   "type": "token",
+   "text": "1"
+  },
+  {
+   "t": 112.79,
+   "type": "token",
+   "text": "6"
+  },
+  {
+   "t": 113.02,
+   "type": "token",
+   "text": "5"
+  },
+  {
+   "t": 113.25,
+   "type": "token",
+   "text": "1"
+  },
+  {
+   "t": 113.49,
+   "type": "token",
+   "text": "2"
+  },
+  {
+   "t": 113.71,
+   "type": "token",
+   "text": "5"
+  },
+  {
+   "t": 113.95,
+   "type": "token",
+   "text": ")\n\n"
+  },
+  {
+   "t": 114.16,
+   "type": "token",
+   "text": "The"
+  },
+  {
+   "t": 114.39,
+   "type": "token",
+   "text": " best"
+  },
+  {
+   "t": 114.62,
+   "type": "token",
+   "text": " match"
+  },
+  {
+   "t": 114.87,
+   "type": "token",
+   "text": " for"
+  },
+  {
+   "t": 115.1,
+   "type": "token",
+   "text": " your"
+  },
+  {
+   "t": 115.33,
+   "type": "token",
+   "text": " skills"
+  },
+  {
+   "t": 115.55,
+   "type": "token",
+   "text": " and"
+  },
+  {
+   "t": 115.75,
+   "type": "token",
+   "text": " experience"
+  },
+  {
+   "t": 115.95,
+   "type": "token",
+   "text": " is"
+  },
+  {
+   "t": 116.15,
+   "type": "token",
+   "text": " the"
+  },
+  {
+   "t": 116.36,
+   "type": "token",
+   "text": " job"
+  },
+  {
+   "t": 116.56,
+   "type": "token",
+   "text": " as"
+  },
+  {
+   "t": 116.78,
+   "type": "token",
+   "text": " a"
+  },
+  {
+   "t": 116.98,
+   "type": "token",
+   "text": " **"
+  },
+  {
+   "t": 117.2,
+   "type": "token",
+   "text": "Serve"
+  },
+  {
+   "t": 117.41,
+   "type": "token",
+   "text": "ur"
+  },
+  {
+   "t": 117.63,
+   "type": "token",
+   "text": " -"
+  },
+  {
+   "t": 117.86,
+   "type": "token",
+   "text": " Job"
+  },
+  {
+   "t": 118.06,
+   "type": "token",
+   "text": " ét"
+  },
+  {
+   "t": 118.29,
+   "type": "token",
+   "text": "udiant"
+  },
+  {
+   "t": 118.5,
+   "type": "token",
+   "text": "**"
+  },
+  {
+   "t": 118.72,
+   "type": "token",
+   "text": " at"
+  },
+  {
+   "t": 118.94,
+   "type": "token",
+   "text": " ACC"
+  },
+  {
+   "t": 119.14,
+   "type": "token",
+   "text": "ENT"
+  },
+  {
+   "t": 119.34,
+   "type": "token",
+   "text": " Jobs"
+  },
+  {
+   "t": 119.58,
+   "type": "token",
+   "text": " For"
+  },
+  {
+   "t": 119.82,
+   "type": "token",
+   "text": " People"
+  },
+  {
+   "t": 120.06,
+   "type": "token",
+   "text": ".\n\n"
+  },
+  {
+   "t": 120.28,
+   "type": "token",
+   "text": "Source"
+  },
+  {
+   "t": 120.5,
+   "type": "token",
+   "text": ":"
+  },
+  {
+   "t": 120.73,
+   "type": "token",
+   "text": " Le"
+  },
+  {
+   "t": 120.95,
+   "type": "token",
+   "text": " Fore"
+  },
+  {
+   "t": 121.17,
+   "type": "token",
+   "text": "m"
+  },
+  {
+   "t": 121.4,
+   "type": "token",
+   "text": " open"
+  },
+  {
+   "t": 121.62,
+   "type": "token",
+   "text": " data"
+  },
+  {
+   "t": 121.84,
+   "type": "token",
+   "text": "."
+  },
+  {
+   "t": 122.06,
+   "type": "done",
+   "text": "The vacancies in Brussels that match your CV are as follows:\n\n1. **Serveur - Job étudiant** at ACCENT Jobs For People (85% fit) - Brussels (id: forem:2151647)\n2. **ETUDIANT  Travailleur de nuit** at Pag - Asa - Pag - Asa vzw (53% fit) - Brussels (id: forem:2165125)\n\nThe best match for your skills and experience is the job as a **Serveur - Job étudiant** at ACCENT Jobs For People.\n\nSource: Le Forem open data.",
+   "stats": {
+    "eval_count": 255,
+    "eval_duration": 52325232000,
+    "prompt_eval_count": 8961,
+    "total_duration": 119111129400,
+    "tool_rounds": 2,
+    "tool_runs": 2,
+    "elapsed_s": 122.06,
+    "model": "qwen2.5:7b"
+   }
+  }
+ ]
+}

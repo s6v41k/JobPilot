@@ -229,6 +229,32 @@ def tabs_flow(port: int) -> None:
         b.close()
 
 
+def demo_flow(port: int) -> None:
+    """The Demo panel: scenarios, live run and the labelled replay of a recording."""
+    b = Browser(port=9337)
+    try:
+        b.goto(f"http://127.0.0.1:{port}/", wait=2.5)
+        click(b, ".linkbtn")
+        check(count(b, ".demo-row") == 4, "Demo: the panel lists the four scripted scenarios")
+        replay_enabled = b.js("[...document.querySelectorAll('.demo-row')].map(r => !r.querySelectorAll('.btn')[1].disabled)")
+        check(replay_enabled == [True, False, False, False], "Demo: Replay is only enabled where a recording exists")
+        b.screenshot(SHOTS / "10_demo_panel.png")
+        b.js("document.querySelectorAll('.demo-row')[0].querySelectorAll('.btn')[1].click()")
+        check(b.wait_for("!!document.querySelector('.replay-badge')", timeout=20), "Demo: a replay shows the REPLAY label")
+        check(b.wait_for("!!document.querySelector('.send') && document.querySelectorAll('.job').length > 0", timeout=60), "Demo: the replay finishes and shows the vacancy cards")
+        badge = text(b, ".replay-badge")
+        check("REPLAY" in badge and "real recording" in badge and "scripted-model" in badge, f"Demo: the label names it a recording and the model ({badge[:70]})")
+        scores = b.js("[...document.querySelectorAll('.score')].map(e => e.innerText)")
+        check(len(scores) == 5, "Demo: scores from the recorded tool results are shown")
+        click(b, ".job .btn.primary")
+        b.pump(0.8)
+        check(text(b, ".job .btn.primary") == "Saved", "Demo: a vacancy from a replay can be saved (it was stored for the replay)")
+        b.screenshot(SHOTS / "11_replay.png")
+        check(not b.problems, f"no console errors or exceptions {b.problems or ''}")
+    finally:
+        b.close()
+
+
 def phone_flow(port: int) -> None:
     b = Browser(port=9334, width=420, height=820)
     try:
@@ -267,6 +293,7 @@ def main() -> int:
     try:
         chat_flow(8011)
         tabs_flow(8011)
+        demo_flow(8011)
         phone_flow(8011)
         ollama_down_flow(8012)
     finally:

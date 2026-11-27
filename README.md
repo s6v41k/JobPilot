@@ -22,9 +22,10 @@ copy .env.example .env        # then fill in your keys
 .venv\Scripts\python -m app.main          # web app: http://127.0.0.1:8000  (Chat, Jobs, Tracker, Profile)
 .venv\Scripts\python -m app.cli           # chat in the terminal
 .venv\Scripts\python -m app.agent_minimal # the 50-line fallback agent
+.venv\Scripts\python -m app.demo prepare   # the day before the demo (data, snapshot, warm-up, check)
 .venv\Scripts\python -m app.preflight --chat # is everything ready? (green / yellow / red report)
-.venv\Scripts\python -m pytest            # 260 tests, ~15 s
-.venv\Scripts\python -m uitest.smoke      # clicks through the web UI in a headless Edge (56 checks)
+.venv\Scripts\python -m pytest            # 305 tests, ~20 s
+.venv\Scripts\python -m uitest.smoke      # clicks through the web UI in a headless Edge (64 checks)
 ```
 Ollama must be running with a model, for example `ollama pull qwen2.5:7b` and `ollama pull bge-m3`.
 Everything about how it is built and tested: [docs/development_log.md](docs/development_log.md),
