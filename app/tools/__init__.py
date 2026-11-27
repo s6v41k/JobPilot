@@ -30,6 +30,7 @@ class Tool:
     description: str                       # the LLM reads this: be clear and concrete
     args_model: type[BaseModel]
     func: Callable[[Any], Any]             # receives the validated args model
+    timeout: float = TOOL_TIMEOUT_SECONDS  # slow tools (LLM calls) ask for more
 
     def schema(self) -> dict:
         """The tool definition in the format the Ollama library expects."""
@@ -46,10 +47,10 @@ class Tool:
 TOOLS: dict[str, Tool] = {}
 
 
-def tool(name: str, description: str, args_model: type[BaseModel]):
+def tool(name: str, description: str, args_model: type[BaseModel], timeout: float = TOOL_TIMEOUT_SECONDS):
     """Decorator that registers a function as an agent tool."""
     def register(func: Callable[[Any], Any]):
-        TOOLS[name] = Tool(name, " ".join(description.split()), args_model, func)
+        TOOLS[name] = Tool(name, " ".join(description.split()), args_model, func, timeout)
         return func
     return register
 
@@ -125,9 +126,9 @@ def call_tool(name: str, arguments: Any = None) -> dict:
         with ThreadPoolExecutor(max_workers=1) as pool:
             future = pool.submit(TOOLS[name].func, parsed)
             try:
-                data = future.result(timeout=TOOL_TIMEOUT_SECONDS)
+                data = future.result(timeout=TOOLS[name].timeout)
             except FutureTimeout:
-                raise TimeoutError(f"Tool '{name}' took longer than {TOOL_TIMEOUT_SECONDS}s") from None
+                raise TimeoutError(f"Tool '{name}' took longer than {TOOLS[name].timeout:.0f}s") from None
         result = {"ok": True, "data": data, "error": None}
     except Exception as e:                                  # ANY failure becomes a normal result
         result = {"ok": False, "data": None, "error": str(e) or type(e).__name__}
@@ -136,4 +137,4 @@ def call_tool(name: str, arguments: Any = None) -> dict:
 
 
 # Importing the modules registers their tools (keep at the bottom: they import `tool`).
-from app.tools import search_jobs  # noqa: E402,F401
+from app.tools import search_jobs, profile_tools  # noqa: E402,F401

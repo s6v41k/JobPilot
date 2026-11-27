@@ -47,6 +47,7 @@ class FakeClient:
 def quiet(tmp_path, monkeypatch):
     monkeypatch.setattr(get_settings(), "log_dir", str(tmp_path / "logs"))
     monkeypatch.setattr("app.agent.agent.time.sleep", lambda s: None)
+    monkeypatch.setattr("app.agent.agent.load_stored_profile", lambda: None)   # never read the real DB
 
     def fake_search(query):
         job = Job(id="t:1", source="t", external_id="1", title="Test barista", company="TestCo", city="Gent")
@@ -108,7 +109,7 @@ def test_bad_arguments_error_goes_back_to_the_model_which_can_fix_it():
 
 def test_tool_failing_twice_is_switched_off():
     a, client = agent(calls("search_jobs", {"limit": 999}), calls("search_jobs", {"limit": 998}),
-                      says("Sorry, search is not working."))
+                      says("Sorry, search is not working."), tool_names=["search_jobs"])
     events = list(a.run("jobs"))
     assert [e["ok"] for e in events if e["type"] == "tool_result"] == [False, False]
     assert "do not use it again" in events[3]["error"]

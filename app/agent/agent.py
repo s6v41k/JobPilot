@@ -34,6 +34,7 @@ from typing import Any, Iterator
 import httpx
 import ollama
 
+from app import db
 from app.agent.prompts import build_system_prompt
 from app.config import Settings, get_settings
 from app.tools import TOOLS, call_tool, tool_schemas
@@ -103,6 +104,15 @@ def history_form(message: dict) -> dict:
 def _compact(data: Any) -> str:
     text = json.dumps(data, ensure_ascii=False)
     return text if len(text) <= MAX_TOOL_RESULT_CHARS else text[:MAX_TOOL_RESULT_CHARS] + '..."(truncated)'
+
+
+def load_stored_profile() -> dict | None:
+    """The profile saved from the user's CV (None if there is none or the DB is unreadable)."""
+    try:
+        with db.connect() as conn:
+            return db.load_profile(conn)
+    except Exception:
+        return None
 
 
 # ----------------------------------------------------------------------------- agent
@@ -217,7 +227,8 @@ class Agent:
 
     def run(self, user_text: str) -> Iterator[dict]:
         started = time.perf_counter()
-        system = {"role": "system", "content": build_system_prompt(self.profile)}
+        profile = self.profile if self.profile is not None else load_stored_profile()
+        system = {"role": "system", "content": build_system_prompt(profile)}
         messages = [system] + self.history + [{"role": "user", "content": user_text}]
         turn_start = len(messages) - 1            # where this turn begins (for saving history)
         synthetic: list[dict] = []                # our own nudges: never saved to the history

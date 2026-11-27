@@ -1,0 +1,25 @@
+[FICTIONAL TEST CV - this person does not exist]
+
+LUCAS MOREAU
+Leuven, Belgium
+
+Profile
+Third-year Applied Computer Science student searching for a 3-month software internship starting February. Likes building small web tools and learning new technologies.
+
+Education
+- Bachelor Applied Computer Science, Thomas More Mechelen (2024 - now)
+- Secondary school, Sciences-Mathematics, Athenee Royal Namur (2018 - 2024)
+
+Experience
+- Course project: web app for sharing study notes (Python, FastAPI, SQLite), team of 4 (2026)
+- Course project: chat bot that answers FAQ questions using a local LLM (2026)
+- Student job, cashier at a supermarket, Saturdays (2023 - 2025)
+
+Skills
+Python, SQL, Git, HTML/CSS, JavaScript (basic), FastAPI, Linux command line, unit testing with pytest, teamwork
+
+Languages
+French (native), English (fluent), Dutch (intermediate)
+
+Interests
+Chess, cycling, open source, board games

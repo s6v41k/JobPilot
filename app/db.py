@@ -243,8 +243,24 @@ def save_profile(conn: sqlite3.Connection, data: dict[str, Any], cv_text: str | 
 
 
 def load_profile(conn: sqlite3.Connection) -> dict[str, Any] | None:
+    """The structured profile, or None if no CV has been analysed yet."""
     row = conn.execute("SELECT data FROM profile WHERE id = 1").fetchone()
-    return json.loads(row["data"]) if row else None
+    data = json.loads(row["data"]) if row else None
+    return data or None          # an uploaded-but-not-yet-analysed CV stores {}
+
+
+def save_cv_text(conn: sqlite3.Connection, cv_text: str) -> None:
+    """Store the raw CV text (e.g. right after upload) without touching the profile."""
+    conn.execute(
+        "INSERT INTO profile (id, data, cv_text, updated_at) VALUES (1, '{}', ?, ?) "
+        "ON CONFLICT(id) DO UPDATE SET cv_text=excluded.cv_text, updated_at=excluded.updated_at",
+        (cv_text, now_iso()),
+    )
+
+
+def load_cv_text(conn: sqlite3.Connection) -> str | None:
+    row = conn.execute("SELECT cv_text FROM profile WHERE id = 1").fetchone()
+    return row["cv_text"] if row and row["cv_text"] else None
 
 
 # ----------------------------------------------------------------- applications
