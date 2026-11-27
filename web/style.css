@@ -241,3 +241,13 @@ label.btn.file { display: inline-block; cursor: pointer; flex-direction: row; co
 .cards { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
 .btn { white-space: nowrap; }
 .actions { flex-wrap: wrap; }
+
+/* system check */
+.verdict { margin: .6rem 0 .3rem; font-size: 1.05rem; }
+.verdict.ok b { color: var(--ok); } .verdict.warn b { color: var(--warn); } .verdict.bad b { color: var(--bad); }
+.checks { list-style: none; margin: 0; padding: 0; display: grid; gap: .35rem; }
+.checks li { display: flex; gap: .7rem; align-items: flex-start; font-size: .88rem; }
+.checks .mark { min-width: 1.7rem; text-align: center; font-weight: 700; border-radius: 6px; padding: 0 .3rem; font-size: .75rem; line-height: 1.5rem; }
+.checks .ok .mark { background: #14391f; color: var(--ok); } .checks .warn .mark { background: #3a3014; color: var(--warn); }
+.checks .fail .mark { background: #3a1c1c; color: var(--bad); } .checks .skip .mark { background: var(--panel-2); color: var(--muted); }
+.checks .fix { color: var(--muted); }

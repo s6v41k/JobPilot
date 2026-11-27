@@ -16,8 +16,8 @@
       <button v-for="t in tabs" :key="t.id" :class="{active: tab === t.id}" @click="tab = t.id">{{ t.label }}</button>
     </nav>
     <div class="status">
-      <span class="pill" :class="ollamaOk ? 'ok' : 'bad'" :title="health && health.ollama && health.ollama.version ? 'Ollama ' + health.ollama.version : 'Ollama'">
-        ● {{ ollamaOk ? modelName : 'Ollama offline' }}
+      <span class="pill" :class="ollamaOk ? 'ok' : 'bad'" :title="modelTitle">
+        ● {{ ollamaOk ? modelName + warmText : 'Ollama offline' }}
       </span>
       <span class="pill" :title="vacanciesTitle">{{ vacanciesLabel }}</span>
     </div>

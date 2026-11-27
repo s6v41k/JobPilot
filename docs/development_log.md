@@ -22,7 +22,8 @@ test details in [testing.md](testing.md).
 | 10b | Local copy of the Forem dataset (daily quota problem) | done - **live download still to be verified** |
 | 11 | Web UI: Chat with tool trace | done |
 | 12 | Web UI: Jobs, Tracker, Profile - **MVP (target 10 Dec)** | done (27 Nov) |
-| 13 | Preflight check, demo mode, error banners | |
+| 13 | Pre-flight check and model warm-up | done |
+| 13b | Demo mode: prepare data, record/replay real runs, demo script | **next** |
 | 14 | Agent roles (one model per job) and runtime model switching | |
 | 15 | Benchmark (two stages) and model selection | |
 | 16 | Memory (rolling summary, `num_ctx`) and RAG knowledge tool | |
@@ -216,3 +217,30 @@ It works, but **speed is now the main risk for the demo**; commits 13-15 deal wi
   and confirmations piled up as banners and pushed the page down. Fixed (wider cards, toasts).
 - The others were wrong assumptions in the test (a vacancy was already tracked from the chat test; the first `input` of the Profile tab is the hidden file picker).
 - Quota reminder: the live Forem download could still not be verified today; the local list in this test was seeded from the saved snapshot.
+
+## Commit 13 - Pre-flight check and model warm-up (this commit)
+**What**
+- `python -m app.preflight` prints a green / yellow / red report: Python, packages, web files, database, vacancy data (and its age), a real search from the local list,
+  Adzuna keys and budget, CV profile, port 8000, Ollama, chat model installed, **tool-calling support** (asked from Ollama's `/api/show`), embedding model.
+  `--chat` also loads the model and asks it one question (measures the cold start); `--json` for scripts. Exit code 1 if anything *failed*.
+  Meaning: **ok** fine, **warn** works but degraded (the app has a fallback), **fail** must be fixed, **skip** not tested. Every red/yellow line says how to fix it.
+  If Ollama is down, the checks that need it are *skipped* (one red line, not five) and the others still run. A crashing check becomes a red line, never a crash.
+- The same report is available in the web UI: **Profile -> System check** (`GET /api/preflight`).
+- **Warm-up** (`app/warmup.py`): when the server starts, a background thread loads the chat model, makes it read the *real* system prompt and tool list once (Ollama keeps that
+  prefix cached) and loads the embedding model; a light ping every 15 min keeps them in memory. Switching the model in the UI warms the new one. The status bar shows
+  "qwen2.5:7b - loading..." until it is ready, and `/api/health` reports the state.
+**Why:** the audience should never watch the first question pay for loading the model. Measured (qwen2.5:7b, simple question, tools list included):
+
+| | first question |
+|---|---|
+| cold (model not in memory) | **91.2 s** |
+| after warm-up | **4.9 s** |
+
+(the warm-up itself takes ~94 s, but it happens before anyone asks anything.)
+**Two things found on the way**
+1. `localhost` costs **~2 s per new connection** on this Windows machine (IPv6 is tried first, then IPv4): 2055 ms vs 25 ms for `127.0.0.1`. It slowed every health poll of the UI and the first
+   request to Ollama. `localhost` is now replaced by `127.0.0.1` when the settings are loaded (no change to `.env` needed).
+2. The system prompt + 10 tool schemas are now **~2000 tokens**. That is what the warm-up caches, and also a reason for commit 14: an agent role should only see the tools it needs.
+**Also:** the pre-flight showed Adzuna at **4/25 calls used**, not 2 as we thought: earlier live experiments, before the rule "only when Forem finds nothing", spent two more. 21 left.
+**Run:** `.venv\Scripts\python -m app.preflight` (add `--chat` before a rehearsal). **Test:** `tests/test_warmup_preflight.py` (18 tests, fake Ollama - no test ever loads a model),
+plus 3 API tests, and 2 new browser checks (the System check panel).

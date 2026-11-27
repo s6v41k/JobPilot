@@ -12,6 +12,7 @@ JPUI.ProfileTab = {
       model: { current: "", chosen: "", installed: [], num_ctx: 8192, think: false, busy: false },
       vacancies: { offers: 0, age_hours: null, busy: false },
       confirmDelete: false,
+      sys: { busy: false, result: null, started: 0 },
     };
   },
   computed: {
@@ -132,6 +133,15 @@ JPUI.ProfileTab = {
       finally { this.vacancies.busy = false; }
     },
 
+    // ---- system check (the same report as `python -m app.preflight`)
+    async runCheck(withModel) {
+      this.sys = { busy: true, result: null, started: Date.now() };
+      try {
+        this.sys.result = await JPUI.api("/api/preflight" + (withModel ? "?chat=true" : ""));
+      } catch (e) { this.say("error", "The system check failed: " + e.message); }
+      finally { this.sys.busy = false; }
+    },
+
     // ---- privacy
     async deleteMyData() {
       try {
@@ -211,8 +221,28 @@ JPUI.ProfileTab = {
           </div>
         </div>
 
+        <div class="panel">
+          <h3>5. System check</h3>
+          <p class="hint">Is everything ready? Checks Ollama, the models, the data and the files. Run it before a presentation.</p>
+          <div class="row">
+            <button class="btn" :disabled="sys.busy" @click="runCheck(false)">Quick check</button>
+            <button class="btn" :disabled="sys.busy" @click="runCheck(true)" title="Also loads the model and asks it one question">Check with a model test</button>
+            <span class="meta" v-if="sys.busy"><span class="dots"><span></span><span></span><span></span></span> Checking... {{ Math.round((now - sys.started) / 1000) }} s</span>
+          </div>
+          <div v-if="sys.result">
+            <p class="verdict" :class="sys.result.ready ? (sys.result.counts.warn ? 'warn' : 'ok') : 'bad'"><b>{{ sys.result.verdict }}</b>
+              <span class="meta"> - {{ sys.result.counts.ok }} ok, {{ sys.result.counts.warn }} warnings, {{ sys.result.counts.fail }} failed</span></p>
+            <ul class="checks">
+              <li v-for="c in sys.result.checks" :key="c.name" :class="c.status">
+                <span class="mark">{{ {ok: 'OK', warn: '!', fail: 'X', skip: '-'}[c.status] }}</span>
+                <span><b>{{ c.name }}</b> {{ c.detail }}<span class="fix" v-if="c.fix && (c.status === 'warn' || c.status === 'fail')"><br>Fix: <code>{{ c.fix }}</code></span></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
         <div class="panel danger">
-          <h3>5. Privacy</h3>
+          <h3>6. Privacy</h3>
           <p class="hint">Everything is stored in one file on this computer. Nothing is sent anywhere except search words to the job sources.</p>
           <div class="row" v-if="!confirmDelete"><button class="btn" @click="confirmDelete = true">Delete my data...</button></div>
           <div class="row" v-else>

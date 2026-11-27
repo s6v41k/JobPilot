@@ -25,6 +25,16 @@ def test_env_overrides(monkeypatch):
     assert s.adzuna_configured is True
 
 
+def test_localhost_becomes_numeric_address(monkeypatch):
+    """'localhost' costs ~2 s per new connection on Windows (IPv6 timeout): use 127.0.0.1."""
+    from app.config import normalize_host
+    assert normalize_host("http://localhost:11434") == "http://127.0.0.1:11434"
+    assert normalize_host("http://192.168.1.5:11434") == "http://192.168.1.5:11434"
+    monkeypatch.setattr("app.config.load_dotenv", lambda *a, **k: None)
+    monkeypatch.setenv("OLLAMA_HOST", "http://localhost:11434")
+    assert load_settings().ollama_host == "http://127.0.0.1:11434"
+
+
 def test_runtime_update_and_unknown_key():
     s = Settings()
     s.update(ollama_model="x:1b", think=True)

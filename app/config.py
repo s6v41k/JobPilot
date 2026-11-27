@@ -23,7 +23,7 @@ def _env(name: str, default: str) -> str:
 @dataclass
 class Settings:
     # --- Ollama ---
-    ollama_host: str = "http://localhost:11434"
+    ollama_host: str = "http://127.0.0.1:11434"
     ollama_model: str = "qwen2.5:7b"
     embed_model: str = "bge-m3"
     num_ctx: int = 8192
@@ -71,11 +71,19 @@ def _resolve(path: str) -> Path:
     return p if p.is_absolute() else ROOT_DIR / p
 
 
+def normalize_host(host: str) -> str:
+    """'localhost' -> '127.0.0.1'.
+
+    On Windows a new connection to 'localhost' first tries IPv6 and waits ~2 seconds before falling
+    back to IPv4 (measured: 2055 ms vs 25 ms). Using the numeric address avoids that on every request."""
+    return host.replace("//localhost", "//127.0.0.1").replace("//LOCALHOST", "//127.0.0.1")
+
+
 def load_settings() -> Settings:
     """Read settings from the environment / .env file."""
     load_dotenv(ROOT_DIR / ".env")
     return Settings(
-        ollama_host=_env("OLLAMA_HOST", Settings.ollama_host),
+        ollama_host=normalize_host(_env("OLLAMA_HOST", Settings.ollama_host)),
         ollama_model=_env("OLLAMA_MODEL", Settings.ollama_model),
         embed_model=_env("EMBED_MODEL", Settings.embed_model),
         num_ctx=int(_env("NUM_CTX", str(Settings.num_ctx))),

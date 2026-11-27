@@ -144,6 +144,21 @@ Real server + real `qwen2.5:7b` + real snapshot vacancies + fictional CV, questi
 (the UI showed "Reading the match_cv result... 193 s"). The answer used "85 out of 100": the guard only checks the "N/100" spelling, which is fine
 because the number itself matched the tool result.
 
+## 10. Model warm-up and the `localhost` delay (2026-11-27)
+
+| Measurement | Result |
+|---|---|
+| First question, model **not** in memory (`qwen2.5:7b`, simple answer, tools list sent) | **91.2 s** |
+| Same question after `warm_now()` (model loaded + real system prompt/tools read once) | **4.9 s** |
+| Warm-up itself | 93.7 s (chat 89.2 s, embedding model 4.5 s) |
+| Prompt size of one request (system prompt + 10 tool schemas, no tool results) | 2072 tokens |
+| New HTTP connection to `http://localhost:11434` | ~2055 ms |
+| New HTTP connection to `http://127.0.0.1:11434` | 21-51 ms |
+
+Reading: almost all of the "first question" cost is *loading the model and reading ~2000 prompt tokens* (about 25 tokens/s on this CPU), not answering.
+A warm model with a cached prefix answers a simple question in 5 s. Questions with tool calls are still slow afterwards because the tool *results*
+(new tokens) are read every round and are not cached. Ideas to test in the benchmark: fewer tools per role, shorter tool schemas, shorter tool results.
+
 ---
 
 ## Open questions

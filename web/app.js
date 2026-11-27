@@ -77,6 +77,17 @@ const app = createApp({
     const onProfileChanged = () => loadHealth();            // a new CV/profile/model changes the status bar
     const onTrackerChanged = () => loadSaved();             // a removed application is no longer "Saved"
     const modelName = computed(() => (health.value && health.value.models.chat.name) || "");
+    // While the server loads the model and reads the system prompt the first answer would be slow.
+    const warmText = computed(() => {
+      const w = health.value && health.value.warm;
+      return w && w.status === "warming" ? " · loading..." : "";
+    });
+    const modelTitle = computed(() => {
+      const h = health.value;
+      if (!h) return "";
+      const v = h.ollama && h.ollama.version ? "Ollama " + h.ollama.version + ". " : "";
+      return v + ((h.warm && h.warm.message) || "");
+    });
     const vacanciesLabel = computed(() => {
       const v = health.value && health.value.vacancies;
       if (!v || !v.offers) return "Vacancies: live search";
@@ -278,7 +289,7 @@ const app = createApp({
 
     return {
       tabs, tab, tabLabel, health, messages, input, busy, saved, suggestions, scroller, box,
-      ollamaOk, hasProfile, modelName, vacanciesLabel, vacanciesTitle, allBanners,
+      ollamaOk, hasProfile, modelName, warmText, modelTitle, vacanciesLabel, vacanciesTitle, allBanners,
       render, fmt, sourceText, cardsOf, waitingText, speed,
       toasts, closeToast, send, stop, newChat, saveJob, copy, dismiss, grow, notify, onProfileChanged, onTrackerChanged,
     };

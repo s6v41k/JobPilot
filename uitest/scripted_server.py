@@ -116,6 +116,8 @@ def prepare() -> None:
     main.forem_mirror.refresh = lambda **kw: 24310               # no download from the portal in UI tests
     main._ollama_get = lambda path: {"version": "scripted", "models": []}
     main._refresher.start = lambda: None                         # never download from the portal in UI tests
+    main._warmer.start = lambda: None                            # ... and never load a real model
+    main._warmer.trigger = lambda: None
 
 
 if __name__ == "__main__":

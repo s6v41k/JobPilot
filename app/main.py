@@ -28,6 +28,7 @@ from app.config import ROOT_DIR, get_settings
 from app.cv import CVError, read_cv
 from app.llm import LLMError
 from app.matching import match_jobs
+from app import preflight, warmup
 from app.providers import forem_mirror
 from app.providers.aggregator import search_all
 from app.providers.base import JobQuery, ProviderError
@@ -37,14 +38,17 @@ from app.tools.profile_tools import Profile, build_profile
 WEB_DIR = ROOT_DIR / "web"
 
 _refresher = forem_mirror.BackgroundRefresher()
+_warmer = warmup.BackgroundWarmer()
 
 
 @asynccontextmanager
 async def lifespan(_: FastAPI):
     """On start-up keep the local copy of the Le Forem data fresh (in the background, never blocking)."""
     _refresher.start()
+    _warmer.start()                 # load the model + read the system prompt before the first question
     yield
     _refresher.stop()
+    _warmer.stop()
 
 
 app = FastAPI(title="JobPilot", version="0.1", lifespan=lifespan)
@@ -132,6 +136,7 @@ def health() -> dict:
         result["database"] = {"ok": False, "message": f"Database problem ({type(e).__name__})"}
     result["adzuna"] = {"configured": s.adzuna_configured, "monthly_budget": s.adzuna_monthly_budget,
                         "used": result["database"].get("adzuna_used")}
+    result["warm"] = dict(_warmer.state)
     try:
         result["vacancies"] = {**forem_mirror.info(), "message": _refresher.last_message}
     except Exception:
@@ -141,6 +146,13 @@ def health() -> dict:
 
 
 # ------------------------------------------------------------------------- jobs
+@app.get("/api/preflight")
+def run_preflight(chat: bool = Query(False, description="also ask the real model one tiny question")) -> dict:
+    """The same report as `python -m app.preflight`, for the 'System check' button in the Profile tab."""
+    checks = preflight.run_checks(chat=chat)
+    return {**preflight.summarize(checks), "checks": [vars(c) for c in checks]}
+
+
 @app.get("/api/jobs")
 def jobs(
     keywords: str = Query("", max_length=100),
@@ -381,6 +393,7 @@ def put_model(change: ModelChange) -> dict:
                                      f"Install it with: ollama pull {change.model}")
         s.update(ollama_model=change.model)
         get_agent().model = change.model
+        _warmer.trigger()                       # load the new model in the background
     if change.num_ctx:
         s.update(num_ctx=change.num_ctx)
     if change.think is not None:

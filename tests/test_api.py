@@ -25,6 +25,7 @@ def client(tmp_path, monkeypatch):
     monkeypatch.setattr(s, "db_path", str(tmp_path / "t.db"))
     monkeypatch.setattr(s, "log_dir", str(tmp_path / "logs"))
     monkeypatch.setattr(main, "_agent", None)
+    monkeypatch.setattr(main._warmer, "trigger", lambda: None)      # never load a real model in a test
     monkeypatch.setattr("app.agent.agent.load_stored_profile", lambda: None)
     monkeypatch.setattr(main, "installed_models", lambda: ["qwen2.5:7b", "bge-m3:latest", "llama3.2:3b"])
     monkeypatch.setattr(main, "_ollama_get", lambda path: {"version": "9.9.9", "models": []})
@@ -286,6 +287,36 @@ def test_refresh_failure_is_a_503_with_a_message(client, monkeypatch):
     monkeypatch.setattr(main.forem_mirror, "refresh", quota)
     res = client.post("/api/refresh")
     assert res.status_code == 503 and "saved copy is kept" in res.json()["error"]
+
+
+# ------------------------------------------------------------ warm-up / preflight
+def test_health_reports_the_warm_up_state(client, monkeypatch):
+    monkeypatch.setitem(main._warmer.state, "status", "warming")
+    warm = client.get("/api/health").json()["warm"]
+    assert warm["status"] == "warming"
+
+
+def test_preflight_endpoint_returns_the_report(client, monkeypatch):
+    seen = {}
+
+    def fake_checks(chat=False):
+        seen["chat"] = chat
+        return [main.preflight.Check("Ollama", "ok", "fine"), main.preflight.Check("Profile", "warn", "none", fix="upload")]
+    monkeypatch.setattr(main.preflight, "run_checks", fake_checks)
+    data = client.get("/api/preflight").json()
+    assert data["verdict"] == "READY (with warnings)" and data["ready"] and len(data["checks"]) == 2
+    assert data["checks"][1]["fix"] == "upload" and seen["chat"] is False
+    client.get("/api/preflight", params={"chat": "true"})
+    assert seen["chat"] is True
+
+
+def test_switching_the_model_warms_the_new_one(client, monkeypatch):
+    triggered = []
+    monkeypatch.setattr(main._warmer, "trigger", lambda: triggered.append(1))
+    for name in ("ollama_model", "num_ctx", "think"):
+        monkeypatch.setattr(get_settings(), name, getattr(get_settings(), name))
+    client.put("/api/model", json={"model": "llama3.2:3b"})
+    assert triggered == [1]
 
 
 # ------------------------------------------------------------------- robustness

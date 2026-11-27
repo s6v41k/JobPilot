@@ -13,12 +13,12 @@ Two kinds of tests, with different purposes.
 
 ## Automated tests
 
-Run all: `.venv\Scripts\python -m pytest` (238 tests at the time of writing, plus 13 JavaScript tests).
+Run all: `.venv\Scripts\python -m pytest` (260 tests at the time of writing, plus 13 JavaScript tests).
 Rule: a commit is made only when this prints **no failures**.
 
 | File | Tests | What it protects |
 |---|---|---|
-| `test_config.py` | 3 | settings from `.env`, runtime switching of model/num_ctx |
+| `test_config.py` | 4 | settings from `.env`, runtime switching of model/num_ctx |
 | `test_db.py` | 7 | SQLite: vacancies, cache, profile, applications, API budget, "delete my data" |
 | `test_adzuna.py` | 11 | Adzuna client: cache first, 25-calls/month budget, keys never leak into cache or errors, HTTP errors |
 | `test_forem.py` | 11 | Le Forem open data: query building, expired offers hidden, internship vs student contract, rate limiter |
@@ -29,8 +29,9 @@ Rule: a commit is made only when this prints **no failures**.
 | `test_profile.py` | 25 | CV reading (PDF/text/scan/encrypted), structured LLM output, profile extraction |
 | `test_matching.py` | 28 | skill vocabulary, language levels, score maths, `get_job_details`, `match_cv` |
 | `test_mirror.py` | 22 | local copy of the Le Forem data: bulk download, failures keep the old copy, word-start search, city names, expired offers, no SQL injection, freshness label |
+| `test_warmup_preflight.py` | 18 | model warm-up (state, failures never raise, no double warm-up) and the pre-flight report (Ollama down, missing model, no tool support, crashing check, exit codes) |
 | `test_web.py` | 7 | web files: assets served, page works without internet, every API path used by the JavaScript exists, Node tests |
-| `test_api.py` | 29 | the REST API and SSE chat with a fake Ollama: health when Ollama is down, filters, CV upload errors, tracker, model switching, delete-my-data, calm 500 errors |
+| `test_api.py` | 32 | the REST API and SSE chat with a fake Ollama: health when Ollama is down, filters, CV upload errors, tracker, model switching, delete-my-data, calm 500 errors |
 | `test_letter_and_tracker.py` | 16 | cover letters (length limit, language, no placeholders, no invented school) and the application tracker |
 
 ### Test data
@@ -56,7 +57,15 @@ Every experiment worth remembering is written down in [experiments_log.md](exper
 | Command | What it checks | Needs |
 |---|---|---|
 | `node --test tests/js/util.test.js` | the JavaScript helpers: HTML escaping, links, lists, SSE parsing, formatting | Node.js |
-| `python -m uitest.smoke` | a real headless Edge clicks through the whole UI (54 checks: chat, Jobs, Tracker, Profile, phone, Ollama down), screenshots to `eval/results/ui/` | Microsoft Edge |
+| `python -m uitest.smoke` | a real headless Edge clicks through the whole UI (56 checks: chat, Jobs, Tracker, Profile, system check, phone, Ollama down), screenshots to `eval/results/ui/` | Microsoft Edge |
 
 `uitest/scripted_server.py` runs the real server, agent loop and tools with a *scripted model*, so a whole conversation takes seconds instead of minutes.
 Everything is real except the words the "model" says and the text of the cover letter.
+
+## Before a rehearsal or the demo
+
+```powershell
+.venv\Scripts\python -m app.preflight --chat     # everything green? (loads the model, ~1.5 min the first time)
+.venv\Scripts\python -m pytest                   # code still fine?
+.venv\Scripts\python -m uitest.smoke             # web UI still fine?
+```

@@ -213,6 +213,9 @@ def tabs_flow(port: int) -> None:
         check("llama3.2:3b" in text(b, ".pill"), "Profile: switching the model updates the status bar")
         click(b, ".panel .btn", "Refresh now")
         check(b.wait_for("document.body.innerText.includes('vacancies downloaded')", timeout=20), "Profile: 'Refresh now' downloads the vacancy list")
+        click(b, ".panel .btn", "Quick check")
+        check(b.wait_for("document.querySelectorAll('.checks li').length >= 10", timeout=60), "Profile: the system check lists its checks")
+        check(any(w in text(b, ".verdict") for w in ("READY", "NOT READY")), "Profile: the system check gives a verdict")
         b.screenshot(SHOTS / "9_profile.png")
 
         click(b, ".panel .btn", "Delete my data...")
