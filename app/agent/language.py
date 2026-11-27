@@ -48,6 +48,21 @@ def guess_language(text: str) -> str | None:
     return best
 
 
+def dominant_language(text: str) -> str | None:
+    """The language a (longer) text is written in, or None when it is not clear. Stricter than guess_language:
+    the winner must beat every other language, so a tie never counts as a match (used to score answers)."""
+    cyrillic = len(re.findall(r"[\u0400-\u04FF]", text or ""))
+    letters = len(re.findall(r"[^\W\d_]", text or ""))
+    if letters and cyrillic / letters > 0.3:
+        return "ru"
+    words = re.findall(r"[\w']+", (text or "").lower())
+    scores = {lang: sum(w in vocabulary for w in words) for lang, vocabulary in _WORDS.items()}
+    ranked = sorted(scores.items(), key=lambda kv: kv[1], reverse=True)
+    if not ranked or ranked[0][1] < 2 or ranked[0][1] == ranked[1][1]:
+        return None
+    return ranked[0][0]
+
+
 def language_name(code: str | None) -> str | None:
     return _NAMES.get(code or "")
 

@@ -1,0 +1,23 @@
+# The models in the benchmark. Tags were checked on https://ollama.com/library on 2026-11-27:
+# every candidate supports tool calling (a model without it cannot be the chat agent).
+#
+#   name    label in the tables      model   the Ollama tag      think   thinking mode on/off (models that have one)
+
+candidates:
+  - {name: "qwen2.5:7b",        model: "qwen2.5:7b",        note: "our baseline; solid tool use, slow on CPU"}
+  - {name: "llama3.2:3b",       model: "llama3.2:3b",       note: "small and fast; invented content in the first tests"}
+  - {name: "qwen3:4b-instruct", model: "qwen3:4b-instruct", note: "non-thinking 2507 build; skipped steps in the first tests"}
+  - {name: "qwen3:8b",          model: "qwen3:8b",          think: false, note: "hybrid thinking model, thinking OFF"}
+  - {name: "granite4:7b-a1b-h", model: "granite4:7b-a1b-h", note: "IBM Granite 4 'tiny-h': 7B mixture-of-experts with ~1B active parameters, made to be fast"}
+  - {name: "granite4:3b",       model: "granite4:3b",       note: "IBM Granite 4 3B"}
+
+# Only tested in stage 2 (they would double the screening time): thinking ON for the hybrid model.
+deep_extra:
+  - {name: "qwen3:8b+think",    model: "qwen3:8b",          think: true, note: "same model with thinking ON: effect on latency and accuracy"}
+
+# Left out on purpose (and why):
+skipped:
+  qwen3:4b: "this tag is the thinking-ONLY build: it reasons for minutes (715 s in our first test); use qwen3:4b-instruct"
+  granite4.2:8b: "the tag does not exist on the Ollama library (the Granite 4 family has tiny-h / micro / small-h tags)"
+  gemma3:12b: "~8 GB; would push the other models out of memory; to be tested alone later if time allows"
+  gpt-oss:20b: "~13 GB; does not fit next to the embedding model and the browser on a 16 GB laptop"

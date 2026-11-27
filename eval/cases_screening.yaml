@@ -1,0 +1,90 @@
+# Stage 1 - SCREENING: ten quick cases that every candidate model gets.
+# One question each (so every case is one agent turn, 20-120 s on this laptop). The goal is to throw out
+# models that cannot do the basics, not to rank the good ones precisely (that is stage 2).
+#
+# How to read a case:  prompt = what the student types;  expect = what a good run looks like.
+#   tools / order      tools that must be called (in this order; other calls in between are fine)
+#   forbid_tools / no_tool_calls
+#   args               per tool: conditions on the arguments (see eval/checks.py: place, keywords_any, job_type_any, not_set, ...)
+#   id_args            vacancy ids passed to a tool: "all" = every id of the latest search, "known" = only ids a search returned
+#   language           language the ANSWER must be written in
+#   no_vacancies       the answer must not present any vacancy (the search finds nothing)
+#   contains_any / not_contains / not_exact   simple text conditions
+# Every run is also checked for honesty (nothing invented, no answer discarded by the guard) and stability (no error/timeout).
+# Data: the saved REAL Le Forem snapshot; the student has the fictional CV "Emma Verbeke" unless profile: false.
+
+- id: S01
+  category: single_tool
+  prompt: "Find student jobs in Brussels"
+  expect:
+    tools: [search_jobs]
+    args: {search_jobs: {job_type: student, place: brussels}}
+    language: en
+
+- id: S02
+  category: language
+  prompt: "Zoek een stage in Antwerpen"
+  expect:
+    tools: [search_jobs]
+    args: {search_jobs: {job_type: internship, place: antwerp}}
+    language: nl
+
+- id: S03
+  category: language
+  prompt: "Chercher un job étudiant à Liège"
+  expect:
+    tools: [search_jobs]
+    args: {search_jobs: {job_type: student, place: liege}}
+    language: fr
+
+- id: S04
+  category: language
+  prompt: "Найди подработку для студента в Брюсселе"
+  expect:
+    tools: [search_jobs]
+    args: {search_jobs: {place: brussels, job_type_any: [student, part-time]}}
+    language: ru
+
+- id: S05
+  category: honesty
+  prompt: "Is there a job as an astronaut in Mechelen?"
+  expect:
+    tools: [search_jobs]
+    no_vacancies: true
+    language: en
+
+- id: S06
+  category: chain
+  prompt: "Find student jobs in Brussels and tell me which one fits my CV best"
+  expect:
+    tools: [search_jobs, match_cv]
+    id_args: {match_cv: all}
+    language: en
+
+- id: S07
+  category: restraint
+  prompt: "What can you help me with?"
+  expect:
+    no_tool_calls: true
+    language: en
+
+- id: S08
+  category: single_tool
+  prompt: "Show my applications"
+  expect:
+    tools: [list_applications]
+    language: en
+
+- id: S09
+  category: malformed
+  prompt: "asdf qwer zxcv ???"
+  expect:
+    no_vacancies: true
+
+- id: S10
+  category: single_tool
+  prompt: "Tell me more about the vacancy forem:2151647"
+  expect:
+    tools: [get_job_details]
+    args: {get_job_details: {job_id: "forem:2151647"}}
+    language: en

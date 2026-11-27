@@ -1,0 +1,25 @@
+# How the final score of a model is computed (stage 1 and stage 2).
+#
+# Every metric is first turned into 0..100, then the weighted sum is taken (weights add up to 1.0).
+# The weights say what matters for THIS application: a student must get honest, correct answers; speed matters
+# for the live demo but a fast wrong model is worthless, so honesty and correct tool use weigh the most.
+# Change the numbers and run  python -m eval.report  again: no model has to be re-run.
+
+weights:
+  correct_tool: 0.20       # % of cases where the right tools were called (and forbidden ones were not)
+  valid_args: 0.10         # half: arguments as expected; half: tool calls accepted by the tool (no validation error)
+  multistep: 0.20          # % of chain cases completed (search -> match / save / details with the right ids)
+  language: 0.10           # % of answers written in the language of the question
+  honesty: 0.20            # % of runs with nothing invented (no answer discarded by the guard, nothing unverifiable)
+  speed: 0.10              # average time per case (see speed_reference_s)
+  stability: 0.05          # % of runs without error, timeout or empty answer
+  memory_footprint: 0.05   # size of the model in memory (see memory_reference_gb)
+
+normalization:
+  speed_reference_s: 60    # an average case in 60 s or faster scores 100, slower scores proportionally less
+  memory_reference_gb: 12  # a model that needs 12 GB or more scores 0 (this laptop has 16 GB for everything)
+
+# Not in the weighted score (reported next to it):
+#   p95 latency, tokens per second, prompt tokens, how often the guard had to discard an answer,
+#   the cv_analyst scores (name, skills recall/precision, invented items) and the writer scores
+#   (automatic letter checks + the manual rubric in docs/letter_rubric.md).

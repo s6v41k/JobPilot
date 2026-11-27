@@ -1,6 +1,8 @@
 """Tool 2: get_job_details - everything we know about one vacancy."""
 from __future__ import annotations
 
+import json
+
 from pydantic import BaseModel, Field
 
 from app import db
@@ -17,10 +19,26 @@ class JobDetailsArgs(BaseModel):
     job_id: str = Field(description="The vacancy id exactly as returned by search_jobs, e.g. 'forem:2151647'.")
 
 
+def _from_local_list(conn, job_id: str) -> dict | None:
+    """A Le Forem id we have not looked at in this session may still be in the local copy of the dataset."""
+    from app.providers.forem import ForemProvider
+    source, _, number = job_id.partition(":")
+    if source != "forem" or not number.isdigit():
+        return None
+    row = conn.execute("SELECT raw FROM forem_offers WHERE number = ?", (number,)).fetchone()
+    if not row:
+        return None
+    jobs = ForemProvider().parse({"results": [json.loads(row["raw"])]})
+    if not jobs:
+        return None
+    db.upsert_job(conn, jobs[0].to_row())                      # remember it: match_cv, tracker and letters need it
+    return db.get_job(conn, jobs[0].id)
+
+
 def find_job(job_id: str) -> dict:
-    """Load a vacancy from the local database or raise a helpful error."""
+    """Load a vacancy from the local database (or the local Le Forem list) or raise a helpful error."""
     with db.connect() as conn:
-        job = db.get_job(conn, job_id.strip())
+        job = db.get_job(conn, job_id.strip()) or _from_local_list(conn, job_id.strip())
     if not job:
         raise LookupError(f"No vacancy with id '{job_id}'. Use search_jobs first and copy the id exactly "
                           "(it looks like forem:123456).")

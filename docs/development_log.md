@@ -25,7 +25,7 @@ test details in [testing.md](testing.md).
 | 13 | Pre-flight check and model warm-up | done |
 | 13b | Demo mode: prepare data, record/replay real runs, demo script | done |
 | 14 | Agent teams: one model per job, runtime switching | done |
-| 15 | Benchmark (two stages) and model selection | |
+| 15 | Benchmark (two stages) and model selection | machinery done; measurements next |
 | 16 | Memory (rolling summary, `num_ctx`) and RAG knowledge tool | |
 | 17 | Map and watchlist | |
 | 18 | README, final docs, polish | |
@@ -306,3 +306,27 @@ Both are covered by tests (the language guesser, the hint, the one-time rule tha
 2. `qwen3:4b-instruct` set `language="en"` (the *user's* language) on the search, which hid every Dutch/French vacancy, and then told the user "no student jobs found".
    Now a search that returns nothing with a language filter is repeated without it (before any Adzuna call) with a note.
 3. A faulty memory comparison: my first "lean tools are 2x faster" came from one run under memory pressure. Rechecked cleanly (unloading all models before each run): no difference. Lesson written in the experiments log.
+
+## Commit 15 - The benchmark machinery (this commit; the measurements follow in the next one)
+**What**
+- `python -m eval.benchmark list | screening | deep | cv | letters` and `python -m eval.report`.
+- **Stage 1 - screening**: 10 quick cases (`eval/cases_screening.yaml`) on every candidate, 2 repeats each. **Stage 2 - deep**: 24 cases (`cases_deep.yaml`) on the best models, 3 repeats:
+  single-tool requests, 3 languages + Russian, multi-step chains (search -> match / save / details / track), honesty (nothing to find, no CV uploaded), restraint (must *not* call a tool),
+  malformed and hostile input (gibberish, prompt injection, SQL text), and **memory** (two-turn cases run once with the conversation kept and once forgotten).
+- **Role benchmarks** for the other two model jobs: `cv` (the model alone fills the profile of the two fictional CVs; scored on name, city, skills recall and precision, exact languages, invented items - *without* the rule-based safety net)
+  and `letters` (automatic checks - length, language, no placeholders, no invented school, no list of technologies - and all letters saved to `letters_for_review.md` for the **manual rubric** in `docs/letter_rubric.md`).
+- **Scoring is automatic and explainable** (`eval/checks.py`): for every run, from the agent's events, *were the right tools called (in order), were the arguments right, did the match cover all vacancies of the search,
+  is the answer in the right language, was anything invented (answer discarded by the guard, unverifiable claim, a vacancy listed when there are none), did it finish without error or timeout*.
+  Metrics: right tools %, valid args %, multi-step %, language %, honesty %, speed (average and p95 seconds), tokens/s, stability %, memory (GB); the **weighted final score** comes from `eval/weights.yaml`
+  (honesty 20 %, right tools 20 %, multi-step 20 %, the rest smaller). Change the weights and re-run `eval.report`: no model has to run again.
+- `eval/report.py` writes `docs/model_selection.md` (only the generated block; the pros/cons and the final justification are written by hand) and two charts in `docs/img/`: ranked bars of the score +
+  speed-against-quality, and a table-heatmap of every metric.
+**Why it is built like this - lessons from earlier sections of the experiments log:** one model per process start with all others unloaded and a warm-up that is not timed (memory pressure fakes results);
+**repeats** (the same setup took 108 s and 220 s); real data from the saved snapshot, offline, no Adzuna call; a per-case time limit; **results are appended after every run and finished runs are skipped**, because a full run takes hours and must be resumable;
+scoring from *events*, not from reading answers.
+**Candidates** (`eval/candidates.yaml`, tags and tool support checked on the Ollama library **and** with `ollama show`): `qwen2.5:7b`, `llama3.2:3b`, `qwen3:4b-instruct`, `qwen3:8b` (thinking off; thinking on is tested in stage 2),
+`granite4:7b-a1b-h` (a 7B mixture-of-experts with ~1B active parameters, built for speed), `granite4:3b`. Left out with a written reason: `qwen3:4b` (thinking-only), `granite4.2:8b` (**the tag does not exist**; the brief had it),
+`gemma3:12b` and `gpt-oss:20b` (do not fit in 16 GB next to everything else).
+**Test:** `tests/test_eval.py` (65 tests): every scoring rule, the weighted score, the report and charts (real PNGs), the runner with a fake agent (resume, memory modes, timeout, errors, no-CV case), the cv and letter stages, and a validity check of the case files.
+**Also in this commit:** `matplotlib` added to `requirements.txt` (for the PNG charts the brief asks for); `get_job_details` can now load a Le Forem id from the local list even if this session never searched for it;
+`dominant_language()` for scoring the language of answers.

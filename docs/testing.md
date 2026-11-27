@@ -13,7 +13,7 @@ Two kinds of tests, with different purposes.
 
 ## Automated tests
 
-Run all: `.venv\Scripts\python -m pytest` (342 tests at the time of writing, plus 13 JavaScript tests).
+Run all: `.venv\Scripts\python -m pytest` (407 tests at the time of writing, plus 13 JavaScript tests).
 Rule: a commit is made only when this prints **no failures**.
 
 | File | Tests | What it protects |
@@ -30,6 +30,7 @@ Rule: a commit is made only when this prints **no failures**.
 | `test_matching.py` | 28 | skill vocabulary, language levels, score maths, `get_job_details`, `match_cv` |
 | `test_mirror.py` | 22 | local copy of the Le Forem data: bulk download, failures keep the old copy, word-start search, city names, expired offers, no SQL injection, freshness label |
 | `test_warmup_preflight.py` | 20 | model warm-up (state, failures never raise, no double warm-up) and the pre-flight report (Ollama down, missing model, no tool support, crashing check, exit codes) |
+| `test_eval.py` | 65 | the benchmark: scoring rules, weighted score, report + charts, runner with a fake agent (resume, memory modes, timeout), cv and letter stages, case files |
 | `test_roles.py` | 26 | agent teams: agents.yaml loading, broken files, role resolution layers, each role really uses its model/tools, API (all-or-nothing changes) |
 | `test_demo.py` | 20 | demo mode: scenarios match the written script, recordings (save/load/safe ids), replay timing and label, vacancies stored for Save, API replay, prepare, offline environment |
 | `test_language.py` | 25 | language guess on short messages, the hidden reply-language hint, the 'must use a tool for vacancy questions' rule (once, cannot loop) |
