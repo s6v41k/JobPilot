@@ -1,0 +1,363 @@
+{
+ "__CLASS__": "Adzuna::API::Response::JobSearchResults",
+ "results": [
+  {
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "DaJobs"
+   },
+   "created": "2026-11-27T05:04:39Z",
+   "title": "Student Schoonmaakmedewerker Wellness & B&B - Ieper - Dagen in overleg",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTk4MDI5NjY4OSIsInMiOiJvTEFMSTBqcThSR2FlX2R4YlAzeE1BIn0.8zxQUAasE8y8g2xoO6ozAj5yGHffkqc3e3U8X8BJLvU",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.be/details/5980296689?utm_medium=api&utm_source=fe20cf49",
+   "salary_is_predicted": "0",
+   "description": "Wil je je projecten financieren en je cv een boost geven nog vóór het einde van je studies? Dan is DaJobs (voormalig Daoust) het bedrijf voor jou! Met meer dan 70 jaar ervaring kennen we de arbeidsmarkt door en door. Maar vooral: we weten dat studeren combineren met werken flexibiliteit vraagt! Waarom DaJobs kiezen voor jouw studentenjobs? Maximale flexibiliteit : korte of lange opdrachten, tijdens vakanties, in het weekend of deeltijds. Wij passen ons aan jouw planning aan. Ervaring = toekomst…",
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "display_name": "Heuvelland, Ieper",
+    "area": [
+     "België",
+     "West-Vlaanderen (Provincie)",
+     "Ieper",
+     "Heuvelland"
+    ]
+   },
+   "id": "5980296689",
+   "category": {
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "unknown",
+    "label": "Unknown"
+   },
+   "latitude": 50.81983,
+   "longitude": 2.83222
+  },
+  {
+   "category": {
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "unknown",
+    "label": "Unknown"
+   },
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "display_name": "Grimbergen, Halle-Vilvoorde",
+    "area": [
+     "België",
+     "Vlaams-Brabant (Provincie)",
+     "Halle-Vilvoorde",
+     "Grimbergen"
+    ]
+   },
+   "id": "5980296693",
+   "description": "Klanten met een glimlach ontvangen en hun bestelling opnemen aan de toog, de drive en de bestelzuilen. Burgers, frieten en dranken bereiden volgens de kwaliteits- en hygiënenormen van Burger King. Zorgen voor een snelle en verzorgde service, in de zaal en aan de drive. De kassa bedienen en betalingen afhandelen. De werkposten, de zaal en de omgeving van het restaurant netjes houden. De regels rond hygiëne en voedselveiligheid (HACCP) naleven. Accueillir les clients avec le sourire et prendre le…",
+   "salary_is_predicted": "0",
+   "longitude": 4.35623,
+   "latitude": 50.9102,
+   "created": "2026-11-27T05:04:39Z",
+   "company": {
+    "display_name": "LOL XL",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "redirect_url": "https://www.adzuna.be/details/5980296693?utm_medium=api&utm_source=fe20cf49",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTk4MDI5NjY5MyIsInMiOiJvTEFMSTBqcThSR2FlX2R4YlAzeE1BIn0.4HzMMSgYnD3oWCWyUAs4iIQ7qrLIJ8B6HpD6FZl6QlY",
+   "title": "Étudiant(e) Polyvalent(e) – Burger King Heysel (H/F)"
+  },
+  {
+   "salary_is_predicted": "0",
+   "description": "Wij zoeken een gemotiveerde student(e) kapper om ons team te versterken!  Elke vrijdag en zaterdag  Van 9u tot 14u  Enige ervaring en basiskennis van knippen, krullen inzetten en andere kapperstechnieken zijn vereist. Ben jij enthousiast, handig en heb je een passie voor haar? Dan zijn wij op zoek naar jou!  Interesse? Solliciteer snel! 13.0 EUR par heure ONZE MISSIE EN VISIE Bij Xtra bouwen we bruggen tussen ondernemingen en gemotiveerde kandidaten. Hierbij willen we: Een tastbare meerwaarde b…",
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "België",
+     "Antwerpen (Provincie)",
+     "Antwerpen",
+     "Borsbeek"
+    ],
+    "display_name": "Borsbeek, Antwerpen"
+   },
+   "id": "5980296682",
+   "category": {
+    "label": "Unknown",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "unknown"
+   },
+   "latitude": 51.22171,
+   "longitude": 4.46155,
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Xtra"
+   },
+   "created": "2026-11-27T05:04:39Z",
+   "title": "Kapper",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.be/details/5980296682?utm_medium=api&utm_source=fe20cf49",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTk4MDI5NjY4MiIsInMiOiJvTEFMSTBqcThSR2FlX2R4YlAzeE1BIn0.CpWpedrvhvG40rBGYoLuMFOZn-anYpw4OU8iMq-ZLxg"
+  },
+  {
+   "longitude": 4.26386,
+   "latitude": 50.87108,
+   "description": "16 en 17 december 2026 in Brussels Gate in Groot-Bijgaarden . Je maakt groepsfoto’s van bezoekers die samen naar de beurs komen. Het gaat om een betaalde opdracht voor twee dagen . Interesse? Wie zoeken we? Een enthousiaste, goedlachse student met een eigen camera en gevoel voor fotografie. Je spreekt bezoekers spontaan aan, stelt hen op hun gemak en maakt leuke, verzorgde groepsfoto’s. 150.0 à 200.0 EUR par jour Over Landbouw-Service Landbouw-Service is de beroepsfederatie die loonwerkbedrijve…",
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "België",
+     "Vlaams-Brabant (Provincie)",
+     "Halle-Vilvoorde",
+     "Dilbeek"
+    ],
+    "display_name": "Dilbeek, Halle-Vilvoorde"
+   },
+   "category": {
+    "tag": "unknown",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "Unknown"
+   },
+   "id": "5980296678",
+   "salary_is_predicted": "0",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoib0xBTEkwanE4UkdhZV9keGJQM3hNQSIsImkiOiI1OTgwMjk2Njc4In0.JD8GN6Pltb_WgcAz3qLg7jV6omrGs2JXYFecUq0HijE",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.be/details/5980296678?utm_medium=api&utm_source=fe20cf49",
+   "title": "Fotograaf gezocht voor Contractor Days",
+   "created": "2026-11-27T05:04:39Z",
+   "company": {
+    "display_name": "Landbouw-service",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   }
+  },
+  {
+   "latitude": 50.92705,
+   "longitude": 4.42485,
+   "salary_is_predicted": "0",
+   "location": {
+    "area": [
+     "België",
+     "Vlaams-Brabant (Provincie)",
+     "Halle-Vilvoorde",
+     "Vilvoorde"
+    ],
+    "display_name": "Vilvoorde, Halle-Vilvoorde",
+    "__CLASS__": "Adzuna::API::Response::Location"
+   },
+   "id": "5980295812",
+   "category": {
+    "label": "Unknown",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "unknown"
+   },
+   "description": "Wat doe je? Bij Crazzle wordt er nooit om echt geld gespeeld: dit is geen gokken, maar een casino als themafeest. De gasten krijgen speelbiljetten bij de start en spelen voor de fun. Fake money, real fun! Als animator-croupier sta je aan een van onze casinotafels op bedrijfsfeesten, personeelsfeesten en teambuildings. Je legt de spellen uit, draait de roulette of deelt de kaarten, en zorgt dat de gasten zich amuseren. Samen met de ploeg bouw je de tafels op en achteraf weer af. Zo verloopt een …",
+   "title": "Dringend studenten gezocht",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoib0xBTEkwanE4UkdhZV9keGJQM3hNQSIsImkiOiI1OTgwMjk1ODEyIn0.hcQvUAxEVvTW_8j341SktYTNR1KiEFZkjxaN3wVwCgs",
+   "redirect_url": "https://www.adzuna.be/details/5980295812?utm_medium=api&utm_source=fe20cf49",
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Crazzle Casino Events"
+   },
+   "created": "2026-11-27T05:04:16Z"
+  },
+  {
+   "description": "ZAS. Samen maken we zorg sterker. Drijf je mee? Als elektricien zorg je mee voor een veilige en betrouwbare technische werking van ZAS Middelheim. Je onderhoudt en herstelt elektrische en andere technische installaties, zodat de zorgverlening kan blijven draaien. WAT? Contract onbepaalde duur ZAS Middelheim (2020, Antwerpen) 38 uur/week (100%) OVER DE JOB Technische installaties – Je onderhoudt en herstelt elektrische en technische installaties. Elektriciteit – Je werkt aan zwakstroom: zoals br…",
+   "location": {
+    "display_name": "Antwerpen",
+    "area": [
+     "België",
+     "Antwerpen (Provincie)",
+     "Antwerpen",
+     "Antwerpen"
+    ],
+    "__CLASS__": "Adzuna::API::Response::Location"
+   },
+   "category": {
+    "label": "IT ICT vacatures",
+    "tag": "it-jobs",
+    "__CLASS__": "Adzuna::API::Response::Category"
+   },
+   "id": "5980295772",
+   "salary_is_predicted": "0",
+   "longitude": 4.383916,
+   "latitude": 51.188738,
+   "created": "2026-11-27T05:04:10Z",
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Ziekenhuis aan de Stroom"
+   },
+   "redirect_url": "https://www.adzuna.be/details/5980295772?utm_medium=api&utm_source=fe20cf49",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoib0xBTEkwanE4UkdhZV9keGJQM3hNQSIsImkiOiI1OTgwMjk1NzcyIn0.oBBYm36fXYrGdhC4idiib23S-40MMUtAvxh1HxHVgaI",
+   "title": "Elektricien"
+  },
+  {
+   "title": "Elektricien",
+   "redirect_url": "https://www.adzuna.be/details/5980295767?utm_medium=api&utm_source=fe20cf49",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTk4MDI5NTc2NyIsInMiOiJvTEFMSTBqcThSR2FlX2R4YlAzeE1BIn0.vdoPUb7HvHoltiRXMi10Td69lQqJVJu7WM55Z-oSEiM",
+   "company": {
+    "display_name": "Ziekenhuis aan de Stroom",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "created": "2026-11-27T05:04:10Z",
+   "latitude": 51.24214,
+   "longitude": 4.44104,
+   "salary_is_predicted": "0",
+   "description": "ZAS. Samen maken we zorg sterker. Drijf je mee? Als elektricien zorg je mee voor een veilige en betrouwbare technische werking van ZAS Middelheim. Je onderhoudt en herstelt elektrische en andere technische installaties, zodat de zorgverlening kan blijven draaien. WAT? Contract onbepaalde duur ZAS Palfijn (2170, Merksem) 38 uur/week (100%) OVER DE JOB Technische installaties – Je onderhoudt en herstelt elektrische en technische installaties. Elektriciteit – Je werkt aan zwakstroom: zoals brandde…",
+   "location": {
+    "display_name": "Antwerpen",
+    "area": [
+     "België",
+     "Antwerpen (Provincie)",
+     "Antwerpen",
+     "Antwerpen"
+    ],
+    "__CLASS__": "Adzuna::API::Response::Location"
+   },
+   "id": "5980295767",
+   "category": {
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "it-jobs",
+    "label": "IT ICT vacatures"
+   }
+  },
+  {
+   "created": "2026-11-27T05:04:10Z",
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Ziekenhuis aan de Stroom"
+   },
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTk4MDI5NTc2OCIsInMiOiJvTEFMSTBqcThSR2FlX2R4YlAzeE1BIn0.BnzgPDmiWox4EThhFfiC8rbdb4aZZ4BLiklLp3EEGXU",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.be/details/5980295768?utm_medium=api&utm_source=fe20cf49",
+   "title": "Technieker bouw",
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "display_name": "Antwerpen",
+    "area": [
+     "België",
+     "Antwerpen (Provincie)",
+     "Antwerpen",
+     "Antwerpen"
+    ]
+   },
+   "category": {
+    "label": "IT ICT vacatures",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "it-jobs"
+   },
+   "id": "5980295768",
+   "description": "ZAS. Samen maken we zorg sterker. Drijf je mee? Als technieker bouw zorg je voor het preventief onderhoud en herstel van onze gebouwen. Je zet je technische kennis breed in en werkt samen met je team aan een veilige, goed onderhouden omgeving. WAT? Contract onbepaalde duur ZAS Palfijn (2170, Merksem) 38 uur/week (100%) OVER DE JOB Technisch onderhoud – Je voert bouwkundige preventieve onderhoudswerken uit aan o.a. infrastructuur, brandcompartimetering, signalisatie, (brand) deuren,  Teamonderst…",
+   "salary_is_predicted": "0",
+   "longitude": 4.44104,
+   "latitude": 51.24214
+  },
+  {
+   "description": "Data Scientist Intern Location: Hybrid – Brussels | Duration: 3 months | Team: Tech BE SRE / AI & Data About the Team Join ING Belgium’s Tech BE SRE organization, where data, AI and engineering come together to solve real business and technology challenges. You will work with Data Scientists, AI Engineers and platform teams in an agile, multidisciplinary environment. The internship is hands-on and learning-focused, while delivering tangible value. Internship Projects You will work mainly on two…",
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "België"
+    ],
+    "display_name": "België"
+   },
+   "category": {
+    "label": "Unknown",
+    "tag": "unknown",
+    "__CLASS__": "Adzuna::API::Response::Category"
+   },
+   "id": "5979850012",
+   "salary_is_predicted": "0",
+   "created": "2026-11-26T17:41:03Z",
+   "contract_time": "full_time",
+   "company": {
+    "display_name": "ING",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTk3OTg1MDAxMiIsInMiOiJvTEFMSTBqcThSR2FlX2R4YlAzeE1BIn0.zi8Apf6tCMoJmlKksX3_8HNq1nt9G5DyUZv_Qq_CtYE",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.be/details/5979850012?utm_medium=api&utm_source=fe20cf49",
+   "title": "Data scientist(AI Automation)-2"
+  },
+  {
+   "description": "Calling all originals: At Levi Strauss & Co., you can be yourself — and be part of something bigger. We’re a community of people who forge our own paths, challenge the ordinary, and work to leave the world better than we found it. We believe that our differences make us stronger. So add your voice. Make an impact. Find your fit — and your future About the Internship Our internship programme offers a unique opportunity to immerse yourself in the world of Levi's®. You'll work on meaningful busine…",
+   "id": "5979848356",
+   "location": {
+    "display_name": "België",
+    "area": [
+     "België"
+    ],
+    "__CLASS__": "Adzuna::API::Response::Location"
+   },
+   "category": {
+    "label": "Unknown",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "unknown"
+   },
+   "salary_is_predicted": "0",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.be/details/5979848356?utm_medium=api&utm_source=fe20cf49",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoib0xBTEkwanE4UkdhZV9keGJQM3hNQSIsImkiOiI1OTc5ODQ4MzU2In0.OtBgl_jCrkGplyU3rJipu4btMx8lAoNMtactaf_Sg4Q",
+   "salary_min": 14400,
+   "title": "Talent Acquisition Intern",
+   "created": "2026-11-26T17:38:33Z",
+   "contract_time": "full_time",
+   "salary_max": 14400,
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Levi Strauss"
+   }
+  },
+  {
+   "company": {
+    "display_name": "Smals",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "created": "2026-11-26T14:34:46Z",
+   "title": "Test Manager",
+   "redirect_url": "https://www.adzuna.be/details/5979716767?utm_medium=api&utm_source=fe20cf49",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTk3OTcxNjc2NyIsInMiOiJvTEFMSTBqcThSR2FlX2R4YlAzeE1BIn0.kRSVipW7GfdLMqZc1IRCorh0Yy5fEos7OG-z57-wdyM",
+   "salary_is_predicted": "0",
+   "description": "Smals réalise des projets ICT innovants dans l'e-gouvernement et l'e-santé pour les institutions de la sécurité sociale et des soins de santé. Pour Smals, \"ICT for society\" n'est pas qu'un slogan : tous nos projets profitent à la société. Smals contribue au portail de la sécurité sociale et à la plateforme eHealth. Les projets novateurs sont notre spécialité : Student@Work, Orgadon, digitalisation des prescriptions médicales, consultation de l'historique de la carrière, transmission plus rapide…",
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "België"
+    ],
+    "display_name": "België"
+   },
+   "id": "5979716767",
+   "category": {
+    "tag": "it-jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "IT ICT vacatures"
+   }
+  },
+  {
+   "title": "Azure Engineer",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoib0xBTEkwanE4UkdhZV9keGJQM3hNQSIsImkiOiI1OTc5NzE2NzI0In0.vGGCLjcY4VG8rS6EH_-ZH5ON9D1LIRO23t8dabpRbJQ",
+   "redirect_url": "https://www.adzuna.be/details/5979716724?utm_medium=api&utm_source=fe20cf49",
+   "company": {
+    "display_name": "Smals",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "created": "2026-11-26T14:34:45Z",
+   "salary_is_predicted": "0",
+   "description": "Smals réalise des projets ICT innovants dans l'e-gouvernement et l'e-santé pour les institutions de la sécurité sociale et des soins de santé. Pour Smals, \"ICT for society\" n'est pas qu'un slogan : tous nos projets profitent à la société. Smals contribue au portail de la sécurité sociale et à la plateforme eHealth. Les projets novateurs sont notre spécialité : Student@Work, Orgadon, digitalisation des prescriptions médicales, consultation de l'historique de la carrière, transmission plus rapide…",
+   "location": {
+    "display_name": "België",
+    "area": [
+     "België"
+    ],
+    "__CLASS__": "Adzuna::API::Response::Location"
+   },
+   "id": "5979716724",
+   "category": {
+    "label": "IT ICT vacatures",
+    "tag": "it-jobs",
+    "__CLASS__": "Adzuna::API::Response::Category"
+   }
+  }
+ ],
+ "mean": 38221.41,
+ "count": 2070
+}

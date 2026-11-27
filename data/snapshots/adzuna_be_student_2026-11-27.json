@@ -1,0 +1,1513 @@
+{
+ "__CLASS__": "Adzuna::API::Response::JobSearchResults",
+ "results": [
+  {
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "DaJobs"
+   },
+   "created": "2026-11-27T05:04:39Z",
+   "title": "Student Schoonmaakmedewerker Wellness & B&B - Ieper - Dagen in overleg",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTk4MDI5NjY4OSIsInMiOiJvTEFMSTBqcThSR2FlX2R4YlAzeE1BIn0.8zxQUAasE8y8g2xoO6ozAj5yGHffkqc3e3U8X8BJLvU",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.be/details/5980296689?utm_medium=api&utm_source=fe20cf49",
+   "salary_is_predicted": "0",
+   "description": "Wil je je projecten financieren en je cv een boost geven nog vóór het einde van je studies? Dan is DaJobs (voormalig Daoust) het bedrijf voor jou! Met meer dan 70 jaar ervaring kennen we de arbeidsmarkt door en door. Maar vooral: we weten dat studeren combineren met werken flexibiliteit vraagt! Waarom DaJobs kiezen voor jouw studentenjobs? Maximale flexibiliteit : korte of lange opdrachten, tijdens vakanties, in het weekend of deeltijds. Wij passen ons aan jouw planning aan. Ervaring = toekomst…",
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "display_name": "Heuvelland, Ieper",
+    "area": [
+     "België",
+     "West-Vlaanderen (Provincie)",
+     "Ieper",
+     "Heuvelland"
+    ]
+   },
+   "id": "5980296689",
+   "category": {
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "unknown",
+    "label": "Unknown"
+   },
+   "latitude": 50.81983,
+   "longitude": 2.83222
+  },
+  {
+   "category": {
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "unknown",
+    "label": "Unknown"
+   },
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "display_name": "Grimbergen, Halle-Vilvoorde",
+    "area": [
+     "België",
+     "Vlaams-Brabant (Provincie)",
+     "Halle-Vilvoorde",
+     "Grimbergen"
+    ]
+   },
+   "id": "5980296693",
+   "description": "Klanten met een glimlach ontvangen en hun bestelling opnemen aan de toog, de drive en de bestelzuilen. Burgers, frieten en dranken bereiden volgens de kwaliteits- en hygiënenormen van Burger King. Zorgen voor een snelle en verzorgde service, in de zaal en aan de drive. De kassa bedienen en betalingen afhandelen. De werkposten, de zaal en de omgeving van het restaurant netjes houden. De regels rond hygiëne en voedselveiligheid (HACCP) naleven. Accueillir les clients avec le sourire et prendre le…",
+   "salary_is_predicted": "0",
+   "longitude": 4.35623,
+   "latitude": 50.9102,
+   "created": "2026-11-27T05:04:39Z",
+   "company": {
+    "display_name": "LOL XL",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "redirect_url": "https://www.adzuna.be/details/5980296693?utm_medium=api&utm_source=fe20cf49",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTk4MDI5NjY5MyIsInMiOiJvTEFMSTBqcThSR2FlX2R4YlAzeE1BIn0.4HzMMSgYnD3oWCWyUAs4iIQ7qrLIJ8B6HpD6FZl6QlY",
+   "title": "Étudiant(e) Polyvalent(e) – Burger King Heysel (H/F)"
+  },
+  {
+   "salary_is_predicted": "0",
+   "description": "Wij zoeken een gemotiveerde student(e) kapper om ons team te versterken!  Elke vrijdag en zaterdag  Van 9u tot 14u  Enige ervaring en basiskennis van knippen, krullen inzetten en andere kapperstechnieken zijn vereist. Ben jij enthousiast, handig en heb je een passie voor haar? Dan zijn wij op zoek naar jou!  Interesse? Solliciteer snel! 13.0 EUR par heure ONZE MISSIE EN VISIE Bij Xtra bouwen we bruggen tussen ondernemingen en gemotiveerde kandidaten. Hierbij willen we: Een tastbare meerwaarde b…",
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "België",
+     "Antwerpen (Provincie)",
+     "Antwerpen",
+     "Borsbeek"
+    ],
+    "display_name": "Borsbeek, Antwerpen"
+   },
+   "id": "5980296682",
+   "category": {
+    "label": "Unknown",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "unknown"
+   },
+   "latitude": 51.22171,
+   "longitude": 4.46155,
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Xtra"
+   },
+   "created": "2026-11-27T05:04:39Z",
+   "title": "Kapper",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.be/details/5980296682?utm_medium=api&utm_source=fe20cf49",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTk4MDI5NjY4MiIsInMiOiJvTEFMSTBqcThSR2FlX2R4YlAzeE1BIn0.CpWpedrvhvG40rBGYoLuMFOZn-anYpw4OU8iMq-ZLxg"
+  },
+  {
+   "longitude": 4.26386,
+   "latitude": 50.87108,
+   "description": "16 en 17 december 2026 in Brussels Gate in Groot-Bijgaarden . Je maakt groepsfoto’s van bezoekers die samen naar de beurs komen. Het gaat om een betaalde opdracht voor twee dagen . Interesse? Wie zoeken we? Een enthousiaste, goedlachse student met een eigen camera en gevoel voor fotografie. Je spreekt bezoekers spontaan aan, stelt hen op hun gemak en maakt leuke, verzorgde groepsfoto’s. 150.0 à 200.0 EUR par jour Over Landbouw-Service Landbouw-Service is de beroepsfederatie die loonwerkbedrijve…",
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "België",
+     "Vlaams-Brabant (Provincie)",
+     "Halle-Vilvoorde",
+     "Dilbeek"
+    ],
+    "display_name": "Dilbeek, Halle-Vilvoorde"
+   },
+   "category": {
+    "tag": "unknown",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "Unknown"
+   },
+   "id": "5980296678",
+   "salary_is_predicted": "0",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoib0xBTEkwanE4UkdhZV9keGJQM3hNQSIsImkiOiI1OTgwMjk2Njc4In0.JD8GN6Pltb_WgcAz3qLg7jV6omrGs2JXYFecUq0HijE",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.be/details/5980296678?utm_medium=api&utm_source=fe20cf49",
+   "title": "Fotograaf gezocht voor Contractor Days",
+   "created": "2026-11-27T05:04:39Z",
+   "company": {
+    "display_name": "Landbouw-service",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   }
+  },
+  {
+   "latitude": 50.92705,
+   "longitude": 4.42485,
+   "salary_is_predicted": "0",
+   "location": {
+    "area": [
+     "België",
+     "Vlaams-Brabant (Provincie)",
+     "Halle-Vilvoorde",
+     "Vilvoorde"
+    ],
+    "display_name": "Vilvoorde, Halle-Vilvoorde",
+    "__CLASS__": "Adzuna::API::Response::Location"
+   },
+   "id": "5980295812",
+   "category": {
+    "label": "Unknown",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "unknown"
+   },
+   "description": "Wat doe je? Bij Crazzle wordt er nooit om echt geld gespeeld: dit is geen gokken, maar een casino als themafeest. De gasten krijgen speelbiljetten bij de start en spelen voor de fun. Fake money, real fun! Als animator-croupier sta je aan een van onze casinotafels op bedrijfsfeesten, personeelsfeesten en teambuildings. Je legt de spellen uit, draait de roulette of deelt de kaarten, en zorgt dat de gasten zich amuseren. Samen met de ploeg bouw je de tafels op en achteraf weer af. Zo verloopt een …",
+   "title": "Dringend studenten gezocht",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoib0xBTEkwanE4UkdhZV9keGJQM3hNQSIsImkiOiI1OTgwMjk1ODEyIn0.hcQvUAxEVvTW_8j341SktYTNR1KiEFZkjxaN3wVwCgs",
+   "redirect_url": "https://www.adzuna.be/details/5980295812?utm_medium=api&utm_source=fe20cf49",
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Crazzle Casino Events"
+   },
+   "created": "2026-11-27T05:04:16Z"
+  },
+  {
+   "description": "ZAS. Samen maken we zorg sterker. Drijf je mee? Als elektricien zorg je mee voor een veilige en betrouwbare technische werking van ZAS Middelheim. Je onderhoudt en herstelt elektrische en andere technische installaties, zodat de zorgverlening kan blijven draaien. WAT? Contract onbepaalde duur ZAS Middelheim (2020, Antwerpen) 38 uur/week (100%) OVER DE JOB Technische installaties – Je onderhoudt en herstelt elektrische en technische installaties. Elektriciteit – Je werkt aan zwakstroom: zoals br…",
+   "location": {
+    "display_name": "Antwerpen",
+    "area": [
+     "België",
+     "Antwerpen (Provincie)",
+     "Antwerpen",
+     "Antwerpen"
+    ],
+    "__CLASS__": "Adzuna::API::Response::Location"
+   },
+   "category": {
+    "label": "IT ICT vacatures",
+    "tag": "it-jobs",
+    "__CLASS__": "Adzuna::API::Response::Category"
+   },
+   "id": "5980295772",
+   "salary_is_predicted": "0",
+   "longitude": 4.383916,
+   "latitude": 51.188738,
+   "created": "2026-11-27T05:04:10Z",
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Ziekenhuis aan de Stroom"
+   },
+   "redirect_url": "https://www.adzuna.be/details/5980295772?utm_medium=api&utm_source=fe20cf49",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoib0xBTEkwanE4UkdhZV9keGJQM3hNQSIsImkiOiI1OTgwMjk1NzcyIn0.oBBYm36fXYrGdhC4idiib23S-40MMUtAvxh1HxHVgaI",
+   "title": "Elektricien"
+  },
+  {
+   "title": "Elektricien",
+   "redirect_url": "https://www.adzuna.be/details/5980295767?utm_medium=api&utm_source=fe20cf49",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTk4MDI5NTc2NyIsInMiOiJvTEFMSTBqcThSR2FlX2R4YlAzeE1BIn0.vdoPUb7HvHoltiRXMi10Td69lQqJVJu7WM55Z-oSEiM",
+   "company": {
+    "display_name": "Ziekenhuis aan de Stroom",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "created": "2026-11-27T05:04:10Z",
+   "latitude": 51.24214,
+   "longitude": 4.44104,
+   "salary_is_predicted": "0",
+   "description": "ZAS. Samen maken we zorg sterker. Drijf je mee? Als elektricien zorg je mee voor een veilige en betrouwbare technische werking van ZAS Middelheim. Je onderhoudt en herstelt elektrische en andere technische installaties, zodat de zorgverlening kan blijven draaien. WAT? Contract onbepaalde duur ZAS Palfijn (2170, Merksem) 38 uur/week (100%) OVER DE JOB Technische installaties – Je onderhoudt en herstelt elektrische en technische installaties. Elektriciteit – Je werkt aan zwakstroom: zoals brandde…",
+   "location": {
+    "display_name": "Antwerpen",
+    "area": [
+     "België",
+     "Antwerpen (Provincie)",
+     "Antwerpen",
+     "Antwerpen"
+    ],
+    "__CLASS__": "Adzuna::API::Response::Location"
+   },
+   "id": "5980295767",
+   "category": {
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "it-jobs",
+    "label": "IT ICT vacatures"
+   }
+  },
+  {
+   "created": "2026-11-27T05:04:10Z",
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Ziekenhuis aan de Stroom"
+   },
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTk4MDI5NTc2OCIsInMiOiJvTEFMSTBqcThSR2FlX2R4YlAzeE1BIn0.BnzgPDmiWox4EThhFfiC8rbdb4aZZ4BLiklLp3EEGXU",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.be/details/5980295768?utm_medium=api&utm_source=fe20cf49",
+   "title": "Technieker bouw",
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "display_name": "Antwerpen",
+    "area": [
+     "België",
+     "Antwerpen (Provincie)",
+     "Antwerpen",
+     "Antwerpen"
+    ]
+   },
+   "category": {
+    "label": "IT ICT vacatures",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "it-jobs"
+   },
+   "id": "5980295768",
+   "description": "ZAS. Samen maken we zorg sterker. Drijf je mee? Als technieker bouw zorg je voor het preventief onderhoud en herstel van onze gebouwen. Je zet je technische kennis breed in en werkt samen met je team aan een veilige, goed onderhouden omgeving. WAT? Contract onbepaalde duur ZAS Palfijn (2170, Merksem) 38 uur/week (100%) OVER DE JOB Technisch onderhoud – Je voert bouwkundige preventieve onderhoudswerken uit aan o.a. infrastructuur, brandcompartimetering, signalisatie, (brand) deuren,  Teamonderst…",
+   "salary_is_predicted": "0",
+   "longitude": 4.44104,
+   "latitude": 51.24214
+  },
+  {
+   "title": "Technieker Sanitair/HVAC",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTk4MDI5NTc2NCIsInMiOiJvTEFMSTBqcThSR2FlX2R4YlAzeE1BIn0.7WvC4CfxAdXYFRxpbFnaO11PWtAFe7ci3VmNsr4Xb2g",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.be/details/5980295764?utm_medium=api&utm_source=fe20cf49",
+   "company": {
+    "display_name": "Ziekenhuis aan de Stroom",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "created": "2026-11-27T05:04:10Z",
+   "latitude": 51.188738,
+   "longitude": 4.383916,
+   "salary_is_predicted": "0",
+   "description": "ZAS. Samen maken we zorg sterker. Drijf je mee? Als technieker Sanitair/HVAC onderhoud en herstel je sanitaire installaties en HVAC-systemen. Zo zorg je mee voor een veilige, comfortabele en bedrijfszekere ziekenhuisomgeving. WAT? Contract onbepaalde duur ZAS Middelheim (2020, Antwerpen) 38 uur/week (100%) OVER DE JOB Onderhoud & herstellingen – Onderhoud & herstellingen – Je onderhoudt en herstelt alle hydraulische installaties, zoals sanitair, koel-, verwarmings- en luchtinstallaties en medis…",
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "display_name": "Antwerpen",
+    "area": [
+     "België",
+     "Antwerpen (Provincie)",
+     "Antwerpen",
+     "Antwerpen"
+    ]
+   },
+   "id": "5980295764",
+   "category": {
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "it-jobs",
+    "label": "IT ICT vacatures"
+   }
+  },
+  {
+   "longitude": 4.35084,
+   "latitude": 51.17456,
+   "description": "ZAS. Samen maken we zorg sterker. Drijf je mee? Als elektricien zorg je mee voor een veilige en betrouwbare technische werking van ZAS Hoge Beuken. Je onderhoudt en herstelt elektrische en andere technische installaties, zodat de zorgverlening kan blijven draaien. WAT? Contract onbepaalde duur ZAS Hoge Beuken (2660, Hoboken) 38 uur/week (100%) OVER DE JOB Technische installaties – Je onderhoudt en herstelt elektrische en technische installaties. Elektriciteit – Je werkt aan zwakstroom: zoals br…",
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "België",
+     "Antwerpen (Provincie)",
+     "Antwerpen",
+     "Hemiksem"
+    ],
+    "display_name": "Hemiksem, Antwerpen"
+   },
+   "category": {
+    "tag": "it-jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "IT ICT vacatures"
+   },
+   "id": "5980295773",
+   "salary_is_predicted": "0",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTk4MDI5NTc3MyIsInMiOiJvTEFMSTBqcThSR2FlX2R4YlAzeE1BIn0.iShZuVG9BgnjNO4t-IYE7pLl1hhWIll0UumVVBvHUsA",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.be/details/5980295773?utm_medium=api&utm_source=fe20cf49",
+   "title": "Elektricien",
+   "created": "2026-11-27T05:04:10Z",
+   "company": {
+    "display_name": "Ziekenhuis aan de Stroom",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   }
+  },
+  {
+   "salary_max": 180,
+   "company": {
+    "display_name": "IMPACT Leuven",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "created": "2026-11-26T22:55:32Z",
+   "salary_min": 180,
+   "title": "Student Admin",
+   "redirect_url": "https://www.adzuna.be/details/5980058281?utm_medium=api&utm_source=fe20cf49",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoib0xBTEkwanE4UkdhZV9keGJQM3hNQSIsImkiOiI1OTgwMDU4MjgxIn0.oO5ovLPXBzHWmo0yhrDn3dsoklGLuQLMFf3nFmkchbc",
+   "salary_is_predicted": "0",
+   "description": "Function description We are looking for a student who can support us with cleaning up our contracts database. This is mainly about administrative support and accurate data processing, not a specialized data analyst profile. The work consists of: Reviewing standalone documents and linking them to the correct agreement. Currently, this involves approximately 2,434 documents. Verifying and completing contract data, such as the end date, contracting party and internal responsible party, according t…",
+   "location": {
+    "display_name": "Leuven",
+    "area": [
+     "België",
+     "Vlaams-Brabant (Provincie)",
+     "Leuven",
+     "Leuven"
+    ],
+    "__CLASS__": "Adzuna::API::Response::Location"
+   },
+   "category": {
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "sales-jobs",
+    "label": "Sales vacatures"
+   },
+   "id": "5980058281",
+   "latitude": 50.87927,
+   "longitude": 4.70214
+  },
+  {
+   "salary_is_predicted": "0",
+   "id": "5980045408",
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "België",
+     "Oost-Vlaanderen (Provincie)",
+     "Gent",
+     "Gent"
+    ],
+    "display_name": "Gent"
+   },
+   "category": {
+    "tag": "unknown",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "Unknown"
+   },
+   "description": "Functieomschrijving Jouw taken : Schoonmaken van kantoren, sanitair en gemeenschappelijke ruimtes Stofzuigen en dweilen van vloeren Afstoffen en onderhouden van werkruimtes Zorgen voor een nette en hygiënische omgeving Werkuren: Maandag tot en met donderdag van 16:30 tot 20:30 Periode Van 14 december tot en met 31 december Dit betreft een tijdelijke opdracht. Profiel Jouw profiel Je bent student en beschikt over een geldig studentenstatuut Je werkt nauwkeurig en hebt oog voor orde en netheid Je…",
+   "latitude": 51.05401,
+   "longitude": 3.7217,
+   "company": {
+    "display_name": "Adecco",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "created": "2026-11-26T21:49:37Z",
+   "title": "Student Schoonmaakmedewerker (m/v/x) - Gent",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTk4MDA0NTQwOCIsInMiOiJvTEFMSTBqcThSR2FlX2R4YlAzeE1BIn0.Wr3ZC3ISU5h-1lS9lfAHggletS09fnWxOlLfc4zhJAo",
+   "redirect_url": "https://www.adzuna.be/land/ad/5980045408?se=oLALI0jq8RGae_dxbP3xMA&utm_medium=api&utm_source=fe20cf49&v=F45B97A42D7CF13ABD653142BB79BF62F001AC13"
+  },
+  {
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.be/details/5980001803?utm_medium=api&utm_source=fe20cf49",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoib0xBTEkwanE4UkdhZV9keGJQM3hNQSIsImkiOiI1OTgwMDAxODAzIn0.FBHwHJhS2-3VzMBWjOPo6x2iye-jL8hoytSsF4o86Kc",
+   "title": "Inpakmedewerker Student",
+   "created": "2026-11-26T20:34:23Z",
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Asap.be"
+   },
+   "longitude": 3.79911,
+   "latitude": 51.02836,
+   "description": "Wat ga je doen? Ben je op zoek naar een boeiende studentenjob als inpakker in een 2-ploegendienst? Voor een bedrijf in de regio Destelbergen zijn we op zoek naar een enthousiaste studenten die 18 zijn en die verantwoordelijk zal zijn voor het zorgvuldig verpakken van medische producten, zoals zalven en poeders. Als inpakmedewerker zul je een breed scala aan taken uitvoeren, waaronder: - Het aanvoeren van karton en andere verpakkingsmaterialen. - Uitvoeren van visuele kwaliteitscontrole. - Verpa…",
+   "id": "5980001803",
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "België",
+     "Oost-Vlaanderen (Provincie)",
+     "Gent",
+     "Melle"
+    ],
+    "display_name": "Melle, Gent"
+   },
+   "category": {
+    "label": "Vacatures Ander of Algemeen",
+    "tag": "other-general-jobs",
+    "__CLASS__": "Adzuna::API::Response::Category"
+   },
+   "salary_is_predicted": "0"
+  },
+  {
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTk3OTkzMTUzMCIsInMiOiJvTEFMSTBqcThSR2FlX2R4YlAzeE1BIn0.rhQURmyREi-_jYeYvoU2AXqt8xrXWzYLAYSflYLH4OA",
+   "redirect_url": "https://www.adzuna.be/land/ad/5979931530?se=oLALI0jq8RGae_dxbP3xMA&utm_medium=api&utm_source=fe20cf49&v=8825271CA7C2CECF53BF19CDC9504FE7001EBC8B",
+   "title": "Salesadvisor | Modewinkel | Diest",
+   "created": "2026-11-26T18:51:21Z",
+   "company": {
+    "display_name": "Adecco",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "longitude": 5.07105,
+   "latitude": 50.97283,
+   "description": "Functieomschrijving Heb jij een passie voor mode en help je graag klanten bij het samenstellen van de perfecte outfit? Dan zijn wij op zoek naar jou! Functieomschrijving Als Sales Advisor ben jij het gezicht van onze winkel. Je verwelkomt klanten, adviseert hen bij hun aankopen en zorgt voor een aangename winkelervaring. Dankzij jouw gevoel voor mode en service help je klanten met het vinden van de juiste look. Jouw taken Klanten vriendelijk ontvangen en professioneel adviseren aan de paskamers…",
+   "category": {
+    "label": "Unknown",
+    "tag": "unknown",
+    "__CLASS__": "Adzuna::API::Response::Category"
+   },
+   "location": {
+    "area": [
+     "België",
+     "Vlaams-Brabant (Provincie)",
+     "Leuven",
+     "Diest"
+    ],
+    "display_name": "Diest, Leuven",
+    "__CLASS__": "Adzuna::API::Response::Location"
+   },
+   "id": "5979931530",
+   "salary_is_predicted": "0"
+  },
+  {
+   "created": "2026-11-26T18:51:21Z",
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Adecco"
+   },
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoib0xBTEkwanE4UkdhZV9keGJQM3hNQSIsImkiOiI1OTc5OTMxNDg5In0.1qWD_1cHf5E4Q_lR13POGkcntgJDoy1QsAVKJNprnfs",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.be/land/ad/5979931489?se=oLALI0jq8RGae_dxbP3xMA&utm_medium=api&utm_source=fe20cf49&v=27413A968281627722AB5CD3D59E111C7CC7ED8B",
+   "title": "Salesadvisor | Modewinkel | Gent",
+   "description": "Functieomschrijving Heb jij een passie voor mode en help je graag klanten bij het samenstellen van de perfecte outfit? Dan zijn wij op zoek naar jou! Functieomschrijving Als Sales Advisor ben jij het gezicht van onze winkel. Je verwelkomt klanten, adviseert hen bij hun aankopen en zorgt voor een aangename winkelervaring. Dankzij jouw gevoel voor mode en service help je klanten met het vinden van de juiste look. Jouw taken Klanten vriendelijk ontvangen en professioneel adviseren aan de paskamers…",
+   "location": {
+    "area": [
+     "België",
+     "Oost-Vlaanderen (Provincie)",
+     "Gent",
+     "Gent"
+    ],
+    "display_name": "Gent",
+    "__CLASS__": "Adzuna::API::Response::Location"
+   },
+   "id": "5979931489",
+   "category": {
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "unknown",
+    "label": "Unknown"
+   },
+   "salary_is_predicted": "0",
+   "longitude": 3.7217,
+   "latitude": 51.05401
+  },
+  {
+   "description": "Functieomschrijving Heb jij een passie voor mode en help je graag klanten bij het samenstellen van de perfecte outfit? Dan zijn wij op zoek naar jou! Functieomschrijving Als Sales Advisor ben jij het gezicht van onze winkel. Je verwelkomt klanten, adviseert hen bij hun aankopen en zorgt voor een aangename winkelervaring. Dankzij jouw gevoel voor mode en service help je klanten met het vinden van de juiste look. Jouw taken Klanten vriendelijk ontvangen en professioneel adviseren aan de paskamers…",
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "België",
+     "Vlaams-Brabant (Provincie)",
+     "Halle-Vilvoorde",
+     "Bever"
+    ],
+    "display_name": "Bever, Halle-Vilvoorde"
+   },
+   "id": "5979931338",
+   "category": {
+    "label": "Unknown",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "unknown"
+   },
+   "salary_is_predicted": "0",
+   "longitude": 3.9296,
+   "latitude": 50.74285,
+   "created": "2026-11-26T18:51:20Z",
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Adecco"
+   },
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTk3OTkzMTMzOCIsInMiOiJvTEFMSTBqcThSR2FlX2R4YlAzeE1BIn0.bUoaY0piX3MWo5eqZZCgmsKGhkm4ekY_sBF3szjedec",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.be/land/ad/5979931338?se=oLALI0jq8RGae_dxbP3xMA&utm_medium=api&utm_source=fe20cf49&v=0743078F4862FEA0C3790712D0F14CF4DC18ADF1",
+   "title": "Salesadvisor | Modewinkel | Geraardsbergen"
+  },
+  {
+   "salary_is_predicted": "0",
+   "description": "Functieomschrijving Heb jij een passie voor mode en help je graag klanten bij het samenstellen van de perfecte outfit? Dan zijn wij op zoek naar jou! Functieomschrijving Als Sales Advisor ben jij het gezicht van onze winkel. Je verwelkomt klanten, adviseert hen bij hun aankopen en zorgt voor een aangename winkelervaring. Dankzij jouw gevoel voor mode en service help je klanten met het vinden van de juiste look. Jouw taken Klanten vriendelijk ontvangen en professioneel adviseren aan de paskamers…",
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "display_name": "Olen, Turnhout",
+    "area": [
+     "België",
+     "Antwerpen (Provincie)",
+     "Turnhout",
+     "Olen"
+    ]
+   },
+   "id": "5979931380",
+   "category": {
+    "label": "Unknown",
+    "tag": "unknown",
+    "__CLASS__": "Adzuna::API::Response::Category"
+   },
+   "latitude": 51.14424,
+   "longitude": 4.85997,
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Adecco"
+   },
+   "created": "2026-11-26T18:51:20Z",
+   "title": "Salesadvisor | Modewinkel | Olen",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.be/land/ad/5979931380?se=oLALI0jq8RGae_dxbP3xMA&utm_medium=api&utm_source=fe20cf49&v=E7AD3BA884052AF5A0C1EBFBEFBA25116E19E418",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTk3OTkzMTM4MCIsInMiOiJvTEFMSTBqcThSR2FlX2R4YlAzeE1BIn0.0SbCA_K8WvTEeO3JKeyDNCELnucnrvo7RERLSWxQQng"
+  },
+  {
+   "longitude": 4.70214,
+   "latitude": 50.87927,
+   "description": "Functieomschrijving Heb jij een passie voor mode en help je graag klanten bij het samenstellen van de perfecte outfit? Dan zijn wij op zoek naar jou! Functieomschrijving Als Sales Advisor ben jij het gezicht van onze winkel. Je verwelkomt klanten, adviseert hen bij hun aankopen en zorgt voor een aangename winkelervaring. Dankzij jouw gevoel voor mode en service help je klanten met het vinden van de juiste look. Jouw taken Klanten vriendelijk ontvangen en professioneel adviseren aan de paskamers…",
+   "location": {
+    "area": [
+     "België",
+     "Vlaams-Brabant (Provincie)",
+     "Leuven",
+     "Leuven"
+    ],
+    "display_name": "Leuven",
+    "__CLASS__": "Adzuna::API::Response::Location"
+   },
+   "id": "5979931339",
+   "category": {
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "unknown",
+    "label": "Unknown"
+   },
+   "salary_is_predicted": "0",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTk3OTkzMTMzOSIsInMiOiJvTEFMSTBqcThSR2FlX2R4YlAzeE1BIn0.2lqT5ja6Rn96EsVus0oFtGH7J804PgBOgpuvd2_LHkw",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.be/land/ad/5979931339?se=oLALI0jq8RGae_dxbP3xMA&utm_medium=api&utm_source=fe20cf49&v=FB444B6DAB556065038686E57B903868238C01F0",
+   "title": "Salesadvisor | Modewinkel | Leuven",
+   "created": "2026-11-26T18:51:20Z",
+   "company": {
+    "display_name": "Adecco",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   }
+  },
+  {
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Adecco"
+   },
+   "created": "2026-11-26T18:51:20Z",
+   "title": "Salesadvisor | Modewinkel | Kortrijk",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTk3OTkzMTMzMyIsInMiOiJvTEFMSTBqcThSR2FlX2R4YlAzeE1BIn0.rAlf0bSGCk1K82sUqe4Nz25-dSoNJCjGrmS2gxIlZ4U",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.be/land/ad/5979931333?se=oLALI0jq8RGae_dxbP3xMA&utm_medium=api&utm_source=fe20cf49&v=7E319C73CB344807C6F449644F625AB9AB29786D",
+   "salary_is_predicted": "0",
+   "description": "Functieomschrijving Heb jij een passie voor mode en help je graag klanten bij het samenstellen van de perfecte outfit? Dan zijn wij op zoek naar jou! Functieomschrijving Als Sales Advisor ben jij het gezicht van onze winkel. Je verwelkomt klanten, adviseert hen bij hun aankopen en zorgt voor een aangename winkelervaring. Dankzij jouw gevoel voor mode en service help je klanten met het vinden van de juiste look. Jouw taken Klanten vriendelijk ontvangen en professioneel adviseren aan de paskamers…",
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "België",
+     "West-Vlaanderen (Provincie)",
+     "Kortrijk",
+     "Kortrijk"
+    ],
+    "display_name": "Kortrijk"
+   },
+   "id": "5979931333",
+   "category": {
+    "tag": "unknown",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "Unknown"
+   },
+   "latitude": 50.82799,
+   "longitude": 3.26503
+  },
+  {
+   "latitude": 50.94466,
+   "longitude": 3.12337,
+   "salary_is_predicted": "0",
+   "description": "Functieomschrijving Heb jij een passie voor mode en help je graag klanten bij het samenstellen van de perfecte outfit? Dan zijn wij op zoek naar jou! Functieomschrijving Als Sales Advisor ben jij het gezicht van onze winkel. Je verwelkomt klanten, adviseert hen bij hun aankopen en zorgt voor een aangename winkelervaring. Dankzij jouw gevoel voor mode en service help je klanten met het vinden van de juiste look. Jouw taken Klanten vriendelijk ontvangen en professioneel adviseren aan de paskamers…",
+   "id": "5979931302",
+   "location": {
+    "display_name": "Roeselare",
+    "area": [
+     "België",
+     "West-Vlaanderen (Provincie)",
+     "Roeselare",
+     "Roeselare"
+    ],
+    "__CLASS__": "Adzuna::API::Response::Location"
+   },
+   "category": {
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "unknown",
+    "label": "Unknown"
+   },
+   "title": "Salesadvisor | Modewinkel | Roeselare",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoib0xBTEkwanE4UkdhZV9keGJQM3hNQSIsImkiOiI1OTc5OTMxMzAyIn0.fiDuOPV_B2mvLjj0_-_yO1mD3hmiq8KoGrxzXmJCUcg",
+   "redirect_url": "https://www.adzuna.be/land/ad/5979931302?se=oLALI0jq8RGae_dxbP3xMA&utm_medium=api&utm_source=fe20cf49&v=321859D019890B53FEC2D6CA8BD303EF4E695BA6",
+   "company": {
+    "display_name": "Adecco",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "created": "2026-11-26T18:51:19Z"
+  },
+  {
+   "description": "Data Scientist Intern Location: Hybrid – Brussels | Duration: 3 months | Team: Tech BE SRE / AI & Data About the Team Join ING Belgium’s Tech BE SRE organization, where data, AI and engineering come together to solve real business and technology challenges. You will work with Data Scientists, AI Engineers and platform teams in an agile, multidisciplinary environment. The internship is hands-on and learning-focused, while delivering tangible value. Internship Projects You will work mainly on two…",
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "België"
+    ],
+    "display_name": "België"
+   },
+   "category": {
+    "label": "Unknown",
+    "tag": "unknown",
+    "__CLASS__": "Adzuna::API::Response::Category"
+   },
+   "id": "5979850012",
+   "salary_is_predicted": "0",
+   "created": "2026-11-26T17:41:03Z",
+   "contract_time": "full_time",
+   "company": {
+    "display_name": "ING",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTk3OTg1MDAxMiIsInMiOiJvTEFMSTBqcThSR2FlX2R4YlAzeE1BIn0.zi8Apf6tCMoJmlKksX3_8HNq1nt9G5DyUZv_Qq_CtYE",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.be/details/5979850012?utm_medium=api&utm_source=fe20cf49",
+   "title": "Data scientist(AI Automation)-2"
+  },
+  {
+   "description": "Calling all originals: At Levi Strauss & Co., you can be yourself — and be part of something bigger. We’re a community of people who forge our own paths, challenge the ordinary, and work to leave the world better than we found it. We believe that our differences make us stronger. So add your voice. Make an impact. Find your fit — and your future About the Internship Our internship programme offers a unique opportunity to immerse yourself in the world of Levi's®. You'll work on meaningful busine…",
+   "id": "5979848356",
+   "location": {
+    "display_name": "België",
+    "area": [
+     "België"
+    ],
+    "__CLASS__": "Adzuna::API::Response::Location"
+   },
+   "category": {
+    "label": "Unknown",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "unknown"
+   },
+   "salary_is_predicted": "0",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.be/details/5979848356?utm_medium=api&utm_source=fe20cf49",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoib0xBTEkwanE4UkdhZV9keGJQM3hNQSIsImkiOiI1OTc5ODQ4MzU2In0.OtBgl_jCrkGplyU3rJipu4btMx8lAoNMtactaf_Sg4Q",
+   "salary_min": 14400,
+   "title": "Talent Acquisition Intern",
+   "created": "2026-11-26T17:38:33Z",
+   "contract_time": "full_time",
+   "salary_max": 14400,
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Levi Strauss"
+   }
+  },
+  {
+   "company": {
+    "display_name": "Smals",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "created": "2026-11-26T14:34:46Z",
+   "title": "Test Manager",
+   "redirect_url": "https://www.adzuna.be/details/5979716767?utm_medium=api&utm_source=fe20cf49",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTk3OTcxNjc2NyIsInMiOiJvTEFMSTBqcThSR2FlX2R4YlAzeE1BIn0.kRSVipW7GfdLMqZc1IRCorh0Yy5fEos7OG-z57-wdyM",
+   "salary_is_predicted": "0",
+   "description": "Smals réalise des projets ICT innovants dans l'e-gouvernement et l'e-santé pour les institutions de la sécurité sociale et des soins de santé. Pour Smals, \"ICT for society\" n'est pas qu'un slogan : tous nos projets profitent à la société. Smals contribue au portail de la sécurité sociale et à la plateforme eHealth. Les projets novateurs sont notre spécialité : Student@Work, Orgadon, digitalisation des prescriptions médicales, consultation de l'historique de la carrière, transmission plus rapide…",
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "België"
+    ],
+    "display_name": "België"
+   },
+   "id": "5979716767",
+   "category": {
+    "tag": "it-jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "IT ICT vacatures"
+   }
+  },
+  {
+   "title": "Azure Engineer",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoib0xBTEkwanE4UkdhZV9keGJQM3hNQSIsImkiOiI1OTc5NzE2NzI0In0.vGGCLjcY4VG8rS6EH_-ZH5ON9D1LIRO23t8dabpRbJQ",
+   "redirect_url": "https://www.adzuna.be/details/5979716724?utm_medium=api&utm_source=fe20cf49",
+   "company": {
+    "display_name": "Smals",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "created": "2026-11-26T14:34:45Z",
+   "salary_is_predicted": "0",
+   "description": "Smals réalise des projets ICT innovants dans l'e-gouvernement et l'e-santé pour les institutions de la sécurité sociale et des soins de santé. Pour Smals, \"ICT for society\" n'est pas qu'un slogan : tous nos projets profitent à la société. Smals contribue au portail de la sécurité sociale et à la plateforme eHealth. Les projets novateurs sont notre spécialité : Student@Work, Orgadon, digitalisation des prescriptions médicales, consultation de l'historique de la carrière, transmission plus rapide…",
+   "location": {
+    "display_name": "België",
+    "area": [
+     "België"
+    ],
+    "__CLASS__": "Adzuna::API::Response::Location"
+   },
+   "id": "5979716724",
+   "category": {
+    "label": "IT ICT vacatures",
+    "tag": "it-jobs",
+    "__CLASS__": "Adzuna::API::Response::Category"
+   }
+  },
+  {
+   "description": "Smals réalise des projets ICT innovants dans l'e-gouvernement et l'e-santé pour les institutions de la sécurité sociale et des soins de santé. Pour Smals, \"ICT for society\" n'est pas qu'un slogan : tous nos projets profitent à la société. Smals contribue au portail de la sécurité sociale et à la plateforme eHealth. Les projets novateurs sont notre spécialité : Student@Work, Orgadon, digitalisation des prescriptions médicales, consultation de l'historique de la carrière, transmission plus rapide…",
+   "category": {
+    "label": "IT ICT vacatures",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "it-jobs"
+   },
+   "location": {
+    "display_name": "België",
+    "area": [
+     "België"
+    ],
+    "__CLASS__": "Adzuna::API::Response::Location"
+   },
+   "id": "5979716755",
+   "salary_is_predicted": "0",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.be/details/5979716755?utm_medium=api&utm_source=fe20cf49",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoib0xBTEkwanE4UkdhZV9keGJQM3hNQSIsImkiOiI1OTc5NzE2NzU1In0.7efyp_V5ncMS66EzCbbGBF-8xBGRCpBvAUyb_OeDCow",
+   "title": "Power Platform Expert",
+   "created": "2026-11-26T14:34:45Z",
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Smals"
+   }
+  },
+  {
+   "salary_is_predicted": "0",
+   "description": "Smals réalise des projets ICT innovants dans l'e-gouvernement et l'e-santé pour les institutions de la sécurité sociale et des soins de santé. Pour Smals, \"ICT for society\" n'est pas qu'un slogan : tous nos projets profitent à la société. Smals contribue au portail de la sécurité sociale et à la plateforme eHealth. Les projets novateurs sont notre spécialité : Student@Work, Orgadon, digitalisation des prescriptions médicales, consultation de l'historique de la carrière, transmission plus rapide…",
+   "category": {
+    "tag": "it-jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "IT ICT vacatures"
+   },
+   "location": {
+    "area": [
+     "België"
+    ],
+    "display_name": "België",
+    "__CLASS__": "Adzuna::API::Response::Location"
+   },
+   "id": "5979716733",
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Smals"
+   },
+   "created": "2026-11-26T14:34:45Z",
+   "title": "Fullstack .Net & Blazor Developer",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTk3OTcxNjczMyIsInMiOiJvTEFMSTBqcThSR2FlX2R4YlAzeE1BIn0.vsmskxg02H2dPJyNAQlhKzxXdJv0XdJMKhB8VC8K9ig",
+   "redirect_url": "https://www.adzuna.be/details/5979716733?utm_medium=api&utm_source=fe20cf49"
+  },
+  {
+   "description": "Smals realiseert innovatieve ICT-projecten in e-government en e-health voor instellingen uit de sociale zekerheid en de gezondheidszorg. 'ICT for society' is voor Smals meer dan een slogan: alle projecten hebben een positieve maatschappelijke impact. Zo bouwt Smals mee aan het portaal van de sociale zekerheid en het eHealth-platform. Grensverleggende projecten zijn ons werkterrein: Student@Work, Orgadon, digitalisering van medische voorschriften, raadpleging van de historiek van je loopbaan, sn…",
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "België"
+    ],
+    "display_name": "België"
+   },
+   "category": {
+    "tag": "it-jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "IT ICT vacatures"
+   },
+   "id": "5979716360",
+   "salary_is_predicted": "0",
+   "created": "2026-11-26T14:34:35Z",
+   "company": {
+    "display_name": "Smals",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "redirect_url": "https://www.adzuna.be/details/5979716360?utm_medium=api&utm_source=fe20cf49",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoib0xBTEkwanE4UkdhZV9keGJQM3hNQSIsImkiOiI1OTc5NzE2MzYwIn0.KExC1UMLDvFlQs4J4itzGwsbXS1_6s8YxL6QtSoYJm0",
+   "title": "Azure Engineer"
+  },
+  {
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Smals"
+   },
+   "created": "2026-11-26T14:34:35Z",
+   "title": "Test Manager",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTk3OTcxNjM0NCIsInMiOiJvTEFMSTBqcThSR2FlX2R4YlAzeE1BIn0.mIHBxgX_RLHE5HAGGmhcnkNoHvFEh1JzDXjdxe6mLtc",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.be/details/5979716344?utm_medium=api&utm_source=fe20cf49",
+   "salary_is_predicted": "0",
+   "description": "Smals realiseert innovatieve ICT-projecten in e-government en e-health voor instellingen uit de sociale zekerheid en de gezondheidszorg. 'ICT for society' is voor Smals meer dan een slogan: alle projecten hebben een positieve maatschappelijke impact. Zo bouwt Smals mee aan het portaal van de sociale zekerheid en het eHealth-platform. Grensverleggende projecten zijn ons werkterrein: Student@Work, Orgadon, digitalisering van medische voorschriften, raadpleging van de historiek van je loopbaan, sn…",
+   "id": "5979716344",
+   "location": {
+    "display_name": "België",
+    "area": [
+     "België"
+    ],
+    "__CLASS__": "Adzuna::API::Response::Location"
+   },
+   "category": {
+    "tag": "it-jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "IT ICT vacatures"
+   }
+  },
+  {
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoib0xBTEkwanE4UkdhZV9keGJQM3hNQSIsImkiOiI1OTc5NzE2MzQ1In0.hdv93exRADj3hiYfMSxtOzQemK2I5bvgLQidTW6pg_Q",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.be/details/5979716345?utm_medium=api&utm_source=fe20cf49",
+   "title": "Fullstack .Net & Blazor Developer",
+   "created": "2026-11-26T14:34:35Z",
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Smals"
+   },
+   "id": "5979716345",
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "België"
+    ],
+    "display_name": "België"
+   },
+   "category": {
+    "tag": "it-jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "IT ICT vacatures"
+   },
+   "description": "Smals realiseert innovatieve ICT-projecten in e-government en e-health voor instellingen uit de sociale zekerheid en de gezondheidszorg. 'ICT for society' is voor Smals meer dan een slogan: alle projecten hebben een positieve maatschappelijke impact. Zo bouwt Smals mee aan het portaal van de sociale zekerheid en het eHealth-platform. Grensverleggende projecten zijn ons werkterrein: Student@Work, Orgadon, digitalisering van medische voorschriften, raadpleging van de historiek van je loopbaan, sn…",
+   "salary_is_predicted": "0"
+  },
+  {
+   "salary_is_predicted": "0",
+   "category": {
+    "tag": "it-jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "IT ICT vacatures"
+   },
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "België"
+    ],
+    "display_name": "België"
+   },
+   "id": "5979716363",
+   "description": "Smals realiseert innovatieve ICT-projecten in e-government en e-health voor instellingen uit de sociale zekerheid en de gezondheidszorg. 'ICT for society' is voor Smals meer dan een slogan: alle projecten hebben een positieve maatschappelijke impact. Zo bouwt Smals mee aan het portaal van de sociale zekerheid en het eHealth-platform. Grensverleggende projecten zijn ons werkterrein: Student@Work, Orgadon, digitalisering van medische voorschriften, raadpleging van de historiek van je loopbaan, sn…",
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Smals"
+   },
+   "created": "2026-11-26T14:34:35Z",
+   "title": "Power Platform Expert",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoib0xBTEkwanE4UkdhZV9keGJQM3hNQSIsImkiOiI1OTc5NzE2MzYzIn0.5DA46zR5Yz7K7D0mq4qvvUqkBXfcrTAk8tMdbuko2mI",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.be/details/5979716363?utm_medium=api&utm_source=fe20cf49"
+  },
+  {
+   "created": "2026-11-26T14:16:19Z",
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Henkel"
+   },
+   "redirect_url": "https://www.adzuna.be/details/5979641034?utm_medium=api&utm_source=fe20cf49",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTk3OTY0MTAzNCIsInMiOiJvTEFMSTBqcThSR2FlX2R4YlAzeE1BIn0.z_K3cHs8uNeyWTCZWkMjDAp4sz6ILTbDajlO8zaDOJ8",
+   "title": "Internship in the Quality Department - July 2027",
+   "category": {
+    "tag": "unknown",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "Unknown"
+   },
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "België",
+     "Vlaams-Brabant (Provincie)",
+     "Halle-Vilvoorde",
+     "Drogenbos"
+    ],
+    "display_name": "Drogenbos, Halle-Vilvoorde"
+   },
+   "id": "5979641034",
+   "description": "About this Position At Henkel, you can build a strong legacy and leading positions in bothindustrial and consumer businesses to reimagine and improve life every day. Ifyou love challenging the status quo, join our community of over 47.000 pioneersaround the globe. Our teams at Henkel Adhesive Technologies help transformentire industries and provide our customers with a competitive advantagethrough adhesives, sealants and functional coatings. With our trusted brands,our cutting-edge technologies…",
+   "salary_is_predicted": "0",
+   "longitude": 4.3166,
+   "latitude": 50.78757
+  },
+  {
+   "title": "Data Visualization & Process Tooling Intern",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoib0xBTEkwanE4UkdhZV9keGJQM3hNQSIsImkiOiI1OTc5NjQxMDM5In0.mxnJy482RNQLgQqzyxw_nLJ5OB0TpNBl8kSTi4lZA4o",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.be/details/5979641039?utm_medium=api&utm_source=fe20cf49",
+   "company": {
+    "display_name": "Sanofi",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "created": "2026-11-26T14:16:19Z",
+   "latitude": 51.05401,
+   "longitude": 3.7217,
+   "salary_is_predicted": "0",
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "België",
+     "Oost-Vlaanderen (Provincie)",
+     "Gent",
+     "Gent"
+    ],
+    "display_name": "Gent"
+   },
+   "id": "5979641039",
+   "category": {
+    "label": "Unknown",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "unknown"
+   },
+   "description": "Location: Ghent, Belgium Start date: February 2027 Duration: 4 to 6 months Work Model: full time, onsite About the job As a Data Visualization & Process Tooling Intern , you will join Sanofi's Downstream Processing team and support the development of digital tools that help scientists and laboratory teams analyse data, design purification processes and make informed decisions. You will work on business intelligence dashboards, data integration and calculation tools, with the opportunity to shap…"
+  },
+  {
+   "description": "Hubo is een 100% Belgische organisatie en één van de grootste spelers op de doe-het-zelfmarkt . We hebben meer dan 160 winkels , verspreid over heel het land, en 2.600 medewerkers . We zijn een dynamische en financieel gezonde onderneming met werknemers met passie voor hun job en zijn ervan overtuigd dat gemotiveerde medewerkers het verschil kunnen maken! Hou jij van sociaal contact? En heb je graag wat meer verantwoordelijkheid ? Maak jij graag deel uit van een tof, enthousiast team ? Dan zijn…",
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "België",
+     "Antwerpen (Provincie)",
+     "Turnhout",
+     "Geel"
+    ],
+    "display_name": "Geel, Turnhout"
+   },
+   "id": "5979640971",
+   "category": {
+    "tag": "unknown",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "Unknown"
+   },
+   "salary_is_predicted": "0",
+   "longitude": 4.99085,
+   "latitude": 51.16233,
+   "created": "2026-11-26T14:16:18Z",
+   "company": {
+    "display_name": "Hubo België NV",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoib0xBTEkwanE4UkdhZV9keGJQM3hNQSIsImkiOiI1OTc5NjQwOTcxIn0.jSwPZ7m6GDrJSxgaIS3gEQ8NoSPexCCCCVcax2r-xpk",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.be/details/5979640971?utm_medium=api&utm_source=fe20cf49",
+   "title": "Verkoper / Aanvuller - Hubo Geel - Student/Flexi"
+  },
+  {
+   "id": "5979372324",
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "België",
+     "Antwerpen (Provincie)",
+     "Mechelen",
+     "Mechelen"
+    ],
+    "display_name": "Mechelen"
+   },
+   "category": {
+    "tag": "hospitality-catering-jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "Horeca en Catering vacatures"
+   },
+   "description": "Hallo, Als CLBR Consulting staan wij onze klant bij in het rekruteren van nieuwe werknemers. Onze klanten zijn werkgevers die mensen aanwerven met een contract van onbepaalde duur en zonder interim periode. Wij doen een eerste gesprek met jou ter ondersteuning van onze klant en als het enthousiasme langs beide kanten even groot is heb je meteen een gesprek met de persoon die aanwerft. Ben jij een liefhebber van heerlijke kipgerechten en ben jij het type persoon dat gasten spontaan een welkom ge…",
+   "salary_is_predicted": "0",
+   "longitude": 4.47807,
+   "latitude": 51.02892,
+   "created": "2026-11-26T10:40:31Z",
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "CLBR Consulting BV"
+   },
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTk3OTM3MjMyNCIsInMiOiJvTEFMSTBqcThSR2FlX2R4YlAzeE1BIn0.jRAgtT7migNYK4UJOXtHr5XQP3bIo8Y5wbmpdYwrASE",
+   "redirect_url": "https://www.adzuna.be/details/5979372324?utm_medium=api&utm_source=fe20cf49",
+   "title": "Restaurantmanager Mechelen"
+  },
+  {
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "display_name": "Riemst, Tongeren",
+    "area": [
+     "België",
+     "Limburg (Provincie)",
+     "Tongeren",
+     "Riemst"
+    ]
+   },
+   "id": "5979345192",
+   "category": {
+    "label": "Unknown",
+    "tag": "unknown",
+    "__CLASS__": "Adzuna::API::Response::Category"
+   },
+   "description": "Functieomschrijving Werk je graag tussen de mensen en steek je graag de handen uit de mouwen? Dan zijn wij op zoek naar jou! Functieomschrijving Voor onze winkel in Riemst zoeken we gemotiveerde studenten die ons team versterken aan de kassa en bij het uitpakken en aanvullen van goederen. De focus ligt voornamelijk op kassawerk, maar je helpt ook mee om de winkel netjes en verzorgd te houden. Jouw taken: * Klanten vriendelijk verder helpen aan de kassa *Correct afrekenen van aankopen *Rekken aa…",
+   "salary_is_predicted": "0",
+   "longitude": 5.56074,
+   "latitude": 50.78433,
+   "created": "2026-11-26T09:46:57Z",
+   "company": {
+    "display_name": "Adecco",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "redirect_url": "https://www.adzuna.be/details/5979345192?utm_medium=api&utm_source=fe20cf49",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTk3OTM0NTE5MiIsInMiOiJvTEFMSTBqcThSR2FlX2R4YlAzeE1BIn0.nC5WntXFw9qKYfqfJXhsoRnlduNcJCSkftxJYRHCGFQ",
+   "title": "Student winkelbediende | Riemst | direct beschikbaar"
+  },
+  {
+   "salary_is_predicted": "0",
+   "description": "Gent Full time R2880422  Location: Ghent, Belgium  Start date: February 2027  Duration: 4 to 6 months  Work Model: full time, onsite About the job As a Data Visualization & Process Tooling Intern , you will join Sanofi's Downstream Processing team and support the development of digital tools that help scientists and laboratory teams analyse data, design purification processes and make informed decisions. You will work on business intelligence dashboards, data integration and calculation tools, …",
+   "location": {
+    "display_name": "Gent",
+    "area": [
+     "België",
+     "Oost-Vlaanderen (Provincie)",
+     "Gent",
+     "Gent"
+    ],
+    "__CLASS__": "Adzuna::API::Response::Location"
+   },
+   "category": {
+    "label": "Unknown",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "unknown"
+   },
+   "id": "5979225524",
+   "latitude": 51.05401,
+   "longitude": 3.7217,
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Sanofi Group"
+   },
+   "created": "2026-11-26T08:02:33Z",
+   "title": "Data Visualization & Process Tooling Intern",
+   "redirect_url": "https://www.adzuna.be/details/5979225524?utm_medium=api&utm_source=fe20cf49",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTk3OTIyNTUyNCIsInMiOiJvTEFMSTBqcThSR2FlX2R4YlAzeE1BIn0.uvqKESwe7MVk8BQhIx4etucfZEvgtpcXXpeNZT_pea4"
+  },
+  {
+   "title": "Persoonlijk assistent student",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTk3OTA0MjA4MCIsInMiOiJvTEFMSTBqcThSR2FlX2R4YlAzeE1BIn0.WupW8eRMkA7IiU7O1fvwVA2_EtQtA_VnTYvmc-mdkGw",
+   "redirect_url": "https://www.adzuna.be/details/5979042080?utm_medium=api&utm_source=fe20cf49",
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "PROMAN Care"
+   },
+   "created": "2026-11-26T05:05:22Z",
+   "latitude": 51.23484,
+   "longitude": 2.97731,
+   "salary_is_predicted": "0",
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "België",
+     "West-Vlaanderen (Provincie)",
+     "Oostende",
+     "Bredene"
+    ],
+    "display_name": "Bredene, Oostende"
+   },
+   "id": "5979042080",
+   "category": {
+    "label": "Unknown",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "unknown"
+   },
+   "description": "Voor een speels en lief kindje met autisme zoeken we een betrokken assistent die kan ondersteunen doorheen de week te Bredene of eventueel in de weekends Voor een jongen met ASS zoeken we een enthousiaste student die op oproepbasis ondersteuning wil bieden tijdens vrije tijdsmomenten. Het gezin werkt met een whatsapp-groepje, waarbij je flexibel kan aangeven of je kan op de gevrgaade momenten. Dit kan zowel op weekdagen zijn, als weekenddagen. Je onderneemt samen leuke activiteiten om zinvolle …"
+  },
+  {
+   "title": "Manpower zoekt dit weekend een student! - Regio Heist-op-den-Berg",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.be/details/5979042092?utm_medium=api&utm_source=fe20cf49",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoib0xBTEkwanE4UkdhZV9keGJQM3hNQSIsImkiOiI1OTc5MDQyMDkyIn0.iCA6zpqPZ0eArW5f2WMmQljwv2QslU_piRCg2bGpLY4",
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Manpower"
+   },
+   "created": "2026-11-26T05:05:22Z",
+   "latitude": 51.07582,
+   "longitude": 4.72901,
+   "salary_is_predicted": "0",
+   "location": {
+    "area": [
+     "België",
+     "Antwerpen (Provincie)",
+     "Mechelen",
+     "Heist-op-den-Berg"
+    ],
+    "display_name": "Heist-op-den-Berg, Mechelen",
+    "__CLASS__": "Adzuna::API::Response::Location"
+   },
+   "category": {
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "unknown",
+    "label": "Unknown"
+   },
+   "id": "5979042092",
+   "description": "Voor dit weekend zijn wij via Manpower op zoek naar een enthousiaste student (18 jaar) om een promostand van Brass Band te bemannen in Heist-op-den-Berg. Wat ga je doen? Verkoop van merchandise aan bezoekers Klanten vriendelijk verder helpen aan de stand Mee zorgen voor een verzorgde en aantrekkelijke presentatie Wanneer? Zaterdag 28 /11 en zondag 29/11 Van 9u00 tot 18u00 Wie zoeken we? Je bent minstens 18 jaar Je bent communicatief en klantvriendelijk Ervaring in verkoop is een pluspunt"
+  },
+  {
+   "description": "Your Responsibilities: Analyze, structure, and optimize internal workflows for various legal reports, claims, and agreements Standardize recurring templates and administrative processes to make them ready for AI automation Support the legal team with the practical implementation and integration of AI tools and digital resources Write scripts (e.g., in Python) or build smart digital solutions to streamline data processing and document flows Collaborate closely with legal professionals to transla…",
+   "category": {
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "unknown",
+    "label": "Unknown"
+   },
+   "location": {
+    "area": [
+     "België",
+     "Oost-Vlaanderen (Provincie)",
+     "Gent",
+     "Gent"
+    ],
+    "display_name": "Gent",
+    "__CLASS__": "Adzuna::API::Response::Location"
+   },
+   "id": "5979042086",
+   "salary_is_predicted": "0",
+   "longitude": 3.7217,
+   "latitude": 51.05401,
+   "created": "2026-11-26T05:05:22Z",
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Ago Jobs & HR"
+   },
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.be/details/5979042086?utm_medium=api&utm_source=fe20cf49",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTk3OTA0MjA4NiIsInMiOiJvTEFMSTBqcThSR2FlX2R4YlAzeE1BIn0.rumRM0F8PEq70oSLuvTdtNguKv4HqWgrLr9UFTrTTfI",
+   "title": "AGO Gent Student zoekt: Student Legal Tech & AI"
+  },
+  {
+   "title": "Jobstudent persoonlijk assistent",
+   "redirect_url": "https://www.adzuna.be/details/5979042094?utm_medium=api&utm_source=fe20cf49",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoib0xBTEkwanE4UkdhZV9keGJQM3hNQSIsImkiOiI1OTc5MDQyMDk0In0.BrJc5R67owtkoZ-jrVUmBReRocYg045wd9Xl6zjrjb0",
+   "company": {
+    "display_name": "PROMAN Care",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "created": "2026-11-26T05:05:22Z",
+   "latitude": 50.96088,
+   "longitude": 4.03486,
+   "salary_is_predicted": "0",
+   "id": "5979042094",
+   "location": {
+    "area": [
+     "België",
+     "Oost-Vlaanderen (Provincie)",
+     "Aalst",
+     "Aalst"
+    ],
+    "display_name": "Aalst",
+    "__CLASS__": "Adzuna::API::Response::Location"
+   },
+   "category": {
+    "tag": "unknown",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "Unknown"
+   },
+   "description": "Als persoonlijk assistent ondersteun je de budgethouder bij het ontdekken en uitwerken van zijn verschillende interesses. Je helpt hem structuur aan te brengen in projecten, doelen af te bakenen en ervoor te zorgen dat ideeën ook daadwerkelijk verder ontwikkeld worden. Daarnaast ondersteun je hem bij het verkennen van mogelijke loopbaanpaden en beroepsinteresses. Takenpakket Samen de wereld van elektronica en technologie ontdekken Ondersteunen bij projecten rond productontwikkeling en ontwerp M…"
+  },
+  {
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTk3OTA0MjA2MSIsInMiOiJvTEFMSTBqcThSR2FlX2R4YlAzeE1BIn0.WmojgvOwWoxkNHdbVRvYPQ-IAlD3kEnw17g9XOrxlec",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.be/details/5979042061?utm_medium=api&utm_source=fe20cf49",
+   "title": "Student Customer Experience – Flexibele studentenjob bij PINO",
+   "created": "2026-11-26T05:05:21Z",
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Ajour BV"
+   },
+   "longitude": 3.26503,
+   "latitude": 50.82799,
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "België",
+     "West-Vlaanderen (Provincie)",
+     "Kortrijk",
+     "Kortrijk"
+    ],
+    "display_name": "Kortrijk"
+   },
+   "id": "5979042061",
+   "category": {
+    "label": "Unknown",
+    "tag": "unknown",
+    "__CLASS__": "Adzuna::API::Response::Category"
+   },
+   "description": "Wat bieden wij? Een eerste betaalde werkdag op ons kantoor in Hangar K in Kortrijk, waarbij je kennismaakt met het team, de producten en onze manier van werken. Een vergoeding van €16 per uur tijdens deze eerste werkdag. Nadien een resultaatgerichte verloning met een commissie per gerealiseerde review. De concrete afspraken hierover bepalen we in onderling overleg na de eerste samenwerkingsdag. Flexibele werkuren die je gemakkelijk kan combineren met je studies. De vrijheid om van thuis uit of …",
+   "salary_is_predicted": "0"
+  },
+  {
+   "salary_is_predicted": "0",
+   "description": "Onze winkel in de regio Sint-Niklaas is een kleine, bijzondere zaak voor wie van outdoor, avontuur en stoere kledij houdt. We verkopen legerkleding, werkkledij, jachtkledij, wandelschoenen en uitrusting voor trekking, kamperen en survival. Je vindt bij ons spullen die je in gewone winkelketens niet vindt, en klanten komen er graag voor ons advies. We zijn een winkel met brede gangpaden en een buitenafdeling, en we groeien verder met een eigen webshop. Ons team is klein, gepassioneerd en klaar v…",
+   "id": "5979042067",
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "België",
+     "Oost-Vlaanderen (Provincie)",
+     "Dendermonde",
+     "Waasmunster"
+    ],
+    "display_name": "Waasmunster, Dendermonde"
+   },
+   "category": {
+    "tag": "unknown",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "Unknown"
+   },
+   "latitude": 51.14635,
+   "longitude": 4.08824,
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Ago Jobs & HR"
+   },
+   "created": "2026-11-26T05:05:21Z",
+   "title": "Weekendstudent (outdoor- & legerkledingwinkel)",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTk3OTA0MjA2NyIsInMiOiJvTEFMSTBqcThSR2FlX2R4YlAzeE1BIn0.3TcC2liWDlgBCAfPE0vXiHqe0ePdMYvkkgtB4auaogA",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.be/details/5979042067?utm_medium=api&utm_source=fe20cf49"
+  },
+  {
+   "salary_is_predicted": "0",
+   "location": {
+    "area": [
+     "België",
+     "West-Vlaanderen (Provincie)",
+     "Tielt",
+     "Dentergem"
+    ],
+    "display_name": "Dentergem, Tielt",
+    "__CLASS__": "Adzuna::API::Response::Location"
+   },
+   "category": {
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "unknown",
+    "label": "Unknown"
+   },
+   "id": "5979042066",
+   "description": "Onze klant is een toonaangevend bedrijf gespecialiseerd in de productie van kunststof materialen. Ze zijn op zoek naar gemotiveerde studenten die graag willen werken als inpakker en kwaliteitscontroleur in de week. Het bedrijf biedt een dynamische werkomgeving waar je veel kunt leren en jezelf kunt ontwikkelen. Als student inpakker en kwaliteitscontroleur zul je verantwoordelijk zijn voor het inpakken van kunststof materialen, het uitvoeren van kwaliteitscontroles en het waarborgen van de produ…",
+   "latitude": 50.99719,
+   "longitude": 3.42214,
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Ago Jobs & HR"
+   },
+   "created": "2026-11-26T05:05:21Z",
+   "title": "Student Inpakker in de week 18",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTk3OTA0MjA2NiIsInMiOiJvTEFMSTBqcThSR2FlX2R4YlAzeE1BIn0.vn00tQane79_zcBW7F9F0Goo9Y0yGOfsNRfZXZgOlZA",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.be/details/5979042066?utm_medium=api&utm_source=fe20cf49"
+  },
+  {
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTk3OTA0MjA1NSIsInMiOiJvTEFMSTBqcThSR2FlX2R4YlAzeE1BIn0.b5aPtFzCjxWfrlsIqpDrsWtvUrJ5vuvHbnWOfS1A80o",
+   "redirect_url": "https://www.adzuna.be/details/5979042055?utm_medium=api&utm_source=fe20cf49",
+   "title": "Jobstudent Productontwikkeling",
+   "created": "2026-11-26T05:05:20Z",
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "DC Development"
+   },
+   "longitude": 5.30732,
+   "latitude": 50.89829,
+   "description": "Jobstudent Productontwikkeling – voor het uitwerken van enkele concrete ideeën Als ondernemer in het vastgoed heb ik een zeer drukke agenda en veel meer ideeën dan tijd. Daarom zoek ik een gedreven student productontwikkeling die enkele reële concepten zelfstandig verder helpt uitwerken tot een product dat echt ontwikkeld en geproduceerd zal worden. Wat ga je doen? 3 concepten of ideeën verder uitwerken (de ideeën omvatten producten in natuursteen, verlichting en modulaire speelgoed) Markt- en …",
+   "category": {
+    "label": "Unknown",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "unknown"
+   },
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "display_name": "Alken, Tongeren",
+    "area": [
+     "België",
+     "Limburg (Provincie)",
+     "Tongeren",
+     "Alken"
+    ]
+   },
+   "id": "5979042055",
+   "salary_is_predicted": "0"
+  },
+  {
+   "redirect_url": "https://www.adzuna.be/details/5979041169?utm_medium=api&utm_source=fe20cf49",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTk3OTA0MTE2OSIsInMiOiJvTEFMSTBqcThSR2FlX2R4YlAzeE1BIn0.yxnKwUsRvKVpFY0RvIGnUYyA75chQvXyVsad4eUsqlc",
+   "title": "Verpleegkundige heelkunde en traumato",
+   "created": "2026-11-26T05:04:47Z",
+   "company": {
+    "display_name": "Ziekenhuis aan de Stroom",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "longitude": 4.396952,
+   "latitude": 51.260742,
+   "description": "ZAS. Samen maken we zorg sterker. Drijf je mee? Wil jij werken in een dynamische heelkundige omgeving waar technische en patiëntgerichte zorg centraal staan? Bij Heelkunde 1 & 2 van ZAS Cadix krijg je de kans om je kennis en vaardigheden verder te ontwikkelen binnen een ervaren team. WAT? Contract onbepaalde duur ZAS Cadix (2030, Antwerpen) 38 uur/week (100%) Je bent bereid om in een gevarieerd shiftensysteem te werken, zowel overdag als ‘s nachts en in weekends. OVER DE JOB Patiëntenzorg : Je …",
+   "location": {
+    "display_name": "Antwerpen",
+    "area": [
+     "België",
+     "Antwerpen (Provincie)",
+     "Antwerpen",
+     "Antwerpen"
+    ],
+    "__CLASS__": "Adzuna::API::Response::Location"
+   },
+   "category": {
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "healthcare-nursing-jobs",
+    "label": "Gezondheidszorg Wetenschap en Verpleging vacatures"
+   },
+   "id": "5979041169",
+   "salary_is_predicted": "0"
+  },
+  {
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "display_name": "Hemiksem, Antwerpen",
+    "area": [
+     "België",
+     "Antwerpen (Provincie)",
+     "Antwerpen",
+     "Hemiksem"
+    ]
+   },
+   "id": "5979041116",
+   "category": {
+    "label": "Gezondheidszorg Wetenschap en Verpleging vacatures",
+    "tag": "healthcare-nursing-jobs",
+    "__CLASS__": "Adzuna::API::Response::Category"
+   },
+   "description": "ZAS, De drijvende kracht voor gezondheidszorg in beweging. Drijf je mee? Heb jij een hart voor zorg en wil je werken waar jouw expertise en aandacht écht gewaardeerd worden? Bij ons neem je een cruciale rol in het begeleiden van neurologische patiënten op hun herstelreis, met persoonlijke, warme en professionele zorg. In een hecht en gepassioneerd team krijg je alle ruimte om jezelf te ontwikkelen, mee te denken en te groeien. Of je nu ervaring hebt in geriatrie of revalidatie, of net klaar ben…",
+   "salary_is_predicted": "0",
+   "longitude": 4.35084,
+   "latitude": 51.17456,
+   "created": "2026-11-26T05:04:40Z",
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Ziekenhuis aan de Stroom"
+   },
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoib0xBTEkwanE4UkdhZV9keGJQM3hNQSIsImkiOiI1OTc5MDQxMTE2In0.mLP4Xlz3jdxPUjd-vLGmRLLFNRS0sKgUvLUV2s3j3QQ",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.be/details/5979041116?utm_medium=api&utm_source=fe20cf49",
+   "title": "Verpleegkundige SP Neurologie"
+  },
+  {
+   "longitude": 4.383916,
+   "latitude": 51.188738,
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "België",
+     "Antwerpen (Provincie)",
+     "Antwerpen",
+     "Antwerpen"
+    ],
+    "display_name": "Antwerpen"
+   },
+   "id": "5979041111",
+   "category": {
+    "tag": "healthcare-nursing-jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "Gezondheidszorg Wetenschap en Verpleging vacatures"
+   },
+   "description": "ZAS, de drijvende kracht voor gezondheidszorg in beweging. Samen gaan we voor warme en innovatieve zorg. WAT? We zoeken een voltijdse arts-specialist in de neonatologie voor maximaal 1 jaar. Indien je een stageplan hebt voor een volledige opleiding tot neonatoloog krijg je een marktconform ASO contract. Indien je geen volledig stageplan hebt en een verdiepingsstage zoekt, ben je als pediater ook welkom maar dan zal je een zelfstandig statuut krijgen. Je werkt bij NICU ZAS Middelheim, maar er wo…",
+   "salary_is_predicted": "0",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.be/details/5979041111?utm_medium=api&utm_source=fe20cf49",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoib0xBTEkwanE4UkdhZV9keGJQM3hNQSIsImkiOiI1OTc5MDQxMTExIn0.-dNIVcUvaC56RD7OOJvnr90b0jqC-AVayyt0qslhkyA",
+   "title": "Arts-specialist in de Neonatologie",
+   "created": "2026-11-26T05:04:40Z",
+   "company": {
+    "display_name": "Ziekenhuis aan de Stroom",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   }
+  },
+  {
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoib0xBTEkwanE4UkdhZV9keGJQM3hNQSIsImkiOiI1OTc5MDQxMTA5In0.iazNlmVNMDqTJdwGhvMBBysuzO8CbFa7u4kre7UF9so",
+   "redirect_url": "https://www.adzuna.be/details/5979041109?utm_medium=api&utm_source=fe20cf49",
+   "title": "Arts-specialist in de Anesthesie/Algologie",
+   "created": "2026-11-26T05:04:39Z",
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Ziekenhuis aan de Stroom"
+   },
+   "longitude": 4.396952,
+   "latitude": 51.260742,
+   "id": "5979041109",
+   "location": {
+    "area": [
+     "België",
+     "Antwerpen (Provincie)",
+     "Antwerpen",
+     "Antwerpen"
+    ],
+    "display_name": "Antwerpen",
+    "__CLASS__": "Adzuna::API::Response::Location"
+   },
+   "category": {
+    "tag": "healthcare-nursing-jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "Gezondheidszorg Wetenschap en Verpleging vacatures"
+   },
+   "description": "ZAS, de drijvende kracht voor gezondheidszorg in beweging. Samen gaan we voor warme en innovatieve zorg. WAT? Zelfstandige overeenkomst ZAS Cadix / ZAS Palfijn, maar je werkt ook op andere ZAS campussen Voltijds OVER DE JOB Je participeert in poliklinische en klinische zorg. Actieve deelname in de supervisie en opleiding van assistenten wordt verwacht. Je bewaakt mee de kwaliteit en de waarden waar de dienst, alsook ZAS voor staat. Je neemt actief deel aan de wachtregeling. OVER JOU Je bent in …",
+   "salary_is_predicted": "0"
+  },
+  {
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTk3OTA0MTEwOCIsInMiOiJvTEFMSTBqcThSR2FlX2R4YlAzeE1BIn0.CXfW7AJzKwkB3ITh4HYKgfFKlYwvYYFaJns53Me9b8Q",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.be/details/5979041108?utm_medium=api&utm_source=fe20cf49",
+   "title": "Arts-specialist in de Gastro-enterologie",
+   "created": "2026-11-26T05:04:39Z",
+   "company": {
+    "display_name": "Ziekenhuis aan de Stroom",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "longitude": 4.396952,
+   "latitude": 51.260742,
+   "category": {
+    "label": "Gezondheidszorg Wetenschap en Verpleging vacatures",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "healthcare-nursing-jobs"
+   },
+   "location": {
+    "display_name": "Antwerpen",
+    "area": [
+     "België",
+     "Antwerpen (Provincie)",
+     "Antwerpen",
+     "Antwerpen"
+    ],
+    "__CLASS__": "Adzuna::API::Response::Location"
+   },
+   "id": "5979041108",
+   "description": "ZAS, de drijvende kracht voor gezondheidszorg in beweging. Samen gaan we voor warme en innovatieve zorg. Het Ziekenhuis aan de Stroom (ZAS) is een groot en dynamisch regionaal ziekenhuisnetwerk in de provincie Antwerpen, ontstaan uit de fusie van 6 algemene en 6 gespecialiseerde ziekenhuizen. ZAS telt meer dan 3200 bedden en 10.000 medewerkers, waaronder 1000 artsen. Sinds de fusie in juli 2024 bevindt het netwerk zich in volle evolutie. De dienst gastro-enterologie, hepatologie en digestieve o…",
+   "salary_is_predicted": "0"
+  },
+  {
+   "created": "2026-11-25T23:24:00Z",
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Lets Work"
+   },
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.be/details/5978836952?utm_medium=api&utm_source=fe20cf49",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTk3ODgzNjk1MiIsInMiOiJvTEFMSTBqcThSR2FlX2R4YlAzeE1BIn0.tEN8jr50UCO0Efv38w7Si8kvtfnwNQjiRjrqJnPCyPo",
+   "title": "Flexi/student winkelmedewerker slagerij",
+   "description": "functieomschrijving Voor een slagerij gaat Let's Work Roeselare op zoek naar flexi-jobbers en studenten die tijdens het weekend willen helpen in de winkel. Je staat in voor het bedienen van klanten en zorgt voor een vriendelijke, klantgerichte service. Ervaring als slager is niet nodig, want de focus ligt op de winkelbediening. Zin om een centje extra te verdienen? Lees zeker verder! Wat staat er op jou te wachten als flexi-jobber / student winkelbediening? Klanten vriendelijk bedienen en verde…",
+   "id": "5978836952",
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "display_name": "Roeselare",
+    "area": [
+     "België",
+     "West-Vlaanderen (Provincie)",
+     "Roeselare",
+     "Roeselare"
+    ]
+   },
+   "category": {
+    "label": "Detailhandel vacatures",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "retail-jobs"
+   },
+   "salary_is_predicted": "0",
+   "longitude": 3.12337,
+   "latitude": 50.94466
+  }
+ ],
+ "mean": 38221.41,
+ "count": 2070
+}
