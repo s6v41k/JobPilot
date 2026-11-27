@@ -115,6 +115,22 @@ Explanation: in this Ollama build the tag `qwen3:4b` is the **thinking-only 2507
 The non-thinking one is `qwen3:4b-instruct`. For the benchmark we compare think on/off only on models
 that really support both modes (e.g. `qwen3:8b`), and use `-instruct` variants otherwise.
 
+## 8. Cover letters (`qwen2.5:7b`, live, real vacancy + fictional CV)
+
+Time: 34-55 s per letter. Length is fine (127-160 words, limit 150 asked, 175 enforced).
+Real defects found by reading the letters, each fixed with a rule in the prompt **and** a check in code
+(the check asks the model once to repair its letter):
+
+| # | Defect | Fix |
+|---|---|---|
+| L1 | placeholder "Cher M. [Nom du responsable]" | no square brackets allowed; leftovers are removed |
+| L2 | "Dear Emma Verbeke" - the letter greeted the candidate herself | checked, model told it writes *to the hiring team* |
+| L3 | English greeting "Dear hiring team" inside a French letter (the example in our own prompt leaked) | greeting is given per language; replaced if the model copies the English one |
+| L4 | **invented "Université de Liège"** (the profile had no education: the test profile was incomplete) | schools/universities in the letter must appear in the profile; CV `Education`/`Experience` sections now fill an empty profile |
+
+Remaining quality issues (small grammar slips such as "un brasserie", "ravi(e)") are for the manual
+letter-quality rubric in the benchmark, not for code.
+
 ---
 
 ## Open questions

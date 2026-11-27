@@ -137,4 +137,6 @@ def call_tool(name: str, arguments: Any = None) -> dict:
 
 
 # Importing the modules registers their tools (keep at the bottom: they import `tool`).
-from app.tools import search_jobs, job_details, profile_tools, match_cv  # noqa: E402,F401
+from app.tools import (  # noqa: E402,F401
+    applications, cover_letter, job_details, match_cv, profile_tools, search_jobs,
+)

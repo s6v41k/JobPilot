@@ -13,7 +13,7 @@ Two kinds of tests, with different purposes.
 
 ## Automated tests
 
-Run all: `.venv\Scripts\python -m pytest` (162 tests at the time of writing).
+Run all: `.venv\Scripts\python -m pytest` (178 tests at the time of writing).
 Rule: a commit is made only when this prints **no failures**.
 
 | File | Tests | What it protects |
@@ -28,6 +28,7 @@ Rule: a commit is made only when this prints **no failures**.
 | `test_agent.py` | 41 | agent loop with a fake Ollama: tool rounds, retries, Ollama down, missing model, loop guards, **hallucination guard** |
 | `test_profile.py` | 25 | CV reading (PDF/text/scan/encrypted), structured LLM output, profile extraction |
 | `test_matching.py` | 28 | skill vocabulary, language levels, score maths, `get_job_details`, `match_cv` |
+| `test_letter_and_tracker.py` | 16 | cover letters (length limit, language, no placeholders, no invented school) and the application tracker |
 
 ### Test data
 - Vacancies in tests are either **trimmed real responses** (`tests/fixtures/*_real_sample.json`,

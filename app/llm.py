@@ -105,3 +105,29 @@ def embed(texts: list[str]) -> list[list[float]]:
     if len(vectors) != len(texts):
         raise LLMError("The embedding model returned an unexpected answer.")
     return vectors
+
+
+def chat_text(system: str, user: str, model: str | None = None, max_tokens: int = 400,
+              temperature: float = 0.4) -> str:
+    """Ask the LLM for plain text (e.g. a letter). Raises LLMError."""
+    settings = get_settings()
+    model = model or settings.ollama_model
+    kwargs: dict[str, Any] = dict(
+        model=model, keep_alive="30m", think=False,
+        messages=[{"role": "system", "content": system}, {"role": "user", "content": user}],
+        options={"num_ctx": settings.num_ctx, "temperature": temperature, "num_predict": max_tokens},
+    )
+    try:
+        try:
+            reply = get_client().chat(**kwargs)
+        except ollama.ResponseError as e:                   # model without a thinking mode
+            if "thinking" not in str(getattr(e, "error", e)).lower():
+                raise
+            kwargs.pop("think")
+            reply = get_client().chat(**kwargs)
+    except Exception as e:
+        raise _friendly(e, model) from None
+    text = (reply.message.content or "").strip()
+    if not text:
+        raise LLMError("The model returned an empty answer. Try again or use another model.")
+    return text

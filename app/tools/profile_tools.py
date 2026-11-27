@@ -41,6 +41,8 @@ _HEADINGS = {
     "skills": ("skills", "vaardigheden", "competenties", "compétences", "competences", "technical skills"),
     "languages": ("languages", "talen", "talenkennis", "langues"),
     "summary": ("profile", "profiel", "profil", "summary", "about me", "over mij"),
+    "education": ("education", "opleiding", "opleidingen", "studies", "études", "etudes", "formation"),
+    "experience": ("experience", "work experience", "ervaring", "werkervaring", "expérience", "experience professionnelle"),
 }
 
 
@@ -86,6 +88,10 @@ def build_profile(cv_text: str, model: str | None = None) -> Profile:
         profile.skills = _split_items(found["skills"])
     if not profile.languages and found.get("languages"):
         profile.languages = _split_items(found["languages"])
+    if not profile.education and found.get("education"):
+        profile.education = found["education"][:5]
+    if not profile.experience and found.get("experience"):
+        profile.experience = found["experience"][:6]
     if not profile.summary and found.get("summary"):
         profile.summary = " ".join(" ".join(found["summary"]).split()[:25])
     if profile.name and profile.name.isupper():          # "LUCAS MOREAU" -> "Lucas Moreau"

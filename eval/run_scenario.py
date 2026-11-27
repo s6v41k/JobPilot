@@ -33,7 +33,7 @@ def sample_profile(name: str) -> tuple[dict, str]:
     found = sections(text)
     profile = {"name": name.replace("_", " ").title(), "summary": " ".join(found.get("summary", [])),
                "skills": _split_items(found.get("skills", [])), "languages": _split_items(found.get("languages", [])),
-               "education": [], "experience": []}
+               "education": found.get("education", [])[:5], "experience": found.get("experience", [])[:6]}
     return profile, text
 
 
