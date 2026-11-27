@@ -13,7 +13,7 @@ Two kinds of tests, with different purposes.
 
 ## Automated tests
 
-Run all: `.venv\Scripts\python -m pytest` (237 tests at the time of writing, plus 11 JavaScript tests).
+Run all: `.venv\Scripts\python -m pytest` (238 tests at the time of writing, plus 13 JavaScript tests).
 Rule: a commit is made only when this prints **no failures**.
 
 | File | Tests | What it protects |
@@ -29,7 +29,7 @@ Rule: a commit is made only when this prints **no failures**.
 | `test_profile.py` | 25 | CV reading (PDF/text/scan/encrypted), structured LLM output, profile extraction |
 | `test_matching.py` | 28 | skill vocabulary, language levels, score maths, `get_job_details`, `match_cv` |
 | `test_mirror.py` | 22 | local copy of the Le Forem data: bulk download, failures keep the old copy, word-start search, city names, expired offers, no SQL injection, freshness label |
-| `test_web.py` | 6 | web files: assets served, page works without internet, every API path used by the JavaScript exists, Node tests |
+| `test_web.py` | 7 | web files: assets served, page works without internet, every API path used by the JavaScript exists, Node tests |
 | `test_api.py` | 29 | the REST API and SSE chat with a fake Ollama: health when Ollama is down, filters, CV upload errors, tracker, model switching, delete-my-data, calm 500 errors |
 | `test_letter_and_tracker.py` | 16 | cover letters (length limit, language, no placeholders, no invented school) and the application tracker |
 
@@ -56,7 +56,7 @@ Every experiment worth remembering is written down in [experiments_log.md](exper
 | Command | What it checks | Needs |
 |---|---|---|
 | `node --test tests/js/util.test.js` | the JavaScript helpers: HTML escaping, links, lists, SSE parsing, formatting | Node.js |
-| `python -m uitest.smoke` | a real headless Edge clicks through the UI (25 checks), screenshots to `eval/results/ui/` | Microsoft Edge |
+| `python -m uitest.smoke` | a real headless Edge clicks through the whole UI (54 checks: chat, Jobs, Tracker, Profile, phone, Ollama down), screenshots to `eval/results/ui/` | Microsoft Edge |
 
 `uitest/scripted_server.py` runs the real server, agent loop and tools with a *scripted model*, so a whole conversation takes seconds instead of minutes.
 Everything is real except the words the "model" says and the text of the cover letter.

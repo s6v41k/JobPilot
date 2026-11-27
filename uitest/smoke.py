@@ -88,13 +88,139 @@ def chat_flow(port: int) -> None:
         b.pump(1.0)
         b.screenshot(SHOTS / "3_letter.png")
 
-        b.js("[...document.querySelectorAll('.tabs button')][1].click()")
-        b.pump(0.3)
-        check(text(b, ".soon").startswith("Jobs") or text(b, ".soon").startswith("Jobs".strip()), "other tabs open without a blank page")
+        b.js("[...document.querySelectorAll('.tabs button')][3].click()")
+        b.pump(0.6)
+        check(b.js("getComputedStyle(document.querySelector('.page')).display") == "none", "switching tabs hides the chat")
         b.js("[...document.querySelectorAll('.tabs button')][0].click()")
         b.js("[...document.querySelectorAll('button')].find(x => x.innerText === 'New chat').click()")
         b.pump(0.6)
         check(b.js("document.querySelectorAll('.msg').length") == 0, "New chat clears the conversation")
+        check(not b.problems, f"no console errors or exceptions {b.problems or ''}")
+    finally:
+        b.close()
+
+
+def set_value(b: Browser, selector: str, value: str, event: str = "input") -> None:
+    """Change a form field the way a user would (so Vue's v-model notices)."""
+    b.js(f"(() => {{ const e = document.querySelector({json.dumps(selector)}); e.value = {json.dumps(value)}; "
+         f"e.dispatchEvent(new Event({json.dumps(event)}, {{bubbles: true}})); }})()")
+
+
+def click(b: Browser, selector: str, text: str | None = None) -> None:
+    if text is None:
+        b.js(f"document.querySelector({json.dumps(selector)}).click()")
+    else:
+        b.js(f"[...document.querySelectorAll({json.dumps(selector)})].find(e => e.innerText.trim() === {json.dumps(text)}).click()")
+
+
+def count(b: Browser, selector: str) -> int:
+    return b.js(f"document.querySelectorAll({json.dumps(selector)}).length")
+
+
+def tab_button(b: Browser, name: str) -> None:
+    click(b, ".tabs button", name)
+    b.pump(0.4)
+
+
+def tabs_flow(port: int) -> None:
+    """Jobs, Tracker and Profile tabs."""
+    b = Browser(port=9336)
+    base = f"http://127.0.0.1:{port}/"
+    api = lambda path: json.load(urllib.request.urlopen(base + path))          # noqa: E731
+    try:
+        b.goto(base, wait=2.5)
+
+        # ---------------------------------------------------------------- Jobs
+        tab_button(b, "Jobs")
+        check(b.wait_for("document.querySelectorAll('.cards .job').length > 0", timeout=30), "Jobs: opening the tab shows vacancies")
+        check("vacanc" in text(b, ".resultbar") and "Le Forem" in text(b, ".resultbar"), "Jobs: result bar shows the count and the source")
+        b.screenshot(SHOTS / "6_jobs.png")
+
+        set_value(b, "select[aria-label='Type of work']", "internship", "change")
+        click(b, ".filters .btn.primary")
+        b.wait_for("!document.querySelector('.loading')")
+        types = b.js("[...document.querySelectorAll('.cards .tag.type')].map(e => e.innerText)")
+        check(types and set(types) == {"internship"}, f"Jobs: the internship filter only returns internships ({len(types)} cards)")
+
+        set_value(b, "input[aria-label='Keywords']", "zzzzqq")
+        click(b, ".filters .btn.primary")
+        b.wait_for("!!document.querySelector('.nothing')", timeout=20)
+        check("No vacancies found" in text(b, ".nothing"), "Jobs: no results gives a helpful message, not a blank page")
+        click(b, ".filters .btn", "Reset")
+        check(b.wait_for("document.querySelectorAll('.cards .job').length > 0", timeout=20), "Jobs: Reset brings the vacancies back")
+
+        check(not b.js("document.querySelector('.filters input[type=checkbox]').disabled"), "Jobs: 'Match with my CV' is available when a profile exists")
+        click(b, ".filters input[type=checkbox]")
+        click(b, ".filters .btn.primary")
+        check(b.wait_for("document.querySelectorAll('.cards .score').length > 0", timeout=90), "Jobs: matching adds a score to the cards")
+        scores = [int(s) for s in b.js("[...document.querySelectorAll('.cards .score')].map(e => e.innerText)")]
+        check(scores == sorted(scores, reverse=True), "Jobs: cards are sorted by match score")
+
+        click(b, ".cards .job .btn", "Details")
+        check(count(b, ".cards .job .desc") == 1, "Jobs: Details shows the description")
+        click(b, ".cards .job .btn.primary")
+        b.pump(0.8)
+        check(text(b, ".cards .job .btn.primary") == "Saved", "Jobs: Save works from the Jobs tab")
+
+        click(b, ".cards .job .btn", "Letter")
+        check(count(b, ".modal") == 1, "Jobs: the Letter button opens a dialog")
+        click(b, ".modal .btn.primary")
+        check(b.wait_for("!!document.querySelector('.letter-text')", timeout=20), "Jobs: the letter is written and shown")
+        check("Dear hiring team" in text(b, ".letter-text"), "Jobs: the letter text is displayed")
+        b.screenshot(SHOTS / "7_letter_dialog.png")
+        click(b, ".modal .btn", "Close")
+        check(count(b, ".modal") == 0, "Jobs: the dialog closes")
+
+        # -------------------------------------------------------------- Tracker
+        tab_button(b, "Tracker")
+        b.wait_for("document.querySelectorAll('.board .job').length > 0", timeout=20)
+        # the chat test already saved one vacancy and the Jobs test saved another
+        check(count(b, "[data-status=interested] .job") == 2, "Tracker: both saved vacancies are in the 'Interested' column")
+        set_value(b, "[data-status=interested] select", "applied", "change")
+        check(b.wait_for("document.querySelectorAll('[data-status=applied] .job').length === 1", timeout=20)
+              and count(b, "[data-status=interested] .job") == 1, "Tracker: changing the status moves the card")
+        set_value(b, "[data-status=applied] input.note", "Call on Monday", "change")
+        b.pump(1.0)
+        notes = [a["notes"] for a in api("api/applications")["applications"]]
+        check("Call on Monday" in notes, "Tracker: notes are saved")
+        b.screenshot(SHOTS / "8_tracker.png")
+        click(b, "[data-status=applied] .btn", "Remove")
+        check(b.wait_for("document.querySelectorAll('.board .job').length === 1", timeout=20), "Tracker: Remove deletes the card")
+        click(b, ".board .btn", "Remove")
+        b.wait_for("document.querySelectorAll('.board .job').length === 0", timeout=20)
+        check("Nothing tracked yet" in text(b, ".hint"), "Tracker: an empty board explains what to do")
+
+        # -------------------------------------------------------------- Profile
+        tab_button(b, "Profile")
+        b.wait_for("!!document.querySelector('.profile')", timeout=20)
+        check("Emma" in (b.js("document.querySelector(\".profile input[maxlength='80']\").value") or ""), "Profile: the saved profile is loaded into the form")
+        check("Customer service" in b.js("[...document.querySelectorAll('.profile textarea')].map(e => e.value).join('|')"), "Profile: skills are listed one per line")
+        set_value(b, ".profile textarea[maxlength='400']", "Edited by the test.")
+        click(b, ".panel .btn.primary", "Save profile")
+        b.pump(1.0)
+        check(api("api/profile")["profile"]["summary"] == "Edited by the test.", "Profile: edits are saved")
+
+        set_value(b, "textarea[aria-label='Paste CV text']", "Lena Peeters, student of communication in Mechelen with two years of event experience.")
+        click(b, ".panel .btn", "Save pasted text")
+        b.pump(1.0)
+        check(api("api/profile")["has_cv"] is True, "Profile: pasted CV text is stored")
+        click(b, ".panel .btn.primary", "Analyze my CV")
+        check(b.wait_for("document.querySelector(\".profile input[maxlength='80']\").value === 'Scripted Student'", timeout=20), "Profile: Analyze fills the form with the extracted profile")
+
+        set_value(b, ".panel select", "llama3.2:3b", "change")
+        click(b, ".panel .btn.primary", "Use this model")
+        b.wait_for("document.body.innerText.includes('Active: llama3.2:3b')", timeout=20)
+        check("llama3.2:3b" in text(b, ".pill"), "Profile: switching the model updates the status bar")
+        click(b, ".panel .btn", "Refresh now")
+        check(b.wait_for("document.body.innerText.includes('vacancies downloaded')", timeout=20), "Profile: 'Refresh now' downloads the vacancy list")
+        b.screenshot(SHOTS / "9_profile.png")
+
+        click(b, ".panel .btn", "Delete my data...")
+        check("for good" in text(b, ".panel.danger"), "Profile: deleting asks for confirmation first")
+        click(b, ".panel .btn.danger")
+        b.pump(1.2)
+        data = api("api/profile")
+        check(data["profile"] is None and data["has_cv"] is False, "Profile: 'Delete my data' removes the CV and the profile")
         check(not b.problems, f"no console errors or exceptions {b.problems or ''}")
     finally:
         b.close()
@@ -137,6 +263,7 @@ def main() -> int:
     servers = [start_server(8011), start_server(8012, "down")]
     try:
         chat_flow(8011)
+        tabs_flow(8011)
         phone_flow(8011)
         ollama_down_flow(8012)
     finally:

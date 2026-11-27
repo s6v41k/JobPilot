@@ -126,8 +126,30 @@
     return "updated " + Math.round(hours / 24) + " days ago";
   }
 
+  // Profile lists are edited as one item per line (or separated by commas/semicolons).
+  function splitList(text) {
+    return String(text == null ? "" : text).split(/[\n;]+/)
+      .flatMap((line) => (line.includes(",") && line.split(",").every((p) => p.trim().split(/\s+/).length <= 4)
+        ? line.split(",") : [line]))
+      .map((s) => s.trim().replace(/^[-*•]\s*/, "")).filter(Boolean);
+  }
+  function joinList(items) { return (items || []).join("\n"); }
+
+  // "2026-11-27T10:00:00+00:00" -> "27 Nov 2026"
+  function shortDate(iso) {
+    if (!iso) return "";
+    const d = new Date(iso);
+    return isNaN(d) ? String(iso).slice(0, 10)
+      : d.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+  }
+
+  const STATUSES = [
+    { id: "interested", label: "Interested" }, { id: "applied", label: "Applied" },
+    { id: "interview", label: "Interview" }, { id: "offer", label: "Offer" }, { id: "rejected", label: "Rejected" },
+  ];
+
   const api = { escapeHtml, renderMarkdown, createSSEParser, formatMs, summarizeArgs,
-                summarizeResult, sourceLabel, ageLabel };
+                summarizeResult, sourceLabel, ageLabel, splitList, joinList, shortDate, STATUSES };
   root.JP = api;
   if (typeof module !== "undefined" && module.exports) module.exports = api;
 })(typeof window !== "undefined" ? window : globalThis);

@@ -31,6 +31,14 @@
     </div>
   </div>
 
+  <!-- short-lived confirmations (floating, they never push the page around) -->
+  <div class="toasts" aria-live="polite">
+    <div v-for="t in toasts" :key="t.id" class="toast" :class="t.kind">
+      <span>{{ t.text }}</span>
+      <button @click="closeToast(t.id)" title="Close">&times;</button>
+    </div>
+  </div>
+
   <!-- ======================= CHAT ======================= -->
   <section class="page" v-show="tab === 'chat'">
     <div class="messages" ref="scroller">
@@ -73,27 +81,7 @@
 
             <!-- vacancy cards -->
             <div class="cards" v-if="cardsOf(m).length">
-              <article class="job" v-for="j in cardsOf(m)" :key="j.id">
-                <div class="top-row">
-                  <h4>{{ j.title }}</h4>
-                  <span class="score" :class="j.match.label" v-if="j.match" :title="'Match score: ' + j.match.label">{{ j.match.score }}</span>
-                </div>
-                <div class="meta">{{ [j.company, j.city, j.region].filter(Boolean).join(' · ') }}</div>
-                <div class="tags">
-                  <span class="tag type" v-if="j.job_type">{{ j.job_type }}</span>
-                  <span class="tag" v-if="j.language">{{ j.language.toUpperCase() }}</span>
-                  <span class="tag" v-if="j.posted_at">{{ j.posted_at.slice(0, 10) }}</span>
-                </div>
-                <p class="reason" v-if="j.match">{{ j.match.reason }}</p>
-                <div class="skills" v-if="j.match">
-                  <span class="skill have" v-for="s in j.match.matched_skills" :key="'h' + s">{{ s }}</span>
-                  <span class="skill lack" v-for="s in j.match.missing_skills" :key="'l' + s">{{ s }}</span>
-                </div>
-                <div class="actions">
-                  <a class="btn" v-if="j.url" :href="j.url" target="_blank" rel="noopener noreferrer">Open ad</a>
-                  <button class="btn primary" :disabled="saved.has(j.id)" @click="saveJob(j)">{{ saved.has(j.id) ? 'Saved' : 'Save' }}</button>
-                </div>
-              </article>
+              <job-card v-for="j in cardsOf(m)" :key="j.id" :job="j" :saved="saved.has(j.id)" @save="saveJob(j)"></job-card>
             </div>
 
             <!-- tool trace (collapsible) -->
@@ -129,15 +117,19 @@
     </form>
   </section>
 
-  <!-- ======================= other tabs (next step) ======================= -->
-  <section class="page soon" v-show="tab !== 'chat'">
-    <h2>{{ tabLabel }}</h2>
-    <p>This tab arrives in the next step. The chat already searches, matches and drafts letters.</p>
-  </section>
+  <!-- ======================= other tabs (one file each) ======================= -->
+  <jobs-tab v-show="tab === 'jobs'" :active="tab === 'jobs'" :saved="saved" :has-profile="hasProfile"
+            @notify="notify" @save="saveJob"></jobs-tab>
+  <tracker-tab v-show="tab === 'tracker'" :active="tab === 'tracker'" @notify="notify" @changed="onTrackerChanged"></tracker-tab>
+  <profile-tab v-show="tab === 'profile'" :active="tab === 'profile'" @notify="notify" @changed="onProfileChanged"></profile-tab>
 </div>
 
 <script src="/vendor/vue.global.prod.js"></script>
 <script src="/util.js"></script>
+<script src="/components.js"></script>
+<script src="/tab-jobs.js"></script>
+<script src="/tab-tracker.js"></script>
+<script src="/tab-profile.js"></script>
 <script src="/app.js"></script>
 </body>
 </html>

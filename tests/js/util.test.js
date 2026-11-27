@@ -72,6 +72,26 @@ test("formatters", () => {
   assert.strictEqual(JP.sourceLabel({ kind: "live" }), "Live data");
 });
 
+test("profile lists: one per line, commas and bullets accepted, blanks dropped", () => {
+  assert.deepStrictEqual(JP.splitList("Excel\n- Word\n\n  Teamwork  "), ["Excel", "Word", "Teamwork"]);
+  assert.deepStrictEqual(JP.splitList("Python, SQL, Git"), ["Python", "SQL", "Git"]);
+  assert.deepStrictEqual(JP.splitList("Dutch (native); English (fluent)"), ["Dutch (native)", "English (fluent)"]);
+  // a long sentence with a comma is ONE item, not cut in two
+  assert.deepStrictEqual(JP.splitList("Waitress at a brasserie in Antwerp, weekends (2024 - now)"),
+    ["Waitress at a brasserie in Antwerp, weekends (2024 - now)"]);
+  assert.deepStrictEqual(JP.splitList(""), []);
+  assert.deepStrictEqual(JP.splitList(null), []);
+  assert.strictEqual(JP.joinList(["a", "b"]), "a\nb");
+  assert.strictEqual(JP.joinList(null), "");
+});
+
+test("dates and statuses", () => {
+  assert.strictEqual(JP.shortDate(""), "");
+  assert.ok(/2026/.test(JP.shortDate("2026-11-27T10:00:00+00:00")));
+  assert.strictEqual(JP.shortDate("garbage").length > 0, true);
+  assert.deepStrictEqual(JP.STATUSES.map((s) => s.id), ["interested", "applied", "interview", "offer", "rejected"]);
+});
+
 test("tool result summaries", () => {
   assert.strictEqual(JP.summarizeResult("search_jobs", true, { count: 5, jobs: [], data_source: "live" }, null), "5 vacancies (live)");
   assert.strictEqual(JP.summarizeResult("match_cv", true, { matches: [1, 2] }, null), "2 vacancies scored");

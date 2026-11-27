@@ -136,6 +136,14 @@ Real defects found by reading the letters, each fixed with a rule in the prompt 
 Remaining quality issues (small grammar slips such as "un brasserie", "ravi(e)") are for the manual
 letter-quality rubric in the benchmark, not for code.
 
+## 9. Whole stack in the browser (2026-11-27, MVP check)
+
+Real server + real `qwen2.5:7b` + real snapshot vacancies + fictional CV, question typed in the web page:
+`search_jobs` 37 ms -> `match_cv` with all 5 ids 5.2 s -> grounded answer, best pick 85/100 (a real `match_cv` score), no retraction.
+**222 s in total, 5.1 tokens/s**, of which almost all is the model reading the result and writing the answer
+(the UI showed "Reading the match_cv result... 193 s"). The answer used "85 out of 100": the guard only checks the "N/100" spelling, which is fine
+because the number itself matched the tool result.
+
 ---
 
 ## Open questions

@@ -9,7 +9,7 @@
  */
 const { createApp, reactive, ref, computed, nextTick, onMounted, onBeforeUnmount } = Vue;
 
-createApp({
+const app = createApp({
   setup() {
     // ------------------------------------------------------------------ state
     const tabs = [
@@ -23,7 +23,7 @@ createApp({
     const input = ref("");
     const busy = ref(false);
     const saved = reactive(new Set());
-    const banners = reactive([]);                 // user-visible notices (dismissable)
+    const toasts = reactive([]);                  // short-lived confirmations and problems
     const now = ref(Date.now());
     const scroller = ref(null);
     const box = ref(null);
@@ -45,23 +45,22 @@ createApp({
     const sourceText = JP.sourceLabel;
     const tabLabel = computed(() => (tabs.find((t) => t.id === tab.value) || {}).label);
 
-    function addBanner(kind, text, id) {
-      id = id || "b" + nextId++;
-      if (!banners.some((b) => b.id === id)) banners.push({ id, kind, text, dismissable: true });
-      return id;
-    }
-    function dismiss(id) {
-      const i = banners.findIndex((b) => b.id === id);
-      if (i >= 0) banners.splice(i, 1);
-      dismissed.add(id);
-    }
+    // Banners (top of the page) describe a STATE that lasts: server down, Ollama off, list downloading.
     const dismissed = new Set();
+    function dismiss(id) { dismissed.add(id); }
 
-    async function api(path, options) {
-      const res = await fetch(path, options);
-      const body = await res.json().catch(() => ({}));
-      if (!res.ok) throw new Error(body.error || "The server answered " + res.status);
-      return body;
+    const api = JPUI.api;                          // fetch + friendly errors (see components.js)
+
+    // Toasts (floating, bottom-right) confirm an ACTION: "Profile saved", "Could not save: ...".
+    // They fade away by themselves, so they never pile up and never push the page around.
+    function notify(kind, text) {
+      const id = nextId++;
+      toasts.push({ id, kind, text });
+      setTimeout(() => closeToast(id), kind === "info" ? 4500 : 9000);
+    }
+    function closeToast(id) {
+      const i = toasts.findIndex((t) => t.id === id);
+      if (i >= 0) toasts.splice(i, 1);
     }
 
     // ----------------------------------------------------------------- health
@@ -74,6 +73,9 @@ createApp({
       }
     }
     const ollamaOk = computed(() => !!(health.value && health.value.ollama && health.value.ollama.ok));
+    const hasProfile = computed(() => !!(health.value && health.value.database && health.value.database.has_profile));
+    const onProfileChanged = () => loadHealth();            // a new CV/profile/model changes the status bar
+    const onTrackerChanged = () => loadSaved();             // a removed application is no longer "Saved"
     const modelName = computed(() => (health.value && health.value.models.chat.name) || "");
     const vacanciesLabel = computed(() => {
       const v = health.value && health.value.vacancies;
@@ -103,7 +105,7 @@ createApp({
         list.push({ id: "nolist", kind: "info", dismissable: true,
           text: "The local vacancy list is still downloading. Until then searches use the live job portal." });
       }
-      return list.concat(banners);
+      return list;
     });
 
     // ------------------------------------------------------------------ chat
@@ -233,15 +235,19 @@ createApp({
           body: JSON.stringify({ job_id: job.id }) });
         saved.add(job.id);
       } catch (e) {
-        addBanner("error", "Could not save the vacancy: " + e.message);
+        notify("error", "Could not save the vacancy: " + e.message);
       }
     }
     async function loadSaved() {
-      try { (await api("/api/applications")).applications.forEach((a) => saved.add(a.job_id)); } catch (e) { /* optional */ }
+      try {
+        const list = (await api("/api/applications")).applications;
+        saved.clear();
+        list.forEach((a) => saved.add(a.job_id));
+      } catch (e) { /* optional */ }
     }
     async function copy(text) {
-      try { await navigator.clipboard.writeText(text); addBanner("info", "Letter copied."); setTimeout(() => dismiss(banners[banners.length - 1].id), 2000); }
-      catch (e) { addBanner("warn", "Copy is not allowed here: select the text and copy it by hand."); }
+      try { await navigator.clipboard.writeText(text); notify("info", "Letter copied."); }
+      catch (e) { notify("warn", "Copy is not allowed here: select the text and copy it by hand."); }
     }
 
     // ------------------------------------------------------------------ misc UI
@@ -272,9 +278,16 @@ createApp({
 
     return {
       tabs, tab, tabLabel, health, messages, input, busy, saved, suggestions, scroller, box,
-      ollamaOk, modelName, vacanciesLabel, vacanciesTitle, allBanners,
+      ollamaOk, hasProfile, modelName, vacanciesLabel, vacanciesTitle, allBanners,
       render, fmt, sourceText, cardsOf, waitingText, speed,
-      send, stop, newChat, saveJob, copy, dismiss, grow,
+      toasts, closeToast, send, stop, newChat, saveJob, copy, dismiss, grow, notify, onProfileChanged, onTrackerChanged,
     };
   },
-}).mount("#app");
+});
+
+// the building blocks defined in components.js and tab-*.js
+app.component("job-card", JPUI.JobCard);
+app.component("jobs-tab", JPUI.JobsTab);
+app.component("tracker-tab", JPUI.TrackerTab);
+app.component("profile-tab", JPUI.ProfileTab);
+app.mount("#app");

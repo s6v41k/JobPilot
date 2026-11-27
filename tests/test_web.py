@@ -21,14 +21,15 @@ def client():
 def test_every_local_asset_in_index_html_is_served(client):
     html = (WEB / "index.html").read_text(encoding="utf-8")
     paths = re.findall(r'(?:src|href)="(/[^"]+)"', html)
-    assert {"/style.css", "/util.js", "/app.js", "/vendor/vue.global.prod.js"} <= set(paths)
+    assert {"/style.css", "/util.js", "/components.js", "/tab-jobs.js", "/tab-tracker.js", "/tab-profile.js",
+            "/app.js", "/vendor/vue.global.prod.js"} <= set(paths)
     for path in paths:
         assert client.get(path).status_code == 200, path
 
 
 def test_the_page_needs_no_internet(client):
     """The demo may run without Wi-Fi: no script, style or font may come from another site."""
-    for name in ("index.html", "style.css", "app.js", "util.js"):
+    for name in ["index.html", "style.css"] + [p.name for p in WEB.glob("*.js")]:
         text = (WEB / name).read_text(encoding="utf-8")
         external = re.findall(r'(?:src|href)="(https?://[^"]+)"|url\((https?://[^)]+)\)|@import\s+["\']https?://', text)
         # links the user clicks (job ads, sources) are fine; loaded resources are not
@@ -44,11 +45,23 @@ def test_vue_is_vendored_with_its_licence_header():
 def test_every_api_path_used_by_the_javascript_exists_on_the_server():
     routes = {r.path for r in main.app.routes}
     templated = [re.sub(r"\{[^}]+\}", "{}", p) for p in routes]
-    used = set(re.findall(r'["\'`](/api/[a-zA-Z0-9/_-]*)', (WEB / "app.js").read_text(encoding="utf-8")))
-    assert used, "app.js should call the API"
-    for path in used:
-        ok = path in routes or path.rstrip("/") in routes or any(t.startswith(path.rstrip("/")) for t in templated)
-        assert ok, f"app.js calls {path} but the server has no such route"
+    used = {}
+    for js in WEB.glob("*.js"):                                    # app.js and every tab / component file
+        for path in re.findall(r'["\'`](/api/[a-zA-Z0-9/_-]*)', js.read_text(encoding="utf-8")):
+            used[path] = js.name
+    assert len(used) >= 12, "the UI should call many API endpoints"
+    patterns = [re.compile("^" + re.sub(r"\{[^}]+\}", "[^/]+", r) + "$") for r in routes]
+    for path, where in used.items():
+        # a full path ("/api/tools/draft_cover_letter") or the start of one built in JS ("/api/applications/" + id)
+        ok = any(p.match(path) for p in patterns) or any(t.startswith(path) for t in templated)
+        assert ok, f"{where} calls {path} but the server has no such route"
+
+
+def test_every_component_used_in_the_page_is_registered():
+    page = (WEB / "index.html").read_text(encoding="utf-8")
+    registered = set(re.findall(r'app\.component\("([a-z-]+)"', (WEB / "app.js").read_text(encoding="utf-8")))
+    used = set(re.findall(r"<([a-z]+-[a-z-]+)[\s>]", page))
+    assert used and used <= registered, f"not registered: {used - registered}"
 
 
 def test_html_has_no_unbalanced_vue_blocks():

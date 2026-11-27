@@ -95,6 +95,12 @@ def scripted_letter(args):
             "job": {"id": args.job_id, "title": "Serveur - Job étudiant", "company": "Accent"}}
 
 
+def scripted_profile(cv_text: str):
+    from app.tools.profile_tools import Profile
+    return Profile(name="Scripted Student", city="Mechelen", summary="Analysed by a scripted model.",
+                   skills=["Teamwork", "Excel"], languages=["Dutch (native)", "English (fluent)"])
+
+
 def prepare() -> None:
     profile, cv_text = sample_profile("emma_verbeke")            # the FICTIONAL student
     with db.connect() as conn:
@@ -104,7 +110,10 @@ def prepare() -> None:
     main.search_all = fake_search
     TOOLS["draft_cover_letter"].func = scripted_letter           # a real letter needs the slow LLM
     main._agent = Agent(client=ScriptedOllama())
-    main.installed_models = (lambda: None) if MODE == "down" else (lambda: ["qwen2.5:7b", "bge-m3:latest"])
+    main.installed_models = (lambda: None) if MODE == "down" else (
+        lambda: ["qwen2.5:7b", "bge-m3:latest", "llama3.2:3b"])
+    main.build_profile = scripted_profile                        # reading a CV needs the slow LLM
+    main.forem_mirror.refresh = lambda **kw: 24310               # no download from the portal in UI tests
     main._ollama_get = lambda path: {"version": "scripted", "models": []}
     main._refresher.start = lambda: None                         # never download from the portal in UI tests
 

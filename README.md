@@ -16,6 +16,19 @@ copy .env.example .env        # then fill in your keys
 .venv\Scripts\python -m pytest
 ```
 
+## Run it
+
+```powershell
+.venv\Scripts\python -m app.main          # web app: http://127.0.0.1:8000  (Chat, Jobs, Tracker, Profile)
+.venv\Scripts\python -m app.cli           # chat in the terminal
+.venv\Scripts\python -m app.agent_minimal # the 50-line fallback agent
+.venv\Scripts\python -m pytest            # 238 tests, ~10 s
+.venv\Scripts\python -m uitest.smoke      # clicks through the web UI in a headless Edge (54 checks)
+```
+Ollama must be running with a model, for example `ollama pull qwen2.5:7b` and `ollama pull bge-m3`.
+Everything about how it is built and tested: [docs/development_log.md](docs/development_log.md),
+[docs/testing.md](docs/testing.md), [docs/experiments_log.md](docs/experiments_log.md).
+
 ## Versions used
 - Ollama: 0.40.18
 - `ollama` Python library: see `requirements.txt` (installed version is recorded in `docs/model_selection.md`)

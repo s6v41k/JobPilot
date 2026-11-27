@@ -21,7 +21,7 @@ test details in [testing.md](testing.md).
 | 10 | FastAPI: REST + streaming chat | done |
 | 10b | Local copy of the Forem dataset (daily quota problem) | done - **live download still to be verified** |
 | 11 | Web UI: Chat with tool trace | done |
-| 12 | Web UI: Jobs, Tracker, Profile - **MVP (target 10 Dec)** | |
+| 12 | Web UI: Jobs, Tracker, Profile - **MVP (target 10 Dec)** | done (27 Nov) |
 | 13 | Preflight check, demo mode, error banners | |
 | 14 | Agent roles (one model per job) and runtime model switching | |
 | 15 | Benchmark (two stages) and model selection | |
@@ -190,3 +190,29 @@ If the export format differs, only `refresh()` needs adjusting; the search side 
 - A first run showed *no scores and no answer* - not a UI bug: the scripted search had not saved the vacancies, so `match_cv` correctly said "unknown id".
   The UI showed the failed chip and the error calmly instead of breaking.
 - Scrollbars and the textarea were light-grey on the dark theme until `color-scheme: dark` was added.
+
+## Commit 12 - Jobs, Tracker and Profile tabs: the MVP (this commit)
+**What:** the three remaining tabs, each in its own file (`web/tab-jobs.js`, `tab-tracker.js`, `tab-profile.js`) plus the shared vacancy card (`web/components.js`).
+- **Jobs** - filters (keywords, type, region, city, language, 20/50 results), vacancy cards with *Details*, *Letter* and *Save*, optional **"Match with my CV"** scores
+  (cards re-sort by score), data badge + attribution, a helpful message when nothing is found. **Works without the LLM**: only the optional match score uses the
+  embedding model, and without it the score falls back to skills + language. The *Letter* button opens a dialog (language, tone, copy).
+- **Tracker** - a kanban board with the five statuses (interested / applied / interview / offer / rejected): change the status in a drop-down, add a note, remove, open the ad.
+- **Profile** - CV upload (PDF / text file / pasted text) and *Analyze my CV*; the extracted profile is shown in an **editable form** (one item per line); model picker
+  (installed models, context size, thinking on/off) that takes effect immediately; "Refresh now" for the local vacancy list; a two-step **Delete my data** button.
+- Toasts (floating, fade away) confirm actions; banners at the top are only for states that last (server down, Ollama off, model missing, list downloading).
+**Why it is built like this:** one vacancy card component is used by the chat and by the Jobs tab, so a card always looks and behaves the same. Tabs refresh themselves
+when opened (so a vacancy saved in the chat appears in the Tracker at once). Every API path used by the JavaScript is checked against the real server routes in a test.
+**Run:** `.venv\Scripts\python -m app.main` and open http://127.0.0.1:8000.
+**Tests:** 13 Node tests, 237 Python tests, and **54 browser checks** (`python -m uitest.smoke`) covering chat, Jobs filters / match / details / letter dialog, Tracker moves / notes / remove,
+Profile edit / paste CV / analyze / switch model / refresh / delete, phone width and the "Ollama is down" state.
+
+**First end-to-end run with a REAL model in the browser (MVP check, 2026-11-27)** - real server, `qwen2.5:7b`, vacancy list seeded from the real snapshot, fictional CV:
+*"Find student jobs in Brussels and tell me which one fits my CV best"* -> `search_jobs` (37 ms) -> `match_cv` with **all 5** ids (5.2 s) -> correct, grounded answer
+(best: "Serveur - Job etudiant", 85/100, a real score), 5 cards sorted by score, source line shown, no retraction, no error. **Total 222 s** at 5.1 tokens/s.
+It works, but **speed is now the main risk for the demo**; commits 13-15 deal with it (warm model, scripted demo scenarios, smaller models, iGPU test).
+
+**Surprises**
+- The first UI test run failed on several checks. Two were real *design* problems, found by looking at the screenshots (not by the checks): buttons wrapped onto two lines in narrow cards,
+  and confirmations piled up as banners and pushed the page down. Fixed (wider cards, toasts).
+- The others were wrong assumptions in the test (a vacancy was already tracked from the chat test; the first `input` of the Profile tab is the hidden file picker).
+- Quota reminder: the live Forem download could still not be verified today; the local list in this test was seeded from the saved snapshot.
