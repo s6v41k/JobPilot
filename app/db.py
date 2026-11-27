@@ -312,6 +312,11 @@ def update_application_status(conn: sqlite3.Connection, job_id: str, status: str
     return dict(conn.execute("SELECT * FROM applications WHERE job_id = ?", (job_id,)).fetchone())
 
 
+def delete_application(conn: sqlite3.Connection, job_id: str) -> bool:
+    """Remove a vacancy from the tracker. True if it was there."""
+    return conn.execute("DELETE FROM applications WHERE job_id = ?", (job_id,)).rowcount > 0
+
+
 def list_applications(conn: sqlite3.Connection, status: str | None = None) -> list[dict[str, Any]]:
     """Applications joined with job title/company, newest first."""
     sql = (

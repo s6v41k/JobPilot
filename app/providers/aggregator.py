@@ -20,7 +20,9 @@ from app.providers.forem import ForemProvider
 from app.providers.keywords import expand_keywords
 from app.providers.snapshot import SnapshotProvider
 
-MIN_RESULTS_BEFORE_ADZUNA = 5
+# Adzuna has a tiny free quota (25 calls/month), so it is used ONLY when Le Forem found nothing at all
+# (or failed). A Jobs-tab click or a chat question must never spend it just because results were few.
+MIN_RESULTS_BEFORE_ADZUNA = 1
 
 
 @dataclass

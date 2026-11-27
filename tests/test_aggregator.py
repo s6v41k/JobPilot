@@ -44,18 +44,32 @@ def test_enough_results_means_adzuna_is_not_used(dbp):
         assert db.get_job(conn, "fake:1") is not None
 
 
-def test_few_results_falls_through_to_adzuna_and_dedupes(dbp):
+def test_a_few_results_do_not_spend_the_adzuna_budget(dbp):
+    adzuna = Fake([job(9)])
+    out = search_all(JobQuery(), Fake([job(1), job(2)]), adzuna, SnapshotProvider(dbp.parent), db_path=dbp)
+    assert len(out.jobs) == 2 and adzuna.queries == []
+
+
+def test_adzuna_is_used_when_forem_finds_nothing_or_fails(dbp):
+    adzuna = Fake([job(9)])
+    assert [j.id for j in search_all(JobQuery(), Fake([]), adzuna, SnapshotProvider(dbp.parent), db_path=dbp).jobs] == ["fake:9"]
+    adzuna = Fake([job(8)])
+    out = search_all(JobQuery(), Fake(error="429"), adzuna, SnapshotProvider(dbp.parent), db_path=dbp)
+    assert [j.id for j in out.jobs] == ["fake:8"] and "429" in out.notes
+
+
+def test_results_are_merged_and_deduplicated_when_adzuna_is_allowed(dbp):
     forem = Fake([job(1), job(2)])
     adzuna = Fake([job(2, id="fake:x"), job(3)])        # job 2 again, same title/company/city
-    out = search_all(JobQuery(), forem, adzuna, SnapshotProvider(dbp.parent), db_path=dbp)
+    out = search_all(JobQuery(), forem, adzuna, SnapshotProvider(dbp.parent), db_path=dbp, min_results=5)
     assert [j.title for j in out.jobs] == ["Test job 1", "Test job 2", "Test job 3"]
     assert len(adzuna.queries) == 1
 
 
 def test_adzuna_failure_is_only_a_note(dbp):
-    out = search_all(JobQuery(), Fake([job(1)]), Fake(error="budget used up"),
+    out = search_all(JobQuery(), Fake([]), Fake(error="budget used up"),
                      SnapshotProvider(dbp.parent), db_path=dbp)
-    assert len(out.jobs) == 1 and out.data_source == "live"
+    assert out.jobs == [] and out.data_source == "live"       # Forem answered (nothing found): no fallback needed
     assert "budget used up" in out.notes
 
 

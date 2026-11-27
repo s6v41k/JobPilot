@@ -13,7 +13,7 @@ Two kinds of tests, with different purposes.
 
 ## Automated tests
 
-Run all: `.venv\Scripts\python -m pytest` (178 tests at the time of writing).
+Run all: `.venv\Scripts\python -m pytest` (206 tests at the time of writing).
 Rule: a commit is made only when this prints **no failures**.
 
 | File | Tests | What it protects |
@@ -23,11 +23,12 @@ Rule: a commit is made only when this prints **no failures**.
 | `test_adzuna.py` | 11 | Adzuna client: cache first, 25-calls/month budget, keys never leak into cache or errors, HTTP errors |
 | `test_forem.py` | 11 | Le Forem open data: query building, expired offers hidden, internship vs student contract, rate limiter |
 | `test_geo_and_inference.py` | 16 | regions, city names (Antwerp = Anvers = Antwerpen), job type / language / level guessing |
-| `test_aggregator.py` | 10 | source order Forem -> Adzuna -> saved jobs -> real snapshot; NL/FR keyword expansion |
+| `test_aggregator.py` | 12 | source order Forem -> Adzuna (only when Forem finds nothing/fails) -> saved jobs -> real snapshot; NL/FR keyword expansion |
 | `test_tools.py` | 10 | the one safe door `call_tool`: validation, timeouts, never raises, logging |
 | `test_agent.py` | 41 | agent loop with a fake Ollama: tool rounds, retries, Ollama down, missing model, loop guards, **hallucination guard** |
 | `test_profile.py` | 25 | CV reading (PDF/text/scan/encrypted), structured LLM output, profile extraction |
 | `test_matching.py` | 28 | skill vocabulary, language levels, score maths, `get_job_details`, `match_cv` |
+| `test_api.py` | 26 | the REST API and SSE chat with a fake Ollama: health when Ollama is down, filters, CV upload errors, tracker, model switching, delete-my-data, calm 500 errors |
 | `test_letter_and_tracker.py` | 16 | cover letters (length limit, language, no placeholders, no invented school) and the application tracker |
 
 ### Test data

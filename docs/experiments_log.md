@@ -33,6 +33,11 @@ repeat each case several times.
 
 **Lesson:** the best source was an official open-data portal, found by searching for it, not by scraping.
 
+**Quota (found 2026-11-27, evening):** the ODWB portal answers `429` with *"exceeded the requests limit for anonymous users",
+call_limit 10 000 per day, reset at 00:00 UTC*. We were blocked for the rest of the day. Headers of the portal show the limit is
+per client address (possibly shared with other users of the same network). Consequence: do not query the portal for every
+user question; download the dataset in bulk and search it locally (next commit).
+
 ## 2. Speed on this laptop (CPU only)
 
 - `ollama ps` shows `qwen2.5:7b` with **0 MB in VRAM**: the AMD graphics are not used.
