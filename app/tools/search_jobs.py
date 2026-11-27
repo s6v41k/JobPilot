@@ -25,10 +25,10 @@ class SearchJobsArgs(BaseModel):
         default=None, description="Language the vacancy is written in.")
     experience_level: Literal["none", "junior", "medior", "senior"] | None = Field(
         default=None, description="Required experience.")
-    limit: int = Field(default=8, ge=1, le=20, description="How many vacancies to return (max 20).")
+    limit: int = Field(default=5, ge=1, le=20, description="How many vacancies to return (default 5, max 20).")
 
 
-def _short(text: str | None, n: int = 220) -> str:
+def _short(text: str | None, n: int = 110) -> str:
     text = " ".join((text or "").split())
     return text if len(text) <= n else text[: n - 1] + "…"
 

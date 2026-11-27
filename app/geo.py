@@ -37,6 +37,33 @@ _PROVINCE_REGION: list[tuple[str, str]] = [
 ]
 
 
+# The same city has different names in Dutch / French / English. Job sites use the local
+# one, but students type whatever they know ("Antwerp", "Ghent", "Louvain").
+_CITY_GROUPS = [
+    ["Antwerpen", "Anvers", "Antwerp"], ["Gent", "Gand", "Ghent"], ["Brugge", "Bruges"],
+    ["Leuven", "Louvain"], ["Mechelen", "Malines"], ["Oostende", "Ostende", "Ostend"],
+    ["Kortrijk", "Courtrai"], ["Liege", "Luik"], ["Mons", "Bergen"], ["Namur", "Namen"],
+    ["Tournai", "Doornik"], ["Ieper", "Ypres"], ["Nivelles", "Nijvel"], ["Wavre", "Waver"],
+    ["Aalst", "Alost"], ["Tongeren", "Tongres"], ["Hasselt"], ["Genk"], ["Turnhout"],
+    ["Roeselare", "Roulers"], ["Dendermonde", "Termonde"], ["Charleroi"], ["Verviers"],
+    ["Arlon", "Aarlen"], ["Eupen"], ["Lier", "Lierre"], ["Vilvoorde", "Vilvorde"],
+]
+_CITY_LOOKUP = {normalize(name): group for group in _CITY_GROUPS for name in group}
+
+# "Brussels" is not one municipality but 19 (Ixelles, Schaerbeek...): treat it as a region.
+BRUSSELS_NAMES = {"brussels", "brussel", "bruxelles", "brussels city", "brussel-stad", "bruxelles-ville",
+                  "brussels-capital", "brussels capital region"}
+
+
+def is_brussels(city: str | None) -> bool:
+    return normalize(city or "") in BRUSSELS_NAMES
+
+
+def city_variants(city: str) -> list[str]:
+    """All known spellings of a city (NL/FR/EN); just the input if we do not know it."""
+    return list(_CITY_LOOKUP.get(normalize(city), [city.strip()]))
+
+
 def region_from_area(area: list[str] | None) -> str | None:
     """Find the region from a list like ["Belgium", "Vlaams-Brabant", "Leuven"].
 

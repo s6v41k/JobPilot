@@ -15,7 +15,7 @@ from app import db
 from app.providers import adzuna as adzuna_module
 from app.providers import forem as forem_module
 from app.providers.adzuna import AdzunaProvider
-from app.providers.base import Job, JobProvider, JobQuery, ProviderError
+from app.providers.base import Job, JobProvider, JobQuery, ProviderError, localize
 from app.providers.forem import ForemProvider
 from app.providers.keywords import expand_keywords
 from app.providers.snapshot import SnapshotProvider
@@ -57,12 +57,14 @@ def search_all(
     out = SearchOutcome()
     attempted = failed = 0
 
+    local = localize(query)        # "Brussels" -> the whole Brussels region
+
     # 1. Le Forem (also searches NL/FR translations of simple English keywords)
     attempted += 1
     try:
         found: list[Job] = []
-        for variant in expand_keywords(query.keywords):
-            found += forem.search(query.model_copy(update={"keywords": variant}))
+        for variant in expand_keywords(local.keywords):
+            found += forem.search(local.model_copy(update={"keywords": variant}))
         out.jobs = _dedupe(found)
         out.attribution.append(forem_module.ATTRIBUTION)
     except ProviderError as e:
@@ -94,8 +96,8 @@ def search_all(
     if failed < attempted:
         return out
     with db.connect(db_path) as conn:
-        rows = db.query_jobs(conn, keywords=query.keywords, job_type=query.job_type,
-                             region=query.region, city=query.city, language=query.language,
+        rows = db.query_jobs(conn, keywords=local.keywords, job_type=local.job_type,
+                             region=local.region, city=local.city, language=local.language,
                              experience_level=query.experience_level, limit=query.limit)
     if rows:
         out.jobs = [Job(**r) for r in rows]

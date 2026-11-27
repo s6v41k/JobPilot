@@ -97,3 +97,8 @@ def test_rate_limiter_waits_between_calls_to_same_domain():
     assert limiter.wait("a.be") == pytest.approx(1.5)
     assert limiter.wait("b.be") == 0    # other domain is independent
     assert slept == [pytest.approx(1.5)]
+
+
+def test_city_is_searched_under_all_its_names(tmp_path):
+    where = make(tmp_path, None).build_where(JobQuery(city="Antwerp"))
+    assert '"Antwerpen"' in where and '"Anvers"' in where and " or " in where

@@ -12,9 +12,9 @@ import re
 from pathlib import Path
 
 from app.config import ROOT_DIR
-from app.geo import normalize
+from app.geo import city_variants, normalize
 from app.providers.adzuna import AdzunaProvider
-from app.providers.base import Job, JobProvider, JobQuery, matches
+from app.providers.base import Job, JobProvider, JobQuery, localize, matches
 from app.providers.forem import ForemProvider
 
 SNAPSHOT_DIR = ROOT_DIR / "data" / "snapshots"
@@ -53,12 +53,15 @@ class SnapshotProvider(JobProvider):
         return jobs
 
     def search(self, query: JobQuery) -> list[Job]:
+        query = localize(query)
         words = [normalize(w) for w in query.keywords.split()]
         found = []
         for job in self.load_all():
             haystack = normalize(f"{job.title} {job.company or ''} {job.description or ''}")
             if all(w in haystack for w in words) and matches(job, query):
-                if query.city and normalize(query.city) not in normalize(f"{job.city or ''} {job.location or ''}"):
-                    continue
+                if query.city:
+                    place = normalize(f"{job.city or ''} {job.location or ''}")
+                    if not any(normalize(v) in place for v in city_variants(query.city)):
+                        continue
                 found.append(job)
         return found[: query.limit]

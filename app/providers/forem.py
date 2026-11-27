@@ -21,7 +21,7 @@ import httpx
 
 from app import db
 from app.config import Settings, get_settings
-from app.geo import region_from_area
+from app.geo import city_variants, region_from_area
 from app.providers.base import (
     Job, JobProvider, JobQuery, ProviderError,
     detect_language, infer_experience, infer_job_type, matches,
@@ -70,7 +70,8 @@ class ForemProvider(JobProvider):
             if w:
                 parts.append(f'(search(titreoffre, "{w}") or search(metier, "{w}"))')
         if q.city:
-            parts.append(f'search(lieuxtravaillocalite, "{_q(q.city)}")')
+            names = [_q(c) for c in city_variants(q.city) if _q(c)]
+            parts.append("(" + " or ".join(f'search(lieuxtravaillocalite, "{n}")' for n in names) + ")")
         if q.region:                                            # NUTS-1: BE1/BE2/BE3
             parts.append(f'search(lieuxtravailregionnuts, "{_NUTS[q.region]}")')
         if q.job_type == "student":

@@ -43,3 +43,11 @@ def test_infer_experience_and_language():
     assert detect_language("Nous recherchons un employé pour le poste avec une expérience dans la vente") == "fr"
     assert detect_language("We are looking for a person with experience to join our team and the staff") == "en"
     assert detect_language("hi") is None
+
+
+def test_city_variants_and_brussels():
+    from app.geo import city_variants, is_brussels
+    assert {"Antwerpen", "Anvers", "Antwerp"} <= set(city_variants("antwerp"))
+    assert "Gand" in city_variants("Ghent")
+    assert city_variants("Unknownville") == ["Unknownville"]
+    assert is_brussels("Brussels") and is_brussels("BRUXELLES") and not is_brussels("Leuven")

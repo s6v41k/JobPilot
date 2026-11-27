@@ -12,7 +12,7 @@ from typing import Any, Literal
 
 from pydantic import BaseModel, Field
 
-from app.geo import normalize
+from app.geo import is_brussels, normalize
 
 JobType = Literal["student", "part-time", "internship", "full-time"]
 
@@ -35,6 +35,13 @@ class JobQuery(BaseModel):
     language: Literal["nl", "fr", "en"] | None = None
     experience_level: Literal["none", "junior", "medior", "senior"] | None = None
     limit: int = Field(default=20, ge=1, le=50)
+
+
+def localize(query: JobQuery) -> JobQuery:
+    """Adapt a query to how Belgian sources work: "Brussels" means the whole region."""
+    if is_brussels(query.city):
+        return query.model_copy(update={"city": None, "region": query.region or "brussels"})
+    return query
 
 
 class Job(BaseModel):

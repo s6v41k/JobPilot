@@ -90,3 +90,15 @@ def test_expand_keywords():
     assert expand_keywords("") == [""]
     assert expand_keywords("Barista")[0] == "Barista"
     assert expand_keywords("data analyst") == ["data analyst"]      # phrases stay as typed
+
+
+def test_brussels_becomes_the_whole_region(dbp):
+    forem = Fake([job(i) for i in range(6)])
+    search_all(JobQuery(keywords="x", city="Brussels"), forem, Fake(), db_path=dbp)
+    assert forem.queries[0].city is None and forem.queries[0].region == "brussels"
+
+
+def test_snapshot_understands_city_names_and_brussels():
+    snap = SnapshotProvider()
+    assert snap.search(JobQuery(city="Brussels", limit=50))        # real snapshot has Brussels offers
+    assert all(j.region == "brussels" for j in snap.search(JobQuery(city="Brussels", limit=50)))
