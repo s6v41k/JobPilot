@@ -1,0 +1,82 @@
+{
+ "model": "qwen2.5:7b",
+ "question": "Find student jobs in Brussels and tell me which one fits my CV best",
+ "profile": "emma_verbeke",
+ "think": false,
+ "date": "2026-11-27T12:11:43",
+ "wall_s": 188.9,
+ "tokens_per_s": 5.4,
+ "prompt_tokens": 6758,
+ "tool_calls": [
+  "search_jobs",
+  "match_cv"
+ ],
+ "tool_failures": 0,
+ "guard_retractions": 0,
+ "errors": [],
+ "answer": "Based on the comparison, the job that fits your CV the best is:\n\n1. **Serveur - Job étudiant** - ACCENT Jobs For People, Saint-Gilles (id: forem:2151647) - 60/100.\n\nThis job has a good fit because it mentions skills that your CV doesn't show (like hospitality), and the ad is in French, which you speak at an intermediate level.\n\nThe other jobs have a partial fit, but they might still be worth considering if you're interested in the fields they mention.\n\nWould you like more information on any of these jobs?",
+ "events": [
+  {
+   "at_s": 63.8,
+   "type": "tool_call",
+   "name": "search_jobs",
+   "arguments": {
+    "city": "Brussels",
+    "job_type": "student",
+    "limit": 5,
+    "region": "brussels"
+   }
+  },
+  {
+   "at_s": 64.1,
+   "type": "tool_result",
+   "name": "search_jobs",
+   "ok": true,
+   "error": null,
+   "duration_ms": 339,
+   "summary": {
+    "count": 5,
+    "data_source": "live"
+   }
+  },
+  {
+   "at_s": 146.4,
+   "type": "tool_call",
+   "name": "match_cv",
+   "arguments": {
+    "job_ids": [
+     "forem:2165125",
+     "forem:2164142",
+     "forem:2158588",
+     "forem:2151647"
+    ]
+   }
+  },
+  {
+   "at_s": 150.4,
+   "type": "tool_result",
+   "name": "match_cv",
+   "ok": true,
+   "error": null,
+   "duration_ms": 3915,
+   "summary": {
+    "matches": 4
+   }
+  },
+  {
+   "at_s": 188.9,
+   "type": "done",
+   "text": "Based on the comparison, the job that fits your CV the best is:\n\n1. **Serveur - Job étudiant** - ACCENT Jobs For People, Saint-Gilles (id: forem:2151647) - 60/100.\n\nThis job has a good fit because it mentions skills that your CV doesn't show (like hospitality), and the ad is in French, which you speak at an intermediate level.\n\nThe other jobs have a partial fit, but they might still be worth considering if you're interested in the fields they mention.\n\nWould you like more information on any of these jobs?",
+   "stats": {
+    "eval_count": 443,
+    "eval_duration": 82382344000,
+    "prompt_eval_count": 6758,
+    "total_duration": 182538973200,
+    "tool_rounds": 2,
+    "tool_runs": 2,
+    "elapsed_s": 188.89,
+    "model": "qwen2.5:7b"
+   }
+  }
+ ]
+}
