@@ -21,6 +21,7 @@ from typing import Callable
 import httpx
 
 from app import db
+from app.agent import roles
 from app.config import ROOT_DIR, get_settings
 
 
@@ -91,19 +92,23 @@ def _has(models: list[str], wanted: str) -> bool:
 
 
 def check_chat_model():
-    s = get_settings()
+    """Every model the active agent team needs (chat agent, CV reader, letter writer)."""
+    needed = roles.models_in_use()
     names = [m["name"] for m in _tags()]
-    if not _has(names, s.ollama_model):
-        return "fail", f"chat model '{s.ollama_model}' is not installed", f"ollama pull {s.ollama_model}"
-    return "ok", f"chat model '{s.ollama_model}' is installed"
+    missing = [m for m in needed if not _has(names, m)]
+    if missing:
+        return "fail", "not installed: " + ", ".join(missing), "; ".join(f"ollama pull {m}" for m in missing)
+    team = roles.active_name()
+    return "ok", f"team '{team}': " + ", ".join(f"{r}={roles.model_for(r)}" for r in roles.ROLES) + " (all installed)"
 
 
 def check_tool_support():
     s = get_settings()
-    info = httpx.post(s.ollama_host.rstrip("/") + "/api/show", json={"model": s.ollama_model}, timeout=10).json()
+    model = roles.model_for("orchestrator")              # only the chat agent calls tools
+    info = httpx.post(s.ollama_host.rstrip("/") + "/api/show", json={"model": model}, timeout=10).json()
     caps = info.get("capabilities") or []
     if caps and "tools" not in caps:
-        return "fail", f"'{s.ollama_model}' does not support tool calling (capabilities: {', '.join(caps)})", \
+        return "fail", f"'{model}' does not support tool calling (capabilities: {', '.join(caps)})", \
             "Choose a model with tool support in the Profile tab."
     return "ok", "the model supports tool calling" if caps else "tool support not reported by this Ollama version (assumed)"
 
@@ -191,7 +196,8 @@ def check_chat_call():
     """One tiny real question: proves the model loads and answers (and measures the cold start)."""
     from app import llm
     started = time.perf_counter()
-    answer = llm.chat_text("Answer with one word.", "Say OK.", max_tokens=8, temperature=0)
+    answer = llm.chat_text("Answer with one word.", "Say OK.", model=roles.model_for("orchestrator"), max_tokens=8,
+                           temperature=0)
     seconds = time.perf_counter() - started
     status = "ok" if seconds < 90 else "warn"
     return status, f"the model answered '{answer[:20]}' in {seconds:.0f} s" + (

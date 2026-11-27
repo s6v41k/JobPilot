@@ -1,0 +1,56 @@
+# Agent teams: which model does which job.
+#
+# JobPilot uses a language model in exactly THREE places (everything else - the vacancy search, the
+# match score, the tracker - is ordinary code and needs no model):
+#
+#   orchestrator  the chat agent: talks to the student and decides which tool to call (tool calling)
+#   cv_analyst    reads the CV text and fills in the structured profile (JSON output)
+#   writer        writes the short motivation letters
+#
+# A "team" (profile) gives each of these roles a model. Pick the active team in the web UI
+# (Profile tab -> Language models) or set  AGENT_PROFILE=<name>  in .env.  The benchmark compares teams.
+#
+# Per role you can set:
+#   model     an Ollama model name, or  default  = "the default model" (the one chosen in the UI / OLLAMA_MODEL)
+#   num_ctx   context window in tokens (default: NUM_CTX from .env)
+#   think     true/false: let a thinking model reason first (slower). Default: THINK from .env
+#   tools     (orchestrator only) the tools this role may use. Fewer tools = a shorter prompt = faster.
+#             Omit to allow all tools.
+#
+# Only one model is computed at a time on this laptop (16 GB RAM, no GPU). Using several different models
+# costs time when the work switches from one to the other (the model must be loaded) - measured in
+# docs/experiments_log.md.
+
+active: default
+
+profiles:
+
+  default:
+    description: One model for everything (the model chosen in the Profile tab).
+    roles:
+      orchestrator: {model: default}
+      cv_analyst:   {model: default}
+      writer:       {model: default}
+
+  lean_tools:
+    description: Same model, but the chat agent only sees the tools it needs for searching and tracking (shorter prompt, faster). Letters and the CV have their own buttons.
+    roles:
+      orchestrator:
+        model: default
+        tools: [search_jobs, get_job_details, match_cv, save_application, update_application_status, list_applications]
+      cv_analyst: {model: default}
+      writer:     {model: default}
+
+  small_chat:
+    description: A small fast model chats and picks tools; the bigger model reads CVs and writes letters.
+    roles:
+      orchestrator: {model: "llama3.2:3b"}
+      cv_analyst:   {model: "qwen2.5:7b"}
+      writer:       {model: "qwen2.5:7b"}
+
+  qwen3_chat:
+    description: Qwen3 4B Instruct chats (it chose tools best in our first tests); Qwen2.5 7B reads CVs and writes letters.
+    roles:
+      orchestrator: {model: "qwen3:4b-instruct"}
+      cv_analyst:   {model: "qwen2.5:7b"}
+      writer:       {model: "qwen2.5:7b"}

@@ -69,6 +69,13 @@ def search_all(
         found: list[Job] = []
         for variant in expand_keywords(local.keywords):
             found += forem.search(local.model_copy(update={"keywords": variant}))
+        if not found and local.language:
+            # Small models often pass the USER's language ("en") as the language of the ad, which hides every
+            # Dutch/French vacancy. Retry without that filter (before spending any Adzuna call) and say so.
+            for variant in expand_keywords(local.keywords):
+                found += forem.search(local.model_copy(update={"keywords": variant, "language": None}))
+            if found:
+                out.notes.append(f"No vacancies are written in '{local.language}'; showing vacancies in any language.")
         out.jobs = _dedupe(found)
         out.attribution.append(forem_module.ATTRIBUTION)
         age = forem_mirror.age_hours(db_path)

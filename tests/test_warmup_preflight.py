@@ -74,6 +74,33 @@ def test_warm_now_never_raises_when_the_model_is_missing(fake):
     assert state["status"] == "failed" and "could not load" in state["message"]
 
 
+def test_the_whole_team_is_loaded_not_only_the_chat_model(fake, monkeypatch):
+    from app.agent import roles
+    client = fake()
+    monkeypatch.setattr(roles, "models_in_use", lambda settings=None: ["chat:1b", "writer:7b", "cv:7b"])
+    monkeypatch.setattr(roles, "model_for", lambda role, settings=None: "chat:1b")
+    state = warmup.BackgroundWarmer().warm_now()
+    loaded = [c["model"] for c in client.chats]
+    assert loaded[0] == "chat:1b" and set(loaded[1:]) == {"writer:7b", "cv:7b"}        # chat agent first, then the rest
+    assert set(state["others_s"]) == {"writer:7b", "cv:7b"} and "chat:1b, writer:7b, cv:7b loaded and ready" in state["message"]
+
+
+def test_a_team_member_that_cannot_be_loaded_is_only_a_note(fake, monkeypatch):
+    from app.agent import roles
+    client = fake()
+    monkeypatch.setattr(roles, "models_in_use", lambda settings=None: ["chat:1b", "ghost:9b"])
+    monkeypatch.setattr(roles, "model_for", lambda role, settings=None: "chat:1b")
+    real_chat = client.chat
+
+    def chat(**kw):
+        if kw["model"] == "ghost:9b":
+            raise ollama.ResponseError("model not found", 404)
+        return real_chat(**kw)
+    client.chat = chat
+    state = warmup.BackgroundWarmer().warm_now()
+    assert state["status"] == "ready" and "could not load ghost:9b" in state["message"]
+
+
 def test_a_missing_embedding_model_is_only_a_note(fake):
     fake(embed_error=ConnectionError("down"))
     state = warmup.BackgroundWarmer().warm_now()

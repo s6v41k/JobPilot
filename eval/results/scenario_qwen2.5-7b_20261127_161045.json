@@ -1,0 +1,84 @@
+{
+ "model": "qwen2.5:7b",
+ "agents": "lean_tools",
+ "data": "real Le Forem snapshot of 2026-11-27 (108 offers), fictional CV 'emma_verbeke'",
+ "question": "Find student jobs in Brussels and tell me which one fits my CV best",
+ "profile": "emma_verbeke",
+ "think": false,
+ "date": "2026-11-27T16:10:45",
+ "wall_s": 144.6,
+ "tokens_per_s": 4.9,
+ "prompt_tokens": 7708,
+ "tool_calls": [
+  "search_jobs",
+  "match_cv"
+ ],
+ "tool_failures": 0,
+ "guard_retractions": 0,
+ "errors": [],
+ "answer": "Based on the skills and experience you've listed, the job \"Serveur - Job étudiant\" at ACCENT Jobs For People in Saint-Gilles (id: forem:2151647) seems to be the best fit for you. It scored 85, indicating a strong match, and the ad is in French, which you speak at an intermediate level.\n\nHere are the other jobs:\n- ETUDIANT Travailleur de nuit at Pag - Asa - Pag - Asa vzw in Brussels (id: forem:2165125) - Partial fit due to the language.\n- Instituteur/trice maternel(le) – Job étudiant (jeunes diplômé(e)s) at AIB in Etterbeek (id: forem:2164142) - Partial fit due to the language and missing healthcare skills.\n- Jaarlijkse jobstudent – Bachelor in de verpleegkunde in specialisatieopleiding at CHU Saint-Pierre - UMC Sint-Pieter in Anderlecht (id: forem:2149104) - Weak fit due to missing healthcare skills.\n- Apprenti technicien pc ou vente (alternance IFAPME, EFP, ...) at Mister Genius in Anderlecht (id: forem:2158588) - Weak fit due to missing sales skills.\n\nWould you like to save any of these jobs to track your applications?",
+ "events": [
+  {
+   "at_s": 8.1,
+   "type": "tool_call",
+   "name": "search_jobs",
+   "arguments": {
+    "job_type": "student",
+    "region": "brussels",
+    "city": "Brussels"
+   }
+  },
+  {
+   "at_s": 8.2,
+   "type": "tool_result",
+   "name": "search_jobs",
+   "ok": true,
+   "error": null,
+   "duration_ms": 66,
+   "summary": {
+    "count": 5,
+    "data_source": "live"
+   }
+  },
+  {
+   "at_s": 55.2,
+   "type": "tool_call",
+   "name": "match_cv",
+   "arguments": {
+    "job_ids": [
+     "forem:2165125",
+     "forem:2164142",
+     "forem:2158588",
+     "forem:2151647",
+     "forem:2149104"
+    ]
+   }
+  },
+  {
+   "at_s": 57.7,
+   "type": "tool_result",
+   "name": "match_cv",
+   "ok": true,
+   "error": null,
+   "duration_ms": 2486,
+   "summary": {
+    "matches": 5
+   }
+  },
+  {
+   "at_s": 144.6,
+   "type": "done",
+   "text": "Based on the skills and experience you've listed, the job \"Serveur - Job étudiant\" at ACCENT Jobs For People in Saint-Gilles (id: forem:2151647) seems to be the best fit for you. It scored 85, indicating a strong match, and the ad is in French, which you speak at an intermediate level.\n\nHere are the other jobs:\n- ETUDIANT Travailleur de nuit at Pag - Asa - Pag - Asa vzw in Brussels (id: forem:2165125) - Partial fit due to the language.\n- Instituteur/trice maternel(le) – Job étudiant (jeunes diplômé(e)s) at AIB in Etterbeek (id: forem:2164142) - Partial fit due to the language and missing healthcare skills.\n- Jaarlijkse jobstudent – Bachelor in de verpleegkunde in specialisatieopleiding at CHU Saint-Pierre - UMC Sint-Pieter in Anderlecht (id: forem:2149104) - Weak fit due to missing healthcare skills.\n- Apprenti technicien pc ou vente (alternance IFAPME, EFP, ...) at Mister Genius in Anderlecht (id: forem:2158588) - Weak fit due to missing sales skills.\n\nWould you like to save any of these jobs to track your applications?",
+   "stats": {
+    "eval_count": 431,
+    "eval_duration": 87931768000,
+    "prompt_eval_count": 7708,
+    "total_duration": 141952037300,
+    "tool_rounds": 2,
+    "tool_runs": 2,
+    "elapsed_s": 144.56,
+    "model": "qwen2.5:7b"
+   }
+  }
+ ]
+}

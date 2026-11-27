@@ -159,7 +159,7 @@ def newest_snapshot_date() -> str | None:
     return SnapshotProvider().snapshot_date()
 
 
-def offline_environment(profile_name: str = "emma_verbeke") -> str:
+def offline_environment(profile_name: str | None = "emma_verbeke") -> str:
     """Point the app at a throw-away database seeded from the newest REAL snapshot: no internet, no Adzuna.
     Returns a short note describing the data. (Used for recordings, never for the live app.)"""
     from eval.run_scenario import sample_profile
@@ -172,11 +172,13 @@ def offline_environment(profile_name: str = "emma_verbeke") -> str:
     settings.update(db_path=str(Path(tempfile.mkdtemp()) / "record.db"), adzuna_app_id="", adzuna_app_key="",
                     today_override=when)
     records = json.loads(newest.read_text(encoding="utf-8"))["results"]
-    profile, cv_text = sample_profile(profile_name)
     with db.connect() as conn:
         db.forem_replace_all(conn, records)
-        db.save_profile(conn, profile, cv_text=cv_text)
-    return f"real Le Forem snapshot of {when} ({len(records)} offers), fictional CV '{profile_name}'"
+        if profile_name:
+            profile, cv_text = sample_profile(profile_name)
+            db.save_profile(conn, profile, cv_text=cv_text)
+    cv = f"fictional CV '{profile_name}'" if profile_name else "no CV profile"
+    return f"real Le Forem snapshot of {when} ({len(records)} offers), {cv}"
 
 
 def record(scenario_id: str | None, question: str | None, model: str | None = None, offline: bool = False,

@@ -1,0 +1,84 @@
+{
+ "model": "qwen2.5:7b",
+ "agents": "lean_tools",
+ "data": "real Le Forem snapshot of 2026-11-27 (108 offers), fictional CV 'emma_verbeke'",
+ "question": "Find student jobs in Brussels and tell me which one fits my CV best",
+ "profile": "emma_verbeke",
+ "think": false,
+ "date": "2026-11-27T16:13:49",
+ "wall_s": 109.9,
+ "tokens_per_s": 5.2,
+ "prompt_tokens": 7708,
+ "tool_calls": [
+  "search_jobs",
+  "match_cv"
+ ],
+ "tool_failures": 0,
+ "guard_retractions": 0,
+ "errors": [],
+ "answer": "Based on your CV, the job \"Serveur - Job étudiant\" at ACCENT Jobs For People in Saint-Gilles (id: forem:2151647) fits you the best, with a score of 85. This position is in French, which you speak at an intermediate level, and you have relevant skills like hospitality.\n\nThe other jobs are less suitable, but you might still consider applying to \"ETUDIANT Travailleur de nuit\" at Pag - Asa - Pag - Asa vzw (id: forem:2165125) as it is in a language you can handle.\n\nIf you're interested, I can provide more details on any of these positions. What would you like to do next?",
+ "events": [
+  {
+   "at_s": 7.1,
+   "type": "tool_call",
+   "name": "search_jobs",
+   "arguments": {
+    "city": "Brussels",
+    "job_type": "student",
+    "region": "brussels"
+   }
+  },
+  {
+   "at_s": 7.1,
+   "type": "tool_result",
+   "name": "search_jobs",
+   "ok": true,
+   "error": null,
+   "duration_ms": 42,
+   "summary": {
+    "count": 5,
+    "data_source": "live"
+   }
+  },
+  {
+   "at_s": 54.0,
+   "type": "tool_call",
+   "name": "match_cv",
+   "arguments": {
+    "job_ids": [
+     "forem:2165125",
+     "forem:2164142",
+     "forem:2158588",
+     "forem:2151647",
+     "forem:2149104"
+    ]
+   }
+  },
+  {
+   "at_s": 56.4,
+   "type": "tool_result",
+   "name": "match_cv",
+   "ok": true,
+   "error": null,
+   "duration_ms": 2358,
+   "summary": {
+    "matches": 5
+   }
+  },
+  {
+   "at_s": 109.9,
+   "type": "done",
+   "text": "Based on your CV, the job \"Serveur - Job étudiant\" at ACCENT Jobs For People in Saint-Gilles (id: forem:2151647) fits you the best, with a score of 85. This position is in French, which you speak at an intermediate level, and you have relevant skills like hospitality.\n\nThe other jobs are less suitable, but you might still consider applying to \"ETUDIANT Travailleur de nuit\" at Pag - Asa - Pag - Asa vzw (id: forem:2165125) as it is in a language you can handle.\n\nIf you're interested, I can provide more details on any of these positions. What would you like to do next?",
+   "stats": {
+    "eval_count": 274,
+    "eval_duration": 52612277000,
+    "prompt_eval_count": 7708,
+    "total_duration": 107432554200,
+    "tool_rounds": 2,
+    "tool_runs": 2,
+    "elapsed_s": 109.88,
+    "model": "qwen2.5:7b"
+   }
+  }
+ ]
+}

@@ -7,6 +7,7 @@ from typing import Literal
 from pydantic import BaseModel, Field
 
 from app import db
+from app.agent import roles
 from app.llm import LLMError, chat_text
 from app.skills import language_levels
 from app.tools import tool
@@ -130,6 +131,7 @@ def problems_in(letter: str, profile: dict, language: str) -> list[str]:
 
 
 def write_letter(job: dict, profile: dict, language: str, tone: str, model: str | None = None) -> str:
+    model = model or roles.model_for("writer")                 # the letter writer may be a different model
     system = LETTER_SYSTEM.format(language=LANGUAGE_NAMES[language], tone=TONES[tone], max_words=MAX_WORDS,
                                   greeting=GREETINGS[language])
     user = (f"VACANCY\nTitle: {job['title']}\nCompany: {job.get('company') or 'unknown'}\n"

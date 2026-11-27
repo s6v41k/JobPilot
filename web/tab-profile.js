@@ -10,6 +10,7 @@ JPUI.ProfileTab = {
       analyzing: false, analyzeStart: 0, now: Date.now(),
       form: null, saving: false, hasProfile: false,
       model: { current: "", chosen: "", installed: [], num_ctx: 8192, think: false, busy: false },
+      agents: { data: null, busy: false },            // teams from agents.yaml and who does which job
       vacancies: { offers: 0, age_hours: null, busy: false },
       confirmDelete: false,
       sys: { busy: false, result: null, started: 0 },
@@ -40,6 +41,7 @@ JPUI.ProfileTab = {
         this.model = { ...this.model, current: m.model, chosen: m.model, installed: m.installed || [],
                        num_ctx: m.num_ctx, think: m.think };
       } catch (e) { /* the model box simply stays empty */ }
+      await this.loadAgents();
       try {
         const h = await JPUI.api("/api/health");
         this.vacancies = { ...this.vacancies, offers: h.vacancies.offers, age_hours: h.vacancies.age_hours };
@@ -108,6 +110,29 @@ JPUI.ProfileTab = {
       finally { this.saving = false; }
     },
 
+    // ---- agent teams: which model does which job
+    async loadAgents() {
+      try { this.agents.data = await JPUI.api("/api/agents"); } catch (e) { /* the panel stays empty */ }
+    },
+    async changeAgents(body, okText) {
+      this.agents.busy = true;
+      try {
+        this.agents.data = await JPUI.api("/api/agents", { method: "PUT", ...JPUI.jsonBody(body) });
+        this.$emit("changed");
+        this.say("info", okText);
+      } catch (e) { this.say("error", e.message); await this.loadAgents(); }
+      finally { this.agents.busy = false; }
+    },
+    chooseTeam(event) { return this.changeAgents({ profile: event.target.value, clear_overrides: true },
+      "Team '" + event.target.value + "' selected. The chat model loads in the background."); },
+    chooseRoleModel(role, model) { return this.changeAgents({ overrides: { [role]: model || null } },
+      model ? "The " + role + " now uses " + model + "." : "The " + role + " follows the team again."); },
+    teamDescription() {
+      const d = this.agents.data;
+      const t = d && d.teams.find((x) => x.name === d.active);
+      return t ? t.description : "";
+    },
+
     // ---- model
     async applyModel() {
       this.model.busy = true;
@@ -115,6 +140,7 @@ JPUI.ProfileTab = {
         const res = await JPUI.api("/api/model", { method: "PUT", ...JPUI.jsonBody({
           model: this.model.chosen, num_ctx: Number(this.model.num_ctx), think: this.model.think }) });
         this.model.current = res.model;
+        await this.loadAgents();
         this.$emit("changed");
         this.say("info", "Now using " + res.model + ". The first answer is slower while the model loads.");
       } catch (e) { this.say("error", e.message); }
@@ -194,28 +220,56 @@ JPUI.ProfileTab = {
         </div>
 
         <div class="panel">
-          <h3>3. Language model</h3>
-          <p class="hint">Bigger models answer better but slower. Switching takes effect immediately.</p>
+          <h3>3. Language models</h3>
+          <p class="hint">JobPilot uses a language model in three jobs (the search, the match score and the tracker are ordinary code).
+            Choose a team, or pick a model for each job. Bigger models are better but slower, and every different model has to be loaded into memory once (about a minute).</p>
+          <div v-if="agents.data">
+            <div class="row">
+              <label>Team
+                <select aria-label="Agent team" :value="agents.data.active" :disabled="agents.busy" @change="chooseTeam">
+                  <option v-for="t in agents.data.teams" :key="t.name" :value="t.name">{{ t.name }}</option>
+                </select>
+              </label>
+              <span class="meta teamdesc">{{ teamDescription() }}</span>
+            </div>
+            <table class="roles">
+              <tr v-for="r in agents.data.roles" :key="r.id">
+                <td><b>{{ r.label }}</b><br><span class="meta">{{ r.description }}</span></td>
+                <td>
+                  <select :aria-label="'Model for ' + r.label" :disabled="agents.busy"
+                          :value="agents.data.overrides[r.id] || ''" @change="chooseRoleModel(r.id, $event.target.value)">
+                    <option value="">Team choice ({{ agents.data.resolved[r.id].source === 'override' ? 'not set' : agents.data.resolved[r.id].model }})</option>
+                    <option v-for="m in (agents.data.installed || [])" :key="m" :value="m">{{ m }}</option>
+                  </select>
+                  <div class="meta">uses <b>{{ agents.data.resolved[r.id].model }}</b>
+                    <span v-if="agents.data.resolved[r.id].tools !== 'all'"> - {{ agents.data.resolved[r.id].tools.length }} tools</span></div>
+                </td>
+              </tr>
+            </table>
+            <p class="meta warn-text" v-for="p in agents.data.problems" :key="p">agents.yaml: {{ p }}</p>
+          </div>
+          <h4>Default model</h4>
+          <p class="hint">Used by every job that is set to "default" in the team.</p>
           <div class="row">
             <label>Model
-              <select v-model="model.chosen">
+              <select aria-label="Default model" v-model="model.chosen">
                 <option v-if="!model.installed.includes(model.current)" :value="model.current">{{ model.current }}</option>
                 <option v-for="m in model.installed" :key="m" :value="m">{{ m }}</option>
               </select>
             </label>
             <label>Context size
-              <select v-model="model.num_ctx"><option :value="2048">2048</option><option :value="4096">4096</option><option :value="8192">8192</option><option :value="16384">16384</option></select>
+              <select aria-label="Context size" v-model="model.num_ctx"><option :value="2048">2048</option><option :value="4096">4096</option><option :value="8192">8192</option><option :value="16384">16384</option></select>
             </label>
             <label class="check"><input type="checkbox" v-model="model.think"> Let the model "think" first (slower)</label>
             <button class="btn primary" :disabled="model.busy || !model.chosen" @click="applyModel">Use this model</button>
           </div>
-          <p class="meta">Active: <b>{{ model.current }}</b></p>
+          <p class="meta">Default model now: <b>{{ model.current }}</b></p>
         </div>
 
         <div class="panel">
           <h3>4. Vacancy list</h3>
           <div class="row">
-            <span class="meta" v-if="vacancies.offers">{{ vacancies.offers.toLocaleString('en-US') }} Le Forem offers stored on this computer ({{ ageText }}).</span>
+            <span class="meta" v-if="vacancies.offers">{{ vacancies.offers.toLocaleString('en-US') }} Le Forem offers stored on this computer<span v-if="ageText"> ({{ ageText }})</span>.</span>
             <span class="meta" v-else>No local list yet: searches use the live job portal.</span>
             <button class="btn" :disabled="vacancies.busy" @click="refreshVacancies">{{ vacancies.busy ? 'Downloading...' : 'Refresh now' }}</button>
           </div>

@@ -35,6 +35,8 @@ import httpx
 import ollama
 
 from app import db
+from app.geo import normalize
+from app.agent import roles
 from app.agent.language import looks_like_job_request, reply_hint
 from app.agent.prompts import build_system_prompt
 from app.config import Settings, get_settings
@@ -84,13 +86,41 @@ _LIST_ITEM = re.compile(r"^\s*(?:\d+[.)]|[-*•])\s+", re.MULTILINE)
 _BRACKETED_ID = re.compile(r"\(\s*(?:id\s*[:#]?\s*)?([A-Za-z_]*:?[A-Za-z_]*\d{2,}[\w:.-]*)\s*\)", re.IGNORECASE)
 _YEAR = re.compile(r"(?:19|20)\d{2}$")
 _SCORE = re.compile(r"\b(\d{1,3})\s*/\s*100\b")
+_BOLD = re.compile(r"\*\*([^*\n]{3,120})\*\*")
+
+
+def _plain(text: str) -> str:
+    """Lowercase, no accents, no punctuation: so '**Student kassa | supermarkt**' matches the tool's title."""
+    return re.sub(r"\W+", " ", normalize(text)).strip()
+
+
+def invented_titles(answer: str, evidence: str) -> list[str]:
+    """Bold phrases that look like vacancy titles but are in NO search result.
+
+    Models present vacancies as **Title** - Company. When the answer is about search results, every such
+    title must appear in the tool results; one that does not was invented (a 3B model did exactly this:
+    "Michael Page International" is nowhere in the data). Only runs when the evidence contains vacancies,
+    and ignores short emphasis ("**Note**", "**Next steps**") and numbers: a false alarm costs a minute, so we
+    only check phrases that look like titles (3+ words, or with a separator such as " - " or "|")."""
+    if '"jobs"' not in evidence:
+        return []
+    haystack = _plain(evidence)
+    missing = []
+    for phrase in _BOLD.findall(answer):
+        words = _plain(phrase).split()
+        title_like = len(words) >= 3 or any(sep in phrase for sep in (" - ", "|", "&", "/"))   # precision over recall
+        if not title_like or phrase.strip()[0].isdigit() or _SCORE.search(phrase):
+            continue
+        if _plain(phrase) not in haystack:
+            missing.append(phrase.strip())
+    return missing
 
 
 def ungrounded_claims(answer: str, evidence: str) -> list[str]:
     """Links / vacancy ids in the answer that NO tool result contained = invented by the LLM.
 
-    Three checks: (1) links, (2) ids like forem:123, (3) in a LIST of items, a bracketed
-    id-like number such as "(123)" that no tool returned (small models invent these)."""
+    Checks: (1) links, (2) ids like forem:123, (3) in a LIST of items, a bracketed id-like number such as
+    "(123)", (4) match scores ("85/100"), (5) bold vacancy titles that no search returned."""
     claims = {m.rstrip(".,;:") for m in _URL.findall(answer)} | set(_JOB_ID.findall(answer))
     if len(_LIST_ITEM.findall(answer)) >= 2:
         claims |= {c for c in _BRACKETED_ID.findall(answer) if not _YEAR.match(c)}
@@ -99,7 +129,8 @@ def ungrounded_claims(answer: str, evidence: str) -> list[str]:
         if not re.search(rf'"score":\s*{number}\b', evidence):
             claims.add(f"{number}/100")
     # whole-token match, so the invented "(123)" is not "found" inside a real id like forem:2123456
-    return sorted(c for c in claims if not re.search(rf"(?<![\w:]){re.escape(c)}(?![\w])", evidence))
+    wrong = sorted(c for c in claims if not re.search(rf"(?<![\w:]){re.escape(c)}(?![\w])", evidence))
+    return wrong + [f"title: {t}" for t in invented_titles(answer, evidence)]
 
 
 def history_form(message: dict) -> dict:
@@ -140,7 +171,7 @@ class Agent:
                  profile: dict | None = None):
         self.settings = settings or get_settings()
         self._client = client
-        self.model = model or self.settings.ollama_model
+        self._model = model                    # None = ask the agent team (agents.yaml) every time
         self.tool_names = tool_names
         self.max_iterations = max_iterations
         self.max_turns = max_turns
@@ -149,6 +180,19 @@ class Agent:
         self._no_think: set[str] = set()       # models that reject the `think` option
 
     # ------------------------------------------------------------------ plumbing
+    @property
+    def role(self) -> roles.RoleConfig:
+        """Model, context size, thinking and tools of the chat agent under the active team."""
+        return roles.role_config("orchestrator", self.settings)
+
+    @property
+    def model(self) -> str:
+        return self._model or self.role.model
+
+    @model.setter
+    def model(self, value: str | None) -> None:
+        self._model = value
+
     @property
     def client(self):
         if self._client is None:
@@ -165,12 +209,12 @@ class Agent:
             sent_anything = False
             kwargs: dict[str, Any] = dict(
                 model=self.model, messages=messages, stream=True, keep_alive="30m",
-                options={"num_ctx": self.settings.num_ctx},
+                options={"num_ctx": self.role.num_ctx},
             )
             if tools:
                 kwargs["tools"] = tools
             if self.model not in self._no_think:
-                kwargs["think"] = self.settings.think
+                kwargs["think"] = self.role.think
             try:
                 for chunk in self.client.chat(**kwargs):
                     sent_anything = True
@@ -245,13 +289,14 @@ class Agent:
     def run(self, user_text: str) -> Iterator[dict]:
         started = time.perf_counter()
         profile = self.profile if self.profile is not None else load_stored_profile()
-        system = {"role": "system", "content": build_system_prompt(profile)}
+        tool_names = self.tool_names if self.tool_names is not None else self.role.tools   # fewer tools = shorter prompt
+        system = {"role": "system", "content": build_system_prompt(profile, tools=tool_names)}
         # The model sees a small hint about the language to answer in (7B models often answer in English
         # to a Dutch question). The hint is NOT shown in the UI and NOT kept in the history.
         messages = [system] + self.history + [{"role": "user", "content": user_text + reply_hint(user_text)}]
         turn_start = len(messages) - 1            # where this turn begins (for saving history)
         synthetic: list[dict] = []                # our own nudges: never saved to the history
-        schemas = tool_schemas(self.tool_names)
+        schemas = tool_schemas(tool_names)
         blocked: set[str] = set()
         failures: Counter = Counter()
         seen_calls: set[str] = set()

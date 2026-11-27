@@ -116,3 +116,23 @@ def test_snapshot_understands_city_names_and_brussels():
     snap = SnapshotProvider()
     assert snap.search(JobQuery(city="Brussels", limit=50))        # real snapshot has Brussels offers
     assert all(j.region == "brussels" for j in snap.search(JobQuery(city="Brussels", limit=50)))
+
+
+def test_a_language_filter_that_hides_everything_is_dropped_before_adzuna_is_tried(dbp):
+    """qwen3:4b passed language="en" (the user's language) and got 0 results: now it retries without it."""
+    class LanguageStrict(Fake):
+        def search(self, query):
+            self.queries.append(query)
+            return [] if query.language else self._jobs
+
+    forem, adzuna = LanguageStrict([job(1), job(2)]), Fake([job(9)])
+    out = search_all(JobQuery(keywords="student", language="en"), forem, adzuna, db_path=dbp)
+    assert [j.id for j in out.jobs] == ["fake:1", "fake:2"] and adzuna.queries == []            # Adzuna budget untouched
+    assert any("No vacancies are written in 'en'" in n for n in out.notes)
+    assert [q.language for q in forem.queries[-1:]] == [None]
+
+
+def test_a_language_filter_with_results_is_left_alone(dbp):
+    forem = Fake([job(1)])
+    out = search_all(JobQuery(language="nl"), forem, Fake(), db_path=dbp)
+    assert out.notes == [] and all(q.language == "nl" for q in forem.queries)

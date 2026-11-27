@@ -4,6 +4,7 @@ from __future__ import annotations
 from pydantic import BaseModel, Field
 
 from app import db
+from app.agent import roles
 from app.llm import LLMError, chat_json
 from app.tools import tool
 
@@ -82,7 +83,7 @@ def build_profile(cv_text: str, model: str | None = None) -> Profile:
 
     Raises LLMError when the LLM itself fails."""
     profile = chat_json(Profile, EXTRACT_SYSTEM, f"CV:\n---\n{cv_text[:MAX_CV_CHARS]}\n---",
-                        model=model, max_tokens=700)
+                        model=model or roles.model_for("cv_analyst"), max_tokens=700)
     found = sections(cv_text)
     if not profile.skills and found.get("skills"):
         profile.skills = _split_items(found["skills"])

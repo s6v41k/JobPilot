@@ -254,6 +254,36 @@ def test_ungrounded_claims(answer, expected):
     assert ungrounded_claims(answer, EVIDENCE) == expected
 
 
+JOBS = ('{"ok": true, "data": {"jobs": [{"id": "forem:1", "title": "Serveur - Job étudiant", "company": "ACCENT Jobs For People"},'
+        ' {"id": "forem:2", "title": "Student kassa | supermarkt | Oostduinkerke", "company": "Adecco"}]}}')
+
+
+@pytest.mark.parametrize("answer,expected", [
+    ("1. **Serveur - Job étudiant** - ACCENT Jobs For People", []),                          # real title, accents kept
+    ("2. **Student kassa | supermarkt | Oostduinkerke** (Adecco)", []),                          # real title with pipes
+    ("1. **SERVEUR - JOB ETUDIANT**", []),                                                      # case and accents do not matter
+    ("1. **Student Administrative & Customer Support Officer**\n   Michael Page International (Belgium)",
+     ["title: Student Administrative & Customer Support Officer"]),                             # the real invention of a 3B model
+    ("Here you go. **Note**: **85 percent** and **two words** here.", []),                 # emphasis, numbers: ignored
+])
+def test_invented_vacancy_titles_are_caught(answer, expected):
+    from app.agent.agent import ungrounded_claims
+    assert ungrounded_claims(answer, JOBS) == expected
+
+
+def test_bold_text_is_not_checked_when_no_search_results_are_involved():
+    from app.agent.agent import ungrounded_claims
+    assert ungrounded_claims("Three **useful interview tips** for you", '{"ok": true, "data": {"saved": true}}') == []
+
+
+def test_an_invented_title_after_a_real_search_is_retracted_and_retried():
+    a, _ = agent(calls("search_jobs", {}), says("1. **Michael Page Student Officer** - Brussels"),
+                 says("Only one: (id: t:1)"))
+    events = list(a.run("Find me a job"))
+    assert kinds(events) == ["tool_call", "tool_result", "token", "retract", "token", "done"]
+    assert events[-1]["text"] == "Only one: (id: t:1)" and "Michael Page" not in str(a.history)
+
+
 def test_scores_from_match_cv_are_accepted():
     from app.agent.agent import ungrounded_claims
     evidence = '{"matches": [{"job_id": "forem:1", "score": 85, "label": "strong"}]}'

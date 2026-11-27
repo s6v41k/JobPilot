@@ -24,7 +24,7 @@ test details in [testing.md](testing.md).
 | 12 | Web UI: Jobs, Tracker, Profile - **MVP (target 10 Dec)** | done (27 Nov) |
 | 13 | Pre-flight check and model warm-up | done |
 | 13b | Demo mode: prepare data, record/replay real runs, demo script | done |
-| 14 | Agent roles (one model per job) and runtime model switching | |
+| 14 | Agent teams: one model per job, runtime switching | done |
 | 15 | Benchmark (two stages) and model selection | |
 | 16 | Memory (rolling summary, `num_ctx`) and RAG knowledge tool | |
 | 17 | Map and watchlist | |
@@ -260,7 +260,7 @@ plus 3 API tests, and 2 new browser checks (the System check panel).
 **Why a replay and not just "hope"?** The live model takes minutes on this laptop. A replay is a safety net the speaker can use in 10 seconds - but only because it is labelled honestly;
 passing a recording off as a live answer would be cheating, and the label also makes a good talking point ("this is what the model really did on <date>").
 
-**Run:** `.venv\Scripts\python -m app.demo list` / `prepare` / `record --scenario S1`. **Test:** `tests/test_demo.py` (24 tests), `tests/test_language.py` (23 tests), and 8 more browser checks
+**Run:** `.venv\Scripts\python -m app.demo list` / `prepare` / `record --scenario S1`. **Test:** `tests/test_demo.py` (20 tests), `tests/test_language.py` (25 tests), and 8 more browser checks
 (the Demo panel, the REPLAY label, saving from a replay): 64 in total.
 
 **What recording the real scenarios showed (all real, qwen2.5:7b, warm model, snapshot data of 2026-11-27)**
@@ -278,3 +278,31 @@ Two real defects, found only by recording, and fixed in this commit:
 2. **Answering vacancy questions from memory.** Fix: if the question looks like a job request and the model answered *without any tool call*, the answer is discarded once (`retract`, shown in the UI with the reason)
    and the model is told to use the right tool. Re-recorded S4: the guard fired, then it searched and honestly reported nothing.
 Both are covered by tests (the language guesser, the hint, the one-time rule that cannot loop).
+
+## Commit 14 - Agent teams: one model per job (this commit)
+**What**
+- `agents.yaml` defines **teams**: which model does which job. A language model is used in exactly **three roles**:
+  `orchestrator` (the chat agent that decides which tool to call), `cv_analyst` (CV text -> structured profile) and `writer` (the cover letters).
+  Everything else - the vacancy search, the match score, the tracker - is ordinary code and needs no model, so it has no role.
+- A team gives each role a model (or `default` = "the default model of the Profile tab") and may set `num_ctx`, `think`, and for the orchestrator a **limited list of tools**.
+  Four teams ship: `default` (one model for everything), `lean_tools` (chat agent sees 6 of 8 tools), `small_chat` (Llama 3.2 3B chats, Qwen 2.5 7B reads/writes), `qwen3_chat` (Qwen3 4B Instruct chats).
+- `app/agent/roles.py` resolves a role in three layers: a model chosen for that role at runtime in the UI -> the active team -> the default model. A broken or missing `agents.yaml`
+  never crashes the app: it falls back to a built-in team and reports the problem (in `/api/health`, the Profile tab and the pre-flight check).
+- The agent, `extract_profile` and `draft_cover_letter` now ask the team for *their* model. The system prompt lists only the tools the role may use, and a rule about a tool the model cannot call is left out.
+- **Profile tab -> Language models**: pick a team, or a model per job (installed models only; a team that needs a missing model is refused with the `ollama pull` command and *nothing* changes).
+  `GET/PUT /api/agents`. The status bar shows the model the chat agent really uses. The warm-up now loads the **whole team**, so the first letter or CV analysis does not wait for a model to load.
+- `python -m eval.run_scenario --agents lean_tools` runs a scenario with a team (offline from the real snapshot by default; models warmed first).
+**Run:** edit `agents.yaml` (or `AGENT_PROFILE=small_chat` in `.env`), or use the Profile tab. **Test:** `tests/test_roles.py` (26 tests) + 20 more elsewhere; 72 browser checks.
+
+**Measured on this laptop (details and caveats in `experiments_log.md` sections 12-14)**
+- **Switching models is cheap if they fit in memory.** First load 7-13 s per model; going back to a loaded model takes 0.1 s. Ollama kept three models resident at once (4.7 + 2.4 + 3.0 GB = 10 GB of 15.4 GB RAM).
+  Free RAM was then only 0.6 GB: a fourth big model would evict another one.
+- **Fewer tools did not make it faster** (hypothesis rejected): the clean A/B-B-A runs gave 108 / 139 s (all tools) vs 145 / 110 s (6 tools) - the same within the noise. Single runs of the *same* setup varied from 100 to 220 s.
+- **Faster models did not finish the job**: `qwen3:4b-instruct` and `llama3.2:3b` ran in 46-85 s but skipped the comparison step or broke their tool arguments.
+
+**Three real defects found by running the teams, all fixed:**
+1. `llama3.2:3b` **invented a vacancy** ("Michael Page International") that exists nowhere in the data, with no id or link, so the old guard did not see it.
+   New check: bold titles of 3+ words (or with a separator) in the answer must appear in the search results. Checked against every real recording: no false alarm.
+2. `qwen3:4b-instruct` set `language="en"` (the *user's* language) on the search, which hid every Dutch/French vacancy, and then told the user "no student jobs found".
+   Now a search that returns nothing with a language filter is repeated without it (before any Adzuna call) with a note.
+3. A faulty memory comparison: my first "lean tools are 2x faster" came from one run under memory pressure. Rechecked cleanly (unloading all models before each run): no difference. Lesson written in the experiments log.

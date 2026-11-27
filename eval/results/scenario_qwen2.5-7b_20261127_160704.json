@@ -1,0 +1,84 @@
+{
+ "model": "qwen2.5:7b",
+ "agents": "default",
+ "data": "real Le Forem snapshot of 2026-11-27 (108 offers), fictional CV 'emma_verbeke'",
+ "question": "Find student jobs in Brussels and tell me which one fits my CV best",
+ "profile": "emma_verbeke",
+ "think": false,
+ "date": "2026-11-27T16:07:04",
+ "wall_s": 107.8,
+ "tokens_per_s": 4.9,
+ "prompt_tokens": 8960,
+ "tool_calls": [
+  "search_jobs",
+  "match_cv"
+ ],
+ "tool_failures": 0,
+ "guard_retractions": 0,
+ "errors": [],
+ "answer": "Based on the match, the job that best fits your CV is:\n\n1. Serveur - Job étudiant - ACCENT Jobs For People, Saint-Gilles (id: forem:2151647) - 85% fit\n\nThis role is highly suitable for you as it requires hospitality skills, which you have demonstrated in your education and experience. The job is also advertised in French, which you speak at an intermediate level.\n\nThe other jobs have lower fits due to missing or mismatched skills. If you're interested, I can help you draft a cover letter for this position. Would you like to proceed?",
+ "events": [
+  {
+   "at_s": 7.6,
+   "type": "tool_call",
+   "name": "search_jobs",
+   "arguments": {
+    "limit": 5,
+    "city": "Brussels",
+    "job_type": "student"
+   }
+  },
+  {
+   "at_s": 7.6,
+   "type": "tool_result",
+   "name": "search_jobs",
+   "ok": true,
+   "error": null,
+   "duration_ms": 50,
+   "summary": {
+    "count": 5,
+    "data_source": "live"
+   }
+  },
+  {
+   "at_s": 56.9,
+   "type": "tool_call",
+   "name": "match_cv",
+   "arguments": {
+    "job_ids": [
+     "forem:2165125",
+     "forem:2164142",
+     "forem:2158588",
+     "forem:2151647",
+     "forem:2149104"
+    ]
+   }
+  },
+  {
+   "at_s": 59.2,
+   "type": "tool_result",
+   "name": "match_cv",
+   "ok": true,
+   "error": null,
+   "duration_ms": 2370,
+   "summary": {
+    "matches": 5
+   }
+  },
+  {
+   "at_s": 107.8,
+   "type": "done",
+   "text": "Based on the match, the job that best fits your CV is:\n\n1. Serveur - Job étudiant - ACCENT Jobs For People, Saint-Gilles (id: forem:2151647) - 85% fit\n\nThis role is highly suitable for you as it requires hospitality skills, which you have demonstrated in your education and experience. The job is also advertised in French, which you speak at an intermediate level.\n\nThe other jobs have lower fits due to missing or mismatched skills. If you're interested, I can help you draft a cover letter for this position. Would you like to proceed?",
+   "stats": {
+    "eval_count": 243,
+    "eval_duration": 49354621000,
+    "prompt_eval_count": 8960,
+    "total_duration": 105335771100,
+    "tool_rounds": 2,
+    "tool_runs": 2,
+    "elapsed_s": 107.81,
+    "model": "qwen2.5:7b"
+   }
+  }
+ ]
+}

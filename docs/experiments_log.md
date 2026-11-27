@@ -175,6 +175,53 @@ A warm model with a cached prefix answers a simple question in 5 s. Questions wi
 Lessons: (1) a 7B model needs *both* a language hint and a tool-use guard; the system prompt alone is not enough (rules 1 and 7 were already in it).
 (2) Recording is a cheap way to find such defects before an audience does. (3) The small snapshot (108 offers) makes S3 empty; with the full list from Le Forem it will have results.
 
+## 12. What does it cost to switch between models? (2026-11-27, 15.4 GB RAM, CPU only)
+
+Unload everything, then ask each model "Say OK." in turn (single run):
+
+| Step | First answer | Model load | Models resident afterwards |
+|---|---|---|---|
+| `qwen2.5:7b` (cold) | 14.4 s | 13.1 s | qwen2.5:7b 4.72 GB |
+| `llama3.2:3b` | 8.0 s | 7.3 s | + llama3.2:3b 2.39 GB |
+| `qwen3:4b-instruct` | 11.9 s | 11.1 s | + qwen3:4b-instruct 2.97 GB (**three models, 10.1 GB**) |
+| `qwen2.5:7b` again | 1.5 s | 0.0 s | unchanged |
+| `llama3.2:3b` again | 0.5 s | 0.1 s | unchanged |
+| `qwen3:4b-instruct` again | 0.6 s | 0.1 s | unchanged |
+
+After this, free RAM was **0.6 GB** of 15.4 GB. Reading: with several small models a team is practically free (7-13 s once, then instant), *as long as the sum stays well below
+the RAM* (browser, editor, server and Windows need the rest). A 12 B or 20 B model (gemma3:12b ~8 GB, gpt-oss:20b ~13 GB) would push the others out, so such a model should be tested alone.
+
+## 13. Agent teams on scenario S1 (2026-11-27)
+
+Task: *"Find student jobs in Brussels and tell me which one fits my CV best"*; real snapshot data, fictional CV, models warmed first, `python -m eval.run_scenario --agents <team>`.
+**Run 1** was done right after section 12 (three models resident, almost no free RAM); **run 2** unloaded all models before every run (order A-B-B-A to cancel order effects).
+
+| Team (chat model) | Run | Time | Tools called | Outcome |
+|---|---|---|---|---|
+| `default` (qwen2.5:7b, 8 tools) | 1 | 219.9 s | search, match | correct, grounded |
+| `default` | 2a / 2b | 107.8 s / 139.0 s | search, match | correct |
+| `lean_tools` (qwen2.5:7b, 6 tools) | 1 | 100.2 s | search, match | correct |
+| `lean_tools` | 2a / 2b | 144.6 s / 109.9 s | search, match | correct |
+| `qwen3_chat` (qwen3:4b-instruct) | 1 | 84.9 s | search only | **wrong**: passed `language="en"`, got 0 results, told the user there are none |
+| `small_chat` (llama3.2:3b) | 1 | 46.1 s | search only | **invented a vacancy** (title + company + summary) not in the data |
+| `small_chat` | 2 | 82.2 s | search, `match_cv(job_ids="[]")` failed | listed real vacancies, but the answer was confused ("let's start again...") |
+
+Conclusions (honest ones):
+1. **The "fewer tools = faster" idea is not supported.** Run 1 suggested 2x, the clean run 2 shows no difference (108/139 s vs 145/110 s). The prompt shrinks by only ~14 % and generation time dominates.
+   The big gap in run 1 was memory pressure, not tools. (Tools are still limited per team because it is a good design, not because of speed.)
+2. **Run-to-run noise is large**: the same configuration took 108 s and 220 s. A benchmark must repeat every case several times and control the memory state; one run proves nothing.
+3. **Speed and reliability pull in opposite directions** (again): the 3-4B models are 2x faster but skipped the second step, passed wrong arguments or invented content. `qwen2.5:7b` is the only one that completed the task correctly in every run so far.
+4. A multi-model team is only useful if the *small* model can do the chat agent's job, which these could not (yet). Candidates for the benchmark: a bigger orchestrator (`qwen3:8b`, `granite4`), with the small model only where the task is easy.
+
+## 14. Two holes in the "answers must come from the tools" guard (found by the runs above)
+
+| Hole | Example | Fix |
+|---|---|---|
+| An invented vacancy with **no id, link or score** | `llama3.2:3b`: "**Student Administrative & Customer Support Officer** - Michael Page International (Belgium)" (0 matches in the data) | bold titles (3+ words or with a separator) must appear in the search results; checked against all recordings: 0 false alarms |
+| A **harmful filter** that makes a correct search return nothing | `qwen3:4b-instruct`: `language="en"` hides all Dutch/French ads | a search with a language filter that finds nothing is repeated without it, with a note, before Adzuna is tried |
+
+Known limit: a vacancy listed in plain text (no bold) without id/link/score can still slip through. The cards in the UI always show the *real* results next to the text, so a reader can compare.
+
 ---
 
 ## Open questions

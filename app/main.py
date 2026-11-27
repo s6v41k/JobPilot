@@ -29,6 +29,7 @@ from app.cv import CVError, read_cv
 from app.llm import LLMError
 from app.matching import match_jobs
 from app import demo, preflight, warmup
+from app.agent import roles
 from app.providers import forem_mirror
 from app.providers.aggregator import search_all
 from app.providers.base import JobQuery, ProviderError
@@ -114,6 +115,7 @@ def health() -> dict:
     result: dict[str, Any] = {"ok": True}
 
     models = installed_models()
+    chat_model = roles.model_for("orchestrator")         # the model the chat agent really uses (see agents.yaml)
     try:
         version = _ollama_get("/api/version").get("version") if models is not None else None
     except Exception:
@@ -123,7 +125,7 @@ def health() -> dict:
         "message": None if models is not None else "Ollama is not running. Start the Ollama app to use the chat.",
     }
     result["models"] = {
-        "chat": {"name": s.ollama_model, "installed": _has(models, s.ollama_model) if models is not None else None},
+        "chat": {"name": chat_model, "installed": _has(models, chat_model) if models is not None else None},
         "embed": {"name": s.embed_model, "installed": _has(models, s.embed_model) if models is not None else None},
         "installed": models or [],
     }
@@ -137,6 +139,8 @@ def health() -> dict:
     result["adzuna"] = {"configured": s.adzuna_configured, "monthly_budget": s.adzuna_monthly_budget,
                         "used": result["database"].get("adzuna_used")}
     result["warm"] = dict(_warmer.state)
+    result["agents"] = {"active": roles.active_name(), "problems": roles.problems(),
+                        "models": {r: roles.model_for(r) for r in roles.ROLES}}
     try:
         result["vacancies"] = {**forem_mirror.info(), "message": _refresher.last_message}
     except Exception:
@@ -408,13 +412,63 @@ def put_model(change: ModelChange) -> dict:
             raise HTTPException(400, f"The model '{change.model}' is not installed. "
                                      f"Install it with: ollama pull {change.model}")
         s.update(ollama_model=change.model)
-        get_agent().model = change.model
+        get_agent().model = None                # the chat agent follows the active team again
         _warmer.trigger()                       # load the new model in the background
     if change.num_ctx:
         s.update(num_ctx=change.num_ctx)
     if change.think is not None:
         s.update(think=change.think)
     return model_info()
+
+
+# ------------------------------------------------------------------ agent teams
+class AgentsChange(BaseModel):
+    profile: str | None = Field(None, max_length=40, description="name of the team to use")
+    overrides: dict[str, str | None] | None = Field(None, description="role -> model (null removes the override)")
+    clear_overrides: bool = False
+
+
+def agents_info() -> dict:
+    return {**roles.describe(), "installed": installed_models()}
+
+
+@app.get("/api/agents")
+def get_agents() -> dict:
+    """The teams from agents.yaml, the active one, and which model each role uses right now."""
+    return agents_info()
+
+
+@app.put("/api/agents")
+def put_agents(change: AgentsChange) -> dict:
+    """Choose a team and/or a model per role. Nothing is changed unless every model is installed."""
+    s = get_settings()
+    if change.profile is not None and change.profile not in roles.teams(s):
+        raise HTTPException(400, f"There is no team '{change.profile}'. Available: {', '.join(roles.teams(s))}")
+    overrides = {} if change.clear_overrides else dict(s.role_overrides)
+    for role, model in (change.overrides or {}).items():
+        if role not in roles.ROLES:
+            raise HTTPException(400, f"Unknown role '{role}'. Roles: {', '.join(roles.ROLES)}")
+        if model:
+            overrides[role] = model.strip()
+        else:
+            overrides.pop(role, None)
+    previous = (s.agent_profile, dict(s.role_overrides))
+    s.update(agent_profile=change.profile if change.profile is not None else s.agent_profile, role_overrides=overrides)
+    models = installed_models()
+    problem = None
+    if models is None:
+        problem = (503, "Ollama is not running, so the models cannot be checked.")
+    else:
+        missing = [m for m in roles.models_in_use(s) if not _has(models, m)]
+        if missing:
+            problem = (400, "Not installed: " + ", ".join(missing) + ". Install with: "
+                       + "; ".join(f"ollama pull {m}" for m in missing))
+    if problem:
+        s.update(agent_profile=previous[0], role_overrides=previous[1])         # nothing changed
+        raise HTTPException(*problem)
+    get_agent().model = None
+    _warmer.trigger()                           # load the chat agent's model in the background
+    return agents_info()
 
 
 # ---------------------------------------------------------------------- privacy

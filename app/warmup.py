@@ -16,6 +16,7 @@ from typing import Any
 import ollama
 
 from app import llm
+from app.agent import roles
 from app.agent.prompts import build_system_prompt
 from app.config import get_settings
 from app.tools import tool_schemas
@@ -28,11 +29,12 @@ def prime_chat(model: str | None = None) -> float:
     """Load the chat model and make it read the real system prompt + tools. Returns seconds taken."""
     from app.agent.agent import load_stored_profile          # late import: the agent imports a lot
     s = get_settings()
-    model = model or s.ollama_model
-    messages = [{"role": "system", "content": build_system_prompt(load_stored_profile())},
+    role = roles.role_config("orchestrator", s)             # same model, tools and options as the real agent
+    model = model or role.model
+    messages = [{"role": "system", "content": build_system_prompt(load_stored_profile(), tools=role.tools)},
                 {"role": "user", "content": "Hello"}]
-    kwargs: dict[str, Any] = dict(model=model, messages=messages, tools=tool_schemas(), keep_alive=KEEP_ALIVE,
-                                  options={"num_ctx": s.num_ctx, "num_predict": 1}, think=s.think)
+    kwargs: dict[str, Any] = dict(model=model, messages=messages, tools=tool_schemas(role.tools), keep_alive=KEEP_ALIVE,
+                                  options={"num_ctx": role.num_ctx, "num_predict": 1}, think=role.think)
     started = time.perf_counter()
     try:
         llm.get_client().chat(**kwargs)
@@ -41,6 +43,15 @@ def prime_chat(model: str | None = None) -> float:
             raise
         kwargs.pop("think")                                   # model without a thinking mode
         llm.get_client().chat(**kwargs)
+    return time.perf_counter() - started
+
+
+def load_model(model: str) -> float:
+    """Just load a model into memory (no prompt). Used for the roles that are not the chat agent:
+    their first real job (reading a CV, writing a letter) should not wait for the model to load."""
+    started = time.perf_counter()
+    llm.get_client().chat(model=model, messages=[{"role": "user", "content": "Hi"}], keep_alive=KEEP_ALIVE,
+                          options={"num_predict": 1})
     return time.perf_counter() - started
 
 
@@ -65,20 +76,28 @@ class BackgroundWarmer:
         if not self._lock.acquire(blocking=False):             # another warm-up is running
             return self.state
         try:
-            model = get_settings().ollama_model
+            model = roles.model_for("orchestrator")
             self.state.update(status="warming", message=f"loading {model}...", model=model)
             try:
                 self.state["chat_s"] = round(prime_chat(model), 1)
             except Exception as e:
                 self.state.update(status="failed", message=f"could not load {model}: {_short(e)}")
                 return self.state
+            note = ""
+            for other in [m for m in roles.models_in_use() if m != model]:       # the rest of the team
+                try:
+                    self.state.update(message=f"loading {other}...")
+                    self.state.setdefault("others_s", {})[other] = round(load_model(other), 1)
+                except Exception as e:
+                    note += f" (could not load {other}: {_short(e)})"
             try:
                 self.state["embed_s"] = round(prime_embeddings(), 1)
-                note = ""
             except Exception as e:
                 self.state["embed_s"] = None
-                note = f" (embedding model not loaded: {_short(e)})"
-            self.state.update(status="ready", message=f"{model} is loaded and ready{note}")
+                note += f" (embedding model not loaded: {_short(e)})"
+            team = roles.models_in_use()
+            self.state.update(status="ready", message=f"{', '.join(team)} loaded and ready{note}" if len(team) > 1
+                              else f"{model} is loaded and ready{note}")
         finally:
             self._lock.release()
         return self.state

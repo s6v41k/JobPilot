@@ -243,7 +243,7 @@ def test_application_lifecycle(client):
 
 # ------------------------------------------------------------------------ model
 def test_model_switching(client, monkeypatch):
-    monkeypatch.setattr(main, "_agent", Agent(settings=Settings(), client=FakeOllama()))
+    monkeypatch.setattr(main, "_agent", Agent(settings=get_settings(), client=FakeOllama()))
     for name in ("ollama_model", "num_ctx", "think"):                    # the API changes global settings:
         monkeypatch.setattr(get_settings(), name, getattr(get_settings(), name))   # restore them afterwards
     res = client.put("/api/model", json={"model": "llama3.2:3b", "num_ctx": 4096, "think": True}).json()

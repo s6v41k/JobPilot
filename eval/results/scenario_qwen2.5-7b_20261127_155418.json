@@ -1,0 +1,85 @@
+{
+ "model": "qwen2.5:7b",
+ "agents": "default",
+ "data": "real Le Forem snapshot of 2026-11-27 (108 offers), fictional CV 'emma_verbeke'",
+ "question": "Find student jobs in Brussels and tell me which one fits my CV best",
+ "profile": "emma_verbeke",
+ "think": false,
+ "date": "2026-11-27T15:54:18",
+ "wall_s": 219.9,
+ "tokens_per_s": 4.8,
+ "prompt_tokens": 8970,
+ "tool_calls": [
+  "search_jobs",
+  "match_cv"
+ ],
+ "tool_failures": 0,
+ "guard_retractions": 0,
+ "errors": [],
+ "answer": "The \"Serveur - Job étudiant\" position at ACCENT Jobs For People in Saint-Gilles fits your CV the best with a score of 85. It asks for hospitality skills, which you have, and the ad is in French, which you speak at an intermediate level.\n\nOther jobs that might be worth considering, but are a less perfect fit, are:\n- \"ETUDIANT Travailleur de nuit\" at Pag - Asa - Pag - Asa vzw in Brussels (score: 53)\n- \"Instituteur/trice maternel(le) – Job étudiant (jeunes diplômé(e)s)\" at AIB in Etterbeek (score: 43)\n- \"Jaarlijkse jobstudent – Bachelor in de verpleegkunde in specialisatieopleiding\" at CHU Saint-Pierre - UMC Sint-Pieter in Anderlecht (score: 34)\n- \"Apprenti technicien pc ou vente (alternance IFAPME, EFP, ...)\" at Mister Genius in Anderlecht (score: 29)\n\nYou might want to focus your job applications on the \"Serveur - Job étudiant\" position first. Source: Le Forem open data.",
+ "events": [
+  {
+   "at_s": 90.7,
+   "type": "tool_call",
+   "name": "search_jobs",
+   "arguments": {
+    "limit": 5,
+    "region": "brussels",
+    "city": "Brussels",
+    "job_type": "student"
+   }
+  },
+  {
+   "at_s": 90.7,
+   "type": "tool_result",
+   "name": "search_jobs",
+   "ok": true,
+   "error": null,
+   "duration_ms": 50,
+   "summary": {
+    "count": 5,
+    "data_source": "live"
+   }
+  },
+  {
+   "at_s": 140.9,
+   "type": "tool_call",
+   "name": "match_cv",
+   "arguments": {
+    "job_ids": [
+     "forem:2165125",
+     "forem:2164142",
+     "forem:2158588",
+     "forem:2151647",
+     "forem:2149104"
+    ]
+   }
+  },
+  {
+   "at_s": 143.3,
+   "type": "tool_result",
+   "name": "match_cv",
+   "ok": true,
+   "error": null,
+   "duration_ms": 2366,
+   "summary": {
+    "matches": 5
+   }
+  },
+  {
+   "at_s": 219.9,
+   "type": "done",
+   "text": "The \"Serveur - Job étudiant\" position at ACCENT Jobs For People in Saint-Gilles fits your CV the best with a score of 85. It asks for hospitality skills, which you have, and the ad is in French, which you speak at an intermediate level.\n\nOther jobs that might be worth considering, but are a less perfect fit, are:\n- \"ETUDIANT Travailleur de nuit\" at Pag - Asa - Pag - Asa vzw in Brussels (score: 53)\n- \"Instituteur/trice maternel(le) – Job étudiant (jeunes diplômé(e)s)\" at AIB in Etterbeek (score: 43)\n- \"Jaarlijkse jobstudent – Bachelor in de verpleegkunde in specialisatieopleiding\" at CHU Saint-Pierre - UMC Sint-Pieter in Anderlecht (score: 34)\n- \"Apprenti technicien pc ou vente (alternance IFAPME, EFP, ...)\" at Mister Genius in Anderlecht (score: 29)\n\nYou might want to focus your job applications on the \"Serveur - Job étudiant\" position first. Source: Le Forem open data.",
+   "stats": {
+    "eval_count": 385,
+    "eval_duration": 79430493000,
+    "prompt_eval_count": 8970,
+    "total_duration": 217451296200,
+    "tool_rounds": 2,
+    "tool_runs": 2,
+    "elapsed_s": 219.91,
+    "model": "qwen2.5:7b"
+   }
+  }
+ ]
+}

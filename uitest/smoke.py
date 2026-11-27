@@ -207,15 +207,37 @@ def tabs_flow(port: int) -> None:
         click(b, ".panel .btn.primary", "Analyze my CV")
         check(b.wait_for("document.querySelector(\".profile input[maxlength='80']\").value === 'Scripted Student'", timeout=20), "Profile: Analyze fills the form with the extracted profile")
 
-        set_value(b, ".panel select", "llama3.2:3b", "change")
+        # ---- agent teams
+        check(count(b, "select[aria-label='Agent team'] option") == 4, "Profile: the four teams of agents.yaml are listed")
+        check(count(b, "table.roles tr") == 3, "Profile: the three jobs of the language models are listed")
+        set_value(b, "select[aria-label='Agent team']", "small_chat", "change")
+        check(b.wait_for("document.querySelector('table.roles').innerText.includes('uses llama3.2:3b')", timeout=20),
+              "Profile: choosing a team gives the chat agent its own model")
+        check("llama3.2:3b" in text(b, ".pill"), "Profile: the status bar shows the model the chat agent really uses")
+        set_value(b, "select[aria-label='Agent team']", "qwen3_chat", "change")
+        check(b.wait_for("document.body.innerText.includes('Not installed: qwen3:4b-instruct')", timeout=20),
+              "Profile: a team that needs a missing model is refused with the install command")
+        check(api("api/agents")["active"] == "small_chat", "Profile: ...and nothing was changed")
+        # the browser logs the deliberate HTTP 400 above in its console: that one is expected, not a bug
+        b.problems = [p for p in b.problems if not ("400" in p[1] and "api/agents" in p[1])]
+        set_value(b, "select[aria-label='Model for Letter writer']", "llama3.2:3b", "change")
+        check(b.wait_for("[...document.querySelectorAll('table.roles tr')][2].innerText.includes('uses llama3.2:3b')", timeout=20),
+              "Profile: a single job can get its own model")
+        set_value(b, "select[aria-label='Agent team']", "default", "change")
+        check(b.wait_for("document.querySelector('table.roles').innerText.includes('uses qwen2.5:7b')", timeout=20),
+              "Profile: switching back to the default team resets all jobs")
+
+        set_value(b, "select[aria-label='Default model']", "llama3.2:3b", "change")
         click(b, ".panel .btn.primary", "Use this model")
-        b.wait_for("document.body.innerText.includes('Active: llama3.2:3b')", timeout=20)
-        check("llama3.2:3b" in text(b, ".pill"), "Profile: switching the model updates the status bar")
+        b.wait_for("document.body.innerText.includes('Default model now: llama3.2:3b')", timeout=20)
+        check("llama3.2:3b" in text(b, ".pill"), "Profile: switching the default model updates the status bar")
         click(b, ".panel .btn", "Refresh now")
         check(b.wait_for("document.body.innerText.includes('vacancies downloaded')", timeout=20), "Profile: 'Refresh now' downloads the vacancy list")
         click(b, ".panel .btn", "Quick check")
         check(b.wait_for("document.querySelectorAll('.checks li').length >= 10", timeout=60), "Profile: the system check lists its checks")
         check(any(w in text(b, ".verdict") for w in ("READY", "NOT READY")), "Profile: the system check gives a verdict")
+        b.js("document.querySelector('table.roles').scrollIntoView({block: 'start'})")
+        b.pump(0.5)
         b.screenshot(SHOTS / "9_profile.png")
 
         click(b, ".panel .btn", "Delete my data...")

@@ -1,0 +1,82 @@
+{
+ "model": "qwen2.5:7b",
+ "agents": "lean_tools",
+ "data": "real Le Forem snapshot of 2026-11-27 (108 offers), fictional CV 'emma_verbeke'",
+ "question": "Find student jobs in Brussels and tell me which one fits my CV best",
+ "profile": "emma_verbeke",
+ "think": false,
+ "date": "2026-11-27T15:56:51",
+ "wall_s": 100.2,
+ "tokens_per_s": 5.2,
+ "prompt_tokens": 7512,
+ "tool_calls": [
+  "search_jobs",
+  "match_cv"
+ ],
+ "tool_failures": 0,
+ "guard_retractions": 0,
+ "errors": [],
+ "answer": "Based on your CV, the \"Serveur - Job étudiant\" position at ACCENT Jobs For People in Saint-Gilles (id: forem:2151647) fits you best with a score of 85. It requires skills you have, such as hospitality, and the ad is in French, which you speak at an intermediate level.\n\nThe \"ETUDIANT  Travailleur de nuit\" position (id: forem:2165125) is a partial fit, and the \"Instituteur/trice maternel(le) – Job étudiant (jeunes diplômé(e)s)\" position (id: forem:2164142) also has a partial fit but requires skills you don't have yet.\n\nWould you like to apply to the \"Serveur - Job étudiant\" position or save it for later?",
+ "events": [
+  {
+   "at_s": 6.8,
+   "type": "tool_call",
+   "name": "search_jobs",
+   "arguments": {
+    "job_type": "student",
+    "region": "brussels",
+    "city": "Brussels"
+   }
+  },
+  {
+   "at_s": 6.9,
+   "type": "tool_result",
+   "name": "search_jobs",
+   "ok": true,
+   "error": null,
+   "duration_ms": 36,
+   "summary": {
+    "count": 5,
+    "data_source": "live"
+   }
+  },
+  {
+   "at_s": 47.2,
+   "type": "tool_call",
+   "name": "match_cv",
+   "arguments": {
+    "job_ids": [
+     "forem:2165125",
+     "forem:2164142",
+     "forem:2151647"
+    ]
+   }
+  },
+  {
+   "at_s": 49.0,
+   "type": "tool_result",
+   "name": "match_cv",
+   "ok": true,
+   "error": null,
+   "duration_ms": 1783,
+   "summary": {
+    "matches": 3
+   }
+  },
+  {
+   "at_s": 100.2,
+   "type": "done",
+   "text": "Based on your CV, the \"Serveur - Job étudiant\" position at ACCENT Jobs For People in Saint-Gilles (id: forem:2151647) fits you best with a score of 85. It requires skills you have, such as hospitality, and the ad is in French, which you speak at an intermediate level.\n\nThe \"ETUDIANT  Travailleur de nuit\" position (id: forem:2165125) is a partial fit, and the \"Instituteur/trice maternel(le) – Job étudiant (jeunes diplômé(e)s)\" position (id: forem:2164142) also has a partial fit but requires skills you don't have yet.\n\nWould you like to apply to the \"Serveur - Job étudiant\" position or save it for later?",
+   "stats": {
+    "eval_count": 275,
+    "eval_duration": 53169591000,
+    "prompt_eval_count": 7512,
+    "total_duration": 98317002400,
+    "tool_rounds": 2,
+    "tool_runs": 2,
+    "elapsed_s": 100.19,
+    "model": "qwen2.5:7b"
+   }
+  }
+ ]
+}

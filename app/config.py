@@ -7,7 +7,7 @@ lives in one `Settings` object, so the UI/CLI can switch it without a restart.
 from __future__ import annotations
 
 import os
-from dataclasses import dataclass, fields
+from dataclasses import dataclass, field, fields
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -30,6 +30,11 @@ class Settings:
     request_timeout: float = 120.0
     # Models can "think" before answering (qwen3 etc.). Off by default: faster.
     think: bool = False
+
+    # --- Agent teams (which model does which job: see agents.yaml) ---
+    agent_profile: str = ""                 # name of the active team; empty = the `active:` line of agents.yaml
+    agents_file: str = "agents.yaml"
+    role_overrides: dict = field(default_factory=dict)    # {role: model} chosen at runtime in the UI
 
     # --- Adzuna (very limited free quota, so it is a last-resort source) ---
     adzuna_app_id: str = ""
@@ -92,6 +97,8 @@ def load_settings() -> Settings:
         num_ctx=int(_env("NUM_CTX", str(Settings.num_ctx))),
         request_timeout=float(_env("REQUEST_TIMEOUT", str(Settings.request_timeout))),
         think=_env("THINK", "false").lower() in ("1", "true", "yes", "on"),
+        agent_profile=_env("AGENT_PROFILE", ""),
+        agents_file=_env("AGENTS_FILE", "agents.yaml"),
         adzuna_app_id=_env("ADZUNA_APP_ID", ""),
         adzuna_app_key=_env("ADZUNA_APP_KEY", ""),
         adzuna_monthly_budget=int(_env("ADZUNA_MONTHLY_BUDGET", str(Settings.adzuna_monthly_budget))),
