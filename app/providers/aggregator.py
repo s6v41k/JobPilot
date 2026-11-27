@@ -1,0 +1,112 @@
+"""Combine all sources into one search, with a clear fallback order.
+
+    1. Le Forem open data   (free, live)                      -> data_source "live"
+    2. Adzuna               (only if step 1 gave too few; limited budget)
+    3. every live source failed -> vacancies saved earlier in SQLite -> "cached"
+    4. nothing there either     -> real snapshot files               -> "snapshot"
+
+Search keywords are the only thing that ever leaves the machine.
+"""
+from __future__ import annotations
+
+from dataclasses import dataclass, field
+
+from app import db
+from app.providers import adzuna as adzuna_module
+from app.providers import forem as forem_module
+from app.providers.adzuna import AdzunaProvider
+from app.providers.base import Job, JobProvider, JobQuery, ProviderError
+from app.providers.forem import ForemProvider
+from app.providers.keywords import expand_keywords
+from app.providers.snapshot import SnapshotProvider
+
+MIN_RESULTS_BEFORE_ADZUNA = 5
+
+
+@dataclass
+class SearchOutcome:
+    jobs: list[Job] = field(default_factory=list)
+    data_source: str = "live"            # live | cached | snapshot
+    notes: list[str] = field(default_factory=list)
+    attribution: list[dict] = field(default_factory=list)
+    snapshot_date: str | None = None
+
+
+def _dedupe(jobs: list[Job]) -> list[Job]:
+    """Same title + company + city = same vacancy (agencies post duplicates)."""
+    seen, unique = set(), []
+    for job in jobs:
+        key = ((job.title or "").lower(), (job.company or "").lower(), (job.city or "").lower())
+        if key not in seen:
+            seen.add(key)
+            unique.append(job)
+    return unique
+
+
+def search_all(
+    query: JobQuery,
+    forem: JobProvider | None = None,
+    adzuna: JobProvider | None = None,
+    snapshot: SnapshotProvider | None = None,
+    db_path=None,
+    min_results: int = MIN_RESULTS_BEFORE_ADZUNA,
+) -> SearchOutcome:
+    forem = forem or ForemProvider()
+    adzuna = adzuna or AdzunaProvider()
+    snapshot = snapshot or SnapshotProvider()
+    out = SearchOutcome()
+    attempted = failed = 0
+
+    # 1. Le Forem (also searches NL/FR translations of simple English keywords)
+    attempted += 1
+    try:
+        found: list[Job] = []
+        for variant in expand_keywords(query.keywords):
+            found += forem.search(query.model_copy(update={"keywords": variant}))
+        out.jobs = _dedupe(found)
+        out.attribution.append(forem_module.ATTRIBUTION)
+    except ProviderError as e:
+        failed += 1
+        out.notes.append(str(e))
+
+    # 2. Adzuna - only when we still have too little (it has a tiny monthly budget)
+    if len(out.jobs) < min_results and getattr(getattr(adzuna, "settings", None), "adzuna_configured", True):
+        attempted += 1
+        try:
+            more = adzuna.search(query)
+            out.jobs = _dedupe(out.jobs + more)
+            if more:
+                out.attribution.append(adzuna_module.ATTRIBUTION)
+        except ProviderError as e:
+            failed += 1
+            out.notes.append(str(e))
+
+    out.jobs = out.jobs[: query.limit]
+
+    # Save live results locally (powers get_job_details, the Jobs tab and the cache fallback).
+    if out.jobs:
+        with db.connect(db_path) as conn:
+            for job in out.jobs:
+                db.upsert_job(conn, job.to_row())
+        return out
+
+    # 3./4. Fall back only when the live sources FAILED (an honest empty result stays empty).
+    if failed < attempted:
+        return out
+    with db.connect(db_path) as conn:
+        rows = db.query_jobs(conn, keywords=query.keywords, job_type=query.job_type,
+                             region=query.region, city=query.city, language=query.language,
+                             experience_level=query.experience_level, limit=query.limit)
+    if rows:
+        out.jobs = [Job(**r) for r in rows]
+        out.data_source = "cached"
+        out.notes.append("Live sources unavailable: showing real vacancies saved earlier on this computer.")
+        return out
+    snap = snapshot.search(query)
+    if snap:
+        out.jobs = snap
+        out.data_source = "snapshot"
+        out.snapshot_date = snapshot.snapshot_date()
+        out.notes.append(f"Live sources unavailable: showing a saved snapshot of real vacancies "
+                         f"from {out.snapshot_date}. They may be outdated.")
+    return out
