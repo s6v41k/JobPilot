@@ -32,7 +32,7 @@ _PROVINCE_REGION: list[tuple[str, str]] = [
     ("luik", "wallonia"), ("liege", "wallonia"),
     ("namen", "wallonia"), ("namur", "wallonia"),
     ("luxembourg", "wallonia"), ("luxemburg", "wallonia"),
-    ("wallonie", "wallonia"), ("wallonia", "wallonia"), ("wallonie", "wallonia"),
+    ("wallonie", "wallonia"), ("wallonia", "wallonia"), ("wallonne", "wallonia"),
     ("brussel", "brussels"), ("bruxelles", "brussels"), ("brussels", "brussels"),
 ]
 

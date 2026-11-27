@@ -1,0 +1,5947 @@
+{
+ "fetched": "2026-11-27",
+ "source": "ODWB offres-d-emploi-forem (CC BY-SA 4.0)",
+ "results": [
+  {
+   "numerooffreforem": "2165902",
+   "titreoffre": "vendeur boucherie (H/F/X)",
+   "lieuxtravaillocalite": [
+    "DURBUY"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Luxembourg",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "6940"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE34",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 5.4564,
+     "lat": 50.35302
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "Accent",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": null,
+   "languescodeiso2": null,
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Commerce de détail de viandes et produits à base de viande exploité par les bouchers/charcutiers"
+   ],
+   "secteurscodenace": [
+    "4722101"
+   ],
+   "source": "Accent Job",
+   "referenceexterne": "986870239",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165902",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2027-01-08",
+   "metier": "Vendeur / Vendeuse en magasin",
+   "metiercodedimeco": "D121401-1"
+  },
+  {
+   "numerooffreforem": "2166499",
+   "titreoffre": "Vendeur(se) en boulangerie – Flexi-job / Étudiant - Grez-doiceau (H/F/X)",
+   "lieuxtravaillocalite": [
+    "GREZ-DOICEAU"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Brabant Wallon",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "1390"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE31",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.696275,
+     "lat": 50.738171
+    }
+   ],
+   "typecontrat": "Flexi-Jobs",
+   "nomemployeur": "AIB",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 2,
+   "niveauxetudes": [
+    "Enseignement secondaire (deuxième cycle)"
+   ],
+   "niveauxetudesisced2011": [
+    "04"
+   ],
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Industries alimentaires"
+   ],
+   "secteurscodenace": [
+    "10"
+   ],
+   "source": "AIB NV",
+   "referenceexterne": "PO-UCRA6ETZ-LEFOREM-BE-271110",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2166499",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2027-01-08",
+   "metier": "Vente en alimentation",
+   "metiercodedimeco": "D1106"
+  },
+  {
+   "numerooffreforem": "2165550",
+   "titreoffre": "Job étudiant en fromagerie | Vendredi et samedi | Rixensart (H/F/X)",
+   "lieuxtravaillocalite": [
+    "RIXENSART"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Brabant Wallon",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "1330"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE31",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.527289,
+     "lat": 50.713354
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "ADECCO PERSONNEL SERVICES",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire (deuxième cycle)"
+   ],
+   "niveauxetudesisced2011": [
+    "04"
+   ],
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": [
+    "B"
+   ],
+   "secteurs": [
+    "Commerce de gros, à l'exception des véhicules automobiles et des motocycles"
+   ],
+   "secteurscodenace": [
+    "46"
+   ],
+   "source": "Adecco",
+   "referenceexterne": "386-43690-LEFOREM-BE-271100",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165550",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2027-01-08",
+   "metier": "Fabrication et affinage de fromages",
+   "metiercodedimeco": "A1412"
+  },
+  {
+   "numerooffreforem": "2165570",
+   "titreoffre": "Étudiant(e) en Chimie/Laboratoire - Mise à jour des procédures de production (H/F/X)",
+   "lieuxtravaillocalite": [
+    "ESTAIMPUIS"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Hainaut",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "7730"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE32",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 3.264018,
+     "lat": 50.705979
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "ADECCO PERSONNEL SERVICES",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire (premier cycle)"
+   ],
+   "niveauxetudesisced2011": [
+    "03"
+   ],
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Commerce de détail, à l'exception des véhicules automobiles et des motocycles"
+   ],
+   "secteurscodenace": [
+    "47"
+   ],
+   "source": "Adecco",
+   "referenceexterne": "394-5480-LEFOREM-BE-271100",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165570",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2027-01-08",
+   "metier": "Rédaction technique",
+   "metiercodedimeco": "H1207"
+  },
+  {
+   "numerooffreforem": "2165556",
+   "titreoffre": "Barman |  Flexijob ou étudiant | Week-ends et vacancess scolaires (H/F/X)",
+   "lieuxtravaillocalite": [
+    "LIBIN"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Luxembourg",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "6890"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE34",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 5.256901,
+     "lat": 49.980946
+    }
+   ],
+   "typecontrat": "Intérimaire avec option sur durée indéterminée",
+   "nomemployeur": "ADECCO PERSONNEL SERVICES",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Primaire"
+   ],
+   "niveauxetudesisced2011": [
+    "02"
+   ],
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": [
+    "B"
+   ],
+   "secteurs": [
+    "Restauration"
+   ],
+   "secteurscodenace": [
+    "56"
+   ],
+   "source": "Adecco",
+   "referenceexterne": "783-32534-LEFOREM-BE-271100",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165556",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2027-01-08",
+   "metier": "Assistance de direction d'hôtel-restaurant",
+   "metiercodedimeco": "G1401"
+  },
+  {
+   "numerooffreforem": "2165525",
+   "titreoffre": "Serveur en salle | Flexijob ou étudiant | Redu (H/F/X)",
+   "lieuxtravaillocalite": [
+    "LIBIN"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Luxembourg",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "6890"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE34",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 5.256901,
+     "lat": 49.980946
+    }
+   ],
+   "typecontrat": "Durée déterminée",
+   "nomemployeur": "ADECCO PERSONNEL SERVICES",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Primaire"
+   ],
+   "niveauxetudesisced2011": [
+    "02"
+   ],
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": [
+    "B"
+   ],
+   "secteurs": [
+    "Restauration"
+   ],
+   "secteurscodenace": [
+    "56"
+   ],
+   "source": "Adecco",
+   "referenceexterne": "783-32536-LEFOREM-BE-271100",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165525",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2027-01-08",
+   "metier": "Assistance de direction d'hôtel-restaurant",
+   "metiercodedimeco": "G1401"
+  },
+  {
+   "numerooffreforem": "2165558",
+   "titreoffre": "Collaborateur plonge | Etudiant ou flexijob | Redu (H/F/X)",
+   "lieuxtravaillocalite": [
+    "LIBIN"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Luxembourg",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "6890"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE34",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 5.256901,
+     "lat": 49.980946
+    }
+   ],
+   "typecontrat": "Intérimaire avec option sur durée indéterminée",
+   "nomemployeur": "ADECCO PERSONNEL SERVICES",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Primaire"
+   ],
+   "niveauxetudesisced2011": [
+    "02"
+   ],
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": [
+    "B"
+   ],
+   "secteurs": [
+    "Restauration"
+   ],
+   "secteurscodenace": [
+    "56"
+   ],
+   "source": "Adecco",
+   "referenceexterne": "783-32535-LEFOREM-BE-271100",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165558",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2027-01-08",
+   "metier": "Plonge en restauration",
+   "metiercodedimeco": "G1605"
+  },
+  {
+   "numerooffreforem": "2164281",
+   "titreoffre": "Aide-magasinier - Job étudiant (H/F/X)",
+   "lieuxtravaillocalite": [
+    "SOMME-LEUZE"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province de Namur",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "5377"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE35",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 5.336931,
+     "lat": 50.288322
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "Accent",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": [
+    "B"
+   ],
+   "secteurs": [
+    "Travaux d'isolation"
+   ],
+   "secteurscodenace": [
+    "43291"
+   ],
+   "source": "Accent Job",
+   "referenceexterne": "986733516",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2164281",
+   "datedebutdiffusion": "2026-11-26",
+   "datefindiffusion": "2027-01-07",
+   "metier": "Magasinier / Magasinière",
+   "metiercodedimeco": "N110301-1"
+  },
+  {
+   "numerooffreforem": "2164851",
+   "titreoffre": "Etudiant(e) polyvalent(e) en magasin (H/F/X)",
+   "lieuxtravaillocalite": [
+    "BELOEIL"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Hainaut",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "7972"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE32",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 3.679352,
+     "lat": 50.518555
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "AIB",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire (deuxième cycle)"
+   ],
+   "niveauxetudesisced2011": [
+    "04"
+   ],
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Restauration"
+   ],
+   "secteurscodenace": [
+    "56"
+   ],
+   "source": "AIB NV",
+   "referenceexterne": "PO-KULF4HZF-LEFOREM-BE-261115",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2164851",
+   "datedebutdiffusion": "2026-11-26",
+   "datefindiffusion": "2027-01-07",
+   "metier": "Mise en rayon libre-service",
+   "metiercodedimeco": "D1507"
+  },
+  {
+   "numerooffreforem": "2165151",
+   "titreoffre": "Job d'étudiant (H/F/X)",
+   "lieuxtravaillocalite": [
+    "FARCIENNES"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Hainaut",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "6240"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE32",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.554129,
+     "lat": 50.42897
+    }
+   ],
+   "typecontrat": "Intérimaire avec option sur durée indéterminée",
+   "nomemployeur": "ACCENT Jobs For People",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Activités liées à l'emploi"
+   ],
+   "secteurscodenace": [
+    "78"
+   ],
+   "source": "Jobat",
+   "referenceexterne": "15706546_FR",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165151",
+   "datedebutdiffusion": "2026-11-26",
+   "datefindiffusion": "2026-12-24",
+   "metier": "Magasinage et préparation de commandes",
+   "metiercodedimeco": "N1103"
+  },
+  {
+   "numerooffreforem": "2164001",
+   "titreoffre": "Etudiant(e) (H/F/X)",
+   "lieuxtravaillocalite": [
+    "NIVELLES"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Brabant Wallon",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "1400"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE31",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.331909,
+     "lat": 50.589162
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "Nivelles",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Primaire"
+   ],
+   "niveauxetudesisced2011": [
+    "02"
+   ],
+   "langues": null,
+   "languescodeiso2": null,
+   "experiencerequise": null,
+   "permisdeconduire": [
+    "B"
+   ],
+   "secteurs": [
+    "Commerce de gros de produits alimentaires, de boissons et de tabac"
+   ],
+   "secteurscodenace": [
+    "463"
+   ],
+   "source": "Synergie Interim",
+   "referenceexterne": "986719680",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2164001",
+   "datedebutdiffusion": "2026-11-26",
+   "datefindiffusion": "2026-12-25",
+   "metier": "Serveur / Serveuse",
+   "metiercodedimeco": "G180301-1"
+  },
+  {
+   "numerooffreforem": "2164171",
+   "titreoffre": "Employé(e) Friterie (H/F/X)",
+   "lieuxtravaillocalite": [
+    "HOTTON"
+   ],
+   "lieuxtravailregion": [
+    "Province du Luxembourg",
+    "Belgique",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "6990"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE34",
+    "BE",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 5.44633,
+     "lat": 50.268801
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "DaJobs - DaJobs Marche",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": [
+    "B"
+   ],
+   "secteurs": [
+    "Activités des agences de travail temporaire"
+   ],
+   "secteurscodenace": [
+    "78200"
+   ],
+   "source": "Via site Forem",
+   "referenceexterne": null,
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2164171",
+   "datedebutdiffusion": "2026-11-26",
+   "datefindiffusion": "2026-12-24",
+   "metier": "Collaborateur / Collaboratrice en restauration rapide",
+   "metiercodedimeco": "G160301-2"
+  },
+  {
+   "numerooffreforem": "2164299",
+   "titreoffre": "Étudiant(e) Horeca – Marché de Noël (H/F/X)",
+   "lieuxtravaillocalite": [
+    "DURBUY"
+   ],
+   "lieuxtravailregion": [
+    "Province du Luxembourg",
+    "Belgique",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "6940"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE34",
+    "BE",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 5.456248,
+     "lat": 50.352411
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "DaJobs - DaJobs Marche",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": [
+    "B"
+   ],
+   "secteurs": [
+    "Activités des agences de travail temporaire"
+   ],
+   "secteurscodenace": [
+    "78200"
+   ],
+   "source": "Via site Forem",
+   "referenceexterne": null,
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2164299",
+   "datedebutdiffusion": "2026-11-26",
+   "datefindiffusion": "2026-12-24",
+   "metier": "Commis / commise de salle",
+   "metiercodedimeco": "G180301-2"
+  },
+  {
+   "numerooffreforem": "2164309",
+   "titreoffre": "Valet / Femme de chambre (H/F/X)",
+   "lieuxtravaillocalite": [
+    "ROCHEFORT"
+   ],
+   "lieuxtravailregion": [
+    "Province de Namur",
+    "Belgique",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "5580"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE35",
+    "BE",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 5.214031,
+     "lat": 50.172581
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "DaJobs - DaJobs Marche",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire professionnel - 2eme degré"
+   ],
+   "niveauxetudesisced2011": null,
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": [
+    "B"
+   ],
+   "secteurs": [
+    "Activités des agences de travail temporaire"
+   ],
+   "secteurscodenace": [
+    "78200"
+   ],
+   "source": "Via site Forem",
+   "referenceexterne": null,
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2164309",
+   "datedebutdiffusion": "2026-11-26",
+   "datefindiffusion": "2026-12-24",
+   "metier": "Valet/femme de chambre",
+   "metiercodedimeco": "G150101-1"
+  },
+  {
+   "numerooffreforem": "2164317",
+   "titreoffre": "Employé polyvalent Horeca (H/F/X)",
+   "lieuxtravaillocalite": [
+    "DURBUY"
+   ],
+   "lieuxtravailregion": [
+    "Province du Luxembourg",
+    "Belgique",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "6940"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE34",
+    "BE",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 5.456248,
+     "lat": 50.352411
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "DaJobs - DaJobs Marche",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": [
+    "B"
+   ],
+   "secteurs": [
+    "Activités des agences de travail temporaire"
+   ],
+   "secteurscodenace": [
+    "78200"
+   ],
+   "source": "Via site Forem",
+   "referenceexterne": null,
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2164317",
+   "datedebutdiffusion": "2026-11-26",
+   "datefindiffusion": "2026-12-24",
+   "metier": "Personnel polyvalent d'hôtellerie",
+   "metiercodedimeco": "G150201-1"
+  },
+  {
+   "numerooffreforem": "2164358",
+   "titreoffre": "Etudiants en vente grande surface (H/F/X)",
+   "lieuxtravaillocalite": [
+    "BERTRIX"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Luxembourg",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "6880"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE34",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 5.252911,
+     "lat": 49.854012
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "DaJobs",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Primaire"
+   ],
+   "niveauxetudesisced2011": [
+    "02"
+   ],
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Commerce de détail, à l'exception des véhicules automobiles et des motocycles"
+   ],
+   "secteurscodenace": [
+    "47"
+   ],
+   "source": "DaJobs",
+   "referenceexterne": "255668-LEFOREM-BE-261112",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2164358",
+   "datedebutdiffusion": "2026-11-26",
+   "datefindiffusion": "2027-01-07",
+   "metier": "Vente en alimentation",
+   "metiercodedimeco": "D1106"
+  },
+  {
+   "numerooffreforem": "2164399",
+   "titreoffre": "Etudiant(e)| Caisse |  Semaine (H/F/X)",
+   "lieuxtravaillocalite": [
+    "NIVELLES"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Brabant Wallon",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "1400"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE31",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.331909,
+     "lat": 50.589162
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "ADECCO PERSONNEL SERVICES",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Primaire"
+   ],
+   "niveauxetudesisced2011": [
+    "02"
+   ],
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Commerce de gros, à l'exception des véhicules automobiles et des motocycles"
+   ],
+   "secteurscodenace": [
+    "46"
+   ],
+   "source": "Adecco",
+   "referenceexterne": "166-33304-LEFOREM-BE-261112",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2164399",
+   "datedebutdiffusion": "2026-11-26",
+   "datefindiffusion": "2027-01-07",
+   "metier": "Mise en rayon libre-service",
+   "metiercodedimeco": "D1507"
+  },
+  {
+   "numerooffreforem": "2164286",
+   "titreoffre": "Etudiant(e) (H/F/X)",
+   "lieuxtravaillocalite": [
+    "NIVELLES"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Brabant Wallon",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "1400"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE31",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.323421,
+     "lat": 50.597
+    }
+   ],
+   "typecontrat": "Intérimaire",
+   "nomemployeur": "SYNERGIE BELGIUM",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": null,
+   "languescodeiso2": null,
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Activités liées à l'emploi"
+   ],
+   "secteurscodenace": [
+    "78"
+   ],
+   "source": "Jobat",
+   "referenceexterne": "15699939_FR",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2164286",
+   "datedebutdiffusion": "2026-11-26",
+   "datefindiffusion": "2026-12-24",
+   "metier": "Service en restauration",
+   "metiercodedimeco": "G1803"
+  },
+  {
+   "numerooffreforem": "2165107",
+   "titreoffre": "Job d'étudiant (H/F/X)",
+   "lieuxtravaillocalite": [
+    "FARCIENNES"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Hainaut",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "6240"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE32",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.554129,
+     "lat": 50.42897
+    }
+   ],
+   "typecontrat": "Intérimaire avec option sur durée indéterminée",
+   "nomemployeur": "Accent",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Commerce de détail de matériaux de construction en magasin spécialisé, assortiment général"
+   ],
+   "secteurscodenace": [
+    "47521"
+   ],
+   "source": "Accent Job",
+   "referenceexterne": "986778148",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165107",
+   "datedebutdiffusion": "2026-11-26",
+   "datefindiffusion": "2027-01-07",
+   "metier": "Assistant / Assistante pharmaceutico-technique",
+   "metiercodedimeco": "J130701-1"
+  },
+  {
+   "numerooffreforem": "2164968",
+   "titreoffre": "Job étudiant - Employé(e) polyvalent en grande distribution (H/F/X)",
+   "lieuxtravaillocalite": [
+    "BOUSSU"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Hainaut",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "7300"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE32",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 3.794684,
+     "lat": 50.434021
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "ACTIEF",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": null,
+   "languescodeiso2": null,
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Activités liées à l'emploi"
+   ],
+   "secteurscodenace": [
+    "78"
+   ],
+   "source": "Jobat",
+   "referenceexterne": "15705045_FR",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2164968",
+   "datedebutdiffusion": "2026-11-26",
+   "datefindiffusion": "2026-12-24",
+   "metier": "Mise en rayon libre-service",
+   "metiercodedimeco": "D1507"
+  },
+  {
+   "numerooffreforem": "2163759",
+   "titreoffre": "PROTHÉSISTE Ongulaire (H/F/X)",
+   "lieuxtravaillocalite": [
+    "GENAPPE"
+   ],
+   "lieuxtravailregion": [
+    "Province du Brabant Wallon",
+    "Belgique",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "1470"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE31",
+    "BE",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.447945,
+     "lat": 50.608005
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "Nicolas, Céline - Beauty Full Girls",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": "Spécialiste des soins esthétiques et corporels",
+   "permisdeconduire": null,
+   "secteurs": [
+    "Soins de manucure et de pédicure"
+   ],
+   "secteurscodenace": [
+    "9602203"
+   ],
+   "source": "Via site Forem",
+   "referenceexterne": null,
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2163759",
+   "datedebutdiffusion": "2026-11-26",
+   "datefindiffusion": "2026-12-31",
+   "metier": "Spécialiste des soins esthétiques et corporels",
+   "metiercodedimeco": "D120801-2"
+  },
+  {
+   "numerooffreforem": "2163900",
+   "titreoffre": "Vendeur / Vendeuse Etudiant.e (H/F/X)",
+   "lieuxtravaillocalite": null,
+   "lieuxtravailregion": [
+    "Province du Luxembourg",
+    "Belgique",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": null,
+   "lieuxtravailregionnuts": [
+    "BE34",
+    "BE",
+    "BE3"
+   ],
+   "lieuxtravailgeo": null,
+   "typecontrat": "Etudiant",
+   "nomemployeur": "IBOO - IBOO",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 2,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Activités des agences de placement de main-d'oeuvre"
+   ],
+   "secteurscodenace": [
+    "78100"
+   ],
+   "source": "Via site Forem",
+   "referenceexterne": null,
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2163900",
+   "datedebutdiffusion": "2026-11-26",
+   "datefindiffusion": "2027-01-07",
+   "metier": "Vendeur / Vendeuse en magasin",
+   "metiercodedimeco": "D121401-1"
+  },
+  {
+   "numerooffreforem": "2165325",
+   "titreoffre": "Etudiant caisse/réassort disponible en semaine (H/F/X)",
+   "lieuxtravaillocalite": [
+    "MONS"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Hainaut",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "7000"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE32",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 3.951958,
+     "lat": 50.454956
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "ADECCO PERSONNEL SERVICES",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire (deuxième cycle)"
+   ],
+   "niveauxetudesisced2011": [
+    "04"
+   ],
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Commerce de gros, à l'exception des véhicules automobiles et des motocycles"
+   ],
+   "secteurscodenace": [
+    "46"
+   ],
+   "source": "Adecco",
+   "referenceexterne": "193-37698-LEFOREM-BE-261117",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165325",
+   "datedebutdiffusion": "2026-11-26",
+   "datefindiffusion": "2027-01-07",
+   "metier": "Mise en rayon libre-service",
+   "metiercodedimeco": "D1507"
+  },
+  {
+   "numerooffreforem": "2164541",
+   "titreoffre": "Aide-magasinier - Job étudiant (H/F/X)",
+   "lieuxtravaillocalite": [
+    "SOMME-LEUZE"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province de Namur",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "5377"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE35",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 5.366997,
+     "lat": 50.336639
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "ACCENT Jobs For People",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Primaire"
+   ],
+   "niveauxetudesisced2011": [
+    "02"
+   ],
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Activités liées à l'emploi"
+   ],
+   "secteurscodenace": [
+    "78"
+   ],
+   "source": "Jobat",
+   "referenceexterne": "15702558_FR",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2164541",
+   "datedebutdiffusion": "2026-11-26",
+   "datefindiffusion": "2026-12-24",
+   "metier": "Magasinage et préparation de commandes",
+   "metiercodedimeco": "N1103"
+  },
+  {
+   "numerooffreforem": "2163775",
+   "titreoffre": "Job étudiant caisse magasin (H/F/X)",
+   "lieuxtravaillocalite": [
+    "BRAINE-LE-COMTE"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Hainaut",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "7090"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE32",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.137033,
+     "lat": 50.612858
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "Start People",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Primaire"
+   ],
+   "niveauxetudesisced2011": [
+    "02"
+   ],
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Commerce de détail, à l'exception des véhicules automobiles et des motocycles"
+   ],
+   "secteurscodenace": [
+    "47"
+   ],
+   "source": "Jobat",
+   "referenceexterne": "15693914_FR",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2163775",
+   "datedebutdiffusion": "2026-11-26",
+   "datefindiffusion": "2026-12-24",
+   "metier": "Personnel de caisse",
+   "metiercodedimeco": "D1505"
+  },
+  {
+   "numerooffreforem": "2165566",
+   "titreoffre": "Student kassa | supermarkt | Oostduinkerke (H/F/X)",
+   "lieuxtravaillocalite": [
+    "KOKSIJDE"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province de Flandre Occidentale",
+    "RÉGION FLAMANDE"
+   ],
+   "lieuxtravailcodepostal": [
+    "8670"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE25",
+    "BE2"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 2.635342,
+     "lat": 51.10911
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "ADECCO PERSONNEL SERVICES",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire (premier cycle)"
+   ],
+   "niveauxetudesisced2011": [
+    "03"
+   ],
+   "langues": [
+    "Français",
+    "Néerlandais"
+   ],
+   "languescodeiso2": [
+    "FR",
+    "NL"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Industries alimentaires"
+   ],
+   "secteurscodenace": [
+    "10"
+   ],
+   "source": "Adecco",
+   "referenceexterne": "137-50231-LEFOREM-BE-271100",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165566",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2027-01-08",
+   "metier": "Mise en rayon libre-service",
+   "metiercodedimeco": "D1507"
+  },
+  {
+   "numerooffreforem": "2165702",
+   "titreoffre": "Student Administrative & Customer Support Officer  / Brussels (H/F/X)",
+   "lieuxtravaillocalite": null,
+   "lieuxtravailregion": [
+    "Province de Flandre Occidentale",
+    "Belgique",
+    "RÉGION FLAMANDE"
+   ],
+   "lieuxtravailcodepostal": null,
+   "lieuxtravailregionnuts": [
+    "BE25",
+    "BE",
+    "BE2"
+   ],
+   "lieuxtravailgeo": null,
+   "typecontrat": "Etudiant",
+   "nomemployeur": "MICHAEL PAGE INTERNATIONAL (BELGIUM)",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": null,
+   "languescodeiso2": null,
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Activités liées à l'emploi"
+   ],
+   "secteurscodenace": [
+    "78"
+   ],
+   "source": "Jobat",
+   "referenceexterne": "15711277_FR",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165702",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2026-12-25",
+   "metier": "Téléconseil et télévente",
+   "metiercodedimeco": "D1408"
+  },
+  {
+   "numerooffreforem": "2165906",
+   "titreoffre": "Student packer €15.23 (H/F/X)",
+   "lieuxtravaillocalite": [
+    "ROESELARE"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province de Flandre Occidentale",
+    "RÉGION FLAMANDE"
+   ],
+   "lieuxtravailcodepostal": [
+    "8800"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE25",
+    "BE2"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 3.123418,
+     "lat": 50.944572
+    }
+   ],
+   "typecontrat": "Journalier (occasionnel ou saisonnier)",
+   "nomemployeur": "LET'S WORK",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire (deuxième cycle)",
+    "Baccalauréat universitaire ou équivalent"
+   ],
+   "niveauxetudesisced2011": [
+    "04",
+    "07"
+   ],
+   "langues": [
+    "Néerlandais"
+   ],
+   "languescodeiso2": [
+    "NL"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Autres activités spécialisées, scientifiques et techniques"
+   ],
+   "secteurscodenace": [
+    "74"
+   ],
+   "source": "Let's Work",
+   "referenceexterne": "PO-MDTAPVKI-LEFOREM-BE-271106",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165906",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2027-01-08",
+   "metier": "Opérations manuelles d'assemblage, tri ou emballage",
+   "metiercodedimeco": "H3302"
+  },
+  {
+   "numerooffreforem": "2165310",
+   "titreoffre": "Student - Surveillant parking (H/F/X)",
+   "lieuxtravaillocalite": [
+    "LEUVEN"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Brabant Flamand",
+    "RÉGION FLAMANDE"
+   ],
+   "lieuxtravailcodepostal": [
+    "3000"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE24",
+    "BE2"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.69299,
+     "lat": 50.881253
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "Liège",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Primaire"
+   ],
+   "niveauxetudesisced2011": [
+    "02"
+   ],
+   "langues": null,
+   "languescodeiso2": null,
+   "experiencerequise": null,
+   "permisdeconduire": [
+    "B"
+   ],
+   "secteurs": [
+    "Travaux d'entretien et réparations mécaniques pour des tiers"
+   ],
+   "secteurscodenace": [
+    "3312011"
+   ],
+   "source": "Synergie Interim",
+   "referenceexterne": "986788459",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165310",
+   "datedebutdiffusion": "2026-11-26",
+   "datefindiffusion": "2026-12-26",
+   "metier": "Agent / Agente de gardiennage",
+   "metiercodedimeco": "K250301-1"
+  },
+  {
+   "numerooffreforem": "2165330",
+   "titreoffre": "Student - Surveillant parking (H/F/X)",
+   "lieuxtravaillocalite": [
+    "LEUVEN"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Brabant Flamand",
+    "RÉGION FLAMANDE"
+   ],
+   "lieuxtravailcodepostal": [
+    "3000"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE24",
+    "BE2"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.69299,
+     "lat": 50.881253
+    }
+   ],
+   "typecontrat": "Intérimaire",
+   "nomemployeur": "SYNERGIE BELGIUM",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": null,
+   "languescodeiso2": null,
+   "experiencerequise": null,
+   "permisdeconduire": [
+    "B"
+   ],
+   "secteurs": [
+    "Activités liées à l'emploi"
+   ],
+   "secteurscodenace": [
+    "78"
+   ],
+   "source": "Jobat",
+   "referenceexterne": "15707493_FR",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165330",
+   "datedebutdiffusion": "2026-11-26",
+   "datefindiffusion": "2026-12-24",
+   "metier": "Sécurité et surveillance privées",
+   "metiercodedimeco": "K2503"
+  },
+  {
+   "numerooffreforem": "2164231",
+   "titreoffre": "Student 18+ Inventaris (H/F/X)",
+   "lieuxtravaillocalite": [
+    "KUURNE"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province de Flandre Occidentale",
+    "RÉGION FLAMANDE"
+   ],
+   "lieuxtravailcodepostal": [
+    "8520"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE25",
+    "BE2"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 3.273632,
+     "lat": 50.860051
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "PROMAN Jobs Retail Team 1",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": null,
+   "languescodeiso2": null,
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Fabrication de confiseries"
+   ],
+   "secteurscodenace": [
+    "1082003"
+   ],
+   "source": "PROMAN",
+   "referenceexterne": "986731857",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2164231",
+   "datedebutdiffusion": "2026-11-26",
+   "datefindiffusion": "2026-12-26",
+   "metier": "Agent / Agente d'enquête",
+   "metiercodedimeco": "M140101-1"
+  },
+  {
+   "numerooffreforem": "2157718",
+   "titreoffre": "Jobstudent Administratie SAP Project | Tijdelijk |McBride Ieper (H/F/X)",
+   "lieuxtravaillocalite": [
+    "IEPER"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province de Flandre Occidentale",
+    "RÉGION FLAMANDE"
+   ],
+   "lieuxtravailcodepostal": [
+    "8900"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE25",
+    "BE2"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 2.891477,
+     "lat": 50.851808
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "ADECCO PERSONNEL SERVICES",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Primaire"
+   ],
+   "niveauxetudesisced2011": [
+    "02"
+   ],
+   "langues": null,
+   "languescodeiso2": null,
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Commerce de détail, à l'exception des véhicules automobiles et des motocycles"
+   ],
+   "secteurscodenace": [
+    "47"
+   ],
+   "source": "Adecco",
+   "referenceexterne": "395-10040-LEFOREM-BE-201113",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2157718",
+   "datedebutdiffusion": "2026-11-20",
+   "datefindiffusion": "2027-01-01",
+   "metier": "Opérations administratives",
+   "metiercodedimeco": "M1602"
+  },
+  {
+   "numerooffreforem": "2155628",
+   "titreoffre": "Student Zaalmedewerker | Gastvrij Restaurant | Sint-Idesbald (H/F/X)",
+   "lieuxtravaillocalite": [
+    "KOKSIJDE"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province de Flandre Occidentale",
+    "RÉGION FLAMANDE"
+   ],
+   "lieuxtravailcodepostal": [
+    "8670"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE25",
+    "BE2"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 2.635342,
+     "lat": 51.10911
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "ADECCO PERSONNEL SERVICES",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire (deuxième cycle)"
+   ],
+   "niveauxetudesisced2011": [
+    "04"
+   ],
+   "langues": [
+    "Français",
+    "Néerlandais"
+   ],
+   "languescodeiso2": [
+    "FR",
+    "NL"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Restauration"
+   ],
+   "secteurscodenace": [
+    "56"
+   ],
+   "source": "Adecco",
+   "referenceexterne": "137-50061-LEFOREM-BE-191100",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2155628",
+   "datedebutdiffusion": "2026-11-19",
+   "datefindiffusion": "2026-12-31",
+   "metier": "Service en restauration",
+   "metiercodedimeco": "G1803"
+  },
+  {
+   "numerooffreforem": "2155763",
+   "titreoffre": "job étudiant – Emballeur 15.23€ (H/F/X)",
+   "lieuxtravaillocalite": [
+    "ROESELARE"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province de Flandre Occidentale",
+    "RÉGION FLAMANDE"
+   ],
+   "lieuxtravailcodepostal": [
+    "8800"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE25",
+    "BE2"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 3.123418,
+     "lat": 50.944572
+    }
+   ],
+   "typecontrat": "Journalier (occasionnel ou saisonnier)",
+   "nomemployeur": "LET'S WORK",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire (deuxième cycle)"
+   ],
+   "niveauxetudesisced2011": [
+    "04"
+   ],
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": [
+    "B"
+   ],
+   "secteurs": [
+    "Autres activités spécialisées, scientifiques et techniques"
+   ],
+   "secteurscodenace": [
+    "74"
+   ],
+   "source": "Let's Work",
+   "referenceexterne": "PO-IB7BAYYW-LEFOREM-BE-191101",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2155763",
+   "datedebutdiffusion": "2026-11-19",
+   "datefindiffusion": "2026-12-31",
+   "metier": "Opérations manuelles d'assemblage, tri ou emballage",
+   "metiercodedimeco": "H3302"
+  },
+  {
+   "numerooffreforem": "2155844",
+   "titreoffre": "Student Boekhouding, Robert Walters (H/F/X)",
+   "lieuxtravaillocalite": [
+    "TEMSE"
+   ],
+   "lieuxtravailregion": [
+    "Province de Flandre Orientale",
+    "Belgique",
+    "RÉGION FLAMANDE"
+   ],
+   "lieuxtravailcodepostal": [
+    "9140"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE23",
+    "BE",
+    "BE2"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.21335,
+     "lat": 51.142143
+    }
+   ],
+   "typecontrat": "Journalier (occasionnel ou saisonnier)",
+   "nomemployeur": "Robert Walters",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Baccalauréat universitaire ou équivalent"
+   ],
+   "niveauxetudesisced2011": [
+    "07"
+   ],
+   "langues": [
+    "Néerlandais"
+   ],
+   "languescodeiso2": [
+    "NL"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Construction de bâtiments",
+    "promotion immobilière"
+   ],
+   "secteurscodenace": [
+    "41"
+   ],
+   "source": "StepStone",
+   "referenceexterne": "2255342",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2155844",
+   "datedebutdiffusion": "2026-11-18",
+   "datefindiffusion": "2026-12-30",
+   "metier": "Assistant / Assistante comptable",
+   "metiercodedimeco": "M120301-2"
+  },
+  {
+   "numerooffreforem": "2155585",
+   "titreoffre": "Student | Kledingwinkel | Nieuwpoort (H/F/X)",
+   "lieuxtravaillocalite": [
+    "NIEUWPOORT"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province de Flandre Occidentale",
+    "RÉGION FLAMANDE"
+   ],
+   "lieuxtravailcodepostal": [
+    "8620"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE25",
+    "BE2"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 2.728398,
+     "lat": 51.14416
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "ADECCO PERSONNEL SERVICES",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire (premier cycle)"
+   ],
+   "niveauxetudesisced2011": [
+    "03"
+   ],
+   "langues": [
+    "Français",
+    "Néerlandais"
+   ],
+   "languescodeiso2": [
+    "FR",
+    "NL"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Commerce de gros, à l'exception des véhicules automobiles et des motocycles"
+   ],
+   "secteurscodenace": [
+    "46"
+   ],
+   "source": "Adecco",
+   "referenceexterne": "137-50051-LEFOREM-BE-181122",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2155585",
+   "datedebutdiffusion": "2026-11-18",
+   "datefindiffusion": "2026-12-30",
+   "metier": "Vente en habillement et accessoires de la personne",
+   "metiercodedimeco": "D1214"
+  },
+  {
+   "numerooffreforem": "2154659",
+   "titreoffre": "Student winkelbediende supermarkt | Koksijde (H/F/X)",
+   "lieuxtravaillocalite": [
+    "KOKSIJDE"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province de Flandre Occidentale",
+    "RÉGION FLAMANDE"
+   ],
+   "lieuxtravailcodepostal": [
+    "8670"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE25",
+    "BE2"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 2.635342,
+     "lat": 51.10911
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "ADECCO PERSONNEL SERVICES",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire (premier cycle)"
+   ],
+   "niveauxetudesisced2011": [
+    "03"
+   ],
+   "langues": [
+    "Français",
+    "Néerlandais"
+   ],
+   "languescodeiso2": [
+    "FR",
+    "NL"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Commerce de gros, à l'exception des véhicules automobiles et des motocycles"
+   ],
+   "secteurscodenace": [
+    "46"
+   ],
+   "source": "Adecco",
+   "referenceexterne": "137-50290-LEFOREM-BE-181110",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2154659",
+   "datedebutdiffusion": "2026-11-18",
+   "datefindiffusion": "2026-12-30",
+   "metier": "Mise en rayon libre-service",
+   "metiercodedimeco": "D1507"
+  },
+  {
+   "numerooffreforem": "2152902",
+   "titreoffre": "Vendeur·se automobile (étudiant-e) (H/F/X)",
+   "lieuxtravaillocalite": [
+    "ZAVENTEM"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Brabant Flamand",
+    "RÉGION FLAMANDE"
+   ],
+   "lieuxtravailcodepostal": [
+    "1930"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE24",
+    "BE2"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.470126,
+     "lat": 50.887688
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "ACTIEF",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": null,
+   "languescodeiso2": null,
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Activités liées à l'emploi"
+   ],
+   "secteurscodenace": [
+    "78"
+   ],
+   "source": "Jobat",
+   "referenceexterne": "15605838_FR",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2152902",
+   "datedebutdiffusion": "2026-11-17",
+   "datefindiffusion": "2026-12-15",
+   "metier": "Relation commerciale en vente de véhicules",
+   "metiercodedimeco": "D1404"
+  },
+  {
+   "numerooffreforem": "2152275",
+   "titreoffre": "Jobstudent Inventaris (week 11/12 t.e.m. 18/12) (H/F/X)",
+   "lieuxtravaillocalite": [
+    "DIKSMUIDE"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province de Flandre Occidentale",
+    "RÉGION FLAMANDE"
+   ],
+   "lieuxtravailcodepostal": [
+    "8600"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE25",
+    "BE2"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 2.863768,
+     "lat": 51.031799
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "ADECCO PERSONNEL SERVICES",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire (deuxième cycle)"
+   ],
+   "niveauxetudesisced2011": [
+    "04"
+   ],
+   "langues": null,
+   "languescodeiso2": null,
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Culture et production animale, chasse et services annexes"
+   ],
+   "secteurscodenace": [
+    "01"
+   ],
+   "source": "Adecco",
+   "referenceexterne": "137-50286-LEFOREM-BE-171112",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2152275",
+   "datedebutdiffusion": "2026-11-17",
+   "datefindiffusion": "2026-12-29",
+   "metier": "Magasinage et préparation de commandes",
+   "metiercodedimeco": "N1103"
+  },
+  {
+   "numerooffreforem": "2155455",
+   "titreoffre": "préparateur de commande | etudiante | zwevegem courtrai (H/F/X)",
+   "lieuxtravaillocalite": [
+    "ZWEVEGEM"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province de Flandre Occidentale",
+    "RÉGION FLAMANDE"
+   ],
+   "lieuxtravailcodepostal": [
+    "8554"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE25",
+    "BE2"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 3.368424,
+     "lat": 50.751205
+    }
+   ],
+   "typecontrat": "Intérimaire",
+   "nomemployeur": "Forum Jobs",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Installation de machines et d'équipements industriels"
+   ],
+   "secteurscodenace": [
+    "332"
+   ],
+   "source": "References",
+   "referenceexterne": "10587860",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2155455",
+   "datedebutdiffusion": "2026-11-17",
+   "datefindiffusion": "2026-12-29",
+   "metier": "Conduite d'engins de déplacement des charges",
+   "metiercodedimeco": "N1101"
+  },
+  {
+   "numerooffreforem": "2165125",
+   "titreoffre": "ETUDIANT  Travailleur de nuit (H/F/X)",
+   "lieuxtravaillocalite": [
+    "BRUXELLES"
+   ],
+   "lieuxtravailregion": [
+    "RÉGION DE BRUXELLES-CAPITALE",
+    "Belgique"
+   ],
+   "lieuxtravailcodepostal": [
+    "1000"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE1",
+    "BE"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.351697,
+     "lat": 50.846557
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "Pag - Asa - Pag - Asa  vzw",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire général - 3eme degré (CESS)"
+   ],
+   "niveauxetudesisced2011": null,
+   "langues": [
+    "Français",
+    "Néerlandais"
+   ],
+   "languescodeiso2": [
+    "FR",
+    "NL"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Services sociaux généraux avec hébergement"
+   ],
+   "secteurscodenace": [
+    "87902"
+   ],
+   "source": "Via site Forem",
+   "referenceexterne": null,
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165125",
+   "datedebutdiffusion": "2026-11-26",
+   "datefindiffusion": "2026-12-31",
+   "metier": "Éducateur-accompagnateur / Éducatrice-accompagnatrice",
+   "metiercodedimeco": "K120701-1"
+  },
+  {
+   "numerooffreforem": "2164142",
+   "titreoffre": "Instituteur/trice maternel(le) – Job étudiant (jeunes diplômé(e)s) (H/F/X)",
+   "lieuxtravaillocalite": [
+    "ETTERBEEK"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "RÉGION DE BRUXELLES-CAPITALE"
+   ],
+   "lieuxtravailcodepostal": [
+    "1040"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE1"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.38693,
+     "lat": 50.83667
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "AIB",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire (deuxième cycle)"
+   ],
+   "niveauxetudesisced2011": [
+    "04"
+   ],
+   "langues": [
+    "Français",
+    "Anglais"
+   ],
+   "languescodeiso2": [
+    "FR",
+    "EN"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Activités liées à l'emploi"
+   ],
+   "secteurscodenace": [
+    "78"
+   ],
+   "source": "Jobat",
+   "referenceexterne": "15698651_FR",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2164142",
+   "datedebutdiffusion": "2026-11-26",
+   "datefindiffusion": "2027-01-25",
+   "metier": "Soins infirmiers spécialisés en puériculture",
+   "metiercodedimeco": "J1507"
+  },
+  {
+   "numerooffreforem": "2158588",
+   "titreoffre": "Apprenti technicien pc ou vente (alternance IFAPME, EFP, ...) (H/F/X)",
+   "lieuxtravaillocalite": [
+    "ANDERLECHT"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "RÉGION DE BRUXELLES-CAPITALE"
+   ],
+   "lieuxtravailcodepostal": [
+    "1070"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE1"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.31234,
+     "lat": 50.838141
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "Mister Genius",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": null,
+   "languescodeiso2": null,
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Conseil informatique"
+   ],
+   "secteurscodenace": [
+    "62020"
+   ],
+   "source": "Mister Genius",
+   "referenceexterne": "985123119",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2158588",
+   "datedebutdiffusion": "2026-11-20",
+   "datefindiffusion": "2027-01-01",
+   "metier": "Technicien / Technicienne d'appareils électriques et électroniques",
+   "metiercodedimeco": "I140201-2"
+  },
+  {
+   "numerooffreforem": "2151647",
+   "titreoffre": "Serveur - Job étudiant (H/F/X)",
+   "lieuxtravaillocalite": [
+    "SAINT-GILLES"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "RÉGION DE BRUXELLES-CAPITALE"
+   ],
+   "lieuxtravailcodepostal": [
+    "1060"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE1"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.345186,
+     "lat": 50.82513
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "ACCENT Jobs For People",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Activités liées à l'emploi"
+   ],
+   "secteurscodenace": [
+    "78"
+   ],
+   "source": "Jobat",
+   "referenceexterne": "15587203_FR",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2151647",
+   "datedebutdiffusion": "2026-11-17",
+   "datefindiffusion": "2026-12-14",
+   "metier": "Service en restauration",
+   "metiercodedimeco": "G1803"
+  },
+  {
+   "numerooffreforem": "2149104",
+   "titreoffre": "Jaarlijkse jobstudent – Bachelor in de verpleegkunde in specialisatieopleiding (H/F/X)",
+   "lieuxtravaillocalite": [
+    "ANDERLECHT"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "RÉGION DE BRUXELLES-CAPITALE"
+   ],
+   "lieuxtravailcodepostal": [
+    "1070"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE1"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.31234,
+     "lat": 50.838141
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "CHU Saint-Pierre - UMC Sint-Pieter",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": null,
+   "languescodeiso2": null,
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Activités des hôpitaux généraux, sauf hôpitaux gériatriques et spécialisés"
+   ],
+   "secteurscodenace": [
+    "86101"
+   ],
+   "source": "CHU Saint-Pierre",
+   "referenceexterne": "983076454",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2149104",
+   "datedebutdiffusion": "2026-11-13",
+   "datefindiffusion": "2026-12-25",
+   "metier": "Infirmier / Infirmière",
+   "metiercodedimeco": "J150601-1"
+  },
+  {
+   "numerooffreforem": "2149484",
+   "titreoffre": "Jobiste à l'année - Bachelier(ère) en soins infirmiers en cours de spécialisation  (H/F/X)",
+   "lieuxtravaillocalite": [
+    "ANDERLECHT"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "RÉGION DE BRUXELLES-CAPITALE"
+   ],
+   "lieuxtravailcodepostal": [
+    "1070"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE1"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.31234,
+     "lat": 50.838141
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "CHU Saint-Pierre - UMC Sint-Pieter",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": null,
+   "languescodeiso2": null,
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Activités des hôpitaux généraux, sauf hôpitaux gériatriques et spécialisés"
+   ],
+   "secteurscodenace": [
+    "86101"
+   ],
+   "source": "CHU Saint-Pierre",
+   "referenceexterne": "983134881",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2149484",
+   "datedebutdiffusion": "2026-11-13",
+   "datefindiffusion": "2026-12-25",
+   "metier": "Infirmier / Infirmière",
+   "metiercodedimeco": "J150601-1"
+  },
+  {
+   "numerooffreforem": "2148189",
+   "titreoffre": "Tartes Françoise - Étudiant(e) Collaborateur d'atelier Sablon (H/F/X)",
+   "lieuxtravaillocalite": [
+    "BRUXELLES"
+   ],
+   "lieuxtravailregion": [
+    "RÉGION DE BRUXELLES-CAPITALE",
+    "Belgique"
+   ],
+   "lieuxtravailcodepostal": [
+    "1000"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE1",
+    "BE"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.351697,
+     "lat": 50.846557
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "BETUNED",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Activités des agences de placement de main-d'oeuvre"
+   ],
+   "secteurscodenace": [
+    "78100"
+   ],
+   "source": "Via site Forem",
+   "referenceexterne": null,
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2148189",
+   "datedebutdiffusion": "2026-11-12",
+   "datefindiffusion": "2026-12-24",
+   "metier": "Boulanger-pâtissier / Boulangère - pâtissière",
+   "metiercodedimeco": "D110201-1"
+  },
+  {
+   "numerooffreforem": "2142150",
+   "titreoffre": "Etudiant en santé communautaire (H/F/X)",
+   "lieuxtravaillocalite": [
+    "BRUXELLES"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "RÉGION DE BRUXELLES-CAPITALE"
+   ],
+   "lieuxtravailcodepostal": [
+    "1000"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE1"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.355707,
+     "lat": 50.845535
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "JOBMATCH",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire (deuxième cycle)"
+   ],
+   "niveauxetudesisced2011": [
+    "04"
+   ],
+   "langues": [
+    "Néerlandais"
+   ],
+   "languescodeiso2": [
+    "NL"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Activités liées à l'emploi"
+   ],
+   "secteurscodenace": [
+    "78"
+   ],
+   "source": "Jobat",
+   "referenceexterne": "15503377_FR",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2142150",
+   "datedebutdiffusion": "2026-11-06",
+   "datefindiffusion": "2026-12-04",
+   "metier": "Soins infirmiers spécialisés en puériculture",
+   "metiercodedimeco": "J1507"
+  },
+  {
+   "numerooffreforem": "2139602",
+   "titreoffre": "Etudiant en Soins Infirmiers (H/F/X)",
+   "lieuxtravaillocalite": [
+    "WOLUWE-SAINT-LAMBERT"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "RÉGION DE BRUXELLES-CAPITALE"
+   ],
+   "lieuxtravailcodepostal": [
+    "1200"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE1"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.427986,
+     "lat": 50.850014
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "EXPRESS MEDICAL",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Baccalauréat universitaire ou équivalent"
+   ],
+   "niveauxetudesisced2011": [
+    "07"
+   ],
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Activités pour la santé humaine"
+   ],
+   "secteurscodenace": [
+    "86"
+   ],
+   "source": "Jobat",
+   "referenceexterne": "15478567_FR",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2139602",
+   "datedebutdiffusion": "2026-11-04",
+   "datefindiffusion": "2026-12-02",
+   "metier": "Soins infirmiers généralistes",
+   "metiercodedimeco": "J1506"
+  },
+  {
+   "numerooffreforem": "2136203",
+   "titreoffre": "Serveur - Job étudiant (H/F/X)",
+   "lieuxtravaillocalite": [
+    "SAINT-GILLES"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "RÉGION DE BRUXELLES-CAPITALE"
+   ],
+   "lieuxtravailcodepostal": [
+    "1060"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE1"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.345668,
+     "lat": 50.82674
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "Accent",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Hôtels, motels, avec restaurant"
+   ],
+   "secteurscodenace": [
+    "5510011"
+   ],
+   "source": "Accent Job",
+   "referenceexterne": "980777028",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2136203",
+   "datedebutdiffusion": "2026-11-02",
+   "datefindiffusion": "2026-12-14",
+   "metier": "Serveur / Serveuse",
+   "metiercodedimeco": "G180301-1"
+  },
+  {
+   "numerooffreforem": "2146919",
+   "titreoffre": "Coordinateur / Coordinatrice – Centre aquatique, stages, Ecole de natation et Wellness (H/F/X)",
+   "lieuxtravaillocalite": [
+    "LESSINES"
+   ],
+   "lieuxtravailregion": [
+    "Province du Hainaut",
+    "Belgique",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "7860"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE32",
+    "BE",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 3.830113,
+     "lat": 50.712303
+    }
+   ],
+   "typecontrat": "Durée indéterminée",
+   "nomemployeur": "Régie Communale Autonome pour le Sport Lessinois - Régie communale autonome pour le sport lessinois",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": [
+    "B"
+   ],
+   "secteurs": [
+    "Gestion d'installations sportives"
+   ],
+   "secteurscodenace": [
+    "93110"
+   ],
+   "source": "Via site Forem",
+   "referenceexterne": null,
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2146919",
+   "datedebutdiffusion": "2026-11-25",
+   "datefindiffusion": "2026-12-17",
+   "metier": "Gérant / Gérante de structure de loisirs ou d'hébergement touristique",
+   "metiercodedimeco": "G140301-1"
+  },
+  {
+   "numerooffreforem": "2161025",
+   "titreoffre": "Stagiaire Consultant Recrutement FR/DE /x) (H/F/X)",
+   "lieuxtravaillocalite": [
+    "EUPEN"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province de Liège",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "4700"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE33",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 6.031425,
+     "lat": 50.630615
+    }
+   ],
+   "typecontrat": "Durée déterminée",
+   "nomemployeur": "Start People",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire (deuxième cycle)"
+   ],
+   "niveauxetudesisced2011": [
+    "04"
+   ],
+   "langues": [
+    "Français",
+    "Allemand"
+   ],
+   "languescodeiso2": [
+    "FR",
+    "DE"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Activités des agences de travail temporaire"
+   ],
+   "secteurscodenace": [
+    "78200"
+   ],
+   "source": "Jobat",
+   "referenceexterne": "15668073_FR",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2161025",
+   "datedebutdiffusion": "2026-11-24",
+   "datefindiffusion": "2026-12-22",
+   "metier": "Développement des ressources humaines",
+   "metiercodedimeco": "M1502"
+  },
+  {
+   "numerooffreforem": "2160919",
+   "titreoffre": "Stagiaire Etudiant en ressource humaine| Adecco Mont-Saint-Guibert (H/F/X)",
+   "lieuxtravaillocalite": [
+    "WAVRE"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Brabant Wallon",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "1300"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE31",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.607744,
+     "lat": 50.716418
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "ADECCO PERSONNEL SERVICES",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire (premier cycle)"
+   ],
+   "niveauxetudesisced2011": [
+    "03"
+   ],
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": [
+    "B"
+   ],
+   "secteurs": [
+    "Activités liées à l'emploi"
+   ],
+   "secteurscodenace": [
+    "78"
+   ],
+   "source": "Adecco",
+   "referenceexterne": "142-35048-LEFOREM-BE-241100",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2160919",
+   "datedebutdiffusion": "2026-11-24",
+   "datefindiffusion": "2027-01-05",
+   "metier": "Développement des ressources humaines",
+   "metiercodedimeco": "M1502"
+  },
+  {
+   "numerooffreforem": "2159966",
+   "titreoffre": "Conseiller commercial - Stagiaire en alternance (H/F/X)",
+   "lieuxtravaillocalite": [
+    "NEUFCHÂTEAU"
+   ],
+   "lieuxtravailregion": [
+    "Province du Luxembourg",
+    "Belgique",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "6840"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE34",
+    "BE",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 5.776446,
+     "lat": 50.719582
+    }
+   ],
+   "typecontrat": "Durée déterminée",
+   "nomemployeur": "GROUPE AUTOSPHERE MOTORS - Groupe Autopshere Neufchâteau",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": null,
+   "languescodeiso2": null,
+   "experiencerequise": null,
+   "permisdeconduire": [
+    "B"
+   ],
+   "secteurs": [
+    "Commerce de gros d'automobiles et d'autres véhicules automobiles légers ( = 3,5 tonnes )"
+   ],
+   "secteurscodenace": [
+    "45111"
+   ],
+   "source": "Via site Forem",
+   "referenceexterne": null,
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2159966",
+   "datedebutdiffusion": "2026-11-23",
+   "datefindiffusion": "2027-01-04",
+   "metier": "Délégué commercial / Déléguée commerciale auprès de particuliers",
+   "metiercodedimeco": "D140301-1"
+  },
+  {
+   "numerooffreforem": "2159294",
+   "titreoffre": "Stagiaire en agence de recrutement (H/F/X)",
+   "lieuxtravaillocalite": [
+    "NIVELLES"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Brabant Wallon",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "1400"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE31",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.331909,
+     "lat": 50.589162
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "ADECCO PERSONNEL SERVICES",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Baccalauréat universitaire ou équivalent"
+   ],
+   "niveauxetudesisced2011": [
+    "07"
+   ],
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Activités liées à l'emploi"
+   ],
+   "secteurscodenace": [
+    "78"
+   ],
+   "source": "Adecco",
+   "referenceexterne": "166-33199-LEFOREM-BE-221123",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2159294",
+   "datedebutdiffusion": "2026-11-22",
+   "datefindiffusion": "2027-01-03",
+   "metier": "Assistanat en ressources humaines",
+   "metiercodedimeco": "M1501"
+  },
+  {
+   "numerooffreforem": "2154623",
+   "titreoffre": "Stagiaire Consultant RH (/X) (H/F/X)",
+   "lieuxtravaillocalite": [
+    "ATH"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Hainaut",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "7800"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE32",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 3.775117,
+     "lat": 50.629135
+    }
+   ],
+   "typecontrat": "Intérimaire",
+   "nomemployeur": "DaJobs",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire (deuxième cycle)"
+   ],
+   "niveauxetudesisced2011": [
+    "04"
+   ],
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": [
+    "B"
+   ],
+   "secteurs": [
+    "Activités des sièges sociaux",
+    "conseil de gestion"
+   ],
+   "secteurscodenace": [
+    "70"
+   ],
+   "source": "DaJobs",
+   "referenceexterne": "254476-LEFOREM-BE-181110",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2154623",
+   "datedebutdiffusion": "2026-11-18",
+   "datefindiffusion": "2026-12-30",
+   "metier": "Assistanat en ressources humaines",
+   "metiercodedimeco": "M1501"
+  },
+  {
+   "numerooffreforem": "2152383",
+   "titreoffre": "Stagiaire en recrutement (H/F/X)",
+   "lieuxtravaillocalite": [
+    "MONS"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Hainaut",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "7000"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE32",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 3.948737,
+     "lat": 50.453335
+    }
+   ],
+   "typecontrat": "Intérimaire avec option sur durée indéterminée",
+   "nomemployeur": "ACCENT Jobs For People",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Activités liées à l'emploi"
+   ],
+   "secteurscodenace": [
+    "78"
+   ],
+   "source": "Jobat",
+   "referenceexterne": "15601442_FR",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2152383",
+   "datedebutdiffusion": "2026-11-17",
+   "datefindiffusion": "2026-12-15",
+   "metier": "Développement des ressources humaines",
+   "metiercodedimeco": "M1502"
+  },
+  {
+   "numerooffreforem": "2155877",
+   "titreoffre": "Stage Transformation RH et Intelligence artificielle, Omexom (H/F/X)",
+   "lieuxtravaillocalite": [
+    "GOSSELIES",
+    "CHARLEROI"
+   ],
+   "lieuxtravailregion": [
+    "Province du Hainaut",
+    "Belgique",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "6041",
+    "6041"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE32",
+    "BE",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.430175,
+     "lat": 50.465384
+    }
+   ],
+   "typecontrat": "Journalier (occasionnel ou saisonnier)",
+   "nomemployeur": "Omexom",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire (deuxième cycle)"
+   ],
+   "niveauxetudesisced2011": [
+    "04"
+   ],
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Production et distribution d'électricité, de gaz, de vapeur et d'air conditionné"
+   ],
+   "secteurscodenace": [
+    "35"
+   ],
+   "source": "StepStone",
+   "referenceexterne": "2255227",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2155877",
+   "datedebutdiffusion": "2026-11-17",
+   "datefindiffusion": "2026-12-29",
+   "metier": "Business Analyst",
+   "metiercodedimeco": "M180601-1"
+  },
+  {
+   "numerooffreforem": "2149868",
+   "titreoffre": "#Semainepouremploi26  Stage en recrutement (H/F/X)",
+   "lieuxtravaillocalite": [
+    "NAMUR"
+   ],
+   "lieuxtravailregion": [
+    "Province de Namur",
+    "Belgique",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "5000"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE35",
+    "BE",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.849314,
+     "lat": 50.456203
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "L'ATELIER INFORMATIQUE",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 2,
+   "niveauxetudes": [
+    "Formation supérieure initiale de type court (Baccalauréat)"
+   ],
+   "niveauxetudesisced2011": null,
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": "Responsable du recrutement",
+   "permisdeconduire": null,
+   "secteurs": [
+    "Programmation informatique"
+   ],
+   "secteurscodenace": [
+    "62010"
+   ],
+   "source": "Via site Forem",
+   "referenceexterne": null,
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2149868",
+   "datedebutdiffusion": "2026-11-16",
+   "datefindiffusion": "2026-12-23",
+   "metier": "Responsable du recrutement",
+   "metiercodedimeco": "M150201-1"
+  },
+  {
+   "numerooffreforem": "2149829",
+   "titreoffre": "#Semainepouremploi26  Stagiaire en marketing/commercial et/ou communication (H/F/X)",
+   "lieuxtravaillocalite": [
+    "NAMUR"
+   ],
+   "lieuxtravailregion": [
+    "Province de Namur",
+    "Belgique",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "5000"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE35",
+    "BE",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.849314,
+     "lat": 50.456203
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "L'ATELIER INFORMATIQUE",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 2,
+   "niveauxetudes": [
+    "Formation supérieure initiale de type court (Baccalauréat)",
+    "Formation supérieure initiale de type court (Baccalauréat)",
+    "Formation supérieure initiale de type court (Baccalauréat)"
+   ],
+   "niveauxetudesisced2011": null,
+   "langues": [
+    "Français",
+    "Anglais"
+   ],
+   "languescodeiso2": [
+    "FR",
+    "EN"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": [
+    "B"
+   ],
+   "secteurs": [
+    "Programmation informatique"
+   ],
+   "secteurscodenace": [
+    "62010"
+   ],
+   "source": "Via site Forem",
+   "referenceexterne": null,
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2149829",
+   "datedebutdiffusion": "2026-11-16",
+   "datefindiffusion": "2026-12-23",
+   "metier": "Assistant commercial / Assistante commerciale service interne",
+   "metiercodedimeco": "D140101-1"
+  },
+  {
+   "numerooffreforem": "2147692",
+   "titreoffre": "OFFRE DE STAGE – RARKETING (H/F/X)",
+   "lieuxtravaillocalite": [
+    "ANTWERPEN(DISTRICT 7)",
+    "ANTWERPEN"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province d'Anvers",
+    "RÉGION FLAMANDE"
+   ],
+   "lieuxtravailcodepostal": [
+    "2018",
+    "2018"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE21",
+    "BE2"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.395722,
+     "lat": 51.202002
+    }
+   ],
+   "typecontrat": "Intérimaire",
+   "nomemployeur": "SYNERGIE BELGIUM",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Maîtrise universitaire ou équivalent"
+   ],
+   "niveauxetudesisced2011": [
+    "08"
+   ],
+   "langues": null,
+   "languescodeiso2": null,
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Activités liées à l'emploi"
+   ],
+   "secteurscodenace": [
+    "78"
+   ],
+   "source": "Jobat",
+   "referenceexterne": "15556059_FR",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2147692",
+   "datedebutdiffusion": "2026-11-12",
+   "datefindiffusion": "2026-12-10",
+   "metier": "Développement des ressources humaines",
+   "metiercodedimeco": "M1502"
+  },
+  {
+   "numerooffreforem": "2147654",
+   "titreoffre": "OFFRE DE STAGE – RH / MARKETING (H/F/X)",
+   "lieuxtravaillocalite": [
+    "ANTWERPEN(DISTRICT 7)",
+    "ANTWERPEN"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province d'Anvers",
+    "RÉGION FLAMANDE"
+   ],
+   "lieuxtravailcodepostal": [
+    "2018",
+    "2018"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE21",
+    "BE2"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.395722,
+     "lat": 51.202002
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "Gosselies",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": null,
+   "languescodeiso2": null,
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Activités des courtiers de transport"
+   ],
+   "secteurscodenace": [
+    "5229032"
+   ],
+   "source": "Synergie Interim",
+   "referenceexterne": "982801607",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2147654",
+   "datedebutdiffusion": "2026-11-12",
+   "datefindiffusion": "2026-12-12",
+   "metier": "Assistant ressources humaines polyvalent / Assistante ressources humaines polyvalente",
+   "metiercodedimeco": "M150101-1"
+  },
+  {
+   "numerooffreforem": "2153771",
+   "titreoffre": "ITAA-Stagiair | Groei tot Financieel Adviseur, Austin Bright (H/F/X)",
+   "lieuxtravaillocalite": [
+    "SCHILDE"
+   ],
+   "lieuxtravailregion": [
+    "Province d'Anvers",
+    "Belgique",
+    "RÉGION FLAMANDE"
+   ],
+   "lieuxtravailcodepostal": [
+    "2970"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE21",
+    "BE",
+    "BE2"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.583514,
+     "lat": 51.23204
+    }
+   ],
+   "typecontrat": "Durée indéterminée",
+   "nomemployeur": "Austin Bright",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Baccalauréat universitaire ou équivalent"
+   ],
+   "niveauxetudesisced2011": [
+    "07"
+   ],
+   "langues": [
+    "Néerlandais"
+   ],
+   "languescodeiso2": [
+    "NL"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Activités comptables"
+   ],
+   "secteurscodenace": [
+    "692"
+   ],
+   "source": "StepStone",
+   "referenceexterne": "2254718",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2153771",
+   "datedebutdiffusion": "2026-11-10",
+   "datefindiffusion": "2026-12-22",
+   "metier": "Assistant / Assistante comptable",
+   "metiercodedimeco": "M120301-2"
+  },
+  {
+   "numerooffreforem": "2144122",
+   "titreoffre": "Réserve stagiaires en ressources humaines /x (H/F/X)",
+   "lieuxtravaillocalite": [
+    "NAMUR"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province de Namur",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "5000"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE35",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.865243,
+     "lat": 50.46529
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "DaJobs",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire (deuxième cycle)"
+   ],
+   "niveauxetudesisced2011": [
+    "04"
+   ],
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": [
+    "B"
+   ],
+   "secteurs": [
+    "Activités des sièges sociaux",
+    "conseil de gestion"
+   ],
+   "secteurscodenace": [
+    "70"
+   ],
+   "source": "DaJobs",
+   "referenceexterne": "253423-LEFOREM-BE-091111",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2144122",
+   "datedebutdiffusion": "2026-11-09",
+   "datefindiffusion": "2026-12-21",
+   "metier": "Assistanat en ressources humaines",
+   "metiercodedimeco": "M1501"
+  },
+  {
+   "numerooffreforem": "2144901",
+   "titreoffre": "Stagiaire RH (H/F/X)",
+   "lieuxtravaillocalite": [
+    "MARCHE-EN-FAMENNE"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Luxembourg",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "6900"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE34",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 5.344315,
+     "lat": 50.22858
+    }
+   ],
+   "typecontrat": "Intérimaire",
+   "nomemployeur": "Vivaldis",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Autres services personnels"
+   ],
+   "secteurscodenace": [
+    "96"
+   ],
+   "source": "References",
+   "referenceexterne": "10586195",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2144901",
+   "datedebutdiffusion": "2026-11-08",
+   "datefindiffusion": "2026-12-23",
+   "metier": "Assistanat en ressources humaines",
+   "metiercodedimeco": "M1501"
+  },
+  {
+   "numerooffreforem": "2142903",
+   "titreoffre": "étudiant(e), stagiaire ou en formation en alternance  (H/F/X)",
+   "lieuxtravaillocalite": [
+    "TOURNAI"
+   ],
+   "lieuxtravailregion": [
+    "Province du Hainaut",
+    "Belgique",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "7500"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE32",
+    "BE",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 3.387825,
+     "lat": 50.60566
+    }
+   ],
+   "typecontrat": "Etudiant",
+   "nomemployeur": "Lequeue, Logan - LMV (Lequeue Menuiserie Vitrerie)",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Sciage et rabotage du bois"
+   ],
+   "secteurscodenace": [
+    "16110"
+   ],
+   "source": "Via site Forem",
+   "referenceexterne": null,
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2142903",
+   "datedebutdiffusion": "2026-11-06",
+   "datefindiffusion": "2026-12-18",
+   "metier": "Menuisier / Menuisière d'atelier",
+   "metiercodedimeco": "H220601-1"
+  },
+  {
+   "numerooffreforem": "2140145",
+   "titreoffre": "Stagiaire RH (H/F/X)",
+   "lieuxtravaillocalite": [
+    "MARCHE-EN-FAMENNE"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Luxembourg",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "6900"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE34",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 5.344315,
+     "lat": 50.22858
+    }
+   ],
+   "typecontrat": "Intérimaire avec option sur durée indéterminée",
+   "nomemployeur": "VIVALDIS INTERIM",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": null,
+   "languescodeiso2": null,
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Activités liées à l'emploi"
+   ],
+   "secteurscodenace": [
+    "78"
+   ],
+   "source": "Jobat",
+   "referenceexterne": "15484389_FR",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2140145",
+   "datedebutdiffusion": "2026-11-05",
+   "datefindiffusion": "2026-12-03",
+   "metier": "Développement des ressources humaines",
+   "metiercodedimeco": "M1502"
+  },
+  {
+   "numerooffreforem": "2139906",
+   "titreoffre": "Stagiaire Consultant(e) RH / Recrutement FR/NL /X) (H/F/X)",
+   "lieuxtravaillocalite": [
+    "ANDERLECHT"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "RÉGION DE BRUXELLES-CAPITALE"
+   ],
+   "lieuxtravailcodepostal": [
+    "1070"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE1"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.307077,
+     "lat": 50.836605
+    }
+   ],
+   "typecontrat": "Intérimaire",
+   "nomemployeur": "Quality Jobs@work",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": null,
+   "languescodeiso2": null,
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Activités liées à l'emploi"
+   ],
+   "secteurscodenace": [
+    "78"
+   ],
+   "source": "Jobat",
+   "referenceexterne": "15481358_FR",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2139906",
+   "datedebutdiffusion": "2026-11-04",
+   "datefindiffusion": "2026-12-02",
+   "metier": "Développement des ressources humaines",
+   "metiercodedimeco": "M1502"
+  },
+  {
+   "numerooffreforem": "2137143",
+   "titreoffre": "Stagiaire minimum 6 semaines | Consultant(e) en recrutement () (H/F/X)",
+   "lieuxtravaillocalite": [
+    "BRAINE-L'ALLEUD"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Brabant Wallon",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "1420"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE31",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.354814,
+     "lat": 50.694094
+    }
+   ],
+   "typecontrat": "Intérimaire avec option sur durée indéterminée",
+   "nomemployeur": "ADECCO PERSONNEL SERVICES",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire (premier cycle)"
+   ],
+   "niveauxetudesisced2011": [
+    "03"
+   ],
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": [
+    "B"
+   ],
+   "secteurs": [
+    "Activités liées à l'emploi"
+   ],
+   "secteurscodenace": [
+    "78"
+   ],
+   "source": "Adecco",
+   "referenceexterne": "386-43467-LEFOREM-BE-031100",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2137143",
+   "datedebutdiffusion": "2026-11-03",
+   "datefindiffusion": "2026-12-15",
+   "metier": "Développement des ressources humaines",
+   "metiercodedimeco": "M1502"
+  },
+  {
+   "numerooffreforem": "2135493",
+   "titreoffre": "Stagiaire IPI - Gestionnaire de copropriétés (H/F/X)",
+   "lieuxtravaillocalite": [
+    "FRAMERIES"
+   ],
+   "lieuxtravailregion": [
+    "Province du Hainaut",
+    "Belgique",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "7080"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE32",
+    "BE",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 3.890565,
+     "lat": 50.408757
+    }
+   ],
+   "typecontrat": "Contrat collaboration indépendant",
+   "nomemployeur": "M & M IMMOBILIER",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire technique - 3eme degré (CESS)",
+    "Enseignement secondaire professionnel 7ème année (CESS)",
+    "Enseignement secondaire général - 3eme degré (CESS)"
+   ],
+   "niveauxetudesisced2011": null,
+   "langues": [
+    "Français",
+    "Anglais"
+   ],
+   "languescodeiso2": [
+    "FR",
+    "EN"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": [
+    "B"
+   ],
+   "secteurs": [
+    "Location et exploitation de biens immobiliers résidentiels propres ou loués, sauf logements sociaux"
+   ],
+   "secteurscodenace": [
+    "68201"
+   ],
+   "source": "Via site Forem",
+   "referenceexterne": null,
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2135493",
+   "datedebutdiffusion": "2026-10-31",
+   "datefindiffusion": "2026-11-30",
+   "metier": "Agent immobilier / Agente immobilière - syndic",
+   "metiercodedimeco": "C150101-1"
+  },
+  {
+   "numerooffreforem": "2165527",
+   "titreoffre": "Personnel Horeca | 19h/semaine | Redu (H/F/X)",
+   "lieuxtravaillocalite": [
+    "LIBIN"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Luxembourg",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "6890"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE34",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 5.256901,
+     "lat": 49.980946
+    }
+   ],
+   "typecontrat": "Intérimaire avec option sur durée indéterminée",
+   "nomemployeur": "ADECCO PERSONNEL SERVICES",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire (premier cycle)"
+   ],
+   "niveauxetudesisced2011": [
+    "03"
+   ],
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": [
+    "B"
+   ],
+   "secteurs": [
+    "Restauration"
+   ],
+   "secteurscodenace": [
+    "56"
+   ],
+   "source": "Adecco",
+   "referenceexterne": "783-32537-LEFOREM-BE-271100",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165527",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2027-01-08",
+   "metier": "Direction de grande entreprise ou d'établissement public",
+   "metiercodedimeco": "M1301"
+  },
+  {
+   "numerooffreforem": "2165499",
+   "titreoffre": "Wiellader bestuurder | Deinze (H/F/X)",
+   "lieuxtravaillocalite": [
+    "DEINZE"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province de Flandre Orientale",
+    "RÉGION FLAMANDE"
+   ],
+   "lieuxtravailcodepostal": [
+    "9800"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE23",
+    "BE2"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 3.527401,
+     "lat": 50.984052
+    }
+   ],
+   "typecontrat": "Intérimaire avec option sur durée indéterminée",
+   "nomemployeur": "ADECCO PERSONNEL SERVICES",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire (premier cycle)"
+   ],
+   "niveauxetudesisced2011": [
+    "03"
+   ],
+   "langues": [
+    "Néerlandais"
+   ],
+   "languescodeiso2": [
+    "NL"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Culture et production animale, chasse et services annexes"
+   ],
+   "secteurscodenace": [
+    "01"
+   ],
+   "source": "Adecco",
+   "referenceexterne": "167-48833-LEFOREM-BE-271100",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165499",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2027-01-08",
+   "metier": "Conduite d'engins de déplacement des charges",
+   "metiercodedimeco": "N1101"
+  },
+  {
+   "numerooffreforem": "2166384",
+   "titreoffre": "Puériculteur - Puéricultrice (H/F/X)",
+   "lieuxtravaillocalite": [
+    "AUVELAIS"
+   ],
+   "lieuxtravailregion": [
+    "Province de Namur",
+    "Belgique",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "5060"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE35",
+    "BE",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.635462,
+     "lat": 50.447019
+    }
+   ],
+   "typecontrat": "Durée déterminée",
+   "nomemployeur": "SOCIETE INTERCOMMUNALE DES MODES D'ACCUEIL DES JEUNES ENFANTS - Les \"P'tits Nuitons\" (Seuris 1)",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire général - 3eme degré (CESS)",
+    "Enseignement secondaire professionnel 7ème année (CESS)"
+   ],
+   "niveauxetudesisced2011": null,
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": [
+    "AM",
+    "A",
+    "A1",
+    "A2",
+    "B"
+   ],
+   "secteurs": [
+    "Activités des crèches et des garderies d'enfants"
+   ],
+   "secteurscodenace": [
+    "88911"
+   ],
+   "source": "Via site Forem",
+   "referenceexterne": null,
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2166384",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2027-01-08",
+   "metier": "Accueillant / Accueillante d'enfant",
+   "metiercodedimeco": "K130301-1"
+  },
+  {
+   "numerooffreforem": "2165636",
+   "titreoffre": "Vendeur alimentaire (H/F/X)",
+   "lieuxtravaillocalite": [
+    "HAVELANGE"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province de Namur",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "5370"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE35",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 5.241998,
+     "lat": 50.387688
+    }
+   ],
+   "typecontrat": "Intérimaire avec option sur durée indéterminée",
+   "nomemployeur": "ACCENT Jobs For People",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Activités liées à l'emploi"
+   ],
+   "secteurscodenace": [
+    "78"
+   ],
+   "source": "Jobat",
+   "referenceexterne": "15710114_FR",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165636",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2026-12-25",
+   "metier": "Mise en rayon libre-service",
+   "metiercodedimeco": "D1507"
+  },
+  {
+   "numerooffreforem": "2165627",
+   "titreoffre": "Vendeur boucherie (H/F/X)",
+   "lieuxtravaillocalite": [
+    "MARCHE-EN-FAMENNE"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Luxembourg",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "6900"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE34",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 5.344315,
+     "lat": 50.22858
+    }
+   ],
+   "typecontrat": "Intérimaire avec option sur durée indéterminée",
+   "nomemployeur": "ACCENT Jobs For People",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Activités liées à l'emploi"
+   ],
+   "secteurscodenace": [
+    "78"
+   ],
+   "source": "Jobat",
+   "referenceexterne": "15710018_FR",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165627",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2026-12-25",
+   "metier": "Boucherie",
+   "metiercodedimeco": "D1101"
+  },
+  {
+   "numerooffreforem": "2165913",
+   "titreoffre": "Flexi-job – Réparateur de palettes (H/F/X)",
+   "lieuxtravaillocalite": null,
+   "lieuxtravailregion": [
+    "Province de Flandre Occidentale",
+    "Belgique",
+    "RÉGION FLAMANDE"
+   ],
+   "lieuxtravailcodepostal": null,
+   "lieuxtravailregionnuts": [
+    "BE25",
+    "BE",
+    "BE2"
+   ],
+   "lieuxtravailgeo": null,
+   "typecontrat": "Durée déterminée",
+   "nomemployeur": "LET'S WORK",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire (deuxième cycle)"
+   ],
+   "niveauxetudesisced2011": [
+    "04"
+   ],
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Activités liées à l'emploi"
+   ],
+   "secteurscodenace": [
+    "78"
+   ],
+   "source": "Jobat",
+   "referenceexterne": "15714203_FR",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165913",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2026-12-25",
+   "metier": "Assemblage d'ouvrages en bois",
+   "metiercodedimeco": "H2201"
+  },
+  {
+   "numerooffreforem": "2166292",
+   "titreoffre": "puéricultrice (H/F/X)",
+   "lieuxtravaillocalite": [
+    "SAINT-HUBERT"
+   ],
+   "lieuxtravailregion": [
+    "Province du Luxembourg",
+    "Belgique",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "6870"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE34",
+    "BE",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 5.373856,
+     "lat": 50.025142
+    }
+   ],
+   "typecontrat": "Durée indéterminée",
+   "nomemployeur": "Ville de Saint-Hubert - Crèche communale",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 2,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Activités des crèches et des garderies d'enfants"
+   ],
+   "secteurscodenace": [
+    "88911"
+   ],
+   "source": "Via site Forem",
+   "referenceexterne": null,
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2166292",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2026-12-11",
+   "metier": "Accueillant / Accueillante d'enfant",
+   "metiercodedimeco": "K130301-1"
+  },
+  {
+   "numerooffreforem": "2166321",
+   "titreoffre": "Chauffeur CE (H/F/X)",
+   "lieuxtravaillocalite": [
+    "VERVIERS"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province de Liège",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "4800"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE33",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 5.863854,
+     "lat": 50.593227
+    }
+   ],
+   "typecontrat": "Intérimaire avec option sur durée indéterminée",
+   "nomemployeur": "Start People",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire (premier cycle)"
+   ],
+   "niveauxetudesisced2011": [
+    "03"
+   ],
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": [
+    "C+E"
+   ],
+   "secteurs": [
+    "Transports terrestres et transport par conduites"
+   ],
+   "secteurscodenace": [
+    "49"
+   ],
+   "source": "Start People",
+   "referenceexterne": "2036482_FR-LEFOREM-BE-271109",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2166321",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2027-01-08",
+   "metier": "Conduite de transport de marchandises sur longue distance",
+   "metiercodedimeco": "N4101"
+  },
+  {
+   "numerooffreforem": "2166319",
+   "titreoffre": "Aide-ménager(e)– /X Saint-Nicolas (H/F/X)",
+   "lieuxtravaillocalite": [
+    "SAINT-NICOLAS"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province de Liège",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "4420"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE33",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 5.538063,
+     "lat": 50.630497
+    }
+   ],
+   "typecontrat": "Intérimaire avec option sur durée indéterminée",
+   "nomemployeur": "DAHOME",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire (deuxième cycle)"
+   ],
+   "niveauxetudesisced2011": [
+    "04"
+   ],
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Activités liées à l'emploi"
+   ],
+   "secteurscodenace": [
+    "78"
+   ],
+   "source": "DaHome SRL/BV",
+   "referenceexterne": "255718-LEFOREM-BE-271109",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2166319",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2027-01-08",
+   "metier": "Services domestiques",
+   "metiercodedimeco": "K1304"
+  },
+  {
+   "numerooffreforem": "2166306",
+   "titreoffre": "Aide-ménager(e)– /X LIEGE (H/F/X)",
+   "lieuxtravaillocalite": [
+    "LIÈGE"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province de Liège",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "4000"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE33",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 5.571627,
+     "lat": 50.643997
+    }
+   ],
+   "typecontrat": "Intérimaire avec option sur durée indéterminée",
+   "nomemployeur": "DAHOME",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 2,
+   "niveauxetudes": [
+    "Primaire"
+   ],
+   "niveauxetudesisced2011": [
+    "02"
+   ],
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Activités liées à l'emploi"
+   ],
+   "secteurscodenace": [
+    "78"
+   ],
+   "source": "DaHome SRL/BV",
+   "referenceexterne": "255716-LEFOREM-BE-271109",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2166306",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2027-01-08",
+   "metier": "Services domestiques",
+   "metiercodedimeco": "K1304"
+  },
+  {
+   "numerooffreforem": "2166382",
+   "titreoffre": "Intervenant (e) en hippotherapies (H/F/X)",
+   "lieuxtravaillocalite": [
+    "BOIS-DE-VILLERS"
+   ],
+   "lieuxtravailregion": [
+    "Province de Namur",
+    "Belgique",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "5170"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE35",
+    "BE",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.823377,
+     "lat": 50.389973
+    }
+   ],
+   "typecontrat": "Durée déterminée",
+   "nomemployeur": "Les Chemaïns, centre d'hippothérapies - Les Chemaïns, centre d'hippothérapies",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Formation supérieure initiale de type court (Baccalauréat)"
+   ],
+   "niveauxetudesisced2011": null,
+   "langues": null,
+   "languescodeiso2": null,
+   "experiencerequise": null,
+   "permisdeconduire": [
+    "B"
+   ],
+   "secteurs": [
+    "Activités de revalidation ambulatoire"
+   ],
+   "secteurscodenace": [
+    "86905"
+   ],
+   "source": "Via site Forem",
+   "referenceexterne": null,
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2166382",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2027-01-08",
+   "metier": "Accompagnateur socio-professionnel  / Accompagnatrice socio-professionnelle",
+   "metiercodedimeco": "K120301-1"
+  },
+  {
+   "numerooffreforem": "2163062",
+   "titreoffre": "Animateur, Animatrice, Educateur, Educatrice, accueillant enfants, auxiliaire de l'enfance (H/F/X)",
+   "lieuxtravaillocalite": [
+    "TUBIZE"
+   ],
+   "lieuxtravailregion": [
+    "Province du Brabant Wallon",
+    "Belgique",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "1480"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE31",
+    "BE",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.204696,
+     "lat": 50.69302
+    }
+   ],
+   "typecontrat": "Remplacement",
+   "nomemployeur": "Centre pour le DEveloppement de l'Enfant et de sa Famille - Centre pour le DEveloppement de l'Enfant et de sa Famille",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire professionnel 7ème année (CESS)"
+   ],
+   "niveauxetudesisced2011": null,
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Autres formes d'action sociale sans hébergement n.c.a."
+   ],
+   "secteurscodenace": [
+    "88999"
+   ],
+   "source": "Via site Forem",
+   "referenceexterne": null,
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2163062",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2026-12-19",
+   "metier": "Accueillant / Accueillante d'enfant",
+   "metiercodedimeco": "K130301-1"
+  },
+  {
+   "numerooffreforem": "2166512",
+   "titreoffre": "vendeur boucherie (H/F/X)",
+   "lieuxtravaillocalite": [
+    "MONS"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Hainaut",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "7000"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE32",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 3.951958,
+     "lat": 50.454956
+    }
+   ],
+   "typecontrat": "Intérimaire avec option sur durée indéterminée",
+   "nomemployeur": "Accent",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": [
+    "B"
+   ],
+   "secteurs": [
+    "Commerce de détail, à l'exception des véhicules automobiles et des motocycles"
+   ],
+   "secteurscodenace": [
+    "47"
+   ],
+   "source": "Accent Job",
+   "referenceexterne": "986938746",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2166512",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2027-01-08",
+   "metier": "Vendeur / Vendeuse en magasin",
+   "metiercodedimeco": "D121401-1"
+  },
+  {
+   "numerooffreforem": "2165635",
+   "titreoffre": "Commis de cuisine (H/F/X)",
+   "lieuxtravaillocalite": [
+    "THIMISTER-CLERMONT"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province de Liège",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "4890"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE33",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 5.864139,
+     "lat": 50.654022
+    }
+   ],
+   "typecontrat": "Intérimaire avec option sur durée indéterminée",
+   "nomemployeur": "ACCENT Jobs For People",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Activités liées à l'emploi"
+   ],
+   "secteurscodenace": [
+    "78"
+   ],
+   "source": "Jobat",
+   "referenceexterne": "15710088_FR",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165635",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2026-12-25",
+   "metier": "Personnel de cuisine",
+   "metiercodedimeco": "G1602"
+  },
+  {
+   "numerooffreforem": "2165511",
+   "titreoffre": "Moniteur auto-école (H/F/X)",
+   "lieuxtravaillocalite": [
+    "CHARLEROI"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Hainaut",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "6000"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE32",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.449164,
+     "lat": 50.41571
+    }
+   ],
+   "typecontrat": "Durée déterminée",
+   "nomemployeur": "ADECCO PERSONNEL SERVICES",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire (deuxième cycle)"
+   ],
+   "niveauxetudesisced2011": [
+    "04"
+   ],
+   "langues": null,
+   "languescodeiso2": null,
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Activités liées à l'emploi"
+   ],
+   "secteurscodenace": [
+    "78"
+   ],
+   "source": "Adecco",
+   "referenceexterne": "128-58385-LEFOREM-BE-271100",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165511",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2027-01-08",
+   "metier": "Formation en conduite de véhicules",
+   "metiercodedimeco": "K2110"
+  },
+  {
+   "numerooffreforem": "2165587",
+   "titreoffre": "Opérateur weekend nuit (H/F/X)",
+   "lieuxtravaillocalite": [
+    "ROESELARE"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province de Flandre Occidentale",
+    "RÉGION FLAMANDE"
+   ],
+   "lieuxtravailcodepostal": [
+    "8800"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE25",
+    "BE2"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 3.124765,
+     "lat": 50.944494
+    }
+   ],
+   "typecontrat": "Intérimaire avec option sur durée indéterminée",
+   "nomemployeur": "LET'S WORK",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire (premier cycle)"
+   ],
+   "niveauxetudesisced2011": [
+    "03"
+   ],
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Industries alimentaires"
+   ],
+   "secteurscodenace": [
+    "10"
+   ],
+   "source": "Let's Work",
+   "referenceexterne": "PO-PYUP91S2-LEFOREM-BE-271101",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165587",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2027-01-08",
+   "metier": "Conduite d'équipement de conditionnement",
+   "metiercodedimeco": "H3301"
+  },
+  {
+   "numerooffreforem": "2166093",
+   "titreoffre": "Aide-soignant / Aide-soignante (H/F/X)",
+   "lieuxtravaillocalite": [
+    "POULSEUR"
+   ],
+   "lieuxtravailregion": [
+    "Province de Liège",
+    "Belgique",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "4171"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE33",
+    "BE",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 5.582784,
+     "lat": 50.509762
+    }
+   ],
+   "typecontrat": "Remplacement",
+   "nomemployeur": "LE CLOS DES ROSES",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire professionnel 7ème année (CESS)"
+   ],
+   "niveauxetudesisced2011": null,
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Activités des maisons de repos et de soins (M.R.S.)"
+   ],
+   "secteurscodenace": [
+    "87101"
+   ],
+   "source": "Via site Forem",
+   "referenceexterne": null,
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2166093",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2027-01-08",
+   "metier": "Aide-soignant / Aide-soignante",
+   "metiercodedimeco": "J150101-1"
+  },
+  {
+   "numerooffreforem": "2166495",
+   "titreoffre": "Control room - Parking (H/F/X)",
+   "lieuxtravaillocalite": [
+    "REMICOURT"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province de Liège",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "4350"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE33",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 5.327672,
+     "lat": 50.679157
+    }
+   ],
+   "typecontrat": "Intérimaire",
+   "nomemployeur": "Retail Liège Battice 1",
+   "regimetravail": "Temps partiel",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Primaire"
+   ],
+   "niveauxetudesisced2011": [
+    "02"
+   ],
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Commerce de détail de viandes et produits à base de viande exploité par les bouchers/charcutiers"
+   ],
+   "secteurscodenace": [
+    "4722101"
+   ],
+   "source": "Randstad",
+   "referenceexterne": "986938302",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2166495",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2027-02-15",
+   "metier": "Magasinier / Magasinière",
+   "metiercodedimeco": "N110301-1"
+  },
+  {
+   "numerooffreforem": "2165500",
+   "titreoffre": "schoonmaakmedewerker ISS  Facility | Waregem (H/F/X)",
+   "lieuxtravaillocalite": [
+    "WAREGEM"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province de Flandre Occidentale",
+    "RÉGION FLAMANDE"
+   ],
+   "lieuxtravailcodepostal": [
+    "8790"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE25",
+    "BE2"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 3.425738,
+     "lat": 50.8762
+    }
+   ],
+   "typecontrat": "Intérimaire avec option sur durée indéterminée",
+   "nomemployeur": "ADECCO PERSONNEL SERVICES",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Primaire"
+   ],
+   "niveauxetudesisced2011": [
+    "02"
+   ],
+   "langues": [
+    "Néerlandais"
+   ],
+   "languescodeiso2": [
+    "NL"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": [
+    "B"
+   ],
+   "secteurs": [
+    "Services administratifs de bureau et autres activités de soutien aux entreprises"
+   ],
+   "secteurscodenace": [
+    "82"
+   ],
+   "source": "Adecco",
+   "referenceexterne": "337-46440-LEFOREM-BE-271100",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165500",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2027-01-08",
+   "metier": "Nettoyage de locaux",
+   "metiercodedimeco": "K2204"
+  },
+  {
+   "numerooffreforem": "2165506",
+   "titreoffre": "CNC operator | dagwerk | Beveren-Leie (H/F/X)",
+   "lieuxtravaillocalite": [
+    "BEVEREN (LEIE)",
+    "WAREGEM"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province de Flandre Occidentale",
+    "RÉGION FLAMANDE"
+   ],
+   "lieuxtravailcodepostal": [
+    "8791",
+    "8791"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE25",
+    "BE2"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 3.342747,
+     "lat": 50.871701
+    }
+   ],
+   "typecontrat": "Intérimaire avec option sur durée indéterminée",
+   "nomemployeur": "ADECCO PERSONNEL SERVICES",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire (deuxième cycle)"
+   ],
+   "niveauxetudesisced2011": [
+    "04"
+   ],
+   "langues": [
+    "Néerlandais"
+   ],
+   "languescodeiso2": [
+    "NL"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Culture et production animale, chasse et services annexes"
+   ],
+   "secteurscodenace": [
+    "01"
+   ],
+   "source": "Adecco",
+   "referenceexterne": "337-46414-LEFOREM-BE-271100",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165506",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2027-01-08",
+   "metier": "Intervention technique en gestion industrielle et logistique",
+   "metiercodedimeco": "H1403"
+  },
+  {
+   "numerooffreforem": "2165502",
+   "titreoffre": "Lasser- Samensteller | Hulste (H/F/X)",
+   "lieuxtravaillocalite": [
+    "HARELBEKE",
+    "HARELBEKE"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province de Flandre Occidentale",
+    "RÉGION FLAMANDE"
+   ],
+   "lieuxtravailcodepostal": [
+    "8530",
+    "8531"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE25",
+    "BE2"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 3.342551,
+     "lat": 50.829324
+    }
+   ],
+   "typecontrat": "Intérimaire avec option sur durée indéterminée",
+   "nomemployeur": "ADECCO PERSONNEL SERVICES",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Primaire"
+   ],
+   "niveauxetudesisced2011": [
+    "02"
+   ],
+   "langues": [
+    "Néerlandais"
+   ],
+   "languescodeiso2": [
+    "NL"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Construction de bâtiments",
+    "promotion immobilière"
+   ],
+   "secteurscodenace": [
+    "41"
+   ],
+   "source": "Adecco",
+   "referenceexterne": "337-46413-LEFOREM-BE-271100",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165502",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2027-01-08",
+   "metier": "Soudage manuel",
+   "metiercodedimeco": "H2913"
+  },
+  {
+   "numerooffreforem": "2165521",
+   "titreoffre": "Conducteur de chantier (H/F/X)",
+   "lieuxtravaillocalite": [
+    "LIBIN"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Luxembourg",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "6890"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE34",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 5.256901,
+     "lat": 49.980946
+    }
+   ],
+   "typecontrat": "Durée indéterminée",
+   "nomemployeur": "ADECCO PERSONNEL SERVICES",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire (deuxième cycle)"
+   ],
+   "niveauxetudesisced2011": [
+    "04"
+   ],
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": [
+    "B"
+   ],
+   "secteurs": [
+    "Construction de bâtiments",
+    "promotion immobilière"
+   ],
+   "secteurscodenace": [
+    "41"
+   ],
+   "source": "Adecco",
+   "referenceexterne": "783-32347-LEFOREM-BE-271100",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165521",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2027-01-08",
+   "metier": "Conception et pilotage de la politique des pouvoirs publics",
+   "metiercodedimeco": "K1401"
+  },
+  {
+   "numerooffreforem": "2165538",
+   "titreoffre": "Chauffeur permis C | jour (H/F/X)",
+   "lieuxtravaillocalite": [
+    "ANDRIMONT",
+    "DISON"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province de Liège",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "4821",
+    "4821"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE33",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 5.890188,
+     "lat": 50.438682
+    }
+   ],
+   "typecontrat": "Durée déterminée",
+   "nomemployeur": "ADECCO PERSONNEL SERVICES",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Primaire"
+   ],
+   "niveauxetudesisced2011": [
+    "02"
+   ],
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": [
+    "C"
+   ],
+   "secteurs": [
+    "Transports terrestres et transport par conduites"
+   ],
+   "secteurscodenace": [
+    "49"
+   ],
+   "source": "Adecco",
+   "referenceexterne": "356-34783-LEFOREM-BE-271100",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165538",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2027-01-08",
+   "metier": "Conduite de transport de marchandises sur longue distance",
+   "metiercodedimeco": "N4101"
+  },
+  {
+   "numerooffreforem": "2165545",
+   "titreoffre": "Conseiller juridique & Data Protection Officer | CDI (H/F/X)",
+   "lieuxtravaillocalite": [
+    "SAINT-VITH"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province de Liège",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "4780"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE33",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 6.125895,
+     "lat": 50.280388
+    }
+   ],
+   "typecontrat": "Durée indéterminée",
+   "nomemployeur": "ADECCO PERSONNEL SERVICES",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Baccalauréat universitaire ou équivalent"
+   ],
+   "niveauxetudesisced2011": [
+    "07"
+   ],
+   "langues": [
+    "Français",
+    "Allemand"
+   ],
+   "languescodeiso2": [
+    "FR",
+    "DE"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Activités médico-sociales et sociales avec hébergement"
+   ],
+   "secteurscodenace": [
+    "87"
+   ],
+   "source": "Adecco",
+   "referenceexterne": "379-4817-LEFOREM-BE-271100",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165545",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2027-01-08",
+   "metier": "Défense et conseil juridique",
+   "metiercodedimeco": "K1903"
+  },
+  {
+   "numerooffreforem": "2165533",
+   "titreoffre": "Technicien dans le secteur chimique (H/F/X)",
+   "lieuxtravaillocalite": [
+    "DEERLIJK"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province de Flandre Occidentale",
+    "RÉGION FLAMANDE"
+   ],
+   "lieuxtravailcodepostal": [
+    "8540"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE25",
+    "BE2"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 3.362279,
+     "lat": 50.838784
+    }
+   ],
+   "typecontrat": "Durée indéterminée",
+   "nomemployeur": "ADECCO PERSONNEL SERVICES",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire (deuxième cycle)"
+   ],
+   "niveauxetudesisced2011": [
+    "04"
+   ],
+   "langues": [
+    "Néerlandais"
+   ],
+   "languescodeiso2": [
+    "NL"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Autres activités spécialisées, scientifiques et techniques"
+   ],
+   "secteurscodenace": [
+    "74"
+   ],
+   "source": "Adecco",
+   "referenceexterne": "337-46420-LEFOREM-BE-271100",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165533",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2027-01-08",
+   "metier": "Maintenance électrique",
+   "metiercodedimeco": "I1309"
+  },
+  {
+   "numerooffreforem": "2165546",
+   "titreoffre": "Electromécanicien industriel (H/F/X)",
+   "lieuxtravaillocalite": [
+    "JUMET",
+    "CHARLEROI"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Hainaut",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "6040",
+    "6040"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE32",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.436023,
+     "lat": 50.44466
+    }
+   ],
+   "typecontrat": "Intérimaire avec option sur durée indéterminée",
+   "nomemployeur": "ADECCO PERSONNEL SERVICES",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire (deuxième cycle)"
+   ],
+   "niveauxetudesisced2011": [
+    "04"
+   ],
+   "langues": null,
+   "languescodeiso2": null,
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Autres activités spécialisées, scientifiques et techniques"
+   ],
+   "secteurscodenace": [
+    "74"
+   ],
+   "source": "Adecco",
+   "referenceexterne": "128-58387-LEFOREM-BE-271100",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165546",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2027-01-08",
+   "metier": "Maintenance électrique",
+   "metiercodedimeco": "I1309"
+  },
+  {
+   "numerooffreforem": "2165565",
+   "titreoffre": "schoonmaakmedewerker ISS  Facility  | Veurne (H/F/X)",
+   "lieuxtravaillocalite": [
+    "VEURNE"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province de Flandre Occidentale",
+    "RÉGION FLAMANDE"
+   ],
+   "lieuxtravailcodepostal": [
+    "8630"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE25",
+    "BE2"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 2.654885,
+     "lat": 51.071043
+    }
+   ],
+   "typecontrat": "Intérimaire avec option sur durée indéterminée",
+   "nomemployeur": "ADECCO PERSONNEL SERVICES",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Primaire"
+   ],
+   "niveauxetudesisced2011": [
+    "02"
+   ],
+   "langues": [
+    "Néerlandais"
+   ],
+   "languescodeiso2": [
+    "NL"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": [
+    "B"
+   ],
+   "secteurs": [
+    "Services administratifs de bureau et autres activités de soutien aux entreprises"
+   ],
+   "secteurscodenace": [
+    "82"
+   ],
+   "source": "Adecco",
+   "referenceexterne": "137-50117-LEFOREM-BE-271100",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165565",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2027-01-08",
+   "metier": "Nettoyage de locaux",
+   "metiercodedimeco": "K2204"
+  },
+  {
+   "numerooffreforem": "2165585",
+   "titreoffre": "Chauffeur CE ADR (H/F/X)",
+   "lieuxtravaillocalite": [
+    "SOMBREFFE"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province de Namur",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "5140"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE35",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.614059,
+     "lat": 50.501865
+    }
+   ],
+   "typecontrat": "Intérimaire avec option sur durée indéterminée",
+   "nomemployeur": "Accent",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": [
+    "C+E"
+   ],
+   "secteurs": [
+    "Autre traitement et élimination des déchets non dangereux"
+   ],
+   "secteurscodenace": [
+    "38219"
+   ],
+   "source": "Accent Job",
+   "referenceexterne": "986859558",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165585",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2027-01-08",
+   "metier": "Conducteur / Conductrice de poids-lourd",
+   "metiercodedimeco": "N410101-1"
+  },
+  {
+   "numerooffreforem": "2165616",
+   "titreoffre": "Serveur (H/F/X)",
+   "lieuxtravaillocalite": [
+    "WAVRE"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Brabant Wallon",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "1300"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE31",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.610737,
+     "lat": 50.716885
+    }
+   ],
+   "typecontrat": "Intérimaire avec option sur durée indéterminée",
+   "nomemployeur": "ACCENT Jobs For People",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Primaire"
+   ],
+   "niveauxetudesisced2011": [
+    "02"
+   ],
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Activités liées à l'emploi"
+   ],
+   "secteurscodenace": [
+    "78"
+   ],
+   "source": "Jobat",
+   "referenceexterne": "15709991_FR",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165616",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2026-12-25",
+   "metier": "Service en restauration",
+   "metiercodedimeco": "G1803"
+  },
+  {
+   "numerooffreforem": "2165599",
+   "titreoffre": "Electricien BA4 (H/F/X)",
+   "lieuxtravaillocalite": [
+    "ENGHIEN"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Hainaut",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "7850"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE32",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 4.037376,
+     "lat": 50.692699
+    }
+   ],
+   "typecontrat": "Intérimaire",
+   "nomemployeur": "KONVERT",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": null,
+   "languescodeiso2": null,
+   "experiencerequise": null,
+   "permisdeconduire": [
+    "B"
+   ],
+   "secteurs": [
+    "Activités liées à l'emploi"
+   ],
+   "secteurscodenace": [
+    "78"
+   ],
+   "source": "Jobat",
+   "referenceexterne": "15709848_FR",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165599",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2026-12-25",
+   "metier": "Électricité bâtiment",
+   "metiercodedimeco": "F1602"
+  },
+  {
+   "numerooffreforem": "2165594",
+   "titreoffre": "Gestionnaire chantier expérimenté (H/F/X)",
+   "lieuxtravaillocalite": [
+    "ATH"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Hainaut",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "7800"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE32",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 3.775117,
+     "lat": 50.629135
+    }
+   ],
+   "typecontrat": "Durée indéterminée",
+   "nomemployeur": "KONVERT",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": null,
+   "languescodeiso2": null,
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Activités liées à l'emploi"
+   ],
+   "secteurscodenace": [
+    "78"
+   ],
+   "source": "Jobat",
+   "referenceexterne": "15709830_FR",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165594",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2026-12-25",
+   "metier": "Conduite de travaux du BTP",
+   "metiercodedimeco": "F1201"
+  },
+  {
+   "numerooffreforem": "2165632",
+   "titreoffre": "Électricien de chantier (H/F/X)",
+   "lieuxtravaillocalite": [
+    "MONS"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Hainaut",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "7033"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE32",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 3.924087,
+     "lat": 50.436314
+    }
+   ],
+   "typecontrat": "Intérimaire avec option sur durée indéterminée",
+   "nomemployeur": "ACCENT Jobs For People",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Activités liées à l'emploi"
+   ],
+   "secteurscodenace": [
+    "78"
+   ],
+   "source": "Jobat",
+   "referenceexterne": "15710059_FR",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165632",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2026-12-25",
+   "metier": "Électricité bâtiment",
+   "metiercodedimeco": "F1602"
+  },
+  {
+   "numerooffreforem": "2165639",
+   "titreoffre": "Commis de cuisine (H/F/X)",
+   "lieuxtravaillocalite": [
+    "ROCHEFORT"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province de Namur",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "5580"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE35",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 5.222139,
+     "lat": 50.161575
+    }
+   ],
+   "typecontrat": "Intérimaire avec option sur durée indéterminée",
+   "nomemployeur": "ACCENT Jobs For People",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": [
+    "Français"
+   ],
+   "languescodeiso2": [
+    "FR"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Activités liées à l'emploi"
+   ],
+   "secteurscodenace": [
+    "78"
+   ],
+   "source": "Jobat",
+   "referenceexterne": "15710134_FR",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165639",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2026-12-25",
+   "metier": "Personnel de cuisine",
+   "metiercodedimeco": "G1602"
+  },
+  {
+   "numerooffreforem": "2165644",
+   "titreoffre": "Technicien de terrain en mesures d'assainissement (H/F/X)",
+   "lieuxtravaillocalite": [
+    "ATH"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Hainaut",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "7822"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE32",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 3.876851,
+     "lat": 50.656612
+    }
+   ],
+   "typecontrat": "Intérimaire",
+   "nomemployeur": "KONVERT",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": null,
+   "languescodeiso2": null,
+   "experiencerequise": null,
+   "permisdeconduire": [
+    "B"
+   ],
+   "secteurs": [
+    "Activités liées à l'emploi"
+   ],
+   "secteurscodenace": [
+    "78"
+   ],
+   "source": "Jobat",
+   "referenceexterne": "15710229_FR",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165644",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2026-12-25",
+   "metier": "Distribution et assainissement d'eau",
+   "metiercodedimeco": "K2301"
+  },
+  {
+   "numerooffreforem": "2165654",
+   "titreoffre": "Machiniste (H/F/X)",
+   "lieuxtravaillocalite": [
+    "PÉRUWELZ"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province du Hainaut",
+    "RÉGION WALLONNE"
+   ],
+   "lieuxtravailcodepostal": [
+    "7600"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE32",
+    "BE3"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 3.59025,
+     "lat": 50.507328
+    }
+   ],
+   "typecontrat": "Durée indéterminée",
+   "nomemployeur": "KONVERT",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": null,
+   "niveauxetudesisced2011": null,
+   "langues": null,
+   "languescodeiso2": null,
+   "experiencerequise": null,
+   "permisdeconduire": [
+    "B"
+   ],
+   "secteurs": [
+    "Activités liées à l'emploi"
+   ],
+   "secteurscodenace": [
+    "78"
+   ],
+   "source": "Jobat",
+   "referenceexterne": "15710262_FR",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165654",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2026-12-25",
+   "metier": "Conduite d'engins de terrassement et de carrière",
+   "metiercodedimeco": "F1302"
+  },
+  {
+   "numerooffreforem": "2165567",
+   "titreoffre": "Medewerker onderhoud | Nazareth | bijverdienste weekend (H/F/X)",
+   "lieuxtravaillocalite": [
+    "NAZARETH-DE PINTE",
+    "NAZARETH"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province de Flandre Occidentale",
+    "RÉGION FLAMANDE",
+    "Province de Flandre Orientale"
+   ],
+   "lieuxtravailcodepostal": [
+    "9810",
+    "9810"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE25",
+    "BE2",
+    "BE23"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 3.596321,
+     "lat": 50.959802
+    }
+   ],
+   "typecontrat": "Intérimaire avec option sur durée indéterminée",
+   "nomemployeur": "ADECCO PERSONNEL SERVICES",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire (premier cycle)"
+   ],
+   "niveauxetudesisced2011": [
+    "03"
+   ],
+   "langues": [
+    "Néerlandais"
+   ],
+   "languescodeiso2": [
+    "NL"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Commerce de gros, à l'exception des véhicules automobiles et des motocycles"
+   ],
+   "secteurscodenace": [
+    "46"
+   ],
+   "source": "Adecco",
+   "referenceexterne": "167-48932-LEFOREM-BE-271100",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165567",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2027-01-08",
+   "metier": "Nettoyage de locaux",
+   "metiercodedimeco": "K2204"
+  },
+  {
+   "numerooffreforem": "2165508",
+   "titreoffre": "Machine operator | 2-ploegen | voltijds | Desselgem (H/F/X)",
+   "lieuxtravaillocalite": [
+    "DESSELGEM",
+    "WAREGEM"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province de Flandre Occidentale",
+    "RÉGION FLAMANDE"
+   ],
+   "lieuxtravailcodepostal": [
+    "8792",
+    "8792"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE25",
+    "BE2"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 3.366911,
+     "lat": 50.883028
+    }
+   ],
+   "typecontrat": "Intérimaire avec option sur durée indéterminée",
+   "nomemployeur": "ADECCO PERSONNEL SERVICES",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Enseignement secondaire (deuxième cycle)"
+   ],
+   "niveauxetudesisced2011": [
+    "04"
+   ],
+   "langues": [
+    "Néerlandais"
+   ],
+   "languescodeiso2": [
+    "NL"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Autres activités spécialisées, scientifiques et techniques"
+   ],
+   "secteurscodenace": [
+    "74"
+   ],
+   "source": "Adecco",
+   "referenceexterne": "155-52400-LEFOREM-BE-271100",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165508",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2027-01-08",
+   "metier": "Opérations manuelles d'assemblage, tri ou emballage",
+   "metiercodedimeco": "H3302"
+  },
+  {
+   "numerooffreforem": "2165523",
+   "titreoffre": "Meewerkend teamleader | Vaste Nacht | Kluisbergen (H/F/X)",
+   "lieuxtravaillocalite": [
+    "KLUISBERGEN"
+   ],
+   "lieuxtravailregion": [
+    "Belgique",
+    "Province de Flandre Orientale",
+    "RÉGION FLAMANDE"
+   ],
+   "lieuxtravailcodepostal": [
+    "9690"
+   ],
+   "lieuxtravailregionnuts": [
+    "BE",
+    "BE23",
+    "BE2"
+   ],
+   "lieuxtravailgeo": [
+    {
+     "lon": 3.521249,
+     "lat": 50.778298
+    }
+   ],
+   "typecontrat": "Intérimaire avec option sur durée indéterminée",
+   "nomemployeur": "ADECCO PERSONNEL SERVICES",
+   "regimetravail": "Temps plein",
+   "nombrepostes": 1,
+   "niveauxetudes": [
+    "Primaire"
+   ],
+   "niveauxetudesisced2011": [
+    "02"
+   ],
+   "langues": [
+    "Néerlandais"
+   ],
+   "languescodeiso2": [
+    "NL"
+   ],
+   "experiencerequise": null,
+   "permisdeconduire": null,
+   "secteurs": [
+    "Autres activités spécialisées, scientifiques et techniques"
+   ],
+   "secteurscodenace": [
+    "74"
+   ],
+   "source": "Adecco",
+   "referenceexterne": "374-37428-LEFOREM-BE-271100",
+   "url": "https://www.leforem.be/recherche-offres/offre-detail/2165523",
+   "datedebutdiffusion": "2026-11-27",
+   "datefindiffusion": "2027-01-08",
+   "metier": "Réglage d'équipement de formage des plastiques et caoutchoucs",
+   "metiercodedimeco": "H3202"
+  }
+ ]
+}

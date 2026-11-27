@@ -15,6 +15,11 @@ The live demo (15-minute slot) must NOT crash. Stability beats features.
   limit, a cache, public pages only. No captcha / block circumvention, no login walls.
 - **Adzuna is a last resort:** only 25 calls/month. Calls are counted in SQLite
   (`ADZUNA_MONTHLY_BUDGET`) and refused when the budget is used. Scrapers and the cache come first.
+- **Source strategy (verified 2026-11-27):** (1) Le Forem OFFICIAL open data on ODWB
+  (`offres-d-emploi-forem`, CC BY-SA 4.0, ~25k live offers, also contains Flemish/Brussels offers
+  relayed by partners, no free-text description); (2) Adzuna as last resort (full descriptions are
+  truncated to 500 chars); (3) scrapers only where a site allows plain requests. Jobat and VDAB
+  answer 403 to scripts: we do NOT circumvent that.
 - **Agent profiles:** different roles (orchestrator, cv_analyst, job_searcher, matcher, writer)
   can use different models (`agents.yaml`). The benchmark compares role->model combinations.
 - Commits are made locally and prepared for review; the team pushes them (never push automatically).
