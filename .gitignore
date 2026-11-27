@@ -1,0 +1,23 @@
+# Secrets and local config
+.env
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Runtime data (user data, logs, caches) - never commit
+logs/
+data/*.db
+data/*.db-journal
+data/*.sqlite*
+data/uploads/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
