@@ -86,6 +86,13 @@ CREATE TABLE IF NOT EXISTS seen_jobs (
     PRIMARY KEY (search_id, job_id)
 );
 
+-- Text embeddings (vectors), cached so the same text is never embedded twice.
+CREATE TABLE IF NOT EXISTS embeddings (
+    cache_key   TEXT PRIMARY KEY,           -- sha256 of model + text
+    vector      BLOB NOT NULL,              -- float32 numbers
+    created_at  TEXT NOT NULL
+);
+
 -- How many paid/limited API calls we made per month (Adzuna free plan: 25/month).
 CREATE TABLE IF NOT EXISTS api_budget (
     source  TEXT NOT NULL,
@@ -204,6 +211,19 @@ def cache_set(conn: sqlite3.Connection, key: str, source: str, body: str) -> Non
         "INSERT INTO http_cache (cache_key, source, body, fetched_at) VALUES (?, ?, ?, ?) "
         "ON CONFLICT(cache_key) DO UPDATE SET body=excluded.body, fetched_at=excluded.fetched_at",
         (key, source, body, now_iso()),
+    )
+
+
+# --------------------------------------------------------------------- embeddings
+def embedding_get(conn: sqlite3.Connection, key: str) -> bytes | None:
+    row = conn.execute("SELECT vector FROM embeddings WHERE cache_key = ?", (key,)).fetchone()
+    return bytes(row["vector"]) if row else None
+
+
+def embedding_set(conn: sqlite3.Connection, key: str, vector: bytes) -> None:
+    conn.execute(
+        "INSERT OR REPLACE INTO embeddings (cache_key, vector, created_at) VALUES (?, ?, ?)",
+        (key, vector, now_iso()),
     )
 
 

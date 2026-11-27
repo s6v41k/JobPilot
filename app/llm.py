@@ -92,3 +92,16 @@ def chat_json(schema: type[T], system: str, user: str, model: str | None = None,
                 {"role": "user", "content": "That was not valid JSON for the requested schema. "
                                             "Reply again with ONLY the JSON object."}]
     raise LLMError(f"The model did not return a valid structured answer ({last_problem}).")
+
+
+def embed(texts: list[str]) -> list[list[float]]:
+    """Turn texts into vectors with the embedding model (bge-m3). Raises LLMError."""
+    settings = get_settings()
+    try:
+        reply = get_client().embed(model=settings.embed_model, input=texts, keep_alive="30m")
+        vectors = [list(v) for v in reply.embeddings]
+    except Exception as e:
+        raise _friendly(e, settings.embed_model) from None
+    if len(vectors) != len(texts):
+        raise LLMError("The embedding model returned an unexpected answer.")
+    return vectors

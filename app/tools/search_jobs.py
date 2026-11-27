@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from typing import Literal
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 
 from app.providers.aggregator import search_all
 from app.providers.base import JobQuery
@@ -20,12 +20,22 @@ class SearchJobsArgs(BaseModel):
     region: Literal["flanders", "wallonia", "brussels"] | None = Field(
         default=None, description="Belgian region.")
     city: str | None = Field(default=None, description="City or municipality, e.g. 'Antwerp', 'Leuven'.")
-    radius_km: int | None = Field(default=None, ge=1, le=200, description="Search radius around the city in km.")
+    radius_km: int | None = Field(default=None, ge=1, le=200,
+                                  description="Search radius around the city in km. Leave empty normally.")
     language: Literal["nl", "fr", "en"] | None = Field(
-        default=None, description="Language the vacancy is written in.")
+        default=None, description="Language the vacancy text is written in. Leave EMPTY unless the user "
+                                  "explicitly asks for ads in one language. Do NOT set it to the language "
+                                  "the user writes in.")
     experience_level: Literal["none", "junior", "medior", "senior"] | None = Field(
         default=None, description="Required experience.")
     limit: int = Field(default=5, ge=1, le=20, description="How many vacancies to return (default 5, max 20).")
+
+
+    @field_validator("radius_km", mode="before")
+    @classmethod
+    def zero_means_not_set(cls, value):
+        """Small models fill every optional field; 0 km / 0 results really mean 'not set'."""
+        return None if value in (0, "0") else value
 
 
 def _short(text: str | None, n: int = 110) -> str:

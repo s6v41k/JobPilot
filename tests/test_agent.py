@@ -234,6 +234,39 @@ def test_chat_returns_text():
     assert a.chat("hello") == "Hi!"
 
 
+EVIDENCE = '{"jobs": [{"id": "forem:2123456", "url": "https://www.leforem.be/offre-detail/2123456"}]}'
+
+
+@pytest.mark.parametrize("answer,expected", [
+    ("1. Barista - Cafe (123)\n2. Intern - EU (456)", ["123", "456"]),          # invented bracketed ids
+    ("1. Waiter (id: forem:999999)\n2. Cook (id: forem:2123456)", ["forem:999999"]),
+    ("1. Waiter (id: forem:2123456)\n2. Same job again (forem:2123456)", []),   # real ids are fine
+    ("1. Studied (2019)\n2. Worked (2024)", []),                                 # years are not ids
+    ("The result is (123)", []),                                                 # not a list: ignored
+    ("See https://www.leforem.be/offre-detail/2123456.", []),
+    ("See https://www.leforem.be/offre-detail/777", ["https://www.leforem.be/offre-detail/777"]),
+    ("1. Job (123)\n2. Job (456)", ["123", "456"]),
+    ("Your CV matches this job with a score of 85/100.", ["85/100"]),            # score nobody computed
+    ("Fit: 41 / 100", ["41/100"]),
+])
+def test_ungrounded_claims(answer, expected):
+    from app.agent.agent import ungrounded_claims
+    assert ungrounded_claims(answer, EVIDENCE) == expected
+
+
+def test_scores_from_match_cv_are_accepted():
+    from app.agent.agent import ungrounded_claims
+    evidence = '{"matches": [{"job_id": "forem:1", "score": 85, "label": "strong"}]}'
+    assert ungrounded_claims("Best fit: 85/100 (id: forem:1)", evidence) == []
+    assert ungrounded_claims("Second: 58/100", evidence) == ["58/100"]
+
+
+def test_invented_numbered_list_without_ids_is_retracted():
+    a, _ = agent(says("1. Barista - Cafe (123)\n2. Intern - EU (456)"), calls("search_jobs", {}), says("Real: (id: t:1)"))
+    events = list(a.run("student jobs"))
+    assert "retract" in kinds(events) and events[-1]["text"] == "Real: (id: t:1)"
+
+
 # ------------------------------------------------------- text tool-call parsing
 @pytest.mark.parametrize("text,expected", [
     ('{"name": "search_jobs", "arguments": {"keywords": "x"}}', 1),

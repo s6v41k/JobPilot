@@ -50,6 +50,12 @@ def test_blank_and_null_optionals_are_ignored(fake_search):
     assert res["ok"]
 
 
+def test_zero_radius_means_not_set(fake_search):
+    res = call_tool("search_jobs", {"keywords": "x", "radius_km": 0, "limit": "5"})   # typical small-model output
+    assert res["ok"] and fake_search["query"].radius_km is None and fake_search["query"].limit == 5
+    assert call_tool("search_jobs", {"radius_km": "0"})["ok"]
+
+
 def test_arguments_may_arrive_as_json_string(fake_search):
     assert call_tool("search_jobs", '{"keywords": "x"}')["ok"]
     assert call_tool("search_jobs", "")["ok"]

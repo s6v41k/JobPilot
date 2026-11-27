@@ -79,10 +79,26 @@ _URL = re.compile(r"https?://[^\s)\]>\"']+")
 _JOB_ID = re.compile(r"\b(?:forem|adzuna):\w+")
 
 
+_LIST_ITEM = re.compile(r"^\s*(?:\d+[.)]|[-*•])\s+", re.MULTILINE)
+_BRACKETED_ID = re.compile(r"\(\s*(?:id\s*[:#]?\s*)?([A-Za-z_]*:?[A-Za-z_]*\d{2,}[\w:.-]*)\s*\)", re.IGNORECASE)
+_YEAR = re.compile(r"(?:19|20)\d{2}$")
+_SCORE = re.compile(r"\b(\d{1,3})\s*/\s*100\b")
+
+
 def ungrounded_claims(answer: str, evidence: str) -> list[str]:
-    """Links / vacancy ids in the answer that NO tool result contained = invented by the LLM."""
+    """Links / vacancy ids in the answer that NO tool result contained = invented by the LLM.
+
+    Three checks: (1) links, (2) ids like forem:123, (3) in a LIST of items, a bracketed
+    id-like number such as "(123)" that no tool returned (small models invent these)."""
     claims = {m.rstrip(".,;:") for m in _URL.findall(answer)} | set(_JOB_ID.findall(answer))
-    return sorted(c for c in claims if c not in evidence)
+    if len(_LIST_ITEM.findall(answer)) >= 2:
+        claims |= {c for c in _BRACKETED_ID.findall(answer) if not _YEAR.match(c)}
+    # A match score ("85/100") must come from a match_cv result, not from the model's imagination.
+    for number in _SCORE.findall(answer):
+        if not re.search(rf'"score":\s*{number}\b', evidence):
+            claims.add(f"{number}/100")
+    # whole-token match, so the invented "(123)" is not "found" inside a real id like forem:2123456
+    return sorted(c for c in claims if not re.search(rf"(?<![\w:]){re.escape(c)}(?![\w])", evidence))
 
 
 def history_form(message: dict) -> dict:

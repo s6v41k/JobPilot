@@ -67,7 +67,7 @@ def simple_schema(model: type[BaseModel]) -> dict:
         if "anyOf" in spec:
             options = [o for o in spec["anyOf"] if o.get("type") != "null"]
             spec = {**{k: v for k, v in spec.items() if k != "anyOf"}, **(options[0] if options else {})}
-        props[key] = {k: v for k, v in spec.items() if k in ("type", "description", "enum", "minimum", "maximum")}
+        props[key] = {k: v for k, v in spec.items() if k in ("type", "description", "enum", "minimum", "maximum", "items")}
     return {"type": "object", "properties": props, "required": raw.get("required", [])}
 
 
@@ -137,4 +137,4 @@ def call_tool(name: str, arguments: Any = None) -> dict:
 
 
 # Importing the modules registers their tools (keep at the bottom: they import `tool`).
-from app.tools import search_jobs, profile_tools  # noqa: E402,F401
+from app.tools import search_jobs, job_details, profile_tools, match_cv  # noqa: E402,F401
