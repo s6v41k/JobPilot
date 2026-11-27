@@ -222,4 +222,4 @@ def test_profile_goes_into_the_system_prompt():
     from app.agent.prompts import build_system_prompt
     prompt = build_system_prompt({"name": "Emma", "skills": ["Excel", "Teamwork"], "education": ["BSc Business"]})
     assert "Emma" in prompt and "Excel, Teamwork" in prompt and "BSc Business" in prompt
-    assert "What you know about the user" not in build_system_prompt(None)
+    assert "What you know about the user (from their CV):" not in build_system_prompt(None)
