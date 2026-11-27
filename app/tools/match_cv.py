@@ -50,4 +50,7 @@ def match_cv(args: MatchCvArgs) -> dict:
             unknown.append(job_id)
     if not jobs:
         raise LookupError(f"Unknown vacancy id(s): {', '.join(unknown)}. Use search_jobs first and copy the ids exactly.")
-    return {"matches": match_jobs(jobs, profile), "unknown_ids": unknown}
+    # The raw score components are for the UI; the LLM only needs the verdict (shorter prompt = faster).
+    matches = [{k: v for k, v in m.items() if k not in ("components", "company", "city")}
+               for m in match_jobs(jobs, profile)]
+    return {"matches": matches, "unknown_ids": unknown}
