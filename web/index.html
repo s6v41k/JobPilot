@@ -4,22 +4,140 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>JobPilot</title>
-  <style>
-    body { background:#14151a; color:#e8e8ea; font-family:system-ui,sans-serif; max-width:640px; margin:12vh auto; padding:0 1rem; }
-    h1 span { color:#f5c518; }
-    code { background:#23242b; padding:.15rem .4rem; border-radius:4px; }
-    pre { background:#23242b; padding:1rem; border-radius:8px; overflow:auto; }
-  </style>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23f5c518'/%3E%3Cpath d='M9 22 16 7l7 15-7-4z' fill='%231a1500'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <h1>Job<span>Pilot</span></h1>
-  <p>The server is running. The full web interface arrives in the next step.</p>
-  <p>Status from <code>/api/health</code>:</p>
-  <pre id="status">loading...</pre>
-  <script>
-    fetch("/api/health").then(r => r.json())
-      .then(d => document.getElementById("status").textContent = JSON.stringify(d, null, 2))
-      .catch(() => document.getElementById("status").textContent = "The server did not answer.");
-  </script>
+<div id="app" v-cloak>
+  <!-- top bar: brand, tabs, live status -->
+  <header class="top">
+    <div class="brand">Job<span>Pilot</span></div>
+    <nav class="tabs">
+      <button v-for="t in tabs" :key="t.id" :class="{active: tab === t.id}" @click="tab = t.id">{{ t.label }}</button>
+    </nav>
+    <div class="status">
+      <span class="pill" :class="ollamaOk ? 'ok' : 'bad'" :title="health && health.ollama && health.ollama.version ? 'Ollama ' + health.ollama.version : 'Ollama'">
+        ● {{ ollamaOk ? modelName : 'Ollama offline' }}
+      </span>
+      <span class="pill" :title="vacanciesTitle">{{ vacanciesLabel }}</span>
+    </div>
+  </header>
+
+  <!-- friendly banners: never a blank page, never a stack trace -->
+  <div class="banners">
+    <div v-for="b in allBanners" :key="b.id" class="banner" :class="b.kind">
+      <span>{{ b.text }}</span>
+      <button v-if="b.dismissable" @click="dismiss(b.id)" title="Dismiss">&times;</button>
+    </div>
+  </div>
+
+  <!-- ======================= CHAT ======================= -->
+  <section class="page" v-show="tab === 'chat'">
+    <div class="messages" ref="scroller">
+      <div class="col">
+        <div v-if="!messages.length" class="empty">
+          <h1>Job<span>Pilot</span></h1>
+          <p>Ask in English, Dutch, French or Russian. I search real vacancies in Belgium,<br>
+             compare them with your CV and help you apply.</p>
+          <div class="suggestions">
+            <button v-for="s in suggestions" :key="s" @click="send(s)">{{ s }}</button>
+          </div>
+        </div>
+
+        <div v-for="m in messages" :key="m.id" class="msg" :class="m.role">
+          <div v-if="m.role === 'user'" class="bubble">{{ m.text }}</div>
+
+          <template v-else>
+            <!-- what the agent decided to do (tool calls) -->
+            <div class="steps" v-if="m.steps.length">
+              <span v-for="s in m.steps" :key="s.id" class="chip" :class="s.status">
+                <b>{{ s.name }}</b>
+                <span>{{ s.status === 'running' ? 'running...' : fmt(s.ms) }}</span>
+              </span>
+            </div>
+
+            <div class="bubble thinking" v-if="m.waiting">
+              <span class="dots"><span></span><span></span><span></span></span>
+              <span>{{ waitingText(m) }}</span>
+            </div>
+            <div class="msg-notice" v-if="m.notice">{{ m.notice }}</div>
+            <div class="bubble" v-if="m.text" v-html="render(m.text)"></div>
+            <div class="msg-error" v-if="m.error">{{ m.error }}</div>
+
+            <!-- cover letters -->
+            <div class="letter" v-for="(l, i) in m.letters" :key="'l' + i">
+              <div class="head">Cover letter - {{ l.job }} ({{ l.words }} words)</div>
+              <pre>{{ l.text }}</pre>
+              <button class="btn" @click="copy(l.text)">Copy</button>
+            </div>
+
+            <!-- vacancy cards -->
+            <div class="cards" v-if="cardsOf(m).length">
+              <article class="job" v-for="j in cardsOf(m)" :key="j.id">
+                <div class="top-row">
+                  <h4>{{ j.title }}</h4>
+                  <span class="score" :class="j.match.label" v-if="j.match" :title="'Match score: ' + j.match.label">{{ j.match.score }}</span>
+                </div>
+                <div class="meta">{{ [j.company, j.city, j.region].filter(Boolean).join(' · ') }}</div>
+                <div class="tags">
+                  <span class="tag type" v-if="j.job_type">{{ j.job_type }}</span>
+                  <span class="tag" v-if="j.language">{{ j.language.toUpperCase() }}</span>
+                  <span class="tag" v-if="j.posted_at">{{ j.posted_at.slice(0, 10) }}</span>
+                </div>
+                <p class="reason" v-if="j.match">{{ j.match.reason }}</p>
+                <div class="skills" v-if="j.match">
+                  <span class="skill have" v-for="s in j.match.matched_skills" :key="'h' + s">{{ s }}</span>
+                  <span class="skill lack" v-for="s in j.match.missing_skills" :key="'l' + s">{{ s }}</span>
+                </div>
+                <div class="actions">
+                  <a class="btn" v-if="j.url" :href="j.url" target="_blank" rel="noopener noreferrer">Open ad</a>
+                  <button class="btn primary" :disabled="saved.has(j.id)" @click="saveJob(j)">{{ saved.has(j.id) ? 'Saved' : 'Save' }}</button>
+                </div>
+              </article>
+            </div>
+
+            <!-- tool trace (collapsible) -->
+            <details class="trace" v-if="m.steps.length">
+              <summary>Tool trace ({{ m.steps.length }} {{ m.steps.length === 1 ? 'step' : 'steps' }})</summary>
+              <ol>
+                <li v-for="s in m.steps" :key="'t' + s.id">
+                  <b>{{ s.name }}</b> <span class="args">{{ s.argsText }}</span><br>
+                  <span :class="{err: s.status === 'failed'}">{{ s.status === 'running' ? 'running...' : s.summary }} - {{ fmt(s.ms) }}</span>
+                </li>
+              </ol>
+            </details>
+
+            <div class="foot" v-if="m.source || m.attribution.length || m.stats">
+              <span class="badge" :class="m.source && m.source.kind" v-if="m.source">{{ sourceText(m.source) }}</span>
+              <span v-for="a in m.attribution" :key="a.text">Source: <a :href="a.url" target="_blank" rel="noopener noreferrer">{{ a.text }}</a></span>
+              <span v-for="n in m.notes" :key="n">{{ n }}</span>
+              <span v-if="m.stats">{{ m.stats.model }} · {{ m.stats.elapsed_s }} s<template v-if="speed(m)"> · {{ speed(m) }} tokens/s</template></span>
+            </div>
+          </template>
+        </div>
+      </div>
+    </div>
+
+    <form class="composer" @submit.prevent="send()">
+      <div class="col">
+        <textarea ref="box" v-model="input" rows="1" placeholder="Ask about jobs in Belgium..." @keydown.enter.exact.prevent="send()" @input="grow"></textarea>
+        <button v-if="busy" type="button" class="stop" @click="stop">Stop</button>
+        <button v-else type="submit" class="send" :disabled="!input.trim()">Send</button>
+        <button type="button" class="stop" @click="newChat" :disabled="busy" title="Forget this conversation">New chat</button>
+      </div>
+      <div class="privacy">Runs on your computer. Your CV never leaves it; only search words go to the job sources.</div>
+    </form>
+  </section>
+
+  <!-- ======================= other tabs (next step) ======================= -->
+  <section class="page soon" v-show="tab !== 'chat'">
+    <h2>{{ tabLabel }}</h2>
+    <p>This tab arrives in the next step. The chat already searches, matches and drafts letters.</p>
+  </section>
+</div>
+
+<script src="/vendor/vue.global.prod.js"></script>
+<script src="/util.js"></script>
+<script src="/app.js"></script>
 </body>
 </html>

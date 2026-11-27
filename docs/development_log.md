@@ -20,7 +20,7 @@ test details in [testing.md](testing.md).
 | 9 | Cover letters, application tracker | done |
 | 10 | FastAPI: REST + streaming chat | done |
 | 10b | Local copy of the Forem dataset (daily quota problem) | done - **live download still to be verified** |
-| 11 | Web UI: Chat with tool trace | |
+| 11 | Web UI: Chat with tool trace | done |
 | 12 | Web UI: Jobs, Tracker, Profile - **MVP (target 10 Dec)** | |
 | 13 | Preflight check, demo mode, error banners | |
 | 14 | Agent roles (one model per job) and runtime model switching | |
@@ -164,3 +164,29 @@ also faster (about 150 ms over 25 000 offers, measured), works offline during th
 1. run `python -m app.providers.forem_mirror` and check it prints about 24 000 offers (the export format is assumed to be a JSON list of records);
 2. check the file size of `data/jobpilot.db` (expected ~35 MB) and a search through `/api/jobs`.
 If the export format differs, only `refresh()` needs adjusting; the search side is already tested.
+
+## Commit 11 - Web UI: the Chat tab (this commit)
+**What:** `web/` - Vue 3 without a build step. Dark theme, yellow accent, English UI.
+- **Chat** streams the answer word by word and shows what the agent decides: a chip per tool call (running / ok / failed with its duration),
+  a collapsible **tool trace** with the arguments, and a "thinking... 12 s" indicator (a local model can take minutes, so silence would look like a crash).
+- **Vacancy cards, match scores and cover letters are built from the tool results, not from the model's text.** They are therefore always correct
+  (real titles, links, scores), sorted by score, with matched skills in green and missing ones struck through. Save puts a card into the tracker.
+- A data badge ("Live data" / "Cached real data" / "Saved snapshot from ...") and the licence attribution are shown under every answer.
+- Status bar: Ollama state + active model, size and age of the local vacancy list. Friendly banners for: server not reachable, Ollama not running,
+  model not installed, vacancy list still downloading. Stop button, New chat, copy button for letters, suggestions in four languages.
+- The other tabs exist but say "next step" (commit 12).
+**Why**
+- **Vue is downloaded into `web/vendor/` instead of loaded from a CDN** (v3.5.46, MIT licence). The demo may run without internet; with a CDN the page would be empty.
+- `web/util.js` holds the pure logic (safe Markdown, SSE parsing, formatters) so it can be tested with Node without a browser.
+- Markdown is *escaped first* and only a few patterns become tags; only `http(s)` links are allowed - a model answer can never inject HTML or `javascript:` links.
+**Run:** `.venv\Scripts\python -m app.main`, open http://127.0.0.1:8000.
+**Test (three layers):**
+1. `node --test tests/js/util.test.js` - 11 tests of the helpers (also run by pytest if Node is installed);
+2. `tests/test_web.py` - assets exist, the page needs no internet, every `/api/...` path used by `app.js` exists on the server;
+3. **`python -m uitest.smoke`** - drives a real headless Edge: types a question, waits for streaming, checks chips, cards, scores, trace, Save, letter,
+   tabs, New chat, phone width, and the "Ollama is down" state (25 checks, screenshots in `eval/results/ui/`). It uses `uitest/scripted_server.py`: the
+   real server and tools with real vacancies from the snapshot, but a scripted "model", so it finishes in about 30 s. Run it before every rehearsal.
+**Surprises**
+- A first run showed *no scores and no answer* - not a UI bug: the scripted search had not saved the vacancies, so `match_cv` correctly said "unknown id".
+  The UI showed the failed chip and the error calmly instead of breaking.
+- Scrollbars and the textarea were light-grey on the dark theme until `color-scheme: dark` was added.
